@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service name="navigation" description="Navigation service">
+	<parameters>
+
+		<numericParameter id = "001" name= "navi_turnByTurn-Distant-to-Maneuver" range= "0..1000" readOnly= "false" />
+		<numericParameter id = "002" name= "navi_Range-Max" range= "0..1000" readOnly= "false"/>
+		<numericParameter id = "003" name= "navi_Distance-to-Home" range= "0..1000" readOnly= "false"/>
+		<numericParameter id = "004" name= "navi_Distance-to-Work" range= "0..1000" readOnly= "false"/>
+		<numericParameter id = "005" name= "navi_Distance-to-Station" range= "0..1000" readOnly= "false"/>
+		<numericParameter id = "006" name= "navi_turnByTurn-Distance-to-Dest" range= "0..1000" readOnly= "false"/>
+		<stringParameter id = "007" name= "navi_turnByTurn-Message" readOnly= "false"/>
+		<stringParameter id = "008" name= "navigationTextToSpeech" readOnly= "false"/>
+		<stringParameter id = "009" name= "navi_turnByTurn-ManeuverType" readOnly= "false"/>
+		<stringParameter id = "010" name= "navi_turnByTurn-Street" readOnly= "false"/>
+		<stringParameter id = "011" name= "navi_turnByTurn-jsonRoute" readOnly= "false"/>
+		
+		
+		<switchParameter id="012" name="isNavigationActive" readOnly="false" />
+		<stateParameter  id ="013" name="destination" readOnly="false">
+			<states>
+				<state>home</state>
+				<state>work</state>
+				<state>favorite1</state>
+				<state>favorite2</state>
+				<state>favorite3</state>
+				<state>favorite4</state>
+				<state>favorite5</state>
+			</states>
+		</stateParameter>
+		<stringParameter id = "014" name= "favorites" readOnly= "false"/>
+		<stateParameter id ="015" name="routingType" readOnly="false">
+			<states>
+				<state>Energy-Efficient</state>
+				<state>Traffic</state>
+				<state>Fastest</state>
+			</states>
+		</stateParameter>
+		<stringParameter id = "016" name= "destinationAddress" readOnly= "true"/>
+		<switchParameter id="017" name="cancelRouting" readOnly="false" />	
+		
+		
+		<setParameter id="018" name="newWaypoint" readOnly="false">
+			<parameters>
+				<numericParameter id = "019" name= "waypointLatitude" range= "-90..90" readOnly= "false"/>
+				<numericParameter id = "020" name= "waypointLongitude" range= "-180..180" readOnly= "false"/>
+				<stringParameter id = "0211" name= "waypointType" readOnly= "false"/>
+			</parameters>
+		</setParameter>
+		
+		<numericParameter id = "021" name= "latitude" range= "-90..90" readOnly= "false"/>
+		<numericParameter id = "022" name= "longitude" range= "-180..180" readOnly= "false"/>
+		
+		
+		
+		<stringParameter id = "024" name= "homeAddress" readOnly= "false"/>
+		<numericParameter id = "025" name= "homeLatitude" range= "-90..90" readOnly= "false"/>
+		<numericParameter id = "026" name= "homeLongitude" range= "-180..180" readOnly= "false"/>
+		<stringParameter id = "027" name= "homeName" readOnly= "false"/>
+		
+		<stringParameter id = "028" name= "workAddress" readOnly= "false"/>
+		<numericParameter id = "029" name= "workLatitude" range= "-90..90" readOnly= "false"/>
+		<numericParameter id = "030" name= "workLongitude" range= "-180..180" readOnly= "false"/>
+		<stringParameter id = "031" name= "workName" readOnly= "false"/>
+		
+				
+		<stringParameter id = "032" name= "favorite1Address" readOnly= "false"/>
+		<numericParameter id = "033" name= "favorite1Latitude" range= "-90..90" readOnly= "false"/>
+		<numericParameter id = "034" name= "favorite1Longitude" range= "-180..180" readOnly= "false"/>
+		<stringParameter id = "035" name= "favorite1Name" readOnly= "false"/>
+		
+					
+		<stringParameter id = "036" name= "favorite2Address" readOnly= "false"/>
+		<numericParameter id = "037" name= "favorite2Latitude" range= "-90..90" readOnly= "false"/>
+		<numericParameter id = "038" name= "favorite2Longitude" range= "-180..180" readOnly= "false"/>
+		<stringParameter id = "039" name= "favorite2Name" readOnly= "false"/>
+		
+					
+		<stringParameter id = "040" name= "favorite3Address" readOnly= "false"/>
+		<numericParameter id = "041" name= "favorite3Latitude" range= "-90..90" readOnly= "false"/>
+		<numericParameter id = "042" name= "favorite3Longitude" range= "-180..180" readOnly= "false"/>
+		<stringParameter id = "043" name= "favorite3Name" readOnly= "false"/>
+		
+					
+		<stringParameter id = "044" name= "favorite4Address" readOnly= "false"/>
+		<numericParameter id = "045" name= "favorite4Latitude" range= "-90..90" readOnly= "false"/>
+		<numericParameter id = "046" name= "favorite4Longitude" range= "-180..180" readOnly= "false"/>
+		<stringParameter id = "047" name= "favorite4Name" readOnly= "false"/>
+		
+					
+		<stringParameter id = "048" name= "favorite5Address" readOnly= "false"/>
+		<numericParameter id = "049" name= "favorite5Latitude" range= "-90..90" readOnly= "false"/>
+		<numericParameter id = "050" name= "favorite5Longitude" range= "-180..180" readOnly= "false"/>
+		<stringParameter id = "051" name= "favorite5Name" readOnly= "false"/>
+		
+			
+		
+	</parameters>
+</service>

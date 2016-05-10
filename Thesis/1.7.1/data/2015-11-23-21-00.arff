@@ -1,0 +1,13 @@
+@relation rel
+
+@attribute date date 'yyyy-MM-dd\'T\'HH:mm:ss'
+@attribute knownPresence numeric
+@attribute openEntryPoint {true,false}
+@attribute motionIndoors {true,false}
+@attribute motionIndoorPerMinute numeric
+@attribute motionOutdoors {true,false}
+@attribute outdoorPerMinute numeric
+@attribute normal {true,false}
+
+@data
+2015-11-23T21:00:03,0,false,true,112,false,0,true

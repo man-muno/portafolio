@@ -1,0 +1,65 @@
+%% Draft document mode
+\documentclass[11pt,a4paper,bibtotoc,idxtotoc,headsepline,footsepline,footexclude,BCOR12mm,DIV13]
+{scrbook}
+
+%% Final document
+%\documentclass[11pt,a4paper,bibtotoc,idxtotoc,headsepline,footsepline,footexclude,BCOR20mm,DIV10]{scrbook}
+
+% KOMA-Optionen:
+%  bibtotoc: include bibliography in table of contents
+%  idxtotoc: include index in table of contents
+%  headsepline: use horizontalline under heading
+%  BCOR: binding correcion (Bindungskorrektur) (e.g.: BCOR5mm)
+%  DIV: Number of sheet sections (used for layout) (e.g.: DIV12) 
+
+%\makeindex
+	%% inter line spacing
+%\linespread{1.0}
+
+\input{components/info}
+\input{components/settings}
+\input{components/commands}
+
+\makeglossary
+
+\begin{document}
+
+	\frontmatter
+	\input{components/cover}
+	\clearemptydoublepage
+	\input{components/titlepage}
+	\input{components/disclaimer}
+	\input{components/acknowledgements}
+	\input{components/abstract}
+	\tableofcontents
+  	\input{components/outline}
+	
+% ---------------------------------------------------------------------------
+%
+% 	Thesis Main Part
+%
+% ---------------------------------------------------------------------------
+
+\mainmatter
+\input{chapters/Introduction}
+\input{chapters/Theory}
+\input{chapters/Implementation}
+\input{chapters/Summary}
+
+% ---------------------------------------------------------------------------
+%
+% 	Appendix
+%
+% ---------------------------------------------------------------------------
+		
+\part*{Appendix}
+\addcontentsline{toc}{part}{Appendix}
+		
+\appendix %---------------------------------------
+\input{chapters/Appendix}
+
+\clearemptydoublepage
+\bibliography{bibliography/literature}
+ 
+\end{document}
+

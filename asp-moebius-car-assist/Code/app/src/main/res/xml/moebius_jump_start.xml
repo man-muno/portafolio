@@ -1,0 +1,96 @@
+<workflow id="Jump start the car" category="troubleshoot">
+	<triggers>
+		<trigger user="true" value="Jump start the car" type="none"/>
+	</triggers>
+    <start name="1" />
+	<activities>
+		<activity id="1" type="backgroundTop" text="Drive helping car close to own one" img="drive_close">
+			<transitions>
+				<transition user="true" value="Show next step" targetType="activity" targetID="2"/>
+			</transitions>
+		</activity>
+		<activity id="2" type="text" text="Do not block traffic">
+			<transitions>
+				<transition user="true" value="Show next step" targetType="activity" targetID="3"/>
+			</transitions>
+		</activity>
+        <activity id="3" type="text" text="Keep motor in idle state and handbrake pulled">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="4"/>
+            </transitions>
+        </activity>
+		<activity id="4" type="backgroundTop" text="Fetch jumper cable" img="jumper_cables">
+			<transitions>
+				<transition user="true" value="Show next step" targetType="activity" targetID="5"/>
+			</transitions>
+		</activity>
+        <activity id="5" type="text" text="Open the engine hood">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="6"/>
+                <transition user="true" value="How to open the engine hood?" targetType="workflow" targetID="Open engine hood"/>
+            </transitions>
+        </activity>
+        <activity id="6" type="backgroundTop" text="Locate battery" img="battery">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="7"/>
+            </transitions>
+        </activity>
+        <activity id="7" type="text" text="Do NOT touch uninsulated parts of the cable">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="8"/>
+            </transitions>
+        </activity>
+        <activity id="8" type="backgroundTop" text="Connect red cable to plus pole of own car" img="red_jump_cable">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="9"/>
+            </transitions>
+        </activity>
+        <activity id="9" type="text" text="Connect red cable to plus pole of helping car">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="10"/>
+            </transitions>
+        </activity>
+        <activity id="10" type="text" text="Connect black cable to minus pole of helping car">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="11"/>
+            </transitions>
+        </activity>
+        <activity id="11" type="backgroundTop" text="Connect black cable to metallic part of the car body" img="black_jump_cable">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="12"/>
+            </transitions>
+        </activity>
+        <activity id="12" type="text" text="Try to start the car as usual">
+            <transitions>
+                <transition user="true" value="It was successful" targetType="activity" targetID="20"/>
+                <transition user="true" value="It was not successful" targetType="activity" targetID="15"/>
+            </transitions>
+        </activity>
+        <activity id="15" type="text" text="Try up to 5 more times to start the car">
+            <transitions>
+                <transition user="true" value="It was successful" targetType="activity" targetID="20"/>
+                <transition user="true" value="It was still not successful" targetType="activity" targetID="16"/>
+            </transitions>
+        </activity>
+        <activity id="16" type="text" text="Call a car service (e.g. ADAC)">
+            <transitions>
+                <transition user="true" value="End help" targetType="activity" targetID="end"/>
+            </transitions>
+        </activity>
+        <activity id="20" type="text" text="Remove the black cable">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="21"/>
+            </transitions>
+        </activity>
+        <activity id="21" type="text" text="Remove red cable">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="22"/>
+            </transitions>
+        </activity>
+        <activity id="22" type="text" text="Drive for at least 30 minutes to charge up battery">
+            <transitions>
+                <transition user="true" value="End jump start help" targetType="activity" targetID="end"/>
+            </transitions>
+        </activity>
+	</activities>
+</workflow>

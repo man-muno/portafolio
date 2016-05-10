@@ -1,0 +1,85 @@
+<workflow id="change tire" category="troubleshoot">
+    <triggers>
+        <trigger user="true" value="Change tire" type="none"/>
+    </triggers>
+    <start name="1" />
+    <activities>
+        <!--<activity id="1" type="text" text="Low tire pressure detected" img="low_tire_pressure_warning">-->
+        <activity id="1" type="text" text="Ensure that the car is parked on a secure area and turn on the hazard lights">
+        <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="2"/>
+            </transitions>
+        </activity>
+        <activity id="2" type="backgroundTop" text="Use protective gear" img="tire_change">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="4"/>
+            </transitions>
+        </activity>
+        <!--<activity id="3" type="text" text="Turn the hazard lights on" >-->
+            <!--<transitions>-->
+                <!--<transition user="true" value="Show next step" targetType="activity" targetID="4"/>-->
+            <!--</transitions>-->
+        <!--</activity>-->
+        <activity id="4" type="text" text="Do a visual check on each of the tires">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="5"/>
+            </transitions>
+        </activity>
+        <!--<activity id="5" type="backgroundBottom" text="Get the jack, wrench and spare tire from the trunk">-->
+        <activity id="5" type="backgroundTop" text="Get the jack, wrench and spare tire from the trunk" img="spare_tire">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="6"/>
+            </transitions>
+        </activity>
+        <activity id="6" type="backgroundTop" img="turn_wrench" text="Use the wrench to loosen the lug nuts by turning the wrench counter-clockwise">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="7"/>
+            </transitions>
+        </activity>
+        <activity id="7" type="backgroundTop" text="Locate the jack points" img="jackpoints">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="15"/>
+            </transitions>
+        </activity>
+        <activity id="15" type="text" text="Use the jack to lift the car slightly">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="8"/>
+            </transitions>
+        </activity>
+        <activity id="8" type="text" text="Remove the lug nuts and pull the tire off the car">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="9"/>
+            </transitions>
+        </activity>
+        <activity id="9" type="text" text="Place the spare tire on the car">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="10"/>
+            </transitions>
+        </activity>
+        <activity id="10" type="text" text="Put the lug nuts on loosely">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="11"/>
+            </transitions>
+        </activity>
+        <activity id="11" type="text" text="Use the jack to bring the car back down to ground level">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="12"/>
+            </transitions>
+        </activity>
+        <activity id="12" type="text" text="Make sure the lug nuts are tightened">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="13"/>
+            </transitions>
+        </activity>
+        <activity id="13" type="text" text="Put your flat tire and tools back into your trunk.">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="14"/>
+            </transitions>
+        </activity>
+        <activity id="14" type="text" text="It is recommended to fix the flat tire right away">
+            <transitions>
+                <transition user="true" value="End tire change" targetType="activity" targetID="end"/>
+            </transitions>
+        </activity>
+    </activities>
+</workflow>

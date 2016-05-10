@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint default-activation="eager"
+	xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+    <reference id="serviceRegistry" interface="de.visiom.carpc.asb.serviceregistry.ServiceRegistry" />
+	<reference id="eventPublisher" interface="de.visiom.carpc.asb.messagebus.EventPublisher" />	
+	
+	<bean id="gpsSourceProdImpl" class="de.visiom.carpc.services.navigation.util.prod.GPS" init-method="init">
+		<property name="serviceRegistry" ref="serviceRegistry" />
+		<property name="eventPublisher" ref="eventPublisher" />
+	</bean>
+	
+	<service id="gpsSource" interface="de.visiom.carpc.services.navigation.util.prod.IGPS" ref="gpsSourceProdImpl" />
+	
+</blueprint>

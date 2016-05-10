@@ -1,0 +1,27 @@
+<workflow id="Check coolant water-OBD">
+    <triggers>
+        <trigger variableName="coolantTemperature" valueType="java.lang.Long" condition="above" value="90"/>
+    </triggers>
+    <start name="preamble_1"/>
+    <activities>
+        <activity id="preamble_1" type="column" text="High coolant temperature detected" img="coolant_temperature_warning">
+            <transition user="true" value="Show help" targetType="activity" targetID="preamble_2"/>
+        </activity>
+        <activity id="preamble_2" type="text" text="Pull over to a safe location and turn off the engine">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="preamble_3"/>
+            </transitions>
+        </activity>
+        <activity id="preamble_3" type="text" text="Stop the engine">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="preamble_4"/>
+            </transitions>
+        </activity>
+        <activity id="preamble_4" type="text" text="Check the coolant">
+            <transitions>
+                <transition user="true" value="How to check the coolant" targetType="workflow" targetID="Check coolant"/>
+                <transition user="true" value="End help" targetType="activity" targetID="end"/>
+            </transitions>
+        </activity>
+    </activities>
+</workflow>

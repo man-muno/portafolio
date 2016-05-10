@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+
+\usepackage{epsfig}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\pagestyle{empty}
+\usepackage{color}
+%\usepackage[all,dvips]{xy}
+
+
+\begin{comment}  
+This LaTex document was created Feb/Mar 2010 by Adriana Salerno and updated Feb 2012 by Meredith Greer
+\end{comment}
+
+
+
+
+
+
+\setlength{\textheight}{8.5in} \setlength{\topmargin}{0.0in}
+\setlength{\headheight}{0.0in} \setlength{\headsep}{0.0in}
+\setlength{\leftmargin}{0.5in}
+\setlength{\oddsidemargin}{0.0in}
+%\setlength{\parindent}{1pc}
+\setlength{\textwidth}{6.5in}
+%\linespread{1.6}
+
+\newtheorem{definition}{Definition}
+\newtheorem{problem}{Problem}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{prop}[theorem]{Proposition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\thispagestyle{empty}
+
+\bigskip
+\bigskip
+
+\centerline{\textbf{\Large{Network intruction detection algortihms}}}
+\centerline{\textbf{\Large{applied on the smart home security domain}}}
+
+\bigskip
+\bigskip
+
+
+\noindent \textbf{Name:} %Your name goes here.
+Manuel Munoz
+
+
+\section*{Proposal}
+
+\bigskip
+
+
+
+
+\subsection*{Introduction}
+In recent years the interest of smart homes has increased significantly\cite{googletrends}. The number of available products geared towards the general consumer has also increased, as is shown by the trade shows like CES\cite{cnet}. Big manufacturers of consumer electronics have noticed this trend, an have launched product lines aimed towards that market segment. These products take advantage of wireless communication technologies to control and monitor the environment they are in. This technology enables seamless integration of these products into everyday life, enabling more ways to interact with the environments, making them more comfortable, or even more secure.
+
+\subsection*{Problem}
+According to the statistics gathered by the German police, 2014 saw the highest number of break-ins in 16 years. In comparison with the previous year, there was a 2\% increase of break-in cases\cite{breakins}. These increasing numbers make the people feel less safe in their own homes.
+
+The most well-known method to secure a household is to hire a security company to provide, install, and also monitor a security system. When a sensor of the security system is triggered, the security company is notified, and can alert both the authorities and the user.
+ 
+This approach has some drawbacks. The installation of the system comes with a price, because it  involves breaking the walls to hide cables and panels that are used to control the system. In order to monitor the household, the security company has access to the the security system, which may raise user´'s privacy concerns. When the system is triggered, the security company reacts by contacting local authorities or the user. Different events, such as pets being detected, can trigger the system resulting in waste of resources.
+
+One way to tackle some of the existing drawbacks of current security systems, is to take advantage of the increasing ubiquity of smart sensors present in smart spaces, and build a system that can analyze the behavior of the inhabitants of the household, recognizing the behavior that is out of the ordinary, such as someone trying to break into the household. Simi 
+
+\subsection*{Proposed Solution}
+Network intrusion detection techniques filter out and identify abnormal behavior. This techniques may be used on smart environments, but to that effect a platform needs to be built. Such platform will enable to take data from a smart environment, analyze it using the network intrusion detection algorithms. The goal is to mitigate the ratio of false positives, while maintaining the inhabitants privacy.
+
+
+\begin{thebibliography}{9}
+% NOTE: change the "9" above to "99" if you have MORE THAN 10 references.
+
+\bibitem{googletrends} Google trends. \textit{Smart Home}, https://www.google.com/trends/explore\#q=smart\%20home (April 2015)
+
+\bibitem{cnet} CNET. \textit{A washer in your washer and smart-home sprawl at CES 2015}, http://www.cnet.com/news/a-washer-in-your-washer-and-smart-home-sprawl-at-ces-2015/ (April 2015)
+
+\bibitem{breakins} Die Zeit. \textit{Zahl der Wohnungseinbrüche auf 16-Jahres-Hoch}, http://www.zeit.de/gesellschaft/zeitgeschehen/2015-04/kriminalitaet-wohnungseinbrueche-deutschland (April 2015)
+
+
+\end{thebibliography}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\end{document} 

@@ -1,0 +1,241 @@
+
+\chapter{Requirements Elicitation}
+\label{chapter:elicitation}
+
+This chapter will focus on describing the system from the viewpoint of the final users. To solve the problem mentioned in Chapter \ref{chapter:Introduction}, the object modeling methodology will be used. This methodology, as explained by Br{\"u}gge \etAl in "Object-oriented software engineering - Using UML, patterns and Java" \cite{Bruegge2004}, describe a set of steps to be followed to define and validate the proposed system. The first activity on the requirements elicitation phase is actor identification. Later, a set of scenarios describing the typical functionality of the system were developed. Once the actors and scenarios are defined, the use cases can be formalized. Lastly, the non-functional requirements are specified. The result of these activities is known as the Requirement Specification \cite{Bruegge2004} and is composed by the functional model and the non-functional requirements.
+
+\section{Functional Model}
+\subsection{Actors}
+\subsubsection{Ocupant}
+Occupant is the name given to the inhabitants of the house that the system can identify as authorized user. An authorized user is defined as a person that has legitimate access to the home.
+\subsubsection{Sensor}
+Represent the devices that pick up the environment data on the home. They are used to take information on the physical world, and deliver ir to the system.
+\subsubsection{Actuator}
+These devices allow the communication of the system with the physical world. They are used to convey information from the system, and deliver it to the real world to change its state. It is important to note that the same device, depending on the how it is used, can function both as a sensor and as an actuator.
+\subsubsection{Guardian}
+This actor is the name given at the part of the system that evaluates all the data, both live and historic, and decides if the current behavior is abnornal and should be reported.
+
+\subsection{Scenarios}
+\label{scenarios}
+To allow a better understanding of what a user may encounter every day when interacting with the system, a set of visionary scenarios where constructed, and are described below.\\
+
+\textbf{Scenario 0: "Set up"} \\
+\textbf{Participating Actors:} George: Occupant, System \\
+George receives and opens the package containing the complete system. The box contains the set of sensors, and the computer that they connect to. George first needs to place the sensors around the different rooms of house. Once the sensors are located and the computer is also connected, the user needs to do a bit more extra configuration for the sensors. The information that the user needs to provide for each sensor is the type of sensor, if its located on the outside of the home. Also, it is expected that the user registers the cellphone where the notifications are going to be received.\\
+
+\textbf{Scenario 1: "Normal week day"} \\
+\textbf{Participating Actors:} George: Occupant, Jane: Occupant, Judy: Occupant, System \\
+It is a weekday morning and George's family wakes up to start the day. Jane goes to the kitchen to prepare breakfast, and opens a window on the way. The sensors pick up the movement indoors, and the window being opened. The information is relayed to the system. George and Jane go to work, leaving Judy to get ready by and go to school. The sensors pick that the doors are being opened, and George's and Jane's presence are not longer detected. The sensors detect opening and closing of the doors, and the presence of Judy in the house. The system recognizes that the activities are performed by authorized members of the home and maintains a threat level as normal. On this level, the system does not dispatch any notifications.\\
+Judy finally leaves the house to go to school. The system detects that Judy's presence is no longer in the house and from that point on any changes in the sensor should be considered abnormal. \\
+
+\textbf{Scenario 2: "Short day at work"} \\
+\textbf{Participating Actor instances:} Jane: Occupant. System\\
+Jane was not feeling well at work and decided to go home early. As she gets home, the system is in a elevated threat level and detects that there is movement that is not typical for the hour and day. However, the system detects the presence of one of the authorized members and regards the activities as normal.\\
+
+\textbf{Scenario 3: "Who are you?"} \\
+\textbf{Participating Actor instances:} Judy: Occupant, System\\
+Judy came from school, but as usual, she spent the whole day listening to music on her phone and when she arrived the battery is dead. The system, as it finds itself in a elevated threat level, uses the camera to scan for familiar faces. The system detects that there is a presence on the house, but cannot detect that it is an authorized user. Judy, to let the system know that she is one of the authorized users she stands before the indoor camera, and the system recognizes her and reduces the threat level to normal.  \\
+
+\textbf{Scenario 4: "Backyard visitor"} \\
+\textbf{Participating Actor instances:} System, Hog: Unknown\\
+On any day of the week, when the family is not at home, a curious hog enters the garden looking for something to eat. Because no one is at home, the system's threat level is set to elevated. However, the camera on the backyard does not register any human form, and decides that it should not notify of this harmless event.\\
+
+\textbf{Scenario 5: "Uh-oh"} \\
+\textbf{Participating Actor instances:} George: Occupant, Burglar: Unknown, System\\
+On a normal week day, when all the family members are away attending to their responsibilities, a burglar decides to break into their home. Because no one is at home, the system's threat level is set to elevated. The burglar finds a window that he can easily open, the system register this event and notifies George. As he receives the notification, he can to call the police and have them catch the thief. \\
+
+%\textbf{Scenario 6: "Panic Attack"} \\
+%\textbf{Participating Actor instances:} George: Occupant, Burglar: Unknown, System\\
+%On a any other day, George decides to take a day off and just wants to hang around his house. That same day a burglar decides to break into the house. The burglar tries to open doors and windows and is noticed by George. He then uses his phone to do nothing and call the police as he should.\\
+
+\subsection{Use Cases}
+\label{sec:useCases}
+The following use cases describe the functions that the system must perform. The use cases extrapolate the scenarios defined in Section \ref{scenarios}. The identified use cases are summarized in two use case diagram (Fig. \ref{UseCaseDiagram} and Fig. \ref{UseCaseDiagram2}), and explained in the following subsections.
+
+\insertfigurescale{images/UseCases.png}{Use case model (UML diagram)}{UseCaseDiagram}{0.25}
+
+
+\insertfigurescale{images/UseCases2.png}{Use case model cont. (UML diagram)}{UseCaseDiagram2}{0.25}
+
+\subsubsection{UC1: Sense}
+\label{sec:sense}
+
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & Sense\\
+	Participating actor & Initiated by the system\\
+	Entry condition & 1. The system is started. \\
+	Flow of events & 1.1 Sensors and actuators initialized.\\
+	& 2. The system receives the up-to-date sensor information.\\
+	& 3. The occupant uses the living spaces as they normally would. \\
+	& 4. The system keeps track and process all the available sensor data. \\	
+	Exit condition & 5. No exit condition. This process must be performed while the system is running. \\
+	Special requirements & There needs to be sensors connected  to function as sources of data. \\
+	\hline
+\end{tabular}
+
+\subsubsection{UC2: Change threat level}
+\label{sec:changeThreatLevel}
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & Change threat level\\
+	Participating actor & Initiated by the system\\
+	Entry condition & 1. New data is sensed from the environment. \\
+	Flow of events & 2. The system evaluates the data and decides if a change of threat level is in order.\\
+	Exit condition & 3. The system keeps the same threat level OR \\
+	& 4. The system changes the threat level.  The possible threat levels are: Normal, elevated, and abnormal. \\
+	Special requirements & The systems needs to have sensors connected to it as sources of data. \\
+	\hline
+\end{tabular}
+
+\subsubsection{UC3: Notify user}
+\label{sec:notify}
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & Notify User\\
+	Participating actor & Initiated by the system\\
+	Entry condition & 1. A new threat level. \\
+	Flow of events & 2. The system detects that for that threat level a notification must be sent.\\
+	Exit condition & 3. The notification is sent. \\
+	Special requirements & The systems needs to have sensors connected to it as sources of data.\\
+	& The users mobile device is already registered with the system.\\
+	\hline
+\end{tabular}
+
+\subsubsection{UC4: Configure system (Boundary Use Case)} 
+\label{sec:notify}
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & Configure system\\
+	Participating actor & Initiated by the user\\
+	Entry condition & 1. The fixtures need to be configured, before the system starts. \\
+	Flow of events  & 2. The user opens the configuration interface.\\
+							  & 3. The user adds the information to connect to each fixture.\\
+							& 4. The user adds the location information of each each fixture.\\
+	Exit condition & 5. Each sensor and actuator is configured. \\
+	%Special requirements & The systems needs to have sensors connected to it as sources of data.\\
+	\hline
+\end{tabular}
+
+\subsubsection{UC5: List available sensors and actuators}
+\label{sec:notify}
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & List sensors and actuators\\
+	Participating actor & Initiated by the user\\
+	Entry condition & 1. The user access the system interface and selects list devices. \\
+	Flow of events & 2. The system returns a list of all the available sensors and actuators. \\
+	Special requirements & The systems needs to have sensors connected to it as sources of data.\\
+	\hline
+\end{tabular}
+
+\subsubsection{UC6: View current sensor/actuators value}
+\label{sec:notify}
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & View sensors and actuators values\\
+	Participating actor & Initiated by the user\\
+	Entry condition & 1. The user access the system interface where the sensors and actuators can be listed. \\
+	Flow of events & 2. The user selects list devices. \\
+	 & 3. The user selects a  specific device, and the value of the sensor appear. \\
+	Special requirements & The systems needs to have sensors connected to it as sources of data.\\
+	\hline
+\end{tabular}
+
+
+\subsubsection{UC7: Change sensor and actuators values}
+\label{sec:notify}
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & Change sensor and actuators values\\
+	Participating actor & Initiated by the user\\
+	Entry condition & 1. The user access the system interface where the sensors and actuators can be listed. \\
+	Flow of events & 2. The user selects list devices. \\
+	& 3. The user selects a  specific device. \\
+	& 4. The user enters a new value for the sensor or actuator. \\
+	Special requirements & The systems needs to have sensors connected to it as sources of data.\\
+	\hline
+\end{tabular}
+
+
+\subsubsection{UC7: Add  sensor or actuator}
+\label{sec:notify}
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & Change sensor and actuators values\\
+	Participating actor & Initiated by the user\\
+	Entry condition & 1. The user access the system interface where the sensors and actuators can be listed. \\
+	Flow of events & 2. The user selects list devices. \\
+	& 3. The user selects a  specific device. \\
+	& 4. The user enters a new value for the sensor or actuator. \\
+	Special requirements & The systems needs to have sensors connected to it as sources of data.\\
+	\hline
+\end{tabular}
+
+
+\subsubsection{UC7: Remove sensor or actuator}
+\label{sec:notify}
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & Change sensor and actuators values\\
+	Participating actor & Initiated by the user\\
+	Entry condition & 1. The user access the system interface where the sensors and actuators can be listed. \\
+	Flow of events & 2. The user selects list devices. \\
+	& 3. The user selects a  specific device. \\
+	& 4. The user enters a new value for the sensor or actuator. \\
+	Special requirements & The systems needs to have sensors connected to it as sources of data.\\
+	\hline
+\end{tabular}
+
+\subsection{Functional Requirements}
+
+The following functional requirements have been identified from the use cases above.\\
+
+\subsection{FR1: Configure Sensors and Actuators}
+The user should be able to configure the necessary sensor information for the system to be correctly configured and functional.
+
+\subsection{FR2: Manage Sensors and Actuators} 
+The user should be able to add and remove new sensors and actuators to the system.
+
+\subsection{FR3: List Sensors and Actuators} 
+The user should be able to list all the available sensors and actuators.
+
+\subsection{FR4: Change Actuators Value } 
+The user should be able to manually change the state of the actuators. 
+
+\subsection{FR5: Get Sensors/Actuators Value } 
+The user should be able to check the current value of the sensors and actuators.
+
+\section{Non-functional Requirements}
+
+The non-functional requirements (NF) of the system are described in the following subsections below.
+
+\subsection{NF1: Unubtrusivness}
+The system should not interfere with the normal activities of the user.
+
+\subsection{NF2: Availability}
+The system should be available 99\% of the time being used. However, it depends on connectivity to the Internet in order provide notifications to the user.
+
+\subsection{NF3: Reliability}
+The system should be able to send the abnormality notifications to the user. The likelihood of failure should be equal to or less than 1\%. The system will send notifications that do not necessarily mean an intrusion, however this behavior is not considered a failure since the system has to learn to differentiate what is normal behavior.  \\
+Furthermore, the system also should be able to handle a large number of sensors, and the data stream for those sensors.
+
+\subsection{NF4: Performance}
+The system should be able to process 99\% of the data sent from the sensors, within a second of the occurrence of the event. The system should be able to receive all the live data from the house and process it.
+
+\subsection{NF5: Extensibility}
+The system should allow the addition and removal of new sensors and actuators, without needing to restart the system.
+The same consideration should be extended to protocols the fixtures use.
+
+\subsection{NF6: Generalization}
+The system should be able to adapt to the behavior of the occupant of the home. In order to identify which behavior is anomalous, the system must first know what normal behavior means. However, human behavior is not a constant and can change. The system must adapt to that fact.
+
+\subsection{NF7: Minimization}
+The system should decrease the occurrence of false positives, while maintaining a high detection rate.
+
+\subsection{NF9: Online Access}
+The user interfaces provided by the system must be accessible via the web, except for the original configuration interface.
+
+
+\section{Summary}
+This chapter presented the requirements elicitation for the smart home intrusion detection system. The system was described using different scenarios to give an overview of how the system should behave. The scenarios describe the different threat levels that the smart space has. Later, the scenarios were used to specify use cases, actors and the interactions between them. Subsequently, the functional and non-functional requirements were obtained and the constrains where formalized. 

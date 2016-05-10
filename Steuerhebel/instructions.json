@@ -1,0 +1,38 @@
+[
+	{
+		"type":"pickUp",
+		"shelfNumber":"1",	
+		"column":"2",
+		"row":"C",
+		"arrowType":"2",
+		"direction":"3"
+	}
+	,
+	{
+		"type":"drop",
+		"shelfNumber":"1",	
+		"column":"2",
+		"row":"B",
+		"arrowType":"0",
+		"direction":"0"
+	}
+	,
+	{
+		"type":"pickUp",
+		"shelfNumber":"2",	
+		"column":"1",
+		"row":"A",
+		"arrowType":"1",
+		"direction":"1"		
+	}
+	,	
+	{
+		"type":"drive",
+		"shelfNumber":"0",
+		"column":"-1",
+		"row":"X",
+		"arrowType":"3",
+		"direction":"3"		
+	}
+	
+]

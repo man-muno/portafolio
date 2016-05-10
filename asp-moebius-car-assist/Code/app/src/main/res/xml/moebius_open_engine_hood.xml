@@ -1,0 +1,34 @@
+<workflow id="Open engine hood" category="manual">
+    <triggers>
+        <trigger user="true" value="Open the engine hood" type="none"/>
+    </triggers>
+    <start name="1" />
+    <activities>
+        <activity id="1" type="backgroundTop" text="Locate and pull the engine hood button." img="engine_hood_button">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="2"/>
+                <!-- <transition user="true" value="Skip the  " targetType="activity" targetID="end"/> -->
+            </transitions>
+        </activity>
+        <activity id="2" type="backgroundTop" text="Locate lever under the hood" img="engine_hood_shifter">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="3"/>
+            </transitions>
+        </activity>
+        <activity id="3" type="text" text="Use lever to open the engine hood" >
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="4"/>
+            </transitions>
+        </activity>
+        <activity id="4" type="backgroundTop" text="Locate hood prop" img="engine_hood_stick">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="5"/>
+            </transitions>
+        </activity>
+        <activity id="5" type="text" text="Use prop to prevent hood from closing">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="end"/>
+            </transitions>
+        </activity>
+    </activities>
+</workflow>

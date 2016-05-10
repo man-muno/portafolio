@@ -1,0 +1,22 @@
+sitemap smartspaces label="Smart Spaces @LS1"
+{
+	Frame label="Shared Spaces" {
+		Text item=l_SmartLab label="Smart Lab" icon="conference" {
+			Frame label="Sensors" {
+				Text item=Big_motion label="Big Motion: [%s]"
+				Text item=Slim_door label="Door [%s]"
+				Text item=EO_SL_WindowLeft label="Window Left [%s]"
+				Text item=EO_SL_WindowRight label="Window Right [%s]"
+			}
+			Frame label="Intrussion" {
+				Switch item=INTRUSION_DETECTED label="Intruder"
+				Text item=scenario label="Scenario [%s]"
+			}
+
+			Frame label="Presence" {
+				Switch item=Smartlab_presence label="Presence"
+				Switch item=Recognized_Face label="Recognized Face Detected"
+			}
+		}
+	}
+}

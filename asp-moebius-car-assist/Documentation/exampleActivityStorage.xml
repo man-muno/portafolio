@@ -1,0 +1,4 @@
+<activity name="locate coolant water reservoir">
+	<picture location="./locateCoolantWaterReservoir.jpg" />
+	<text language="english">Locate the coolant water reservoir.</text>
+</activity>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/checks"
+        android:icon="@drawable/ic_gear_50"
+        android:title="@string/checks"
+        >
+        <menu></menu>
+    </item>
+    <item
+        android:id="@+id/troubleshoot"
+        android:icon="@drawable/ic_question_150"
+        android:title="@string/troubleshoot"
+        >
+        <menu></menu>
+    </item>
+    <item
+        android:id="@+id/manual"
+        android:icon="@drawable/ic_note_50"
+        android:title="@string/manual"
+        >
+        <menu></menu>
+    </item>
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_help_50"
+        android:title="@string/settings"
+        >
+        <menu></menu>
+    </item>
+</menu>

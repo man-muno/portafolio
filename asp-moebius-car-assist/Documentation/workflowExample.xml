@@ -1,0 +1,37 @@
+<workflow id="check and refill coolant water">
+	<triggers>
+		<trigger user="true" value="check the coolant water" type="none"/>
+		<trigger user="true" value="refill coolant water" type="none"/>
+		<trigger user="false" variableName="coolantWaterTemp" valueType="java.lang.Integer" condition="above" value="70.0"/>
+	</triggers>
+	<activities>
+		<activity id="1" type="text" text="Drive slowly to the next gas station and stop the engine.">
+			<transitions>
+				<transition user="true" value="show next step" targetType="activity" targetID="2"/>
+			</transitions>
+		</activity>
+		<activity id="2" type="text" text="Open the engine hood." parameter="OBDName">
+			<transitions>
+				<transition user="true" value="show next step" targetType="activity" targetID="3"/>
+				<transition user="true" value="repeat previous step" targetType="activity" targetID="1"/>
+				<transition user="true" value="help me open the engine hood?" targetType="subworkflow" targetID="2"/>
+			</transitions>
+		</activity>
+		<activity id="3" type="caption" text="Locate the coolant water reservoir." img="coolantWaterReservoir.jpg">
+			<transitions>
+				<transition user="true" value="show next step" targetType="activity" targetID="4"/>
+				<transition user="true" value="repeat previous step" targetType="activity" targetID="2"/>
+			</transitions>
+		</activity>
+		<activity id="4" type="text" text="Check if the coolant water level is above the 'min' mark.">
+			<transitions>
+				<transition user="true" value="water level is above 'min' mark" targetType="activity" targetID="5"/>
+				<transition user="true" value="water level is below 'min' mark" targetType="activity" targetID="6"/>
+				<transition user="true" value="repeat previous step" targetType="activity" targetID="3"/>
+			</transitions>
+		</activity>
+		
+		...
+		
+	</activities>
+</workflow>

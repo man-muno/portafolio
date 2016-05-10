@@ -1,0 +1,89 @@
+
+\chapter{Requirements Elicitation}
+	
+In requirements elicitation, ...
+The requirements are gained from the scenarios described below. In general, requirements are divided into functional requirements referring to "interactions between the system and its environment independent" \cite{Bruegge2004} and non-functional requirements referring to "user-visible aspects of the system that are not directly related with the functional behavior". \cite{Bruegge2004} Pseudo requirements are constraints that were imposed by the client. The proposed intuitive control system is created on the assumption of the requirements elicitation described in the following sections.
+
+\section{Scenarios}
+\label{scenarios}
+
+The proposed solution can be applied in different scenarios. For the requirements elicitation, a number of visionary scenarios are created and described below. \\
+
+\textbf{Scenario 1: "Example scenario} \\
+Mr. Miller enters his office and remains at the door. He sees that the window blinds are lowered and wishes to open them. He opens the HomeGestures app on his iPhone. The app shows that he is now in his office. He presses the big button while pointing to the window and makes a gesture with the iPhone, raising his hand from the bottom of the window to the top. The system opens the window blinds and Mr. Miller proceeds to his desk. \\
+
+
+....
+
+
+\textbf{Boundary Scenario 4: "Initial Configuration"} \\
+Ms. Cooper has moved to a new office and wants to set up HomeGestures for the first time. The administrator has already set up her room with its addressable fixtures on the server using a simple configuration file. \\
+Ms. Cooper opens the HomeGestures app on her iPhone. As her room is yet unknown, the device estimates her position in an adjacent room. She corrects this in the configuration tab by changing the room manually. The system is now taking WiFi measurements (called fingerprints) in the background. Ms Cooper chooses the "Learn fixtures" option and sees all addressable fixtures in her room by the given names of the administrator. She chooses her desk light first, points the iPhone to the light and presses the big button with the "Learn" caption. The app confirms with a sound and Ms. Cooper proceeds analogously with her other fixtures. The office is now configured and can be controlled by any authorized device.
+
+	\section{Non-functional Requirements}
+
+	The non-functional requirements (NF) of ... are described in the following subsections below.
+
+		\subsection{NF1: My requirement}
+			Explanation 
+							
+		\subsection{NF2: My requirement 2}
+			Explanation
+
+	\section{Pseudo Requirements}
+
+	The following subsections describe the pseudo requirements (PR) of ...
+
+		\subsection{PR1: Platform}
+		...
+
+	\section{Functional Model}
+		\subsection{Use Cases}
+		
+		A use case is the generalization of all scenarios for a given piece of functionality and helps to find out the requirements of the product. The identified use cases are summarized in the UML use case diagram below (fig. \ref{UseCaseDiagram}).
+		
+		\insertfigure{images/UseCaseDiagram.png}{UML use case diagram}{UseCaseDiagram}{1.00}
+		
+		The identified use cases (UC) are refined in the following subsections.
+		\subsubsection{UC1: Control fixture}
+
+		\begin{tabular}{ l p{11cm} }
+	    \hline                       
+  		Use case name & Control fixture \\
+  		Participating actor & Occupant, Fixture \\
+  		Entry condition & 1. The occupant launches the HomeGestures app to control a fixture \\
+  		Flow of events & 2. The app has been launched and has identified the current position \\
+  						& 3. The occupant points the smart phone at a fixture, presses the control button and optionally completes a fixture-specific gesture. \\
+  		Exit condition & 4. The state of the fixture has changed to the desired state. \\
+  		Special requirements & The status of the fixture changes at a maximum of 6 seconds after the user request has been performed. Otherwise, jump into the "Connection down" use case. \\
+		\hline
+		\end{tabular}
+		
+		
+		...
+	    		
+		\subsection{Functional Requirements}
+
+		The following functional requirements (FR) have been identified from the use cases above.
+		
+			\subsubsection{FR1: My functionl requirement}
+			Description	
+
+			....
+
+		\section{Summary}
+		The requirements elicitation chapter describes the overall purpose of ... as it is introduced in the previous chapter. The use cases are based on three main scenarios, that is, the office scenario, the couch at home, the disabled person, and the boundary scenario that describes the initial configuration of the system. The scenarios are then generalized into use cases. From these use cases, functional-, non-functional- and pseudo requirements are gained. The proposed framework for smart home and office environments is built on the assumption of these requirements. \\
+		In the next chapter, the information and objects of the application domain are formalized in an analysis model.
+		
+\chapter{Analysis}
+
+	Based on the preceded requirements elicitation, an analysis model is created to formalize the information and objects that exist in the application domain of .... The object-oriented analysis consists of an analysis object model and a dynamic model. \cite{Bruegge2004} However, this thesis is not a documentation of the implemented prototype but describes the general concepts and practices in this application domain. Therefore, the formal dynamic model is out of the scope of this thesis. The analysis of the intuitive control system starts with the analysis object model.
+	
+	\section{Analysis Object Model}
+	
+
+
+\section{Summary}
+
+Summarize your chapter here
+					

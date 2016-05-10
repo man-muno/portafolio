@@ -1,0 +1,57 @@
+sitemap smartspaces label="Smart Spaces @LS1"
+{
+	Frame label="Shared Spaces" {
+		Text item=l_SmartLab label="Smart Lab" icon="conference" {
+			Frame label="Sensors" {
+				Text item=Netatmo_Indoor_Temperature label="Temperature [%.1f °C]"
+				Text item=Netatmo_Indoor_Humidity label="Humidity [%.1f %%]"
+				Text item=Netatmo_Indoor_CO2 label="CO2 [%.0f ppm]"
+				Text item=Netatmo_Indoor_Pressure label="Pressure [%.2f mbar]"
+				Text item=Netatmo_Indoor_Noise label="Noise [%d db]"
+				
+				Text item=Slim_temp label="Slim Temperature: [%.1f °C]"
+				Text item=Big_temp label="Big Temperature: [%.1f °C]"
+				Text item=Big_luminance label="Big Luminance: [%.0f Lux]"
+				Text item=Big_humidity label="Big Relative Humidity : [%.0f %%]"
+				Text item=Big_motion label="Big Motion: [MAP(movement.map):%s]"
+
+				Text item=EO_SL_WindowLeft label="Window Left [%s]"
+				Text item=EO_SL_WindowRight label="Window Right [%s]"
+				Text item=Slim_door label="Door [%s]"
+			}
+			Frame label="Overhead Lights" {
+				Switch item=EO_SL_Light_A label="Door Light"
+				Switch item=EO_SL_Light_B label="WindowLight"
+			}
+			Frame label="Blinds" {
+				Switch item=EO_SL_Blinds_A label="Blinds"
+			}
+			Frame label="Plugs" {
+				Switch item=EO_SL_PowerPlug_Black label="Extension Black Plug"
+				Switch item=EO_SL_PowerPlug_Gray  label="Extension Gray Plug"
+				Switch item=EO_SL_PowerPlug_White label="Eltako Single Plug"
+			}
+			Frame label="Intrussion" {
+				Switch item=Intruder label="Intruder"
+			}
+
+			Frame label="Smartlab Presence" {
+				Switch item=Smartlab_presence label="Smartlab Presence"
+			}
+
+			Frame label="Philips Hue" {
+				Switch item=HueSwitch1 label="Philips Hue 1"
+				Switch item=HueSwitch2 label="Philips Hue 2"
+				Switch item=HueSwitch3 label="Philips Hue 3"
+
+				Slider item=HueDimm1 label="Philips Hue 1"
+				Slider item=HueDimm2 label="Philips Hue 2"
+				Slider item=HueDimm3 label="Philips Hue 3"
+
+				Colorpicker item=HueColor1    label="Philips Hue 1"
+				Colorpicker item=HueColor2    label="Philips Hue 2"
+				Colorpicker item=HueColor3    label="Philips Hue 3"
+	      		}
+		}
+	}
+}

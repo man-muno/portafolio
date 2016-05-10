@@ -1,0 +1,1522 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{nty}{nty}
+    \entry{Bahrololum2008}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=4bb7107f81c0eae4faf9447d85d97b58}{Bahrololum}{B\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=8548f30f321434bb9d8214a079ad8473}{Khaleghi}{K\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{2f2dbb917781cfc9d7d0c4a9f0fd0d72}
+      \strng{fullhash}{2f2dbb917781cfc9d7d0c4a9f0fd0d72}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Intrusion detection systems have been widely used to overcome security threats in computer networks and to identify unauthorized use, misuse, and abuse of computer systems. Anomaly-based approaches in intrusion detection systems have the advantage of being able to detect unknown attacks; they look for patterns that deviate from the normal behavior. We have proposed an approach of anomaly intrusion detection system by using Gaussian mixture model. This method learns patterns of normal and intrusive activities to classify that use a set of Gaussian probability distribution functions. The use of maximum likelihood in detection phase has used the deviation between current and reference behavior. GMM is evaluated by dataset KDD99 without any special hardware requirements. Experimental results show that this method is able to reducing the missing alarm. Moreover, this model is a fast method for detecting the unknown attacks.}
+      \field{booktitle}{2008 Third International Conference on Convergence and Hybrid Information Technology}
+      \field{isbn}{978-0-7695-3407-7}
+      \field{month}{11}
+      \field{shorttitle}{Convergence and Hybrid Information Technology, 200}
+      \field{title}{Anomaly Intrusion Detection System Using Gaussian Mixture Model}
+      \field{volume}{1}
+      \field{year}{2008}
+      \field{pages}{1162\bibrangedash 1167}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICCIT.2008.17
+      \endverb
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=4682192
+      \endverb
+      \keyw{Anomaly detection,Computer networks,Computer security,Databases,Gaussian Mixture Model,Gaussian distribution,Gaussian mixture model,Gaussian probability distribution,Intrusion Detection,Intrusion detection,Maximum likelihood detection,Pattern Matching,Phase detection,Probability distribution,Probes,Telecommunication traffic,Traffic control,anomaly intrusion detection system,computer network,maximum likelihood detection,security of data,security threat}
+    \endentry
+    \entry{Balajinath:2001:IDT:2294491.2294970}{article}{}
+      \name{author}{2}{}{%
+        {{hash=fdda559a453de7340a6dcd13765b5fcb}{Balajinath}{B\bibinitperiod}{B}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=9c78e96ff24e81ca0ed90e206e2b1ea6}{Raghavan}{R\bibinitperiod}{S.V}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam, The Netherlands, The Netherlands}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier Science Publishers B. V.}%
+      }
+      \strng{namehash}{78329074337f6986d4d98b55208fb7d6}
+      \strng{fullhash}{78329074337f6986d4d98b55208fb7d6}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0140-3664}
+      \field{journaltitle}{Comput. Commun.}
+      \field{month}{07}
+      \field{number}{12}
+      \field{title}{Intrusion Detection Through Learning Behavior Model}
+      \field{volume}{24}
+      \field{year}{2001}
+      \field{pages}{1202\bibrangedash 1212}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/S0140-3664(00)00364-9
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org.eaccess.ub.tum.de/10.1016/S0140-3664(00)00364-9
+      \endverb
+      \keyw{Behavior learning,Genetic algorithms,Intrusion detection}
+    \endentry
+    \entry{Barbara:2001:ATE:604264.604268}{article}{}
+      \name{author}{4}{}{%
+        {{hash=b15d1fe634d8dc903535e2d6ca43d17c}{Barbará}{B\bibinitperiod}{Daniel}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=09727b55dd7ad752b625385e7da53bd8}{Couto}{C\bibinitperiod}{Julia}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=f21aa520ad69374e7b6d40b5c0891da7}{Jajodia}{J\bibinitperiod}{Sushil}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=bd8b57c399b42cb45569733e2ef24b57}{Wu}{W\bibinitperiod}{Ningning}{N\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{29a8839a36e760a276534fa8432d4f7a}
+      \strng{fullhash}{9dbfb4dd8168b5af0027fc62b405d47e}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0163-5808}
+      \field{journaltitle}{SIGMOD Rec.}
+      \field{month}{12}
+      \field{number}{4}
+      \field{title}{ADAM: A Testbed for Exploring the Use of Data Mining in Intrusion Detection}
+      \field{volume}{30}
+      \field{year}{2001}
+      \field{pages}{15\bibrangedash 24}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/604264.604268
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org.eaccess.ub.tum.de/10.1145/604264.604268
+      \endverb
+      \keyw{cyber attacks,data mining,intrusion detection software,pattern analysis}
+    \endentry
+    \entry{info:doi/10.2196/jmir.8.4.e29}{article}{}
+      \name{author}{3}{}{%
+        {{hash=66e2c02ef4261fb5cb4c56125c8754cc}{Beaudin}{B\bibinitperiod}{S.\bibnamedelimi Jennifer}{S\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+        {{hash=d44b278817acaaa3ece3699d351f3fa1}{Intille}{I\bibinitperiod}{S.\bibnamedelimi Stephen}{S\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{hash=19342c794f287ceedc8046dc77584ca4}{Morris}{M\bibinitperiod}{E.\bibnamedelimi Margaret}{E\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{8851d0511f91d63d74fbbafaf97bd42a}
+      \strng{fullhash}{8851d0511f91d63d74fbbafaf97bd42a}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Background: Advances in ubiquitous computing, smart homes, and sensor technologies enable novel, longitudinal health monitoring applications in the home. Many home monitoring technologies have been proposed to detect health crises, support aging-in-place, and improve medical care. Health professionals and potential end users in the lay public, however, sometimes question whether home health monitoring is justified given the cost and potential invasion of privacy. Objective: The aim of the study was to elicit specific feedback from health professionals and laypeople about how they might use longitudinal health monitoring data for proactive health and well-being. Methods: Interviews were conducted with 8 health professionals and 26 laypeople. Participants were asked to evaluate mock data visualization displays that could be generated by novel home monitoring systems. The mock displays were used to elicit reactions to longitudinal monitoring in the home setting as well as what behaviors, events, and physiological indicators people were interested in tracking. Results: Based on the qualitative data provided by the interviews, lists of benefits of and concerns about health tracking from the perspectives of the practitioners and laypeople were compiled. Variables of particular interest to the interviewees, as well as their specific ideas for applications of collected data, were documented. Conclusions: Based upon these interviews, we recommend that ubiquitous ``monitoring'' systems may be more readily adopted if they are developed as tools for personalized, longitudinal self-investigation that help end users learn about the conditions and variables that impact their social, cognitive, and physical health.}
+      \field{day}{7}
+      \field{journaltitle}{J Med Internet Res}
+      \field{month}{12}
+      \field{number}{4}
+      \field{title}{To Track or Not to Track: User Reactions to Concepts in Longitudinal Health Monitoring}
+      \field{volume}{8}
+      \field{year}{2006}
+      \field{pages}{e29}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.2196/jmir.8.4.e29
+      \endverb
+      \verb{url}
+      \verb http://www.jmir.org/2006/4/e29/
+      \endverb
+      \keyw{User-computer interface; computers,handheld; ubiquitous computing; home monitoring; personal monitoring; personal tracking; personal health record; diaries; self-help devices; smart homes}
+    \endentry
+    \entry{Bhattacharyya:2013:NAD:2505468}{book}{}
+      \name{author}{2}{}{%
+        {{hash=8c25510bf74c887a332ca9b6c90a41c2}{Bhattacharyya}{B\bibinitperiod}{Dhruba\bibnamedelima Kumar}{D\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+        {{hash=54789ff6739ea6787a57f15f10c46484}{Kalita}{K\bibinitperiod}{Jugal\bibnamedelima Kumar}{J\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Chapman \& Hall/CRC}%
+      }
+      \strng{namehash}{b3003a0359a4fdcf21865e545ed0f981}
+      \strng{fullhash}{b3003a0359a4fdcf21865e545ed0f981}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{1466582081, 9781466582088}
+      \field{title}{Network Anomaly Detection: A Machine Learning Perspective}
+      \field{year}{2013}
+    \endentry
+    \entry{Blackstone2005233}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1852a28850f92051638ef44e01386c92}{Blackstone}{B\bibinitperiod}{Erwin\bibnamedelima A.}{E\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+        {{hash=334a86ff94ab192a70896ca930923968}{Buck}{B\bibinitperiod}{Andrew\bibnamedelima J.}{A\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+        {{hash=4fa7bff69398a6bbb31254930a2e505f}{Hakim}{H\bibinitperiod}{Simon}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{33980a88ddc07d1cb308f93645a974f1}
+      \strng{fullhash}{33980a88ddc07d1cb308f93645a974f1}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Ninety-four to ninety-nine percent of all police physical responses to burglar alarm activations are false. In 2000 police responded to 36 million false calls at an estimated cost of $1.8 billion. This paper presents and evaluates ten police policies for dealing with this waste of police resources. The paper then suggests that a public–private partnership will yield the highest net social benefits and avoids undesired cross subsidization. It further shows that implementation of a market oriented economic model where the police fulfill merely their public obligation is preferred to intuitive solutions that are often used by police.}
+      \field{issn}{0149-7189}
+      \field{journaltitle}{Evaluation and Program Planning}
+      \field{number}{2}
+      \field{title}{Evaluation of alternative policies to combat false emergency calls}
+      \field{volume}{28}
+      \field{year}{2005}
+      \field{pages}{233\bibrangedash 242}
+      \range{pages}{10}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1016/j.evalprogplan.2004.09.004
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/S0149718905000121
+      \endverb
+      \keyw{Free-access}
+    \endentry
+    \entry{cnet}{online}{}
+      \name{author}{1}{}{%
+        {{hash=565928a2886d7d0974c03c64e54b5a60}{Brown}{B\bibinitperiod}{Rich}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {CNET}%
+      }
+      \strng{namehash}{565928a2886d7d0974c03c64e54b5a60}
+      \strng{fullhash}{565928a2886d7d0974c03c64e54b5a60}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{04}
+      \field{title}{A washer in your washer and smart-home sprawl at CES 2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.cnet.com/news/a-washer-in-your-washer-and-smart-home-sprawl-at-ces-2015/
+      \endverb
+    \endentry
+    \entry{Bruegge2004}{book}{}
+      \name{author}{2}{}{%
+        {{hash=c2a0eccad087cfec3ac4cd69ceeda367}{Brügge}{B\bibinitperiod}{Bernd}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=e0a8c0283996a9ec07217fe186135a88}{Dutoit}{D\bibinitperiod}{Allen\bibnamedelima H.}{A\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Prentice Hall}%
+      }
+      \strng{namehash}{b914575713c7ce4951c042d7c8546d93}
+      \strng{fullhash}{b914575713c7ce4951c042d7c8546d93}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-13-191179-6}
+      \field{title}{Object-oriented software engineering - using UML, patterns and Java (2nd ed.)}
+      \field{year}{2004}
+    \endentry
+    \entry{Buschmann:1996:PSA:249013}{book}{}
+      \name{author}{5}{}{%
+        {{hash=430c232492825b32cc28516567fba614}{Buschmann}{B\bibinitperiod}{Frank}{F\bibinitperiod}{}{}{}{}}%
+        {{hash=f4027a9a8e2d38c752c1297840076ff7}{Meunier}{M\bibinitperiod}{Regine}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=d8847e1d8f19241d08e773c0c52a91b0}{Rohnert}{R\bibinitperiod}{Hans}{H\bibinitperiod}{}{}{}{}}%
+        {{hash=ada8f9113cbf791844f149d70b20c5e7}{Sommerlad}{S\bibinitperiod}{Peter}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=ae19aca7d140c27197c6cc8b4bcf8c3c}{Stal}{S\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons, Inc.}%
+      }
+      \strng{namehash}{bdf43703bbbbcb09d37d4a8ce98dd3ca}
+      \strng{fullhash}{6279fe502a51119abf4ec29a5c1d4257}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0-471-95869-7}
+      \field{title}{Pattern-oriented Software Architecture: A System of Patterns}
+      \field{year}{1996}
+    \endentry
+    \entry{unada}{incollection}{}
+      \name{author}{3}{}{%
+        {{hash=07b1b6ae98d5cced8d712eb9c7dd70da}{Casas}{C\bibinitperiod}{Pedro}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=4dab139e5fdfd5b68fd4eaa917c1209e}{Mazel}{M\bibinitperiod}{Johan}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=6eca113895d19a8d2b9a165b5e7ca2d6}{Owezarski}{O\bibinitperiod}{Philippe}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=f42c22fd12f9666264ec5634efe57bb9}{Domingo-Pascual}{D\bibinithyphendelim P\bibinitperiod}{Jordi}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=162475ddd2cf5a0610b91fbb3bdd36fa}{Manzoni}{M\bibinitperiod}{Pietro}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=35773698347aac99ee86d1043b6e4082}{Palazzo}{P\bibinitperiod}{Sergio}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=17e6f4292735923da6f165ddb3619948}{Pont}{P\bibinitperiod}{Ana}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=ae3dc8cfdb4429a561f958a84a279f3c}{Scoglio}{S\bibinitperiod}{Caterina}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{2e35d157c3eda4f06cb535957c9ff02b}
+      \strng{fullhash}{2e35d157c3eda4f06cb535957c9ff02b}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{NETWORKING 2011}
+      \field{isbn}{978-3-642-20756-3}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{UNADA: Unsupervised Network Anomaly Detection Using Sub-space Outliers Ranking}
+      \field{volume}{6640}
+      \field{year}{2011}
+      \field{pages}{40\bibrangedash 51}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1007/978-3-642-20757-0_4
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/978-3-642-20757-0_4
+      \endverb
+      \keyw{Unsupervised Anomaly Detection; Sub-Space Clustering; Evidence Accumulation; Outliers Detection; Abnormality Ranking}
+    \endentry
+    \entry{5176039}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=5ef029353baae31efdc84d1a85966aad}{Chen}{C\bibinitperiod}{Rung-Ching}{R\bibinithyphendelim C\bibinitperiod}{}{}{}{}}%
+        {{hash=95d35acde2e102184e207bad153e55ab}{Cheng}{C\bibinitperiod}{Kai-Fan}{K\bibinithyphendelim F\bibinitperiod}{}{}{}{}}%
+        {{hash=c0f687d47db42f4e9fa51b68d2667e25}{Chen}{C\bibinitperiod}{Ying-Hao}{Y\bibinithyphendelim H\bibinitperiod}{}{}{}{}}%
+        {{hash=6965cd5e992f239d1a7505c9bc1ee85b}{Hsieh}{H\bibinitperiod}{Chia-Fen}{C\bibinithyphendelim F\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{9e2a6b4f866fa54d567181e123c35314}
+      \strng{fullhash}{094e4c4de3d628d7d784d3cfd7fde467}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Intelligent Information and Database Systems, 2009. ACIIDS 2009. First Asian Conference on}
+      \field{month}{04}
+      \field{title}{Using Rough Set and Support Vector Machine for Network Intrusion Detection System}
+      \field{year}{2009}
+      \field{pages}{465\bibrangedash 470}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ACIIDS.2009.59
+      \endverb
+      \keyw{rough set theory;security of data;support vector machines;SVM model;network intrusion detection system;rough set theory;support vector machine;Chaos;Deductive databases;Intelligent networks;Intrusion detection;Monitoring;Packaging;Protection;Set theory;Space technology;Support vector machines;Attack Detection Rate;Intrusion Detection System;Rough Set;Support Vector Machine}
+    \endentry
+    \entry{4509827}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=6ab0f4d3d2ca334820c059eaec8ad099}{Chhabra}{C\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=9e15a195898ff23d6ff23030ea92954b}{Scott}{S\bibinitperiod}{C.}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=f5a4a2847ef73dba01afeec0bedce0aa}{Kolaczyk}{K\bibinitperiod}{E.D.}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=8eb236d91f155987667d1388220646ea}{Crovella}{C\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{f270eb1ec8a2f663a203047a386703cf}
+      \strng{fullhash}{6cbbe2c18d6f8bd189b27f3cafef7cf7}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{INFOCOM 2008. The 27th Conference on Computer Communications. IEEE}
+      \field{issn}{0743-166X}
+      \field{month}{04}
+      \field{title}{Distributed Spatial Anomaly Detection}
+      \field{year}{2008}
+      \verb{doi}
+      \verb 10.1109/INFOCOM.2008.232
+      \endverb
+    \endentry
+    \entry{1192783}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=2a0279ce4c33b415a8373f4264c05445}{Cook}{C\bibinitperiod}{D.J.}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=c5d3b4ddee8ac23112a6c1cc69c6cea7}{Youngblood}{Y\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=e7da7f697b1ec6dec79cb7e178db68b7}{Heierman}{H\bibinitperiod}{III}{I\bibinitperiod}{}{}{E.O.}{E\bibinitperiod}}%
+        {{hash=69f8225a3215013a0ae1820e76adf061}{Gopalratnam}{G\bibinitperiod}{K.}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=e2bdae333d43d584536d3e44d53724c8}{Rao}{R\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=a0dfbfcbc516869b4f88be25cb160336}{Litvin}{L\bibinitperiod}{A.}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=53fbf6f2f1c566d4b5c5dce63c73731c}{Khawaja}{K\bibinitperiod}{F.}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{260e2d8c7ed2c027fe28560c1c2e5a42}
+      \strng{fullhash}{ba5d285d4d2ea4f1c6b79fcbfaccda1a}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Pervasive Computing and Communications, 2003. (PerCom 2003). Proceedings of the First IEEE International Conference on}
+      \field{month}{03}
+      \field{title}{MavHome: an agent-based smart home}
+      \field{year}{2003}
+      \field{pages}{521\bibrangedash 524}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/PERCOM.2003.1192783
+      \endverb
+      \keyw{home automation;software agents;Managing An Intelligent Versatile Home project;MavHome project;agent-based smart home;algorithms;inhabitant action prediction;intelligent agent;meta-predictor;prediction algorithms;Computer architecture;Dairy products;Databases;Displays;Hardware;Intelligent agent;Intelligent sensors;Physical layer;Robot sensing systems;Smart homes}
+    \endentry
+    \entry{1010072F1159031611}{incollection}{}
+      \name{author}{2}{}{%
+        {{hash=c187d384e30e21b7ced66684b5918126}{Das}{D\bibinitperiod}{SajalK.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=b3ff38ffbd9b92ecb347159cfd8f8e88}{Cook}{C\bibinitperiod}{DianeJ.}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=266c70f41d48f52836b0819a65020350}{Pal}{P\bibinitperiod}{SankarK.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=677774606dcde5657361415e2b2a2809}{Bandyopadhyay}{B\bibinitperiod}{Sanghamitra}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=d7cabb8e7073e1a84813e01efee17cdb}{Biswas}{B\bibinitperiod}{Sambhunath}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{95a56d4500c828716dbd34d9bfd1c8f7}
+      \strng{fullhash}{95a56d4500c828716dbd34d9bfd1c8f7}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Pattern Recognition and Machine Intelligence}
+      \field{isbn}{978-3-540-30506-4}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{Designing Smart Environments: A Paradigm Based on Learning and Prediction}
+      \field{volume}{3776}
+      \field{year}{2005}
+      \field{pages}{80\bibrangedash 90}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1007/11590316_11
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/11590316_11
+      \endverb
+    \endentry
+    \entry{877441}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=6cd083a6bdeb391f4cd392305bd9aa57}{Dickerson}{D\bibinitperiod}{J.E.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=40a372e377c315fec0daec60ae0032d5}{Dickerson}{D\bibinitperiod}{J.A.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{2de13ad52278b5353706eafd9f565d08}
+      \strng{fullhash}{2de13ad52278b5353706eafd9f565d08}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Fuzzy Information Processing Society, 2000. NAFIPS. 19th International Conference of the North American}
+      \field{title}{Fuzzy network profiling for intrusion detection}
+      \field{year}{2000}
+      \field{pages}{301\bibrangedash 306}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/NAFIPS.2000.877441
+      \endverb
+      \keyw{data mining;fuzzy logic;safety systems;security of data;data mining;fuzzy analysis engine;fuzzy intrusion recognition engine;fuzzy logic;fuzzy network profiling;fuzzy rules;fuzzy sets;intrusion detection;Computer crime;Data mining;Data security;Fires;Fuzzy logic;Fuzzy sets;Fuzzy systems;Information security;Intrusion detection;Search engines}
+    \endentry
+    \entry{Erman:1980:HSS:356810.356816}{article}{}
+      \name{author}{4}{}{%
+        {{hash=5f735fb56b3afb3bb330a0da2d47e56a}{Erman}{E\bibinitperiod}{Lee\bibnamedelima D.}{L\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+        {{hash=7bd3d2c957ef2b72a28e6c137946602c}{Hayes-Roth}{H\bibinithyphendelim R\bibinitperiod}{Frederick}{F\bibinitperiod}{}{}{}{}}%
+        {{hash=6de30f5c3064df725fe3c98505b94354}{Lesser}{L\bibinitperiod}{Victor\bibnamedelima R.}{V\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+        {{hash=34b38aa61e893c74349d6f74bcdf32ff}{Reddy}{R\bibinitperiod}{D.\bibnamedelimi Raj}{D\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{59c02ee7cc145e4b904a5326ce32e3c7}
+      \strng{fullhash}{27b540ee7b3ba7d96549ed3d5fd9ff3f}
+      \field{sortinit}{E}
+      \field{sortinithash}{fefc5210ef4721525b2a478df41efcd4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0360-0300}
+      \field{journaltitle}{ACM Comput. Surv.}
+      \field{month}{06}
+      \field{number}{2}
+      \field{title}{The Hearsay-II Speech-Understanding System: Integrating Knowledge to Resolve Uncertainty}
+      \field{volume}{12}
+      \field{year}{1980}
+      \field{pages}{213\bibrangedash 253}
+      \range{pages}{41}
+      \verb{doi}
+      \verb 10.1145/356810.356816
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org.eaccess.ub.tum.de/10.1145/356810.356816
+      \endverb
+    \endentry
+    \entry{fung2013CRC}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=ab1e21cb1482778abab44c76277c76ab}{Fung}{F\bibinitperiod}{C.}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=e5c5e7535ab2673732dfe25cf29a5897}{Boutaba}{B\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{e18bf010b203cee524d546a623e8e674}
+      \strng{fullhash}{e18bf010b203cee524d546a623e8e674}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-4665-6412-1}
+      \field{title}{Intrusion Detection Networks: A Key to Distributed Security}
+      \field{year}{2013}
+    \endentry
+    \entry{Gamma:1995:DPE:186897}{book}{}
+      \name{author}{4}{}{%
+        {{hash=abd927bf30d6566be0ac66a66e893fdd}{Gamma}{G\bibinitperiod}{Erich}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=233f891813bda0f3920985f97a4a7554}{Helm}{H\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=fd79e5e249b219ff553fc2d811104d78}{Johnson}{J\bibinitperiod}{Ralph}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=e032589f0b9a38804483ab7cf5ccad7f}{Vlissides}{V\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Boston, MA, USA}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Longman Publishing Co., Inc.}%
+      }
+      \strng{namehash}{4d2492409a24d4ed208ae6670cb91945}
+      \strng{fullhash}{5cb4a6d7baf30d11bae6682eca698b4f}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0-201-63361-2}
+      \field{title}{Design Patterns: Elements of Reusable Object-oriented Software}
+      \field{year}{1995}
+    \endentry
+    \entry{Ghahramani:2001:IHM:505741.505743}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=bf5cf30deddddad00a6341ad7a414445}{Ghahramani}{G\bibinitperiod}{Zoubin}{Z\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {River Edge, NJ, USA}%
+      }
+      \list{publisher}{1}{%
+        {World Scientific Publishing Co., Inc.}%
+      }
+      \strng{namehash}{bf5cf30deddddad00a6341ad7a414445}
+      \strng{fullhash}{bf5cf30deddddad00a6341ad7a414445}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{chapter}{An Introduction to Hidden Markov Models and Bayesian Networks}
+      \field{isbn}{981-02-4564-5}
+      \field{title}{Hidden Markov Models}
+      \field{year}{2002}
+      \field{pages}{9\bibrangedash 42}
+      \range{pages}{34}
+      \verb{url}
+      \verb http://dl.acm.org/citation.cfm?id=505741.505743
+      \endverb
+    \endentry
+    \entry{kPoint}{article}{}
+      \name{author}{3}{}{%
+        {{hash=09564d0aaa763e4a8899b4acf2ba35c7}{Gogoi}{G\bibinitperiod}{Prasanta}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=2e3b8d7e3608a24ede7bc7ffa2a51f6c}{Borah}{B\bibinitperiod}{Bhogeswar}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=3f07cc7ae337c385c4917b48052eff40}{Bhattacharyya}{B\bibinitperiod}{Dhruba\bibnamedelima K}{D\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{b4c8caef2d7d59bcee177457ba5fab91}
+      \strng{fullhash}{b4c8caef2d7d59bcee177457ba5fab91}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IJCA Special Issue on Network Security and Cryptography}
+      \field{month}{12}
+      \field{note}{Full text available}
+      \field{number}{1}
+      \field{title}{Network Anomaly Detection Using Unsupervised Model}
+      \field{volume}{NSC}
+      \field{year}{2011}
+      \field{pages}{19\bibrangedash 30}
+      \range{pages}{12}
+    \endentry
+    \entry{Gogoi:2011:SOD:1971494.1971504}{article}{}
+      \name{author}{4}{}{%
+        {{hash=09564d0aaa763e4a8899b4acf2ba35c7}{Gogoi}{G\bibinitperiod}{Prasanta}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=67894d42ef404900f5aad13dde96653c}{Bhattacharyya}{B\bibinitperiod}{D.K.}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=70b190d5a400ea2c8f1c4d32511e6a9d}{Borah}{B\bibinitperiod}{B.}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=24a1696dad55c6f851b84fd6d07bddad}{Kalita}{K\bibinitperiod}{Jugal\bibnamedelima K.}{J\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Oxford, UK}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{53b8feba1555157996dc9cbaf2cebc5c}
+      \strng{fullhash}{b3ba6bdb42d1efc394ce9d5f414112e8}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0010-4620}
+      \field{journaltitle}{Comput. J.}
+      \field{month}{04}
+      \field{number}{4}
+      \field{title}{A Survey of Outlier Detection Methods in Network Anomaly Identification}
+      \field{volume}{54}
+      \field{year}{2011}
+      \field{pages}{570\bibrangedash 588}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1093/comjnl/bxr026
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1093/comjnl/bxr026
+      \endverb
+    \endentry
+    \entry{Gogoi01042014}{article}{}
+      \name{author}{4}{}{%
+        {{hash=09564d0aaa763e4a8899b4acf2ba35c7}{Gogoi}{G\bibinitperiod}{Prasanta}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=67894d42ef404900f5aad13dde96653c}{Bhattacharyya}{B\bibinitperiod}{D.K.}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=70b190d5a400ea2c8f1c4d32511e6a9d}{Borah}{B\bibinitperiod}{B.}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=24a1696dad55c6f851b84fd6d07bddad}{Kalita}{K\bibinitperiod}{Jugal\bibnamedelima K.}{J\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{53b8feba1555157996dc9cbaf2cebc5c}
+      \strng{fullhash}{b3ba6bdb42d1efc394ce9d5f414112e8}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{With the growth of networked computers and associated applications, intrusion detection has become essential to keeping networks secure. A number of intrusion detection methods have been developed for protecting computers and networks using conventional statistical methods as well as data mining methods. Data mining methods for misuse and anomaly-based intrusion detection, usually encompass supervised, unsupervised and outlier methods. It is necessary that the capabilities of intrusion detection methods be updated with the creation of new attacks. This paper proposes a multi-level hybrid intrusion detection method that uses a combination of supervised, unsupervised and outlier-based methods for improving the efficiency of detection of new and old attacks. The method is evaluated with a captured real-time flow and packet dataset called the Tezpur University intrusion detection system (TUIDS) dataset, a distributed denial of service dataset, and the benchmark intrusion dataset called the knowledge discovery and data mining Cup 1999 dataset and the new version of KDD (NSL-KDD) dataset. Experimental results are compared with existing multi-level intrusion detection methods and other classifiers. The performance of our method is very good.}
+      \field{journaltitle}{The Computer Journal}
+      \field{number}{4}
+      \field{title}{MLH-IDS: A Multi-Level Hybrid Intrusion Detection Method}
+      \field{volume}{57}
+      \field{year}{2014}
+      \field{pages}{602\bibrangedash 623}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1093/comjnl/bxt044
+      \endverb
+      \verb{eprint}
+      \verb http://comjnl.oxfordjournals.org/content/57/4/602.full.pdf+html
+      \endverb
+      \verb{url}
+      \verb http://comjnl.oxfordjournals.org/content/57/4/602.abstract
+      \endverb
+    \endentry
+    \entry{Hall:2009:WDM:1656274.1656278}{article}{}
+      \name{author}{6}{}{%
+        {{hash=8afb2c93d55a5a48ea1845b23eb996d5}{Hall}{H\bibinitperiod}{Mark}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=14376659b7c222795bf43d1158efbaef}{Frank}{F\bibinitperiod}{Eibe}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=a8cf4cd7abdf3cb3b82ac01950b95778}{Holmes}{H\bibinitperiod}{Geoffrey}{G\bibinitperiod}{}{}{}{}}%
+        {{hash=8d3031672ff9944d1bd83979cee191bb}{Pfahringer}{P\bibinitperiod}{Bernhard}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=1515682a5415208296ec827a5a2f8940}{Reutemann}{R\bibinitperiod}{Peter}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=926252d979eb0dc3c8c27118fa93f219}{Witten}{W\bibinitperiod}{Ian\bibnamedelima H.}{I\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{54381202ca50a480c52cd70b442b2213}
+      \strng{fullhash}{4ed6d3c2f9f0c93b6103294c871d778f}
+      \field{sortinit}{H}
+      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1931-0145}
+      \field{journaltitle}{SIGKDD Explor. Newsl.}
+      \field{month}{11}
+      \field{number}{1}
+      \field{title}{The WEKA Data Mining Software: An Update}
+      \field{volume}{11}
+      \field{year}{2009}
+      \field{pages}{10\bibrangedash 18}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1145/1656274.1656278
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/1656274.1656278
+      \endverb
+    \endentry
+    \entry{iffftbegining}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ba293cdad3fd365555684db36886f9b6}{Inc}{I\bibinitperiod}{IFTTT}{I\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {IFTTT Inc}%
+      }
+      \strng{namehash}{ba293cdad3fd365555684db36886f9b6}
+      \strng{fullhash}{ba293cdad3fd365555684db36886f9b6}
+      \field{sortinit}{I}
+      \field{sortinithash}{25e99d37ba90f7c4fb20baf4e310faf3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{http://blog.ifttt.com/post/2316021241/ifttt-the-beginning}
+      \field{month}{111}
+      \field{title}{ifttt the beginning}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://blog.ifttt.com/
+      \endverb
+    \endentry
+    \entry{iffftwtf}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ba293cdad3fd365555684db36886f9b6}{Inc}{I\bibinitperiod}{IFTTT}{I\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {IFTTT Inc}%
+      }
+      \strng{namehash}{ba293cdad3fd365555684db36886f9b6}
+      \strng{fullhash}{ba293cdad3fd365555684db36886f9b6}
+      \field{sortinit}{I}
+      \field{sortinithash}{25e99d37ba90f7c4fb20baf4e310faf3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://ifttt.com/wtf}
+      \field{month}{11}
+      \field{title}{What is IFTTT?}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://ifttt.com/wtf
+      \endverb
+    \endentry
+    \entry{smartpeople}{online}{}
+      \name{author}{1}{}{%
+        {{hash=3ba281064246e71cbe1447f84eea9ca6}{Intille}{I\bibinitperiod}{Stephen\bibnamedelima S.}{S\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{3ba281064246e71cbe1447f84eea9ca6}
+      \strng{fullhash}{3ba281064246e71cbe1447f84eea9ca6}
+      \field{sortinit}{I}
+      \field{sortinithash}{25e99d37ba90f7c4fb20baf4e310faf3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Goal: Smart People, Not Smart Homes}
+      \verb{url}
+      \verb http://web.media.mit.edu/~intille/papers-files/IntilleICOST06.pdf
+      \endverb
+    \endentry
+    \entry{placelab}{incollection}{}
+      \name{author}{7}{}{%
+        {{hash=bfc877986a9df1123c25b4b1cf261041}{Intille}{I\bibinitperiod}{StephenS.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=04ab752f836a53e0b26566acbf19c954}{Larson}{L\bibinitperiod}{Kent}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=46456976cb436195801dcfe7a6ccdb56}{Tapia}{T\bibinitperiod}{EmmanuelMunguia}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=2b05653e10ab12c1a291a146f31f046a}{Beaudin}{B\bibinitperiod}{JenniferS.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=cdb254d7db83bfca75d910ffa2ca7e03}{Kaushik}{K\bibinitperiod}{Pallavi}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=29c38835913b7c8c48913b00ea31f8d9}{Nawyn}{N\bibinitperiod}{Jason}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=4e5cbb8f1339c31d3138d98c49aad6d8}{Rockinson}{R\bibinitperiod}{Randy}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=68d6df0cedf07648744a333a3e0b4686}{Fishkin}{F\bibinitperiod}{KennethP.}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=457dd3049a60059cf69e775a47f0c154}{Schiele}{S\bibinitperiod}{Bernt}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=6fb1b3c98429342e296eae06a35ca8f3}{Nixon}{N\bibinitperiod}{Paddy}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=192f4c9db69121c98d7900243b99acf9}{Quigley}{Q\bibinitperiod}{Aaron}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{dfdd718aae3475a667811e491947ed10}
+      \strng{fullhash}{de662dbb8ff9b9d332ccacc4c9450fa7}
+      \field{sortinit}{I}
+      \field{sortinithash}{25e99d37ba90f7c4fb20baf4e310faf3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Pervasive Computing}
+      \field{isbn}{978-3-540-33894-9}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{Using a Live-In Laboratory for Ubiquitous Computing Research}
+      \field{volume}{3968}
+      \field{year}{2006}
+      \field{pages}{349\bibrangedash 365}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1007/11748625_22
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/11748625_22
+      \endverb
+    \endentry
+    \entry{bhack}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=60dd0c783a63ab188406698c30faf4ec}{K.C.\bibnamedelimi Cheung}{K\bibinitperiod\bibinitdelim C\bibinitperiod}{S.S.\bibnamedelimi Intille}{S\bibinitperiod\bibinitdelim I\bibinitperiod}{}{}{}{}}%
+        {{hash=a97d72800107b6160fd4e3379b6404ac}{Larson}{L\bibinitperiod}{K.}{K\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{74127e49d600ec9c8050e343585de4e7}
+      \strng{fullhash}{74127e49d600ec9c8050e343585de4e7}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of UbiComp 2006 Extended Abstracts (Posters Program)}
+      \field{title}{An Inexpensive Bluetooth-Based Indoor Positioning Hack}
+      \field{year}{2006}
+      \verb{url}
+      \verb http://web.mit.edu/cron/group/house_n/documents/CheungIntilleLarson2006.pdf
+      \endverb
+    \endentry
+    \entry{raey}{incollection}{}
+      \name{author}{9}{}{%
+        {{hash=76d6f34c1c576f4599d74d102306c1d9}{Kidd}{K\bibinitperiod}{CoryD.}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=f976878e96b366f18caf4d6e340170f9}{Orr}{O\bibinitperiod}{Robert}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=2f3d6bbb8ccdc6e3d583ab4bfd014fe8}{Abowd}{A\bibinitperiod}{GregoryD.}{G\bibinitperiod}{}{}{}{}}%
+        {{hash=379b675d96c742cfd07704270a9481e2}{Atkeson}{A\bibinitperiod}{ChristopherG.}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=7efd4834947e87f13921ee703fae5700}{Essa}{E\bibinitperiod}{IrfanA.}{I\bibinitperiod}{}{}{}{}}%
+        {{hash=3d9f632601bd3d4754ebaa82da8e5f57}{MacIntyre}{M\bibinitperiod}{Blair}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=b14ec9c9cf79057c03899b0829a92a54}{Mynatt}{M\bibinitperiod}{Elizabeth}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=90f645473259920d1691ab5e7892aca6}{Starner}{S\bibinitperiod}{ThadE.}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=4da282756336e1326352fc346bb5a161}{Newstetter}{N\bibinitperiod}{Wendy}{W\bibinitperiod}{}{}{}{}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=3e483ed3879fa97a192c577951e27dc6}{Streitz}{S\bibinitperiod}{NorbertA.}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=294861302fb2421ac138f1d0aaa57a8c}{Siegel}{S\bibinitperiod}{Jane}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=256e7c0f2ae7c472af9711d1fc570c46}{Hartkopf}{H\bibinitperiod}{Volker}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=2f006f93e549bdc0833726aa6df8de1f}{Konomi}{K\bibinitperiod}{Shinâ€™ichi}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{1eee3c568b87439c2f445c0114263557}
+      \strng{fullhash}{87009b096c6ff2a966867e848d3dee67}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Cooperative Buildings. Integrating Information, Organizations, and Architecture}
+      \field{isbn}{978-3-540-66596-0}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{The Aware Home: A Living Laboratory for Ubiquitous Computing Research}
+      \field{volume}{1670}
+      \field{year}{1999}
+      \field{pages}{191\bibrangedash 198}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1007/10705432_17
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/10705432_17
+      \endverb
+      \keyw{Home; ubiquitous computing; context-awareness; sensors; applications; evaluation}
+    \endentry
+    \entry{Kientz:2007:GKU:1240624.1240830}{inproceedings}{}
+      \name{author}{7}{}{%
+        {{hash=922fdbe553657dcceebf49dfaad89715}{Kientz}{K\bibinitperiod}{Julie\bibnamedelima A.}{J\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+        {{hash=987d036e0c8894bf000c336bc9af5f8d}{Arriaga}{A\bibinitperiod}{Rosa\bibnamedelima I.}{R\bibinitperiod\bibinitdelim I\bibinitperiod}{}{}{}{}}%
+        {{hash=c8c244c169ded93e360bab2c68a0ba75}{Chetty}{C\bibinitperiod}{Marshini}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=96c4050dcf71340313c760d4baa403f7}{Hayes}{H\bibinitperiod}{Gillian\bibnamedelima R.}{G\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+        {{hash=41564dbc1351fd60e1cf85220fceaa57}{Richardson}{R\bibinitperiod}{Jahmeilah}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=9011c768a8e649075b30ad1d6e7cdc38}{Patel}{P\bibinitperiod}{Shwetak\bibnamedelima N.}{S\bibinitperiod\bibinitdelim N\bibinitperiod}{}{}{}{}}%
+        {{hash=8eee84dec587775cce8155547fff708e}{Abowd}{A\bibinitperiod}{Gregory\bibnamedelima D.}{G\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {San Jose, California, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{45d26944695675b0773b4e24b3230563}
+      \strng{fullhash}{f24f8e42a846bfead54b3ad64203cbd6}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the SIGCHI Conference on Human Factors in Computing Systems}
+      \field{isbn}{978-1-59593-593-9}
+      \field{series}{CHI '07}
+      \field{title}{Grow and Know: Understanding Record-keeping Needs for Tracking the Development of Young Children}
+      \field{year}{2007}
+      \field{pages}{1351\bibrangedash 1360}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/1240624.1240830
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/1240624.1240830
+      \endverb
+      \keyw{children,design requirements,developmental delay,healthcare,qualitative study}
+    \endentry
+    \entry{Kientz:2008:GTA:1358628.1358911}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=922fdbe553657dcceebf49dfaad89715}{Kientz}{K\bibinitperiod}{Julie\bibnamedelima A.}{J\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+        {{hash=9011c768a8e649075b30ad1d6e7cdc38}{Patel}{P\bibinitperiod}{Shwetak\bibnamedelima N.}{S\bibinitperiod\bibinitdelim N\bibinitperiod}{}{}{}{}}%
+        {{hash=14779c4584e3408854342b2264222f10}{Jones}{J\bibinitperiod}{Brian}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=7b56d83420325545339764be04a49eaf}{Price}{P\bibinitperiod}{Ed}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=15637ad32ac41a687147b0ac9c7cc0c3}{Mynatt}{M\bibinitperiod}{Elizabeth\bibnamedelima D.}{E\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+        {{hash=8eee84dec587775cce8155547fff708e}{Abowd}{A\bibinitperiod}{Gregory\bibnamedelima D.}{G\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Florence, Italy}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{45d26944695675b0773b4e24b3230563}
+      \strng{fullhash}{313a3891949a8ee47e36fac1654ec91a}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{CHI '08 Extended Abstracts on Human Factors in Computing Systems}
+      \field{isbn}{978-1-60558-012-8}
+      \field{series}{CHI EA '08}
+      \field{title}{The Georgia Tech Aware Home}
+      \field{year}{2008}
+      \field{pages}{3675\bibrangedash 3680}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1145/1358628.1358911
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/1358628.1358911
+      \endverb
+      \keyw{aging in place,aware home,children,home,sensors,smart home}
+    \endentry
+    \entry{Koufakou:2010:FOD:1743225.1743230}{article}{}
+      \name{author}{2}{}{%
+        {{hash=a76c715ba613caf42af108a0a6d11860}{Koufakou}{K\bibinitperiod}{Anna}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=aa1eedefc451f8ae04555db0631867db}{Georgiopoulos}{G\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Hingham, MA, USA}%
+      }
+      \list{publisher}{1}{%
+        {Kluwer Academic Publishers}%
+      }
+      \strng{namehash}{532e2d4ff4e586af1bada2624671d49b}
+      \strng{fullhash}{532e2d4ff4e586af1bada2624671d49b}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1384-5810}
+      \field{journaltitle}{Data Min. Knowl. Discov.}
+      \field{month}{03}
+      \field{number}{2}
+      \field{title}{A Fast Outlier Detection Strategy for Distributed High-dimensional Data Sets with Mixed Attributes}
+      \field{volume}{20}
+      \field{year}{2010}
+      \field{pages}{259\bibrangedash 289}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1007/s10618-009-0148-z
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/s10618-009-0148-z
+      \endverb
+      \keyw{Anomaly detection,Data mining,Distributed data sets,High-dimensional data sets,Mixed attribute data sets,Outlier detection}
+    \endentry
+    \entry{Kruegel:2003:BEC:956415.956436}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=d9ce444a06db69e6182a92eb6319fda8}{Kruegel}{K\bibinitperiod}{Christopher}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=6e7673948b77b4ae43e15fac3ebe9032}{Mutz}{M\bibinitperiod}{Darren}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=4dd6cad5e867fba4c649bf2e50123e03}{Robertson}{R\bibinitperiod}{William}{W\bibinitperiod}{}{}{}{}}%
+        {{hash=a929bfae554939ab2008b27b68ff257f}{Valeur}{V\bibinitperiod}{Fredrik}{F\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Washington, DC, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Computer Society}%
+      }
+      \strng{namehash}{79a3967d9ab27f840f5bd269b353d3fb}
+      \strng{fullhash}{ab954e873ebfebfa852cd29456f9a427}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 19th Annual Computer Security Applications Conference}
+      \field{isbn}{0-7695-2041-3}
+      \field{series}{ACSAC '03}
+      \field{title}{Bayesian Event Classification for Intrusion Detection}
+      \field{year}{2003}
+      \field{pages}{14\bibrangedash}
+      \range{pages}{-1}
+      \verb{url}
+      \verb http://dl.acm.org/citation.cfm?id=956415.956436
+      \endverb
+    \endentry
+    \entry{Langley:1992:ABC:1867135.1867170}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=cb234967d439eca7bd966830f708c7a2}{Langley}{L\bibinitperiod}{Pat}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=d561cc23aab41265d207115992d3149c}{Iba}{I\bibinitperiod}{Wayne}{W\bibinitperiod}{}{}{and}{a\bibinitperiod}}%
+        {{hash=c7970665055265034f103f254067e7e1}{Thompson}{T\bibinitperiod}{Kevin}{K\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {San Jose, California}%
+      }
+      \list{publisher}{1}{%
+        {AAAI Press}%
+      }
+      \strng{namehash}{ce64605784c111c13f5739fa7b32f502}
+      \strng{fullhash}{ce64605784c111c13f5739fa7b32f502}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Tenth National Conference on Artificial Intelligence}
+      \field{isbn}{0-262-51063-4}
+      \field{series}{AAAI'92}
+      \field{title}{An Analysis of Bayesian Classifiers}
+      \field{year}{1992}
+      \field{pages}{223\bibrangedash 228}
+      \range{pages}{6}
+      \verb{url}
+      \verb http://dl.acm.org/citation.cfm?id=1867135.1867170
+      \endverb
+    \endentry
+    \entry{935046}{article}{}
+      \name{author}{2}{}{%
+        {{hash=edd78cbc4a40c495d01fcdd43258983f}{Lee}{L\bibinitperiod}{S.C.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=1ea717fd040c8f9b8267dfa855535893}{Heinbuch}{H\bibinitperiod}{D.V.}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{70c5189924fe13a972501dc361e90250}
+      \strng{fullhash}{70c5189924fe13a972501dc361e90250}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1083-4427}
+      \field{journaltitle}{Systems, Man and Cybernetics, Part A: Systems and Humans, IEEE Transactions on}
+      \field{month}{07}
+      \field{number}{4}
+      \field{title}{Training a neural-network based intrusion detector to recognize novel attacks}
+      \field{volume}{31}
+      \field{year}{2001}
+      \field{pages}{294\bibrangedash 299}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/3468.935046
+      \endverb
+      \keyw{backpropagation;pattern recognition;protocols;security of data;self-organising feature maps;telecommunication security;anomaly detector;network behavior;neural-network based intrusion detector;nominal behavior;novel attacks;Databases;Detectors;Intrusion detection;Monitoring;Neural networks;Operating systems;Pattern recognition;Protection;Protocols;Testing}
+    \endentry
+    \entry{5499108}{article}{}
+      \name{author}{5}{}{%
+        {{hash=cf56d1c0cc3a95fd2ca93bc894ceb020}{Mabu}{M\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=4cc8da5ded4d11cf6dce36cb3d688be0}{Chen}{C\bibinitperiod}{Ci}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=84141fa924e3d2fb9bb032f6d83a23e3}{Lu}{L\bibinitperiod}{Nannan}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=9514376c39d8b944d850a638245a4682}{Shimada}{S\bibinitperiod}{K.}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=0aeab04d680d500e96c3e74db4cba902}{Hirasawa}{H\bibinitperiod}{K.}{K\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{a0560ff6b26ff127bf52d6991227060a}
+      \strng{fullhash}{0958c1f25b2d64a7ede90a4c78ff4407}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1094-6977}
+      \field{journaltitle}{Systems, Man, and Cybernetics, Part C: Applications and Reviews, IEEE Transactions on}
+      \field{month}{01}
+      \field{number}{1}
+      \field{title}{An Intrusion-Detection Model Based on Fuzzy Class-Association-Rule Mining Using Genetic Network Programming}
+      \field{volume}{41}
+      \field{year}{2011}
+      \field{pages}{130\bibrangedash 139}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/TSMCC.2010.2050685
+      \endverb
+      \keyw{data mining;directed graphs;fuzzy set theory;genetic algorithms;security of data;directed graph structures;fuzzy class-association-rule mining;fuzzy set theory;genetic network programming;intrusion-detection model;Data mining;Databases;Economic indicators;Fuzzy set theory;Genetic algorithms;Genetic programming;Intrusion detection;Laboratories;Tree graphs;Web and internet services;Class-association-rule mining;evolutionary computation;fuzzy membership function;intrusion detection}
+    \endentry
+    \entry{Matthews:2004:TMU:1029632.1029676}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=bf3c226a1aac63293a65c2b4816630e2}{Matthews}{M\bibinitperiod}{Tara}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=34144296094bdbd95537c64aceb332b9}{Dey}{D\bibinitperiod}{Anind\bibnamedelima K.}{A\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+        {{hash=842bbcc9ac08b114577a24aac173b659}{Mankoff}{M\bibinitperiod}{Jennifer}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=8dccba5791a42009281074f764b45325}{Carter}{C\bibinitperiod}{Scott}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=90f0480d639cba6be8f010ebf98ad3a6}{Rattenbury}{R\bibinitperiod}{Tye}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Santa Fe, NM, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{03370a643b084d7860975083b3afabdb}
+      \strng{fullhash}{59f5dc127544fe97bc8a663c81bde554}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 17th Annual ACM Symposium on User Interface Software and Technology}
+      \field{isbn}{1-58113-957-8}
+      \field{series}{UIST '04}
+      \field{title}{A Toolkit for Managing User Attention in Peripheral Displays}
+      \field{year}{2004}
+      \field{pages}{247\bibrangedash 256}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/1029632.1029676
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org.eaccess.ub.tum.de/10.1145/1029632.1029676
+      \endverb
+      \keyw{peripheral displays,toolkits,user attention}
+    \endentry
+    \entry{mozer2004lessons}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=92b7004388a4c37df79d45c3fcbac1a4}{Mozer}{M\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {Architectural Engineering}%
+      }
+      \strng{namehash}{92b7004388a4c37df79d45c3fcbac1a4}
+      \strng{fullhash}{92b7004388a4c37df79d45c3fcbac1a4}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Lessons from an adaptive house}
+      \field{type}{phdthesis}
+      \field{year}{2004}
+    \endentry
+    \entry{rosdocu}{online}{}
+      \name{author}{1}{}{%
+        {{hash=72b693e8ed0f1772642cc355a66af21e}{Open\bibnamedelimb Source\bibnamedelimb Robotics\bibnamedelima Foundation}{O\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim F\bibinitperiod}{Inc.}{I\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Open Source Robotics Foundation, Inc.}%
+      }
+      \strng{namehash}{72b693e8ed0f1772642cc355a66af21e}
+      \strng{fullhash}{72b693e8ed0f1772642cc355a66af21e}
+      \field{sortinit}{O}
+      \field{sortinithash}{7803d2715d5e795e70382b084ab8d00e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{http://wiki.ros.org/}
+      \field{month}{11}
+      \field{title}{Documentation}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://wiki.ros.org/
+      \endverb
+    \endentry
+    \entry{ros}{online}{}
+      \name{author}{1}{}{%
+        {{hash=72b693e8ed0f1772642cc355a66af21e}{Open\bibnamedelimb Source\bibnamedelimb Robotics\bibnamedelima Foundation}{O\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim F\bibinitperiod}{Inc.}{I\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {Open Source Robotics Foundation, Inc.}%
+      }
+      \strng{namehash}{72b693e8ed0f1772642cc355a66af21e}
+      \strng{fullhash}{72b693e8ed0f1772642cc355a66af21e}
+      \field{sortinit}{O}
+      \field{sortinithash}{7803d2715d5e795e70382b084ab8d00e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{http://www.ros.org/history/}
+      \field{month}{11}
+      \field{title}{History}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.ros.org/history/
+      \endverb
+    \endentry
+    \entry{Pawlak199748}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7e65b8b02c7bfb5e370273ac9c64b7e3}{Pawlak}{P\bibinitperiod}{Zdzislaw}{Z\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{7e65b8b02c7bfb5e370273ac9c64b7e3}
+      \strng{fullhash}{7e65b8b02c7bfb5e370273ac9c64b7e3}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0377-2217}
+      \field{journaltitle}{European Journal of Operational Research}
+      \field{number}{1}
+      \field{title}{Rough set approach to knowledge-based decision support}
+      \field{volume}{99}
+      \field{year}{1997}
+      \field{pages}{48\bibrangedash 57}
+      \range{pages}{10}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1016/S0377-2217(96)00382-7
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/S0377221796003827
+      \endverb
+      \keyw{Rough sets}
+    \endentry
+    \entry{Prasanna:2009:DI:1795686}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c51a9a92e1c4f54161837a2fce5a0ce0}{Prasanna}{P\bibinitperiod}{Dhanji\bibnamedelima R.}{D\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Greenwich, CT, USA}%
+      }
+      \list{publisher}{1}{%
+        {Manning Publications Co.}%
+      }
+      \strng{namehash}{c51a9a92e1c4f54161837a2fce5a0ce0}
+      \strng{fullhash}{c51a9a92e1c4f54161837a2fce5a0ce0}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1st}
+      \field{isbn}{193398855X, 9781933988559}
+      \field{title}{Dependency Injection}
+      \field{year}{2009}
+    \endentry
+    \entry{inhabitantguidanceofsmartenvironments}{incollection}{}
+      \name{author}{4}{}{%
+        {{hash=3bab88520ac75f291aa6fcdccca87520}{Rashidi}{R\bibinitperiod}{Parisa}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=4299117d584759f03d3867873e0ddb4d}{Youngblood}{Y\bibinitperiod}{G.Michael}{G\bibinitperiod}{}{}{}{}}%
+        {{hash=b3ff38ffbd9b92ecb347159cfd8f8e88}{Cook}{C\bibinitperiod}{DianeJ.}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=c187d384e30e21b7ced66684b5918126}{Das}{D\bibinitperiod}{SajalK.}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=a7199d67f6822ab40cfbd60bd0f37f7d}{Jacko}{J\bibinitperiod}{JulieA.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{09f3de07d1b7c0152e4490d5c80357c3}
+      \strng{fullhash}{ac843d96768fee4378642e66cb9c9937}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Human-Computer Interaction. Interaction Platforms and Techniques}
+      \field{isbn}{978-3-540-73106-1}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{Inhabitant Guidance of Smart Environments}
+      \field{volume}{4551}
+      \field{year}{2007}
+      \field{pages}{910\bibrangedash 919}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1007/978-3-540-73107-8_100
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/978-3-540-73107-8_100
+      \endverb
+    \endentry
+    \entry{aginginplace}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=1e34856d51b64419a252a10320b48afa}{S.\bibnamedelimi S.\bibnamedelimi Intille}{S\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim I\bibinitperiod}{K.\bibnamedelimi Larson}{K\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+        {{hash=759492994e02e873667a59cbe9d8fcba}{Tapia}{T\bibinitperiod}{E.\bibnamedelimi M.}{E\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{9a471193f61989887d8ec337439fe5ba}
+      \strng{fullhash}{9a471193f61989887d8ec337439fe5ba}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the International Conference on Aging, Disability and Independence}
+      \field{title}{Designing and evaluating technology for independent aging in the home}
+      \field{year}{2003}
+      \verb{url}
+      \verb http://web.media.mit.edu/~intille/papers-files/IntilleLarsonTapia03.pdf
+      \endverb
+    \endentry
+    \entry{hybridMultilevelIntrusion}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=f81fc939ed966c3eabadacac17636fd1}{Sahar\bibnamedelima Selim}{S\bibinitperiod\bibinitdelim S\bibinitperiod}{Mohamed\bibnamedelima Hashem}{M\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+        {{hash=6eaac9735eb003847673f36415873905}{Nazmy}{N\bibinitperiod}{Taymoor\bibnamedelima M.}{T\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{44534a8bc8a83c2e7ea36c691f9e3bf5}
+      \strng{fullhash}{44534a8bc8a83c2e7ea36c691f9e3bf5}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Journal of Computer Science and Information Security}
+      \field{number}{5}
+      \field{title}{Hybrid Multi-level Intrusion Detection System}
+      \field{volume}{9}
+      \field{year}{2011}
+      \field{pages}{23\bibrangedash 29}
+      \range{pages}{7}
+    \endentry
+    \entry{googletrends}{online}{}
+      \list{organization}{1}{%
+        {Google trends}%
+      }
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labeltitlesource}{title}
+      \field{month}{04}
+      \field{title}{Smart Home}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://www.google.com/trends/explore%5C#q=smart%20home
+      \endverb
+    \endentry
+    \entry{ais}{incollection}{}
+      \name{author}{3}{}{%
+        {{hash=5c419994e6e9a097fb0d9a121e6337a0}{Stibor}{S\bibinitperiod}{Thomas}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=9ce962601674cc1937a2c84ff9ad4ee1}{Timmis}{T\bibinitperiod}{Jonathan}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=cd9b8b6ad8b07ad6c0e7ff77e3340a14}{Eckert}{E\bibinitperiod}{Claudia}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=84d3b476f45091fb0fd6719a142bd955}{Jacob}{J\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=7bdd85dcfd8ca83740115c0fab6ff16c}{Pilat}{P\bibinitperiod}{MarcinL.}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=b8a0da55e433857850a104cfac2d28c2}{Bentley}{B\bibinitperiod}{PeterJ.}{P\bibinitperiod}{}{}{}{}}%
+        {{hash=48f0088cbeb99eb4b31afadfa9752e06}{Timmis}{T\bibinitperiod}{JonathanI.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{5dd6a0ae3f1a28f68231fd3fcfd9bbb6}
+      \strng{fullhash}{5dd6a0ae3f1a28f68231fd3fcfd9bbb6}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Artificial Immune Systems}
+      \field{isbn}{978-3-540-28175-7}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{A Comparative Study of Real-Valued Negative Selection to Statistical Anomaly Detection Techniques}
+      \field{volume}{3627}
+      \field{year}{2005}
+      \field{pages}{262\bibrangedash 275}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1007/11536444_20
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/11536444_20
+      \endverb
+    \endentry
+    \entry{Tajbakhsh2009462}{article}{}
+      \name{author}{3}{}{%
+        {{hash=da8e5aa4c9f7bcec07a83df62bb051e5}{Tajbakhsh}{T\bibinitperiod}{Arman}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=2d3362af990023d19d092dacb1cad452}{Rahmati}{R\bibinitperiod}{Mohammad}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=b4c436ea7a6c62358d348244e67c9514}{Mirzaei}{M\bibinitperiod}{Abdolreza}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{b501548e8a44a0da9590ab0f0843e30b}
+      \strng{fullhash}{b501548e8a44a0da9590ab0f0843e30b}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1568-4946}
+      \field{journaltitle}{Applied Soft Computing}
+      \field{number}{2}
+      \field{title}{Intrusion detection using fuzzy association rules}
+      \field{volume}{9}
+      \field{year}{2009}
+      \field{pages}{462\bibrangedash 469}
+      \range{pages}{8}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1016/j.asoc.2008.06.001
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/S1568494608000975
+      \endverb
+      \keyw{Association rule}
+    \endentry
+    \entry{openhabBinding}{online}{}
+      \name{author}{1}{}{%
+        {{hash=d39575edd229c3e023f567da846448c3}{UG}{U\bibinitperiod}{OpenHAB}{O\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {OpenHAB UG}%
+      }
+      \strng{namehash}{d39575edd229c3e023f567da846448c3}
+      \strng{fullhash}{d39575edd229c3e023f567da846448c3}
+      \field{sortinit}{U}
+      \field{sortinithash}{8145509bd2718876fc77d31fd2cde117}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://github.com/openhab/openhab/wiki/How-To-Implement-A-Binding}
+      \field{month}{07}
+      \field{title}{How to Implement a Binding}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://github.com/openhab/openhab/wiki/How-To-Implement-A-Binding
+      \endverb
+    \endentry
+    \entry{openhabIntro}{online}{}
+      \name{author}{1}{}{%
+        {{hash=d39575edd229c3e023f567da846448c3}{UG}{U\bibinitperiod}{OpenHAB}{O\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {OpenHAB UG}%
+      }
+      \strng{namehash}{d39575edd229c3e023f567da846448c3}
+      \strng{fullhash}{d39575edd229c3e023f567da846448c3}
+      \field{sortinit}{U}
+      \field{sortinithash}{8145509bd2718876fc77d31fd2cde117}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{http://www.openhab.org/features/introduction.html}
+      \field{month}{07}
+      \field{title}{Introduction}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.openhab.org/features/introduction.html
+      \endverb
+    \endentry
+    \entry{openhabItems}{online}{}
+      \name{author}{1}{}{%
+        {{hash=d39575edd229c3e023f567da846448c3}{UG}{U\bibinitperiod}{OpenHAB}{O\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {OpenHAB UG}%
+      }
+      \strng{namehash}{d39575edd229c3e023f567da846448c3}
+      \strng{fullhash}{d39575edd229c3e023f567da846448c3}
+      \field{sortinit}{U}
+      \field{sortinithash}{8145509bd2718876fc77d31fd2cde117}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://github.com/openhab/openhab/wiki/Explanation-of-items}
+      \field{month}{07}
+      \field{title}{OpenHAB Items}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://github.com/openhab/openhab/wiki%5C#openhab-runtime
+      \endverb
+    \endentry
+    \entry{openhabRuntime}{online}{}
+      \name{author}{1}{}{%
+        {{hash=d39575edd229c3e023f567da846448c3}{UG}{U\bibinitperiod}{OpenHAB}{O\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {OpenHAB UG}%
+      }
+      \strng{namehash}{d39575edd229c3e023f567da846448c3}
+      \strng{fullhash}{d39575edd229c3e023f567da846448c3}
+      \field{sortinit}{U}
+      \field{sortinithash}{8145509bd2718876fc77d31fd2cde117}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://github.com/openhab/openhab/wiki\#openhab-runtime}
+      \field{month}{07}
+      \field{title}{OpenHAB Runtime}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://github.com/openhab/openhab/wiki%5C#openhab-runtime
+      \endverb
+    \endentry
+    \entry{openhabSupported}{online}{}
+      \name{author}{1}{}{%
+        {{hash=d39575edd229c3e023f567da846448c3}{UG}{U\bibinitperiod}{OpenHAB}{O\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {OpenHAB UG}%
+      }
+      \strng{namehash}{d39575edd229c3e023f567da846448c3}
+      \strng{fullhash}{d39575edd229c3e023f567da846448c3}
+      \field{sortinit}{U}
+      \field{sortinithash}{8145509bd2718876fc77d31fd2cde117}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{http://www.openhab.org/features/supported-platforms.html}
+      \field{month}{07}
+      \field{title}{Supported platforms}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.openhab.org/features/supported-platforms.html
+      \endverb
+    \endentry
+    \entry{ibk}{online}{}
+      \name{author}{1}{}{%
+        {{hash=44ac78b1a68266900631bc5e2d40a56c}{Waikato}{W\bibinitperiod}{University}{U\bibinitperiod}{of}{o\bibinitperiod}{}{}}%
+      }
+      \list{organization}{1}{%
+        {University of Waikato}%
+      }
+      \strng{namehash}{44ac78b1a68266900631bc5e2d40a56c}
+      \strng{fullhash}{44ac78b1a68266900631bc5e2d40a56c}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{http://weka.sourceforge.net/doc.dev/weka/classifiers/lazy/IBk.html}
+      \field{month}{07}
+      \field{title}{Class IBk}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://github.com/openhab/openhab/wiki%5C#openhab-runtime
+      \endverb
+    \endentry
+    \entry{geneticAlgos}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b64bc2becad49e7b8be65b1b7ca374f1}{Whitley}{W\bibinitperiod}{Darrell}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{publisher}{1}{%
+        {Kluwer Academic Publishers}%
+      }
+      \strng{namehash}{b64bc2becad49e7b8be65b1b7ca374f1}
+      \strng{fullhash}{b64bc2becad49e7b8be65b1b7ca374f1}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0960-3174}
+      \field{journaltitle}{Statistics and Computing}
+      \field{number}{2}
+      \field{title}{A genetic algorithm tutorial}
+      \field{volume}{4}
+      \field{year}{1994}
+      \field{pages}{65\bibrangedash 85}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1007/BF00175354
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1007/BF00175354
+      \endverb
+      \keyw{Genetic algorithms; search; parallel algorithms}
+    \endentry
+    \entry{cnetIFA}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2dd05e8c655131124cfe7bac72d167d2}{Wollerton}{W\bibinitperiod}{Megan}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{organization}{1}{%
+        {CNET}%
+      }
+      \strng{namehash}{2dd05e8c655131124cfe7bac72d167d2}
+      \strng{fullhash}{2dd05e8c655131124cfe7bac72d167d2}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{The smart home is a hit at IFA 2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.cnet.com/pictures/the-smart-home-is-a-hit-at-ifa-2015-pictures/
+      \endverb
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

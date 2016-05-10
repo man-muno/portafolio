@@ -1,0 +1,91 @@
+		
+\chapter{Analysis}
+\label{chapter:analysis}
+Based on the requirements elicitation evaluated in Chapter \ref{chapter:elicitation}, the analysis model is created to formalize the information and objects that exist in the application domain. 
+Formalization is done by developing the analysis object model and the dynamic model \cite{Bruegge2004}.
+
+\section{Analysis Object Model}
+
+\insertfigurescale{images/objectModel.png}{Complete object model (UML class diagram)}{ObjectModelDiagram}{0.23}
+
+The object diagram depicted on Figure \ref{ObjectModelDiagram} represent the concepts of the system, relationships, and their properties. Br{\"u}gge \etAl \cite{Bruegge2004} emphasize that these entities are not meant to represent software classes, but user-level concepts, and the objects that can be used to describe them. 
+The analysis object model is made up of entity objects, control objects, and boundary objects. Entity objects are there defined as those that are meant to be tracked and made persistent. Boundary objects symbolize interactions between the actors and the system. Control objects are in charge of accomplishing the use cases.\\
+
+
+\subsection{Entity Objects}
+
+Br{\"u}gge \etAl define entity objects as the persistent information tracked by the system \cite{Bruegge2004}. The object model on figure \ref{EntityModelDiagram} depict the entity objects. In this case, the system monitors the living spaces of a home. With that, a representation of the activities of the user leads to an analysis of the commonality of that behavior. \\
+Here, the fixtures do not represent the element that generates data, but the data itself.
+
+\subsubsection{Home and Room}
+
+\insertfigurescale{images/entityObjectModel.png}{Entity object model (UML class diagram)}{EntityModelDiagram}{0.24}
+
+The home object represents the space where the occupants live. A home is composed of rooms. They may contain entry points to the home. Entry points are provide a point of entry to the home when they are opened (e.g. doors or windows). The sensors and actuators are located in those rooms. The home provides the information of sensors and actuators to the guardian when needed.
+
+\subsubsection{Fixtures}
+A fixture represents the value that the sensor or actuator has on the system. It is not meant to be the representation of the physical fixture, but the data that it produces.
+
+\subsection{Control Objects}
+
+Br{\"u}gge \etAl define control objects as the entities that are responsible for the coordination between entity objects and boundary objects. The object model on Figure \ref{ControlModelDiagram} depict the control objects. In our system, the control objects take the information gathered by the sensors in the rooms, and decides when the perceived behavior as not normal, and if it should be reported to the user.
+
+\insertfigurescale{images/controlObjectModel.png}{Control object model (UML class diagram)}{ControlModelDiagram}{0.24}
+
+\subsubsection{Guardian}
+\label{sec:guardian}
+This is the main entity of the system. It represents the entity that is responsible of analyzing the sensor data. It takes the information from the Home entity, and draws conclusions from it, regarding the behavior in the home. For example, the number of authorized presences in the living space. The guardian reacts to the live sensor data and uses its own knowledge to decide what the threat level should be.
+
+\subsubsection{Threat Level}
+The different events picked-up by the sensors and registered by the Guardian are a representation of the behavior that takes place in the home. The threat level represents how common that behavior is. The first level is normal. This level represents that the events are common. The next level is elevated. This is reached when the events on the home are more uncommon. The highest threat level is abnormal, and arises when the behavior is regarded as suspicious. 
+
+\subsubsection{Notification Level}
+\label{notificationLevels}
+Given that the Guardian has different levels of perceived threat, it also has distinct levels of reaction to them. These reaction levels are represented in the NotificationLevel. The most basic one is \textit{ignore}. This represents events that tend to be normal and their occurrence requires no attention from the occupant. The next level is \textit{low attention}. This level may represent events that, due to their lower threat level, they do not require de user's immediate attention.This level is followed by \textit{medium attention}. This kind of event occurring in a home is not common, however they do not need the users immediate attention. They can be reported to the user, but no action needs to be taken. The topmost level is \textit{high attention}. When a very unusual event occurs, such as intrusion, the immediate attention of the user is required.
+
+\subsection{Boundary Objects}
+
+Br{\"u}gge \etAl define boundary objects as elements from the system that interact with the actors. The object model in Figure \ref{BoundaryModelDiagram} depict the boundary objects. 
+In this case, the interaction is not expected to be the usual interaction methods like mouse or keyboard. The user is expected to use the living space normally, and the system is supposed to pick up that information in order to detect abnormal behavior. The interaction between the user and the system is performed through the sensors and actuators.
+
+\insertfigurescale{images/boundaryObjectModel.png}{Boundary object model (UML class diagram)}{BoundaryModelDiagram}{0.20}
+
+\subsubsection{Sensor}
+Sensors are devices that perceive a type of input from the physical phenomena on the environment. They convert them into electrical impulses, that are later interpreted by a system. For example, sensors exist to identify when an object is in motion, distinguish when a familiar device is in range, or if two surfaces are in contact with each other.
+
+\subsubsection{Actuator}
+Actuators are devices that influence the environment. Given a signal, they can move or control devices. They can turn switches on and off, active or deactivate appliances and alter the state of the environment they are in.
+
+
+\section{Dynamic Model}
+
+\subsection{Initialize}
+\insertfigurescale{images/dynamicModel3.png}{Initialization of the environment (UML sequence diagram)}{dynamicModel3}{0.23}
+
+The first interaction between the Occupant and the Home is the initialization of the system, covered in Figure \ref{dynamicModel3}. The system must read all the configuration files needed to configure the sensors, and their location. This is represented by the \textit{init(...)} method call.
+\\
+
+
+\subsection{Sense}
+The following sequence diagrams depict the interactions that takes place during the execution of the use cases between the identified actors and the entities. \\ 
+Due to size restrictions the sequence diagram is divided into two, however, it only depicts one use case. \\
+The sequence diagram depicted in Figure \ref{dynamicModel}, represents the first part of the Sense use case described in section \ref{sec:sense}. This use case assumes that the sensors and actuators are already in place and configured. \\
+
+\insertfigurescale{images/dynamicModel.png}{Sense environment (UML sequence diagram)}{dynamicModel}{0.26}
+Once the system has been initialized, the sensors already begin picking up their environment. The House manages the rooms, and the list of sensors in each room. Once the Guardian obtains the sensors, can collect all the relevant information from the sensors.\\
+\insertfigurescale{images/dynamicModel2.png}{Sense environment UML 
+sequence diagram}{dynamicModel2}{0.26}
+The following steps, covered in Figure \ref{dynamicModel2}, show how the system selects the threat level, after acquiring the sensor data. \\
+The next step is to take the gathered data, and the historical data, and interpret the behavior from the home. 
+Depending on the conclusion reached by the Guardian, the threat level may change. If the threat level is calls for notifying the user, the needed actuator is used to notify the occupant.
+\subsection{Threat Level}
+
+The behavior of the threat level is depicted in Figure \ref{state}. The state machine shows each possible state of the system depending on the behavior detected in the home. After starting the state machine, the first state it enters is the \textit{Normal} state. While the machine is at this state, the system senses the environment and determines if a change of state is needed. If the behavior detected is uncommon, then the threat level is raised to \textit{Elevated}. If the behavior is deemed suspicious the threat level is raised to \textit{Abnormal}.
+\\
+Once on \textit{Elevated} threat level, if the behavior is presumed normal, the threat level will go back to being normal. If the behavior is regarded as suspicious, the threat level selected will be \textit{Abnormal}.
+\\
+From the \textit{Abnormal} state, the threat leval can go back either to \textit{Elevated} or to \textit{Normal}.
+\insertfigurescale{images/state.png}{Threat level (UML state diagram)}{state}{0.25}
+
+\section{Summary}
+In the present chapter the analysis of the system is defined. First, with the help of the analysis object model, the objects that interact on the system were defined. Their attributes and relationships between the entities were also characterized and transcribed with the help of a UML class diagram. From that point on, the dynamic model was developed in order to explain how the objects interact and how they communicate. Two sequence diagrams were outlined to that effect. A state diagram was also authored to clarify how the system reacts to the different sensed behavior. 

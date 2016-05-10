@@ -1,0 +1,107 @@
+/* Initialize groups for items */
+
+Group	root	"Everything"	<node>
+Group	i	"Item"	<node>
+Group	t	"Items By Type"	<node>	(root)
+Group	t_Light	"Lights"	<light>	(t)
+Group	t_OverheadLight	"Overhead Lights"	<light>	(t_Light)
+Group	t_DeskLight	"Desk Lights"	<desklight>	(t_Light)
+Group	t_Window	"Windows"	<window>	(t)
+Group	t_Plug		"Plugs"		<plug>		(t)
+Group	t_Blinds	"Blinds"	<blinds>	(t)
+Group	t_Doors	"Doors"		<doors>		(t)
+
+Group	t_Sensor	"Sensors"	<sensor>	(t)
+Group	t_Temperature	"Temperature Sensors"	<temperature>	(t_Sensor)
+Group	t_Humidity	"Humidity Sensors"	<humidity>	(t_Sensor)
+Group	t_CO2	"CO2 Sensors"	<co2>	(t_Sensor)
+Group	t_Presence "Presence Sensors" <presence> (t_Sensor) 
+Group	t_Door "Door Sensors" <door> (t_Sensor)
+Group	t_Luminance "Luminance Sensors" <luminance> (t_Sensor) 
+
+Group	l	"Locations"	<node>	(root)
+Group	l_Office	"Offices"	<office>	(l)
+Group	l_SharedSpace	"Shared Spaces"	<node>	(l)
+Group	l_Conference	"Conference Room"	<conference>	(l_SharedSpace)
+Group	l_SmartLab	"Smart Lab"	<smartlab>	(l_SharedSpace)
+Group	l_iTuepferl	"iTuepferl"	<ituepferl>	(l_SharedSpace)
+Group	l_Outdoor	"Outdoor"	<outdoor>	(l_SharedSpace)
+Group ROS (All)
+
+/* Items for ROS  --------------------------------------------- */
+
+String ROS_Status "ROS [%s]" (ROS)
+Switch Recognized_Face "Recognized Face" <presence> (l_SmartLab, t_Presence, ROS) {rosie="Switch,Presence"}
+//String jsonState
+
+/* Items for the Smart Lab --------------------------------------------- */
+
+Switch Smartlab_presence "Smart Lab Authorized Presence" <presence> (l_SmartLab, t_Presence) { rosie="Switch,Presence"}
+
+Switch Intruder "Intruder" <presence> (l_SmartLab, t_Presence) 
+
+/* NetAtmo */
+Number Netatmo_Indoor_Temperature     "Indoor Temperature [%.2f C]"  <temperature>   (l_SmartLab, t_Temperature)  {netatmo="70:ee:50:01:cb:98#Temperature",rosie="Number,Environmental"}
+Number Netatmo_Indoor_Humidity        "Indoor Humidity [%d /100]"    <humidity>   (l_SmartLab, t_Humidity)  {netatmo="70:ee:50:01:cb:98#Humidity",rosie="Number,Environmental"}
+Number Netatmo_Indoor_CO2             "Indoor Carbon dioxide [%d ppm]"  (l_SmartLab, t_CO2)  {netatmo="70:ee:50:01:cb:98#Co2",rosie="Number,Environmental"}
+Number Netatmo_Indoor_Pressure        "Indoor Pressure [%.2f mbar]"     (l_SmartLab)  {netatmo="70:ee:50:01:cb:98#Pressure",rosie="Number,Environmental"}
+Number Netatmo_Indoor_Noise           "Indoor Noise [%d db]"            (l_SmartLab)  {netatmo="70:ee:50:01:cb:98#Noise",rosie="Number,Environmental"}
+Number Netatmo_Outdoor_Temperature    "Outdoor Temperature [%.2f C]"    (l_Outdoor, t_Temperature)  {netatmo="70:ee:50:01:cb:98#02:00:00:01:c9:4c#Temperature",rosie="Number,Environmental"}
+Number Netatmo_Outdoor_Humidity       "Outdoor Humidity [%.2f P]"       (l_Outdoor, t_Humidity)  {netatmo="70:ee:50:01:cb:98#02:00:00:01:c9:4c#Humidity",rosie="Number,Environmental"}
+
+// Rollershutter  EO_SL_Blinds_A "Blinds Rollershutter"         (l_SmartLab, t_Blinds)   {enocean="{ id=00:22:5B:1C,     eep=F6:02:01,   channel=A, channelID=1}"}
+Switch  EO_SL_Blinds_A "Blinds Switch"         (l_SmartLab, t_Blinds)   {enocean="{ id=00:22:5B:1C,     eep=F6:02:01,   channel=A, channelID=1}",rosie="Switch,Electrical"}
+
+//Switch  EO_SL_Blinds_B "BlindsMove"        (l_SmartLab, t_Blinds)   {enocean="{ id=00:22:5B:1C,     eep=F6:02:01,   channel=B, channelID=1}"}
+
+Switch  EO_SL_Light_A "LightDoor"         (l_SmartLab, t_OverheadLight)   {enocean="{ id=00:28:CB:E6,     eep=F6:02:01,   channel=A, channelID=2}",rosie="Switch,Electrical"}
+Switch  EO_SL_Light_B "LightWindow"         (l_SmartLab, t_OverheadLight)   {enocean="{ id=00:28:CB:E6,     eep=F6:02:01,   channel=B, channelID=2}",rosie="Switch,Electrical"}
+
+Contact EO_SL_WindowRight "Right Window" (l_SmartLab, t_Window) {enocean="{ id=00:00:0F:7C, eep=D5:00:01, parameter=CONTACT_STATE}",rosie="Contact,PointOfEntry"}
+Contact EO_SL_WindowLeft "Left Window" (l_SmartLab, t_Window) {enocean="{ id=00:00:0F:92, eep=D5:00:01, parameter=CONTACT_STATE}",rosie="Contact,PointOfEntry"}
+
+Switch EO_SL_PowerPlug_Black "Extension Black Plugs" (l_SmartLab, t_Plug) {enocean="{id=00:50:30:30, eep=F6:02:01, channel=A, channelID=6}"}
+Switch EO_SL_PowerPlug_Gray "Extension Gray Plugs" (l_SmartLab, t_Plug) {enocean="{id=00:50:30:30, eep=F6:02:01, channel=B, channelID=8}"}
+Switch EO_SL_PowerPlug_White "Eltako Single Plug"    (l_SmartLab, t_Plug)   {enocean="{ id=FF:CC:5B:1D,     eep=F6:02:01,   channel=A, channelID=7}"}
+
+Switch HueSwitch1     "Hue 1 Switch"   (t_Light, l_SmartLab)   {hue="1",rosie="Switch,Electrical"}
+Switch HueSwitch2     "Hue 2 Switch" (t_Light, l_SmartLab)   {hue="2"}
+Switch HueSwitch3     "Hue 3 Switch"  (t_Light, l_SmartLab)   {hue="3"}
+
+Dimmer HueDimm1     "Hue 1 Dimm"   (t_Light, l_SmartLab)   {hue="1;brightness;30"}
+Dimmer HueDimm2     "Hue 2 Dimm" (t_Light, l_SmartLab)   {hue="2;brightness;30"}
+Dimmer HueDimm3     "Hue 3 Dimm"  (t_Light, l_SmartLab)   {hue="3;brightness;30"}
+
+Color HueColor1     "Hue 1 Color"   (t_Light, l_SmartLab)   {hue="1"}
+Color HueColor2     "Hue 2 Color" (t_Light, l_SmartLab)   {hue="2"}
+Color HueColor3     "Hue 3 Color"  (t_Light, l_SmartLab)   {hue="3"}
+
+//Sensors from the smart lab that use Zwave. Info is read using mqtt
+Number Slim_temp "Slim Temperature: [%.1f °C]" <temperature>   (l_SmartLab, t_Temperature) {  zwave="12:0:command=sensor_multilevel,sensor_type=1" ,rosie="Number,Environmental"}
+Contact Slim_door "Slim Door: Door [%s]" <door> (l_SmartLab, t_Doors) { zwave="12:0:command=sensor_binary,sensor_type=10,respond_to_basic=true", rosie="Contact,PointOfEntry"}
+Contact Slim_motion "Slim Motion: [%s]" <presence> (l_SmartLab, t_Presence) { rosie="Contact,Motion"}
+Number Slim_battery "Slim Battery: [%s %%]" <energy> (l_SmartLab) { zwave="12:0:command=battery" }
+
+Number Big_temp "Big Temperature: [%.1f °C]" <temperature>   (l_SmartLab, t_Temperature) { zwave="11:0:command=sensor_multilevel,sensor_type=1" ,rosie="Number,Environmental"}
+Number Big_luminance "Big Luminance: [%.0f Lux]" <luminance> (l_SmartLab,t_Luminance) { zwave="11:0:command=sensor_multilevel,sensor_type=3",rosie="Number,Environmental"}
+Number Big_humidity "Big Relative Humidity : [%.0f %%]" <humidity>   (l_SmartLab, t_Humidity) {  zwave="11:0:command=sensor_multilevel,sensor_type=5", rosie="Number,Environmental"}
+Contact Big_motion "Big Motion: [%s]" <presence> (l_SmartLab, t_Presence) { zwave="11:0:command=sensor_binary,respond_to_basic=true", rosie="Contact,Motion"}
+Number Big_battery "Big Battery: [%.0f %%]" <energy> (l_SmartLab)   { zwave="11:0:command=battery" }
+
+/* Items for the Conference Room --------------------------------------------- */
+
+//Switch  EO_CR_Blinds_A "BlindsA"         (l_Conference, t_Blinds)   {enocean="{ id=00:22:5D:81,     eep=F6:02:01,   channel=A, channelID=3}"}
+Switch  EO_CR_Blinds_B "Blinds"        (l_Conference, t_Blinds)   {enocean="{ id=00:22:5D:81,     eep=F6:02:01,   channel=B, channelID=3}"}
+
+Switch  EO_CR_Light_A "DoorLight"          (l_Conference, t_OverheadLight)   {enocean="{ id=00:25:B4:9A,     eep=F6:02:01,   channel=A, channelID=4}"}
+Switch  EO_CR_Light_B "WindowLight"         (l_Conference, t_OverheadLight)   {enocean="{ id=00:25:B4:9A,     eep=F6:02:01,   channel=B, channelID=4}"}
+
+Switch EO_CR_PowerPlug_Black "Extension Black Plugs" (l_Conference, t_Plug) {enocean="{id=00:30:30:30, eep=F6:02:01, channel=A, channelID=6}"}
+Switch EO_CR_PowerPlug_Gray "Extension Gray Plugs" (l_Conference, t_Plug) {enocean="{id=00:30:30:30, eep=F6:02:01, channel=B, channelID=8}"}
+Switch EO_CR_PowerPlug_White "Eltako Single Plug" (l_Conference, t_Plug) {enocean="{id=00:50:30:30, eep=F6:02:01, channel=A, channelID=9}"}
+
+Contact EO_CR_WindowRight "Right Window" (l_Conference, t_Window) {enocean="{ id=00:82:DC:B7, eep=D5:00:01, parameter=CONTACT_STATE}"}
+Contact EO_CR_WindowLeft "Left Window" (l_Conference, t_Window) {enocean="{ id=00:00:0E:4F, eep=D5:00:01, parameter=CONTACT_STATE}"}
+
+
+

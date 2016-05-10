@@ -1,0 +1,229 @@
+\chapter{Features Extracted From Networking Datasets}
+\label{chapter:ThisIsMyAppendixChapter}
+
+\centering
+{\footnotesize
+	\captionof{table}{Packet level features of the TUIDS intrusion dataset (Part 1)} \label{tab:tuids1}
+	\begin{tabular}{llr}
+		\hline
+		%\multicolumn{2}{c}{\textbf{Packet level features of the TUIDS intrusion dataset}} \\
+		%\cline{1-2}
+		&  \\
+		\textbf{Feature names}    & \textbf{Feature description} \\
+		&  \\
+		\hline
+		&  \\
+		\textbf{Basic features} & \\
+		Duration & Time since occurrence of the first frame\\
+		Protocol & Protocol of layer 3- IP, TCP, UDP \\
+		Src IP & Source IP address\\
+		Dst IP & Destination IP address\\
+		Src port & Source port of machine\\
+		Dst port & Destination port of machine\\
+		Service & Network service on the destination e.g. http, telnet, etc.\\
+		num-bytes-src-dst & No. of data bytes flowing from src to dst\\
+		num-bytes-dst-src & No. of data bytes flowing from dst to src\\
+		Fr-no. & Frame number\\
+		Fr-length & Length of the frame\\
+		Cap-length & Captured frame length\\
+		Head-len & Header length of the packet\\
+		Frag-offset & Fragment offset value\\
+		TTL & Time to live\\
+		Seq-no. & Sequence number\\
+		CWR & Congestion window record\\
+		ECN & Explicit congestion notification\\
+		URG & Urgent TCP flag\\
+		ACK & Ack flag\\
+		PSH & Push TCP flag\\
+		RST & Reset RST flag\\
+		SYN & Syn TCP flag\\
+		FIN & Fin TCP flag\\
+
+		
+		\hline
+	\end{tabular}
+}
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\centering
+{\footnotesize
+	\captionof{table}{Packet level features of the TUIDS intrusion dataset (Part 2)} \label{tab:tuids2} 
+	\begin{tabular}{llr}
+	\hline
+		%\multicolumn{2}{c}{\textbf{Packet level features of the TUIDS intrusion dataset}} \\
+		%\cline{1-2}
+		&  \\
+		\textbf{Feature names}    & \textbf{Feature description} \\
+		&  \\
+		\hline
+				&  \\
+				\textbf{Content-based features} & \\
+				Land & 1 if connection is from/to the same host/port; 0 \\
+				&otherwise\\
+				Mss-src-dst-requested & Maximum segment size from src\\
+				& to dst requested\\
+				Mss-dst-src-requested & Maximum segment size from dst \\
+				&to src requested\\
+				Ttt-len-src-dst & Time to live length from src to dst\\
+				Ttt-len-dst-src & Time to live length from dst to src\\
+				Conn-status & Status of the connection (1-complete, 0-reset)\\
+		%&  \\
+		\textbf{Time-based features} & \\
+		count-fr-dst & No. of frames received by the unique dst in the last \\
+		&T sec from the same src\\
+		count-fr-src & No. of frames received by the unique src in the last \\
+		&T sec to the same dst\\
+		count-serv-src & No. of frames from the src to the same dst port in \\
+		&the last T sec\\
+		count-serv-dst & No. of frames from dst to the same src port in the \\
+		&last T sec\\
+		num-pushed-src-dst & No. of pushed pkts flowing from src to dst\\
+		num-pushed-dst-src & No. of pushed pkts flowing from dst to src\\
+		num-SYN-FIN-src-dst & No. of SYN/FIN pkts flowing from src to dst\\
+		num-SYN-FIN-dst-src & No. of SYN/FIN pkts flowing from dst to src\\
+		num-FIN-src-dst & No. of FIN pkts flowing from src to dst\\
+		num-FIN-dst-src & No. of FIN pkts flowing from dst to src\\
+		&  \\
+		\textbf{Connection-based features} & \\
+		count-dst-conn & No. of frames to the unique dst in the last N packets from\\
+		& the same src\\
+		count-src-conn & No. of frames from the unique src in the last N packets to \\
+		&the same dst\\
+		count-serv-src-conn & No. of frames from the src to the same dst port in the\\
+		& last N packets\\
+		count-serv-dst-conn & No. of frames from the dst to the same src port in the\\
+		& last N packets\\
+		num-packets-src-dst & No. of packets flowing from src to dst\\
+		num-packets-dst-src & No. of packets flowing from dst to src\\
+		num-acks-src-dst & No. of ack packets flowing from src to dst\\
+		num-acks-dst-src & No. of ack packets flowing from dst to src\\
+		num-retransmit-src-dst & No. of retransmitted packets flowing from src to dst\\
+		num-retransmit-dst-src & No. of retransmitted packets flowing from dst to src\\
+		\hline
+	\end{tabular}
+}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+
+\centering
+{\footnotesize
+	\captionof{table}{Flow level features of the TUIDS intrusion dataset}\label{tab:tuidsFlow} 
+	\begin{tabular}{llr}
+		\hline
+		%\multicolumn{2}{c}{\textbf{Packet level features of the TUIDS intrusion dataset}} \\
+		%\cline{1-2}
+		&  \\
+		\textbf{Feature names}    & \textbf{Feature description} \\
+		&  \\
+		\hline
+		&  \\
+		\textbf{Basic features} & \\
+		Duration & Length of the flow (in seconds)\\
+		Protocol-type & Type of protocols - TCP, UDP, ICMP \\
+		Src IP & Src node IP address\\
+		Dst IP & Destination IP address\\
+		Src port & Source port\\
+		Dst port & Destination port\\
+		ToS & Type of service\\
+		URG & Urgent flag of TCP header\\
+		ACK & Ack flag\\
+		PSH & Push flag\\
+		RST & Reset flag\\
+		SYN & SYN flag\\
+		FIN & FIN flag\\
+		Source byte & No. of data bytes transferred from the src IP addrs to\\
+		&  the dst IP addrs\\
+		Dst byte & No. of data bytes transferred from the dst IP addrs to the\\
+		&  src IP addrs\\
+		Land & 1 if connection is from/to the same host/port; 0 otherwise\\
+		\textbf{Time-window features} & \\
+		Count-dst & No. of flows to the unique dst IP addr inside the network\\
+		&  in the last T sec from the same src\\
+		Count-src & No. of flows from the unique src IP addr inside the network\\
+		&  in the last T sec to the same dst\\
+		Count-serv-src & No. of flows from the src IP to the same dst port in \\
+		& the last T sec\\
+		Count-serv-dst & No. of flows to the dst IP using the same src port in\\
+		&  the last T sec\\
+		\textbf{Connection-based features} & \\
+		Count-dst-conn & No. of flows to the unique dst IP addrs in the last N\\
+		&  flows from the same src\\
+		Count-src-conn & No. of flows from the unique src IP addrs in the last N\\
+		&  flows to the same dst\\
+		Count-serv-src-conn & No. of flows from the src IP addrs to the same dst \\
+		&  port in the last N flows.\\
+		Count-serv-dst-conn & No. of flows to the dst IP addrs to the same src port \\
+		&  in the last N flows\\
+		\hline
+	\end{tabular}
+}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\centering
+{\footnotesize
+	\captionof{table}{Features of the DDoS dataset} \label{tab:ddos} 
+	\begin{tabular}{llr}
+		\hline
+		%\multicolumn{2}{c}{\textbf{Packet level features of the TUIDS intrusion dataset}} \\
+		%\cline{1-2}
+		&  \\
+		\textbf{Feature names}    & \textbf{Feature description} \\
+		&  \\
+		\hline
+		&  \\
+		Duration &  Length of the flow (in seconds) \\
+		Protocol-type &  Type of protocols - TCP, UDP, ICMP \\
+		src IP &  Source node IP address \\
+		dest IP &  Destination IP address \\
+		src port &  Source port \\
+		dest port &  Destination port \\
+		ToS &  Type of service \\
+		URG &  Urgent flag of TCP header \\
+		ACK &  Ack flag \\
+		PSH &  Push flag \\
+		RST &  Reset flag \\
+		SYN &  SYN flag \\
+		FIN &  FIN flag \\
+		src byte &  No. of data bytes transferred from the src IP addrs to the dst IP  \\
+		&addrs \\
+		Land &  1 if connection is from/to the same host/port; 0 otherwise \\
+		count-dst &  No. of flows to the unique dst IP addrs inside the network in the  \\
+		&last T sec (5 s) from the same src \\
+		count-src &  No. of flows from the unique src IP addrs inside the network in the  \\
+		&last T sec (5 s) to the same dst \\
+		count-serv-src &  No. of flows from the src IP addrs to the same dst port in the  \\
+		&last T sec (5 s) \\
+		count-serv-dst &  No. of flows to the dst IP addrs using the same src port in the  \\
+		&last T sec (5 s) \\
+		count-dst-conn &  No. of flows to the unique dst IP addrs in the last N flows from \\
+		& the same src \\
+		count-src-conn &  No. of flows from the unique src IP addrs in the last N flows to  \\
+		&the same dst \\
+		count-serv-src-conn &  No. of flows from the src IP addrs to the same dst port in  \\
+		&the last N flows \\
+		count-serv-dst-conn &  No. of flows to the dst IP addrs to the same src port in the \\
+		& last N flows \\
+		Label & Label of the feature instance as normal/attack  \\
+		\hline
+	\end{tabular}
+}
+

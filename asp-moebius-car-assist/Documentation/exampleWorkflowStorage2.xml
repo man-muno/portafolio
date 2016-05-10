@@ -1,0 +1,16 @@
+<workflow name="open engine hood">
+	<start name="locate engine hood button" />	
+	<activity name="locate engine hood button"> <!-- //in the car -->
+		<transition value="next" target="press engine hood button">		
+	</activity>
+	<activity name="press engine hood button"> <!-- //in the car -->
+		<transition value="next" target="move engine hood shifter">		
+	</activity>	
+	<activity name="move engine hood shifter"> <!-- //at the engine hood -->
+		<transition value="next" target="clip engine hood">		
+	</activity>	
+	<activity name="clip engine hood">
+		<transition value="next" target="end">		
+	</activity>
+	<end name="end" />
+</workflow>

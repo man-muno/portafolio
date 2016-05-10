@@ -1,0 +1,14 @@
+// setting the Presence to some initial value
+//rule Startup
+//when 
+//    System started
+//then
+//    postUpdate(Presence_new, 2)
+//end
+
+rule "Intrusion"
+when   
+    Item Intruder changed from OFF to ON or
+then   
+    sendCommand(HueSwitch1, ON)
+end

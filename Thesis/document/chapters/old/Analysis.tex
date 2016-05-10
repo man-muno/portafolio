@@ -1,0 +1,120 @@
+
+		
+\chapter{Analysis}
+
+Based on the preceded requirements elicitation found on last chapter, the analysis model is created to formalize the information and objects that exist in the application domain. Figure \ref{ClassDiagram} depicts the complete set of classes.
+
+
+\section{Analysis Object Model}
+	
+The following class diagram represent the objects that compose the system.
+
+\insertfigure{images/ClassDiagram.jpg}{Complete System UML class diagram}{ClassDiagram}{1.00}
+
+
+\subsection{Entity Objects}
+
+According to Br{\"u}gge \etAl\cite{Bruegge2004} the boundary objects are the ones that represent the "persistant information tracked by the system". The data that is going to be received by the system, has already been transformed by OpenHAB. However, the data received needs to be augmented with extra input.\\
+
+\subsubsection{Tuple}
+\label{Tuple}
+
+\insertfigure{images/Tuple.jpg}{Tuple UML class diagram}{TupleDiagram}{0.25}
+
+Tuple is the only entity object on the system. It represents the data that can be received from the sensors or actuators. As soon as the sensors dispatch a new measured value, it is passed to OpenHAB which process it and dispatches it to system through the event bus. Once it is dispatched to the system it will be stored until it can be further processed. For example, the data is enhanced by adding the time that the event occurred.\\ 
+The concrete value of the sensor or the command executed by the actuator is stored on the \textit{payload}. As it is possible to store different tuples from distinct types of sources i.e. another expert, the level for which the tuple is intended is also stored. The level is also added with the intent of informing the knowledge sources which tuples may be intended to their level. Section \ref{AbtractKnowledgeSource} has more information about knowledge sources and their levels. 
+
+
+\subsection{Boundary Objects}
+
+\insertfigure{images/Boundary.jpg}{Only Boundary Objects UML class diagram}{Boundary}{0.5}
+
+Boundary objects are the ones that interact with the actors to fulfill the use cases\cite{Bruegge2004}. On this particular case, the interactions of the actors are directly done through actuators or sensors, making the interactions between systems. Figure \ref{Boundary} depicts these objects and their relationships.
+
+\subsubsection{RosieGenericBindingProvider}
+\label{RosieGenericBindingProvider}
+
+\insertfigure{images/RosieGenericBindingProvider.jpg}{RosieGenericBindingProvider UML class diagram}{RosieGenericBindingProviderDiagram}{0.35}
+
+This class, shown on figure \ref{RosieGenericBindingProvider} is one of the classes that must be implemented in order to integrate the system with OpenHAB. It is the first class called when the OSGi bundles are initiated.
+The activation is done when the system is started. The responsibility of this class at that moment is to read the configuration files and instantiate all the knowledge sources that are going to be used by the system, and adding them to the blackboard.
+
+\subsubsection{RosieBinding}
+\label{RosieBinding}
+\insertfigure{images/RosieBinding.jpg}{RosieBinding UML class diagram}{RosieBindingDiagram}{0.35}
+
+To create the tuples with the sensor values, OpenHAB needs to be able to tell our system when a new value is ready to be passed. In consequence, the RosieBinding class implements the abstract class provided by OpenHAB to support this behavior(See figure \ref{RosieBinding}). Two methods are implemented that assist passing of the new values from OpenHAB's event bus to our system\\
+The RosieBinding class is deployed along side the other OpenHAB bundles, the life cycle, and execution cycle of the RosieBinding depends on and it is controlled by the OSGi container.
+
+\subsubsection{EventPublisher}
+\label{EventPublisher}
+\insertfigure{images/EventPublisher.jpg}{EventPublisher UML class diagram}{EventPublisherDiagram}{0.25}
+
+This class is entirely implemented by OpenHAB, shown in figure \ref{EventPublisher}. However, this class allows the blackboard to write on the event bus, to send messages or commands to the sensors and actuators connected to the system. Due to the importance of this function it is counted as one of the boundary objects.
+
+\subsection{Control Objects}
+\insertfigure{images/Control.jpg}{Only Control Objects UML class diagram}{Control}{0.80}
+
+One of the main characteristics of this problem, is that the control policy is intricate and cannot be determined from the start, as a one-size-fits all solution. This solution also must be able to evolve with time and usage. To tackle problems with such characteristics the Blackboard pattern was proposed by Buschmann \etAl\cite{Buschmann:1996:PSA:249013}. This pattern defines three main objects that work together to solve a problem: The knowledge sources, the controller, and the blackboard. See figure \ref{Control}.
+
+\subsubsection{Controller}
+\label{Controller}
+\insertfigure{images/Controller.jpg}{Controller UML class diagram}{ControllerDiagram}{0.18}
+The controller class has two  basic responsibilities. The first one is to iterate over the available knowledge sources and commands. That way each can evaluate the information contained on the blackboard so they can reach the conclusion.\\
+The second responsibility of the controller is to tell the blackboard to execute the actions that result from the evaluations performed by the different knowledge sources.\\
+On the pattern proposed by Buschmann \etAl\cite{Buschmann:1996:PSA:249013} it is the controller the class responsible to hold the list of the knowledge sources. However, on our system the knowledge sources are contained on the Blackboard class because the life cycle is controlled by OpenHAB and the knowledge sources are created and configured on the activation phase, and it is the only possible moment to use the configuration system provided by OpenHAB, in order to make the configuration and instantiation flexible.
+
+\subsubsection{AbtractKnowledgeSource}
+\label{AbtractKnowledgeSource}
+\insertfigure{images/AbstractKnowledgeSource.jpg}{AbstractKnowledgeSource UML class diagram}{AbstractKnowledgeSource}{0.4}
+%The knowledge sources are the entities that take the information gather by the sensors, and process it in order to obtain different results. These results are dependent of the classes that implement the AbstractKnowledgeSource.\\
+The knowledge sources were defined by Bushmann \etAl\cite{Buschmann:1996:PSA:249013} as independent modules that function as specialists that solve problems. They read data from the blackboard in order to work on solving a problem, and if they arrive to a solution they write it on the blackboard.\\
+In our system the knowledge sources must implement the AbstractKnowledgeSource class. The data that is read from the blackboard, and processed according to each knowledge source's implementation.\\
+The different levels of the knowledge sources do not represent a hierarchy on the knowledge sources. However, they symbolize a way of differentiating between the varying responsibilities of the knowledge sources. For example, the level one knowledge sources are responsible for taking the data from the sensors provided by OpenHAB and process it into useful, formated information. 
+
+\subsubsection{Blackboard}
+%\label{Blackboard}
+\insertfigure{images/Blackboard.jpg}{Blackboard UML class diagram}{BlackboardDiagram}{0.45}
+This is the central class of the system, as such it's the class with most responsibilities.\\
+First, the blackboard acts as a container for the knowledge sources. This means it holds them when they are created by the RosieBindingProvider. It is also in charge of instructing each of the knowledge sources to execute the code related to evaluating the information stored on the blackboard, and produce the conclusions.\\
+The threat level of the smart home is also managed here. The different degrees represent how closely the smart space is being monitored, and what are the possible actions may be taken, in case of state change. As One of the possible outcomes of the execution of the knowledge sources, is modifying the threat level, also producing control-related actions to be executed. Section \ref{StateMachine} explains this relationship in greater detail.\\
+The tuples covered on section \ref{Tuple} are the most up-to-date values received by the sensors. They are stored on the blackboard so they are available to the low-level knowledge sources either for pre-procesing or to be used as data samples by the higher-level knowledge sources.\\
+The blackboard also holds and executes the AbstractActions covered on section \ref{AbstractAction}.\\
+The relationship with the event publisher allows the blackboard to either write messages directly on the OpenHAB bus, or to delegate that responsibility to the possible actions that the system might take.\\
+
+
+\textsl{}\subsubsection{AbstractAction}
+\label{AbstractAction}
+\insertfigure{images/AbstractAction.jpg}{AbstractAction UML class diagram}{AbstractActionDiagram}{0.5}
+The AbstractAction class are containers of the commands designated by the knowledge sources to be executed. For example, the TurnONHueAction needs to instruct OpenHAB to send a text command to a specific device identified by name. The commands also can be very complex. For example, the command TurnOnFaceRecognition needs to start a ROS, the camera, and start the environment so faces can be recognized.
+
+\subsubsection{State and Action}
+\label{StateMachine}
+\insertfigure{images/State.jpg}{State and Action UML class diagram}{StateDiagram}{0.60}
+One of the possible ways to handle the threat level changes of the smart home is modeling it with a state machine. This way, it is possible to have several triggers that move the state machine depending on the current state. It is also possible to set actions on different moments during a state change. For example, to execute an action before the state machine enters the next state.
+\\%The modeled states are Start, Normal, Elevated, Exceptional.\\
+The actions represent what can be executed when the state machine changes state. For example, it may be necessary to perform checks, when the state machine enter a specific state, or it may be needed to run the knowledge sources again. However, this actions are not meant to directly interact with the OpenHAB or the external environment. They are meant to prepare data on the blackboard to in order to run the knowledge sources again.
+
+
+\section{Dynamic Model}
+
+\subsubsection{Add Knowledge Sources}
+\label{addKnowledgeSources}
+\insertfigure{images/configure.jpg}{Add Knowledge Sources UML State diagram}{configure}{1.00}
+Figure \ref{configure}
+
+
+\subsubsection{Execution}
+\label{execute}\textsl{}
+\insertfigure{images/execute.jpg}{Execution of a knowledge source UML state diagram}{execute}{0.55}
+Figure \ref{execute}
+
+\subsubsection{Receive New Value}
+\label{ReceiveNewValue}
+\insertfigure{images/update.jpg}{Receive new value from OpenHAB UML state diagram}{update}{0.70} 
+Figure \ref{configure}
+
+\section{Summary}
+
+Summarize your chapter here
+					

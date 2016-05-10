@@ -1,0 +1,32 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2010.7.29)  2 JUL 2011 16:50
+entering extended mode
+ %&-line parsing enabled.
+**info.tex
+(./info.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, german-x-2009-06-19, ngerman-x-2009-06-19, ancientgreek, ibycus, ar
+abic, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutc
+h, esperanto, estonian, farsi, finnish, french, galician, german, ngerman, mono
+greek, greek, hungarian, icelandic, assamese, bengali, gujarati, hindi, kannada
+, malayalam, marathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, i
+rish, italian, kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, b
+okmal, nynorsk, polish, portuguese, romanian, russian, sanskrit, serbian, slova
+k, slovenian, spanish, swedish, turkish, turkmen, ukenglish, ukrainian, upperso
+rbian, welsh, loaded.
+)
+! Emergency stop.
+<*> info.tex
+            
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 11 strings out of 493773
+ 180 string characters out of 3145346
+ 49042 words of memory out of 3000000
+ 3399 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 5i,0n,1p,94b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

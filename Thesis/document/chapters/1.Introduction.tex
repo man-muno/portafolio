@@ -1,0 +1,210 @@
+\chapter{Introduction}
+\label{chapter:Introduction}
+In recent years the we have witnessed increasing interest in smart environment research \cite{1010072F1159031611}. This trend has also been followed by the interest of users about smart homes \cite{googletrends}. The number of products geared towards home automation has increased, which can be seen from the amount of attention these products attract at trade shows like CES \cite{cnet} and IFA \cite{cnetIFA}, and the increasing coverage by the media, where they have become the main attraction. \\
+Big manufacturers of consumer electronics reacted to this trend, and launched product lines aimed towards the home market segment, making home automation not longer restricted to enthusiasts.\\
+These products take advantage of wireless communication technologies to monitor, and in some cases autonomously control the environment they are in. Through their interaction and collaboration they can make spaces more comfortable and more secure. However, for a smart home security alternative to be appealing to the general consumer, it has to outperform traditional security systems. 
+
+\section{Problem Statement}
+One of the problems facing traditional home security systems, is the issue of false positives. In terms of home security, a false positive is defined as reporting an intrusion or a burglary when really nothing has occurred. According to Blackstone \etAl \cite{Blackstone2005233}, one of the larger issues that negatively impact on communities, is the elevated frequency in which first responders have to attend and investigate false alarms. Specifically, Blackstone \etAl claim that the response to burglar alarms by police officers amount from 10 to 20\% of all the received calls. However, more disconcerting is the fact that 94 to 99\% of those calls are false alarms. \\
+Some cities and municipalities try to counteract this problem by imposing fines \cite{Blackstone2005233}, which can be as high as \$1000 USD for repeating offenders. In some cases, legal action has also be taken \cite{Blackstone2005233}. Some users were charged and convicted for offenses that are subject to a mandatory prison time. However, the highest burden of a high frequency false positive rate impacts the whole neighborhood. Concretely, Blackstone \etAl assert that in such areas police tend to lower the priority of those calls, directly affecting the "deterrence effect" of owning an alarm system \cite{Blackstone2005233}. 
+\\
+\section{Proposed Solution}
+To tackle many of these issues, we take advantage of the increasing popularity and decreasing prices of home sensing equipment. We developed a system that aims to reduce the occurrence of false positives. To that effect, we explored the available research and existing algorithms from the networking discipline, which has dealt with intrusion detection since the 1960s. Our goal is to take the advantages of machine learning algorithms for network intrusion detection and applying them to the smart home domain.
+
+
+\section{Related Work}
+\label{related_work}
+
+%The Aware Home, Georgia Tech University
+\textbf{Kidd \etAl, 1999: The Aware Home: A Living Laboratory for Ubiquitous Computing Research \cite{raey}} \\
+The Aware Home is a project from the Georgia Institute of Technology. It was created as "a living laboratory for interdisciplinary design, development and evaluation" \cite{Kientz:2008:GTA:1358628.1358911}. The objective of the project was to provide a platform where different disciplines could test their hypotheses regarding new technologies for the smart home. The team at the Georgia Institute of Technology built a three-story house and equipped it with sensors that captured and registered almost every event that happened around the house, using pinhole cameras, microphones, voltmeters, etc. Applications that where developed for this context, target specific scenarios like supporting aging in place, and supporting busy families. \\
+The first scenario addresses problems that stay-at-home senior citizens may have. Issues such as safety, accident prevention and detection, aid in daily activities (reminders and familiarization with new technologies), and facilitating communication with the outside. For example, the project \textbf{Memory Mirror} \cite{Kientz:2008:GTA:1358628.1358911} identifies objects used by the resident, and posts them on a mirror creating a reminder. In the case the user has interacted with the object before, the mirror posts usage statistics.
+The second scenario, supporting busy families, targets households where parents work but also need to take care of another family member. The issues include home schedule maintenance, care for individuals with special needs, and making life more enjoyable. The \textbf{Baby Steps} \cite{Kientz:2007:GKU:1240624.1240830} project tracks and logs milestones on the baby's cognitive development cycle. That way, if a milestone is missed, the house itself can provide additional timeline information to the doctors.\\
+This project from the Georgia Institute of Technology is a good example of what it can be done, when a living space is designed and built from the ground up as a smart space. The house was planned from the start to have a large set of sensors. For example, for activity recognition the Aware Home has 10 pin-hole cameras in just one room \cite{Kientz:2008:GTA:1358628.1358911}. \\
+Our project is focused on living spaces that already exist, and it is not possible to install a high number of sensors.\\
+From the applications point of view, none of the Aware Home projects tackle the problem of home security or intrusion detection. However, it supports the use of machine learning algorithms for activity identification in a home environment, which its use is an important assumption made by our research. \\
+
+%MavHome, University of Texas at Arlington
+\textbf{Cook \etAl, 2004: MavHome: An Agent-Based Smart Home} \cite{1192783} \\
+The University of Texas at Arlington proposed an architecture to model the home as a rational agent. It uses sensors to measure what happens in a home, and through different actuators the system acts on the home, altering its state. MavHome proposes an architecture that allows the home to learn the behavior of the inhabitants and interactions they have with the home. The agent uses a layered architecture \cite{1192783} with four layers. The physical layer communicates the system with the hardware components of the house. The communication layer transmits the data between agents. The information layer is responsible to gather, store, and generate new knowledge that is going to be used on the decision-making process. The decision layer takes the knowledge provided by the information layer and selects actions to be executed. The decision layer uses prediction algorithms to take sequences of interactions between the inhabitant and the home, and then compares them with previously stored sequences in order to predict the next possible actions. However, the events that can be automated are the ones that occur with a certain frequency. \\
+To test the project the university also built two physical spaces and a simulation space \cite{inhabitantguidanceofsmartenvironments}. The first physical space, is a workplace environment equipped with work areas, cubicles, a break room, a lounge, and a conference room. The second space is completely equipped apartment. The project also counts with a simulation tool that allows the machine learning algorithms to be trained, to be later deployed on the physical environments.\\ 
+The project arrived at one conclusion that is of importance to our project. Machine learning algorithms can be used to "model and predict inhabitant activities, and that a policy can be learned using this information to automate a smart environment" \cite{inhabitantguidanceofsmartenvironments}. Furthermore, the division of responsibilities using a layered architecture, where each layer processes the information from the previous layer, and builds upon it to then be served to the next layer, is interesting and can be explored in the context of this work.\\
+
+%The Adaptive House, University of Colorado at Boulder
+\textbf{Mozer, 2004: Lessons From An Adaptive House} \cite{mozer2004lessons} \\
+The Adaptive Home is a project for the University of Colorado at Boulder. It started 1996, with the idea that smart homes should not provide a different control interface from the one that users normally use. The house uses machine learning algorithms to control different systems like heating, ventilation, air conditioning, the water heater, and lighting. The Adaptive Home, after observing the interaction between the house and the users, can deduct patterns and make predictions. If the users are not happy with the predictions, they can change the values selected by the house using the normal interface. The main objective of the Adaptive Home is comfort while reducing operating costs \cite{mozer2004lessons}.\\
+The algorithm uses two constraints that need to be optimally satisfied: cost and discomfort. Through reinforcement learning, it is possible to calculate the next action for the current state, or for the next predicted state. Coarse activity identification is also one of the main focuses on the project. Once an activity is identified, the system can trigger an event that in turn will change the state of the house into the predicted one \cite{mozer2004lessons}.\\
+This project not only boosts the idea from using machine learning in the home environment, but also provides an interesting perspective to that aspect, because it includes the discomfort constraint. The system calculates the cost of performing an action not only in monetary value, but also with how annoying the action can be if it is wrong. It is also interesting that it does not discretized time into timed intervals, but into event changes that trigger states changes.\\
+For this project, security of the smart home was not explored. However, the use of machine learning algorithms supports the idea that it is possible to do activity identification. Furthermore, it ratifies that the environment of a smart home can be condensed on a set of predefined states, and execute actions according to those states.  If this idea is adapted to the security domain, it is possible to define the threat level of the home as states, and in turn execute actions accordingly.\\
+
+%Aire project: Focuses on work spaces
+
+%CyberManor, Internet Home Alliance. Company, not a Uni project
+%CASAS Smart home project. Data sets MavHome comes from them.
+%EasyLiving, Microsoft
+%Hal, MIT Artificial Intelligence Laboratory. No home automation project
+%Home Automation, IBM
+
+%House_n, MIT
+\textbf{Intille, 2004: The Goal: Smart People, Not Smart Homes} \cite{smartpeople} \\
+The Massachusetts Institute of Technology also conducted research in the field of the smart home with a multi-disciplinary approach. Many industry partners and other departments at MIT co-founded the House\underline{ }n project. The goal of this project \cite{smartpeople} was to shift the investigation's focus from a smart home that automates all possible activities, to one where the smart home requires user's interaction to help maintaining life stimulating \cite{smartpeople}.\\
+Within the House\underline{ }n project, MIT joined forces with industry partners and used the approach of building a live-in laboratory. There, volunteers would move in for a period of time and lead their lives normally, and allow to measure their activities by sensors. The laboratory was built in 2004 and it is called the PlaceLab \cite{placelab}. 
+The focus of this project was proactive health care \cite{placelab}. By providing relevant, just-in-time information, the home influences the occupants to make better dietary choices. Also, the project focuses on the influence of how technology can impact independence of aging seniors \cite{aginginplace}, using different methods of indoor positioning \cite{bhack}, and the implications of user tracking \cite{info:doi/10.2196/jmir.8.4.e29}. All other projects tackled problems from other disciplines like material engineering and architecture.\\
+%IIB, Trinity College Dublin
+%i-LAND, Ambiente
+%Interactive Workspaces, Stanford University. collaborative work settings
+%Neural network house from 1995. May be too old.
+%PRIMA, Inria
+%The intelligent home 1999. May be too old.
+%Smart Spaces Lab, NIST. Project for working spaces detecting meetigns 
+%SMART Connected Home, GE
+
+%Machine learning
+\textbf{Fung \etAl, 2013: Intrusion Detection Networks: A Key to Distributed Security} \cite{fung2013CRC} \\
+Intrusion detection systems are designed to monitor all elements deployed in a network, and alert in case out of the ordinary behavior is detected. Network intrusion detection techniques can be divided into the following two methods: Signature-based and anomaly-based \cite{fung2013CRC}. Signature-based techniques use a predefined list of already identified intrusion methods, and compares the network's traffic to filter out possible intrusion attempts. Anomaly-based techniques compare the behavior of the network with a precollected baseline of normal behavior \cite{fung2013CRC}. This technique is the one we want to explore with our current work, under which circumstances anomaly detection can be extended to the smart environment, and which of the intrusion detection methods can be also used in the home.\\
+ 
+\textbf{Bhattacharyya \etAl, 2013: Network Anomaly Detection: A Machine Learning Perspective \cite{Bhattacharyya:2013:NAD:2505468}} \\
+The work of Bhattacharyya \etAl analyzes the different machine learning techniques used on anomaly-based network intrusion detection. According to the authors, it is possible to analyze the traffic on a network and then classify it between malicious or normal behavior. This characteristic turns the anomaly detection problem into a classification problem \cite{Bhattacharyya:2013:NAD:2505468}, as specified below: \\
+%The authors also present a list of requirements that must be met by real-time or near real-time systems, that can be adapted to the smart home environment:
+\begin{enumerate}
+	\item These systems must detect anomalies with high detection accuracy with minimal or even no prior knowledge of the environment, and also must observe the environment and learn what is the normal behavior. 
+	\item The identification process must be done with the minimum amount of false positives. 
+	\item The number of features should be the least possible. The authors also propose other two requirements, which are already implicit to the smart environment.
+\end{enumerate}
+The work of Bhattacharyya \etAl also categorizes the machine learning techniques used for network anomaly detection into six categories, from which we describe four that are most relevant for our problem: 
+	\begin{itemize}
+		\item \textbf{Supervised learning}
+		
+This method assumes that it is possible to start with a batch of labeled data, called a "training set". This collection of data is used to build a model, to which all new data can be compared against and decide if the behavior is normal or not. This categorization is divided into parametric and nonparametric methods. \\
+The first approach assumes that the data is produced using a parametric distribution and probability density function.
+The second approach, the nonparametric method, does not start with a model, but creates one from the data. The most used nonparametric method for anomaly detection is to take the training set and create a function that maps sample data to the interval from [0,1]. Then, a data point is evaluated with that function. If it scores under a certain predefined threshold is considered anomalous.\\
+One of the advantages of using supervised learning, is that if the system runs for a certain amount of time, it is possible to establish a very good baseline to be used as a comparison. The disadvantages include susceptibility to being trained to consider malicious traffic as normal. Also, due to the assumptions made by the model, and on the grounds that setting all the parameters is very difficult, the ratio between false positives and false negatives is unfavorable.\\
+
+		\item \textbf{Unsupervised learning}
+		
+For supervised learning it is very important to have labeled data. Nevertheless, obtaining that data may be very difficult or expensive, since the use of experts is needed. Methods that do not rely on labels are called unsupervised, and they may be better suited to set the baseline that represents normal behavior. \\
+
+One of the methods is \textit{clustering}. Here a representative point is selected for each desired cluster, then each test data point is taken, and classified according to the nearest cluster. Here the disadvantage of an expert becomes again apparent. Nevertheless, works like UNADA \cite{unada} where Casas \etAl{} introduced a clustering algorithm for unsupervised network anomaly knowledge-independent detection of anomalous traffic. 
+
+This algorithm uses a clustering technique to identify clusters and outliers in multiple low-dimensional spaces.\\
+
+%needs explanation of how it works and how it can be translated to smart homes
+\textit{Association mining} tries to identify events that occur simultaneously. This technique assumes that patterns in the data can be identified. Typical usage of association mining is, when stores perform market research to better stock their shelves. Analyzing the data it is possible to come interesting conclusions. For example, customers from a convenience store that buy product A always end also up buying product B on the current or future visits. With this information the market can stock product A and B together. For instance, this is the reason some stores set aside shelf space for lemons on the alcoholic beverages aisle. Intrusion detection algorithms such as ADAM \cite{Barbara:2001:ATE:604264.604268}, use this principles to identify out-of-the-ordinary behavior. \\
+
+\textit{Outlier mining} is the the opposite approach of clustering. Here, the techniques search for the data points that do not represent the majority of the data. This points are called outliers. These methods are distance-based, density-based
+and soft-computing approaches. A distance-based method defines a function that measures the distance of the new data point in comparison to the training set. The selection of this function depends on the assumptions made on the data \cite{Gogoi:2011:SOD:1971494.1971504}. Density-based methods estimate the density distribution
+of the data instance and then identify outliers as
+those who are located in regions of low density \cite{Koufakou:2010:FOD:1743225.1743230}.\\
+
+		\item \textbf{Probabilistic learning}
+		
+The techniques grouped by probabilistic learning allow for including random behavior or with probabilistic uncertainty. According to  Bhattacharyya \etAl, the main characteristic of these techniques is that they allow to "update previous outcome estimates by conditioning them with newly available evidence" \cite{Bhattacharyya:2013:NAD:2505468}. This seems like a desirable attribute to have, when evaluating human behavior, where probabilistic uncertainty is inherent.\\
+%Hidden Markov Model based methods. 
+
+\textit{Bayesian networks} is a model where the relationships between random variables are represented. Usually a direct graph is used in order to represent the random variables and the dependency relation between them. The nodes of the graph also incorporate the possible states of the random variable, and the conditional probability table \cite{Kruegel:2003:BEC:956415.956436}. The relation that the arcs exhibit is one of causality, that means that the child node is causally dependent of the parent nodes \cite{Kruegel:2003:BEC:956415.956436}. \\
+Kruegel \etAl explain \cite{Kruegel:2003:BEC:956415.956436}, that given the assumptions made with Bayesian networks, it is very likely to have a high number of false alarms, when used on network intrusion detection methods. Given the low probability of the parent variable, e.g. "an intrusion is occurring", and the dependence of the child's variable probability on the parents probability, e.g. "a motion sensor is tripped given that an intrusion is occurring".  \\
+
+\textit{Hidden Markov models} is a mechanism to assign probability distributions to a sequence of observations at equally-spaced time intervals. Even though this is a type of a Bayesian network, they differ in some of the extra assumptions that are made \cite{Ghahramani:2001:IHM:505741.505743}. The process is called \textit{hidden} because the observations are caused by states which are hidden to the observer. The other assumption, is that the Markov property is fulfilled, meaning the current state is independent from all the past states. This also implies that the current state contains all the information of past states needed to calculate any future states. Bhattacharyya \etAl assert that it is possible to train the models by using data obtained by doing packet inspection, as well as system calls and commands.\\
+
+\textit{Naive Bayes} based techniques have been also used on this field. Naive Bayes methods are a simplified version of the Bayesian network model \cite{Langley:1992:ABC:1867135.1867170}. Here, independence between the variables is assumed. That way, it is possible to calculate the a posteriori probability of an outcome given the a priori observations. Bhattacharyya \etAl and Kruegel \etAl note that there are, however, some some limitations to the use of this technique. First, the assumed independence between the variables gives it the same classification capability as other simpler techniques, like threshold-based systems. Second, adding new information is problematic. \\
+
+\textit{Gaussian mixture model} based techniques are also used. This approach also assumes independence between the variables, however it uses Gaussian probability distribution functions to build the probability distribution of each individual variable. These functions are called Gaussian mixtures. Bahrololum \etAl \cite{Bahrololum2008} developed an anomaly detection system using Gaussian mixture models. There, they use maximum likelihood estimation to estimate the parameters of the Gaussian mixture model. Once the models were set up, they where trained using a famous dataset, which included instances of different network attacks, such as probing, denial-of-service, unauthorized access to local super user (root) privileges, and unauthorized access from a remote machine \cite{Bahrololum2008}. \\
+
+%EM Model		
+
+		\item \textbf{Soft-computing}
+		
+		
+Soft-computing can be viewed as the opposite of traditional computing that requires a precise, even ideal, established analytical mode. Soft-computing, much like the human mind, is tolerant of imprecision and uncertainty. This techniques often do not find exact solutions, which makes them suitable for network anomaly detection.\\
+
+\textit{Genetic algorithms} represent a problem on a data structure much like chromosomes. Then, operators, like selection, recombination, and mutation are applied in order to generate new sample points in a search space \cite{geneticAlgos}. 
+In the context of network anomaly detection, the chromosomes represent attributes like services, flags, and number of super user attempts \cite{Bhattacharyya:2013:NAD:2505468}. \\	
+Balajinath \etAl propose a network anomaly intrusion detection system based on genetic algorithms. This algorithm continuously captures and learns the user behavior in order to identify when that behavior is abnormal \cite{Balajinath:2001:IDT:2294491.2294970}. Each command of the user forms a gene, and together with a fitness function calculated for a set of genes, new iteration of genes are computed to determine the probability of commands being intrusive.\\
+
+\textit{Artificial neural networks} can also be used for anomaly and network intrusion detection. Neural networks are motivated on how fundamentally different the human brain and a computer process and compute information. The hierarchical multi-layered structure is composed of interconnected processing elements working in conjunction to solve specific problems. ANNs are commonly used on various applications such as data clustering, feature extraction and anomalous pattern identification.\\
+The work by Lee \etAl \cite{935046} present a very interesting approach to network intrusion detection. They use a hierarchy of back propagation neural networks to to detect known and unknown attacks in real-time. Each neural network, instead of being built with network data, they are built with the normal behavior contained on the TCP protocol.\\
+
+\textit{Rough Sets} introduced by Zdzislaw \cite{Pawlak199748} deals with sets that include vagueness in its definition. The opposite are traditional sets also known as crisp sets. On a crisp, set all the mathematical notions must be exact. On the other hand, rough sets define a boundary region, a lower approximation, and an upper approximation. The lower approximation consists of all objects which surely belong to the set. The upper approximation contains all objects which possibly belong to the set. Objects that cannot be classified with certainty as members of the set completely. The difference between the upper and the lower approximation constitute the boundary region of the vague concept.
+Rough Sets  methods have been also researched as techniques for intrusion detection. Bhattacharyya \etAl explain that these techniques are useful on network intrusion detection because of their simplicity, and because they allow learning with small training datasets \cite{Bhattacharyya:2013:NAD:2505468}. Rough Sets have been used on network intrusion detection systems in conjunction with another techniques like fuzzy set theory \cite{4509827} and support vector machines \cite{5176039}.\\
+
+
+Boolean logic is used by computers where the state of all elements can only be either true or false. In \textit{fuzzy logic}, that set is extended to include more possible values. For example, when talking about the weather one can say that today the weather is great, good, ok, bad, or awful. An algorithm was developed by Dikerson \etAl to use fuzzy logic and statistics for identifying network anomalies \cite{877441}. After a learning phase, ranges for the types of data being monitored are evaluated. Five fuzzy sets LOW, MEDIUM-LOW, MEDIUM, MEDIUM-HIGH, and HIGH, where determined to apply the same fuzzy rules to all the network input. Tajbakhsh \etAl also applied this concept to network intrusion detection. They extracted a set of fuzzy association rules for different classes, and is used as a model for each class. To determine the class of a set of transactions, they generate a set of fuzzy association rules from this transaction set and compute the similarity of the extracted rule set with sets mined from each class \cite{Tajbakhsh2009462}. The fuzzy association rule sets are used to describe normal and anomalous classes. A sample is considered normal if the compatibility of the rule set generated is above a certain threshold. Those with lower compatibility are regarded as anomalous.
+
+A fuzzy class association rule mining method based on \textit{genetic network programming} was presented by Mabu \etAl GNP is similar to genetic algorithms, but instead of strings to denote genes it uses directed graphs, which boosts the representation capability and node's reusability in a graph structure. Using both fuzzy set theory with GNP, this method can use discrete and continuous values to extract important class-association rules that increase the detection ability \cite{5499108}.
+
+%Xian et al. [388] propose a novel unsupervised fuzzy clustering method based on clonal selection for anomaly detection. The method is capable of obtaining global optimal clusters more quickly than competing algorithms.
+
+\textit{Human Immune systems} have been also used to model algorithms called artificial immune systems. The objective of the human immune system is to recognize anomalies within the body. The immune system classifies some external objects that enter the body as undesirable and creates antibodies to fight those antigens. The process of identifying the antigens is called negative selection. This process has been used as motivation to develop network intrusion detection algorithms \cite{ais}, however the outcome is that the time needed to create all the detectors to achieve high confidence is impractical for high dimensional data. Explicitly, Stibor \etAl used a subset of the KDD dataset, where each data point contains in total 42 fields. However, the detection rate was around 2.4\%. For other commonly-used algorithms the detection rate was over 99\%.
+
+
+		\item \textbf{Hybrid Methods}
+		\label{hybridmethods}
+Each of the techniques previously discussed have their own pros and cons. Many of them as  described in the work by Bhattacharyya \etAl \cite{Bhattacharyya:2013:NAD:2505468}. For example, supervised methods have the advantage that they are able to take observations from the system and learn the expected behavior. However, they can be trained over time by an attacker to consider anomalous behavior as normal. 
+For unsupervised anomaly detection methods, the advantages are, that if the starting parameters are well estimated, then it fits the problem of identifying outliers. The downside is, that finding the correct starting parameters is difficult and has great impact on results. For example, using an incorrect proximity measure affects the detection rate. 
+In probabilistic learning, the main advantage is that given proper training for the attacks, these methods are able to detect intrusions accurately and timely. However, if unknown attacks occur they are not able to detect them. Also, they are resource-intensive methods. Performance may be affected by slight changes of the values of input parameters.
+Soft-computing methods have the advantage of being able to solve problems that do not have an exact answer. Fuzzy clustering and rough set-based feature extraction are effective for unsupervised learning, also feedback is not needed to detect or categorize features. Disadvantages include scalability issues, over-fitting, and lack of a large set of normal data impacts training. 
+
+
+Hybrid methods try to combine two or more techniques in order to mutually use the advantages of one technique to relieve some or all disadvantages of the oder, hoping that the outcome is overall improved.
+
+Selim \etAl \cite{hybridMultilevelIntrusion} developed a modular multi-level system that analyses traffic and classifies it between normal or attack. The first module is the capture module. Through this module, the captured data is piped into the next module. The preprocessing module gives a numerical representation to some values, it normalizes the data, and reduces the dimensionality of the features. The classification module takes the data and first trains a classifier to distinguish between normal or attack traffic. Later, the classifier is used to identify the network traffic. The next module is the decision module, which depending on different performance measures, i.e, detection rate, false positive rate, it alerts a human user to take action against the attack.\\
+The system is divided in three levels. The first level classifies the data between nomal or an attack. The second level identifies between four classes of attacks. The third level is responsible for classifying the attack types.
+One of the major contributions of the work by Selim \etAl, is that they implemented seven machine learning algorithms to compare their performance. They tested each of the machine learning algorithms against all of the possible attacks and calculated the detection rate and false alarm rate. The best-performing algorithms were chosen for each level of the system, giving each layer the best possible performance.
+
+Another method is the work of Gogoi \etAl \cite{Gogoi01042014}. This technique is called multi-level hybrid intrusion detection or MLS-IDS for short. It divides the types of attacks into three levels, and assigns a different network detection algorithm to each level. The first level uses supervised methods to detect denial of services attacks, and probe attacks. The second level uses an unsupervised classifier to classify between normal and abnormal behavior. The third layer uses an outlier-based classifier to detect when attackers tries to gain access to a machine, or to tries to obtain root privileges.
+
+The use of a hybrid technique seems to be the most suited to our problem. Not only it is meant to help reduce the number of false positives, but also the division of work into smaller parts, where each take the responsibility of performing a small part of the machine learning process makes it an interesting proposed solution. Especially interesting is the work of Gogoi \etAl Not only they are very through in selecting the best network intrusion detection algorithms, they also test the selected algorithms against several available data sets. Additionally, they provide a list of all the features that they extracted from those datasets, which is immensely helpful in our work. As a result, it is possible to establish a parallel between the features extracted from the networking domain, and the features that can be extracted from the smart home domain.
+
+%		\item Knowledge-based  
+%		
+%		
+%Rule based and Expert System based
+%
+%Ontology and Logic System based
+
+		
+%		\item Combination learners
+%		
+%		
+%Ensamble based
+%
+%Fusion based
+%
+%Hybrid
+		
+	\end{itemize}
+
+
+\section{Terminology}
+
+This section introduces definitions of ambiguous words that are used continuously throughout this thesis. 
+
+\begin{itemize}
+
+\item \textbf{Occupant:} Name given to the inhabitants of the house that the system can identify as authorized user.
+
+\item \textbf{Authorized user:} A person that has legitimate access to the home.
+
+\item \textbf{Living space:} The physical space that the occupants regard as home.
+
+\item \textbf{Sensor:} Devices that pick up the environment data on the home. They are used to measure information of the physical world, and deliver it to computer systems.
+
+\item \textbf{Actuator:} These devices allow the communication of computer systems with the physical world. They are used to convey information from the systems, and change the state of the real world.
+
+\item \textbf{Fixture:} Set that covers the sensors and actuators.
+
+\item \textbf{Anomaly:} Deviations from normal usage behavior.
+
+\item \textbf{Motion sensors} Measure heat that moves between detection zones. They detect movement but cannot differentiate between human or non-human sources. 
+
+\item \textbf{Point of entry sensors} Measures contact between two surfaces using magnets. One component sits on the non-movable part such as the door frame, while the other part sits on the door itself. When the door is closed the two parts are alongside each other and the magnet is detected. However, when the door or window is opened the sensor stops detecting the magnet. 
+
+\item \textbf{Presence sensor} They can be worn by a people or a pets, and it can be determined if the wearer enters an area, is currently located on that area, or leaves the area. 
+
+\item \textbf{Environmental sensors} Measure the different values from their surrounding environment. For example, temperature, humidity, noise. 
+
+\item \textbf{Electrical sensors} Measures usage of power lines. They can also measure if an appliance connected to a electrical socket. 
+
+\item \textbf{Known Presence}  A person or a pet that is detected as an authorized occupant.
+
+\end{itemize}

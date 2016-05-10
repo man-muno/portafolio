@@ -1,0 +1,43 @@
+/* Initialize groups for items */
+
+Group	root	"Everything"	<node>
+Group	i	"Item"	<node>
+Group	t	"Items By Type"	<node>	(root)
+Group	t_Light	"Lights"	<light>	(t)
+Group	t_OverheadLight	"Overhead Lights"	<light>	(t_Light)
+Group	t_DeskLight	"Desk Lights"	<desklight>	(t_Light)
+Group	t_Window	"Windows"	<window>	(t)
+Group	t_Plug		"Plugs"		<plug>		(t)
+Group	t_Blinds	"Blinds"	<blinds>	(t)
+Group	t_Doors	"Doors"		<doors>		(t)
+
+Group	t_Sensor	"Sensors"	<sensor>	(t)
+Group	t_Temperature	"Temperature Sensors"	<temperature>	(t_Sensor)
+Group	t_Humidity	"Humidity Sensors"	<humidity>	(t_Sensor)
+Group	t_CO2	"CO2 Sensors"	<co2>	(t_Sensor)
+Group	t_Presence "Presence Sensors" <presence> (t_Sensor) 
+Group	t_Door "Door Sensors" <door> (t_Sensor)
+Group	t_Luminance "Luminance Sensors" <luminance> (t_Sensor) 
+
+Group	l	"Locations"	<node>	(root)
+Group	l_Office	"Offices"	<office>	(l)
+Group	l_SharedSpace	"Shared Spaces"	<node>	(l)
+Group	l_Conference	"Conference Room"	<conference>	(l_SharedSpace)
+Group	l_SmartLab	"Smart Lab"	<smartlab>	(l_SharedSpace)
+Group	l_iTuepferl	"iTuepferl"	<ituepferl>	(l_SharedSpace)
+Group	l_Outdoor	"Outdoor"	<outdoor>	(l_SharedSpace)
+Group ROS (All)
+
+/* Items for ROS  --------------------------------------------- */
+
+String ROS_Status "ROS [%s]" (ROS)
+
+Contact Outdoor_Motion "Outdoor_Motion" (l_SmartLab) {rosie="Contact,Motion,Outdoor"}
+Contact Indoor_Motion "Indoor_Motion" (l_SmartLab) {rosie="Contact,Motion,Indoor"}
+Contact Window "Window" (l_SmartLab) {rosie="Contact,pointofentry,Indoor"}
+Switch Presence "Presence" (l_SmartLab) {rosie="Switch,Presence,Indoor"}
+Contact Front_Door "Front_Door" (l_SmartLab) {rosie="Contact,pointofentry,Indoor"}
+Contact Back_Door "Back_Door" (l_SmartLab) {rosie="Contact,pointofentry,Indoor"}
+Switch Recognized_Face "Recognized_Face" (l_SmartLab)  {rosie="Switch,Presence,Outdoor"}
+
+

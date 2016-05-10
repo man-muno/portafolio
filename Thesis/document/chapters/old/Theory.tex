@@ -1,0 +1,184 @@
+
+\chapter{Requirements Elicitation}
+	
+The present section will identify the actors that interact with our system. A description of the features from the point of view of the actors is given. With that description in mind, the use cases for the system's functionality is defined. Also, the restrictions over the system will be determined. The methodology of scenario-based requirements elicitation as defined by Br{\"u}gge \etAl on \cite{Bruegge2004} will be followed.
+%In requirements elicitation, ...
+%The requirements are gained from the scenarios described below. In general, requirements are divided into functional requirements referring to "interactions between the system and its environment independent" \cite{Bruegge2004} and non-functional requirements referring to "user-visible aspects of the system that are not directly related with the functional behavior". \cite{Bruegge2004} Pseudo requirements are constraints that were imposed by the client. The proposed intuitive control system is created on the assumption of the requirements elicitation described in the following sections.
+
+\section{Scenarios}
+\label{scenarios}
+
+
+To have a better understanding of what a potential user may encounter every day when interacting with the system, a set of visionary scenarios where are devised, and are described below. \\
+
+\textbf{Scenario 1: "Normal week day"} \\
+\textbf{Participating Actor instances:} George:User, Jane:User, Judy:User, ROSIE:System \\
+It is a weekday morning and George's family wakes up to start the day. Jane goes to the kitchen to get breakfast ready, and opens a window on the way. ROSIE notices that windows are being opened, and movement is being detected on the way to the kitchen. George and Jane go to work leaving Judy to get ready by and go to school. ROSIE detects that the doors are being opened, and George's and Jane's presence are not longer detected. ROSIE detects opening and closing of the doors, and the presence of Judy on the house. ROSIE recognizes that the activities are performed by authorized members of the household and maintains a the threat level as normal. On this level ROSIE is instructed to silently record the data, and to not dispatch any notifications.\\
+Judy finally leaves the house to go to school. ROSIE detects that Judy's presence is no longer on the household and that from that point on any physical interaction with ROSIE should be considered abnormal. The threat level is raised to elevated. As per George configuration, ROSIE keeps recording sensor data, and also sends notifications in case anything abnormal is detected. \\
+
+\textbf{Scenario 2: "Short day at work"} \\
+\textbf{Participating Actor instances:} Jane:User. ROSIE: System\\
+Jane was not feeling well at work and decided to go home early. As she gets home, ROSIE is in a elevated threat level detects that there is movement that is not typical for the hour and day. However, the system detects the presence of one of the authorized members and reduces the thread level to normal \\
+
+\textbf{Scenario 3: "Who are you?"} \\
+\textbf{Participating Actor instances:} Judy:User, ROSIE:System\\
+Judy came from school, but as is usual she spent the whole day listening to music on her phone and the battery is dead as she came tho her empty home. ROSIE as it finds itself in a elevated threat level has the camera on and is scanning for familiar faces. ROSIE detects that there is a presence on the household, but cannot detect that it is an authorized user. To let ROSIE know that she is one of the authorized users she stands before the camera, and ROSIE recognizes Judy and reduces the threat level to normal.  \\
+
+\textbf{Scenario 4: "A helping hand"} \\
+\textbf{Participating Actor instances:} George:User, Henry:Unauthorized, ROSIE:System\\
+On the day the hot water meter is scheduled to be read, neither George, Jane, nor Judy are at home to open the door to the person that reads the meters. Jane kindly asks the landlord Henry, to open the door of the house so the task can be completed. ROSIE detects the door being opened but distinguishes no authorized presence. The threat level is raised to exceptional, where the system monitors that the sensors that are outside the area where the meter is located are not tripped. That would mean that the temporally allowed users have entered an unauthorized area. \\
+%On the day the hot water meter is scheduled to be read, neither George, Jane, nor Judy are at home to open the door to the person that reads the meters. Jane kindly asks the landlord Henry, to open the door of the house so the task can be completed. ROSIE detects the door being opened but distinguishes no authorized presence. The threat level is raised to exceptional, where notifications keep George updated, as well as the camera is turned on to check when the two men leave the house. Once they do, George can set the threat level back to elevated. \\
+
+\textbf{Scenario 5: "Finally vacations"} \\
+\textbf{Participating Actor instances:} ROSIE:System\\
+The complete family takes a vacation for a couple of days. ROSIE detects that no authorized users are at home and it enters the elevated state. At this point ROSIE mimics the behavior with the actuators available. For example, the lights on the living room turn on at around 19.00, like they usually do when the family is there. \\
+
+\textbf{Scenario 6: "Uh-oh"} \\
+\textbf{Participating Actor instances:} George:User, Burglar:Unauthorized, ROSIE:System\\
+On a normal week day, when all the family members are away attending to their responsibilities, a burglar decides to break into their home. Because no one is at home, ROSIE's threat level is set to elevated. The burglar finds a window that he can easily open, the system register this event and notifies George. As he receives the notification, he can to call the police and have them catch the thief. \\
+
+\textbf{Boundary Scenario 7: "Initial Configuration"} \\
+\textbf{Participating Actor instances:} George:User, ROSIE:System\\
+George has recently acquired ROSIE. To use the features he needs to do some initial set up. First of all, he needs to train ROSIE with the faces of the trusted users. Second, he needs to configure the different available reactions to be executed when the threat level changes, e.g. turn the camera when the level is elevated.
+%Ms. Cooper has moved to a new office and wants to set up HomeGestures for the first time. The administrator has already set up her room with its addressable fixtures on the server using a simple configuration file. \\
+%Ms. Cooper opens the HomeGestures app on her iPhone. As her room is yet unknown, the device estimates her position in an adjacent room. She corrects this in the configuration tab by changing the room manually. The system is now taking WiFi measurements (called fingerprints) in the background. Ms Cooper chooses the "Learn fixtures" option and sees all addressable fixtures in her room by the given names of the administrator. She chooses her desk light first, points the iPhone to the light and presses the big button with the "Learn" caption. The app confirms with a sound and Ms. Cooper proceeds analogously with her other fixtures. The office is now configured and can be controlled by any authorized device.
+
+\section{Functional Model}
+\subsection{Use Cases}
+
+The following use cases describe the functions that the system must perform. The use cases extrapolate the scenarios defined on section \ref{scenarios}. The identified use cases are summarized in the UML use case diagram below (fig. \ref{UseCaseDiagram}).
+
+\insertfigure{images/UseCaseDiagram.jpg}{UML use case diagram}{UseCaseDiagram}{0.60}
+
+%The identified use cases (UC) are refined in the following subsections.
+
+\subsubsection{UC1: Sense user}
+
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & Sense environment\\
+	Participating actor & Initiated by System \\
+	Entry condition & 1. The user starts the system. \\
+	Flow of events & 2. Once the system has started and there are sensors connected to it, the system reads the information from the available sensors.\\
+	& 3. The user can use the living spaces as they normally would. \\
+	& 4. The system records and process all the available sensor data. \\	
+	Exit condition & 5. The system stores the data \\
+	Special requirements & The systems needs to have sensors connected to it as sources of data. \\
+	\hline
+\end{tabular}
+
+\subsubsection{UC2: Change threat level}
+
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & Change threat level\\
+	Participating actor & Initiated by System\\
+	Entry condition & 1. New data has been sensed from the user. \\
+	Flow of events & 2. The system evaluates the data and decides if a change of threat level is in order.\\
+	Exit condition & 4. The system keeps the same threat level OR \\
+	& 5. The system changes the threat level and executes the actions associated with it \\
+	Special requirements & The systems needs to have sensors connected to it as sources of data. \\
+	\hline
+\end{tabular}
+
+
+\subsubsection{UC3: Execute action}
+
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & Execute action\\
+	Participating actor & Initiated by System\\
+	Entry condition & 1. Threat level changed has been detected. \\
+	Flow of events & 2. The system selects and executes the actions related to the threat level change. The actions can be simple tasks like turning on notifications, or more complex like turning a camera on to perform face recognition\\
+	Exit condition & 3. The system has executed all the actions for that threat level change. \\
+	Special requirements & The list of actions to be executed must be defied a priori by the user.\\
+	\hline
+\end{tabular}
+
+\subsubsection{UC4: Add action}
+
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & Add action\\
+	Participating actor & Initiated by User\\
+	Entry condition & 1. User opens the app.\\
+	Flow of events & 2. User selects the option to set action for particular threat level.\\
+	& 3. System shows the user the available actions for that threat level.\\
+	Exit condition & 4. The system has added the new actions for that threat level change.\\
+	Special requirements & The list of available actions must exist already for the system .\\
+	\hline
+\end{tabular}
+
+
+\subsubsection{UC5: Remove action}
+
+\begin{tabular}{ l p{11cm} }
+	\hline                       
+	Use case name & Remove action\\
+	Participating actor & Initiated by User\\
+	Entry condition & 1. User opens the app. \\
+	Flow of events & 2. User selects remove action for particular threat level.\\
+	& 3. System shows the user the actions for that threat level.\\
+	Exit condition & 4. The system has removed the new actions for that threat level change\\
+	Special requirements & none. \\
+	\hline
+\end{tabular}
+
+   		
+%\subsection{Functional Requirements}
+
+%The following functional requirements (FR) have been identified from the use cases above.
+
+%\subsubsection{FR1: My functionl requirement}
+
+
+
+\section{Non-functional Requirements}
+
+The non-functional requirements (NF) of ROSIE are described in the following subsections below.
+
+\subsection{NF1: Usability}
+The system should not interfere with the normal lifestyle of the user.
+
+\subsection{NF2: Availability}
+The system should be available 99\%. However, it depends on connectivity to the Internet in order to notify the user.	
+
+\subsection{NF2: Reliability}
+The system should be able to send the abnormality notifications to the user. The likelihood of failure should be equal to or less than 1\%. The system will send notifications that do not necessarily mean an intrusion, but this behavior is not considered a failure, because the system needs to learn to differentiate what is normal behavior.  \\
+The system also should be able to handle a large amount of sensors, and the data stream for those sensors.
+
+\subsection{NF2: Performance}
+Starting the application should not take more than 3 seconds. The system should be able to receive all the live data from the household.
+
+\subsection{NF2: Supportability}
+The system should be able to be deployed on running instances of OpenHab, by adding it as an add-on
+
+
+\section{Pseudo Requirements} %(constrains)
+
+\subsection{PR1: Platform}
+
+\subsubsection{OpenHAB}
+
+We chose to run our system on OpenHab\cite{openhabIntro}. This open source project integrates many smart devices and protocols to provide a common running platform to an otherwise heterogeneous field. The motivating factor behind OpenHab is that the home automation and Internet of things space is filled with products that work well by themselves, but do not interoperate well between each other. 
+
+Conceptually speaking, OpenHab uses the idea of an \textit{item} as a "data-centric functional atomic building block"\cite{openhabIntro}, to separate the data from where that data comes from. By making data homogeneous, rules and interfaces can be used, added, or replaced independently of the technologies behind them.
+
+From the architecture point of view, openHAB is written not to be tied to any running platform. Following the "write once, run anywhere" premise openHAB is implemented in Java, where it can be deployed on most systems, including smaller development platforms like the Raspberry Pie and the BeagleBone Black\cite{openhabSupported}.\\
+OpenHAB's architecture consists of a set of OSGi bundles. This provides it with a highly modular structure, which supports removing and adding new functionality bundles on the fly, without stopping running services\cite{openhabRuntime}.
+
+The communication between the runtime environment of openHAB and the external sensors or services starts with bundles called \textit{bindings}. They are treated as external packages or add-ons by openHAB. That way, functionality can be added or removed by the user with ease by just copying a binding file into a specified folder. The function of the binding is to translate between the events that flow within openHAB, and external systems\cite{openhabBinding} or the real world. For example, the Z-Wave binding implements all the necessary logic to connect to the required USB dongle, establish a connection with the configured devices, and send and receive commands to the different sensors or actuators. \\
+The community behind openHAB has already develop a large number of bindings. Included bindings for wireless communications standards like Bluetooth, KNX, and Z-Wave; bindings for protocols like MQTT, HTTP, and TCP/UDP; bindings for automation companies like Bticino, Ecobee, and Insteon; and bindings for application integration like Twitter, Google, and ROS Robot Operating System\cite{openhabBinding}.
+
+The communication within openHAB itself is performed using a message bus called the \textit{event bus}. This is the mechanisms to communicate between bindings or openHAB's runtime environment. On this bus the bindings write events informing all other bundles about the external actions that happen outside of openHAB, and also read all the events that occur for the other bindings \\
+Specifically, bindings are able to read and write two types of events. \textit{Commands} are intended to trigger actions or change the state of an item, e.g. turn on a light. \textit{Status} updates inform about state changes of an Item, e.g. the temperature is now 28 degrees\cite{openhabBinding}.
+
+OpenHAB also uses an \textit{item repository} to store the current state of all the items. This allows openHAB to have a centralized place for all the items current values. This frees the bindings from collecting the states for all the items, and enables decoupling elements like user interfaces\cite{openhabBinding}.
+
+\subsubsection{Robot Operating System}
+Paragraph about ROS, history and where it is used.
+Paragraph about ROS architecture
+Paragraph about ROS and OpenHAB integration
+
+\section{Summary}
+This chapter tackles the requirements elicitation for the smart home intrusion detection system. The system was described using different scenarios to give an overview of how the system would normally behave. Starting with the scenarios that the user configures the actions to be performed by the smart home. The scenarios also describe the different threat levels that the smart space has. Later, the use scenarios where  used to specify use cases, actors and the interactions between them. Following, the non-functional requirements where obtained and the constrains where formalized, specially the use of the OpenHAB platform. 

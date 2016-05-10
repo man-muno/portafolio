@@ -1,0 +1,39 @@
+<node>
+  <deviceClass>
+    <basicDeviceClass>STATIC_CONTROLLER</basicDeviceClass>
+    <genericDeviceClass>STATIC_CONTOLLER</genericDeviceClass>
+    <specificDeviceClass>PC_CONTROLLER</specificDeviceClass>
+  </deviceClass>
+  <homeId>0x184de4b</homeId>
+  <nodeId>1</nodeId>
+  <version>3</version>
+  <manufacturer>0x86</manufacturer>
+  <deviceId>0x1</deviceId>
+  <deviceType>0x2</deviceType>
+  <listening>true</listening>
+  <frequentlyListening>false</frequentlyListening>
+  <routing>false</routing>
+  <healState>DONE @ 2015-09-21T23:00:03+0000</healState>
+  <supportedCommandClasses>
+    <entry>
+      <commandClass>NO_OPERATION</commandClass>
+      <noOperationCommandClass>
+        <version>0</version>
+        <instances>0</instances>
+      </noOperationCommandClass>
+    </entry>
+    <entry>
+      <commandClass>BASIC</commandClass>
+      <basicCommandClass>
+        <version>0</version>
+        <instances>0</instances>
+        <isGetSupported>true</isGetSupported>
+      </basicCommandClass>
+    </entry>
+  </supportedCommandClasses>
+  <nodeNeighbors>
+    <int>11</int>
+    <int>12</int>
+  </nodeNeighbors>
+  <applicationUpdateReceived>false</applicationUpdateReceived>
+</node>

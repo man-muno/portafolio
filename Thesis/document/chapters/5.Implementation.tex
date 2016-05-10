@@ -1,0 +1,213 @@
+\chapter{Object Design}
+\label{chapter:objectdesign}
+The concepts developed in Chapter \ref{chapter:systemdesign} together with the concepts from this chapter will complete the description for the solution domain.
+In this chapter, the objects defined, pay important consideration into refining the concepts from previous chapters, as well as the objects that interact with the selected off-the-shelf components. 
+
+
+\section{Parallel between the Smarthome and Networks}
+\label{parallel}
+For designing the solution domain, we need to establish a parallel between computer networks and the smart home. To create this parallel we explore the types of attacks that affect networks \cite{Bhattacharyya:2013:NAD:2505468}:\\
+\textbf{Denial of Service (DoS):} The main objective of DoS attacks is to block the access of some networking resource by making it unavailable. This is usually done by requesting a service repeatedly pass its maximum expected load and hardware capabilities, bringing the resource down.\\
+\textbf{User to Root Attacks (U2R)} This is a two part attack, where the attacker first needs to obtain the login credentials of a normal user. Then, the attacker tries different security exploits to obtain super user privileges \\
+\textbf{Remote to Local (R2L)} With this type of attack, the attacker tries to gain access to a system without having the credentials of a legitimate user, by sending instructions that try to fool the attacked system into granting access. 
+
+In order to identify the attacks, the behavior on the network is analyzed. The network intrusion detection algorithms read the data that is contained within the packets that flow through the network, and extract the relevant features.\\ 
+Gogoi \etAl provide a comprehensive list of the features extracted for their network intrusion detection algorithms \cite{Gogoi01042014}. Their starting point was the available network intrusion detection data sets. They used the TUIDS intrusion dataset, DDoS dataset, KDD Cup 1999 dataset, and NSL-KDD dataset. The features from the TUIDS data set, detailed in Tables \ref{tab:tuids1} and \ref{tab:tuids2}, are the features extracted from the packet information that was gathered from the network. Some of these features, do not have a parallel with the smart home environment.\\
+From the features that may have a parallel with the smart home, some basic features like protocol or service can be mapped to the type of sensor that picks up the data. Location-based features, like source and destination addresses can be comparable to the location where the sensors are placed. From the DDoS dataset detailed in Table \ref{tab:ddos}, there are other features that can be analogous. This dataset tracks the number  of flows from a unique address over a period of time. Tha same is calculated for the motion detectors both outside and inside of the home. \\
+
+The features that can be extracted from the smart home are summarized in table \ref{tab:features}. First, from the presence information the number of authorized presences, and the time intervals when a known presence is present in the home can be calculated. From the point of entry information, the status of all the points of entry in the house are observed, as well as the duration of open entry points. From the motion detection the information can be classified between indoors and one for outdoors. For both cases, the motion is monitored but also the density of motion, meaning how much times the sensor is triggered each minute, can be inferred. The division between outdoors and indoors favors the use of detection of human forms by the outdoor camera.
+
+
+{\centering
+	{\footnotesize
+		\captionof{table}{Features from the smart home domain} \label{tab:features} 
+		\begin{tabular}{llr}
+			\hline
+			&  \\
+			\textbf{Name}   \\
+			\hline
+			&  \\
+			Number of known presences \\ 
+			Duration of known presence \\
+			Entry point open \\
+			Duration of open entry point  \\
+			Motion detected indoors   \\
+			Indoor motion in the last 60 seconds  \\
+			Motion detected outdoors   \\
+			Outdoor motion in the last 60 seconds  \\
+			Human figure detected outdoors  \\
+			\hline
+			&  \\
+		\end{tabular}
+	}\par
+}
+Once the features are obtained, the machine learning algorithms also need to be defined. Many machine learning techniques have been developed and researched, however hybrid techniques have had a better success rate at lowering false positives and increasing detection rate. The work of Gogoi \etAl \cite{Gogoi01042014} claim that their three-layer strategy boosts detection rate and minimizes false positives. The first layer uses a supervised detection algorithm, the second an unsupervised clustering technique, and the third layer is a outlier mining method.
+
+With the supervised classification method for the first layer, there is a difference between the networking and the smart home environments, that hinder using it as a parallel with the smart come environment. The existence of publicly available datasets for network intrusion detection, which have instances classified as normal and abnormal behavior. Such open datasets are not available for the smart home environment. However, there are two possible strategies to counter this fact. The first is not to use a supervised machine learning algorithm and replace them with a rule-based algorithm. With this method the set of rules would need to be defined a priori. The main disadvantage is that even though some rules can be defined, not all of them may work for all the homes, and they would be probably costly to produce. The second strategy, is to gather data for a certain period of time and assume that it the data belongs to the normal category. Which is not much different than the second layer strategy. The disadvantage from the second approach is that for this period, the system is learning and will not be able to classify behavior. 
+
+For the second layer, Gogoi \etAl \cite{Gogoi01042014} created an unsupervised classification algorithm called \textit{k-point} \cite{kPoint}. This technique starts with an empty set of clusters, and k objects randomly selected from the dataset. The algorithm takes each of those elements and it places it on one of the clusters, depending on how similar the element is to that cluster. If the similarity is smaller than a given value, a new cluster is created with that element. Equivalently, if the element cannot be assigned to an existing cluster, or a cluster cannot be created, then it will be discarded. Similar clusters can be merged into one single cluster. The largest cluster is selected and labeled as normal on the basis of the assumption of the normal behavior model \cite{Gogoi01042014}. 
+
+The third layer of the technique proposed by Gogoi \etAl uses nearest neighbor for outlier mining \cite{Gogoi01042014}.
+
+
+\section{Interface Specification}
+
+\subsection{Rosie}
+
+\insertfigurescale{images/basicObjectDesign.png}{Object design (UML component diagram)}{objecctDesign}{0.17}
+
+\subsubsection{AbstractController}
+\label{Controller}
+This abstract class represents the controller of the blackboard pattern. The controller class has two basic responsibilities. The first one is to iterate over the available knowledge sources allowing each one to evaluate the knowledge. Each expert selected by the AbstractController will asses the information contained on the blackboard so they each can improve on the hypothesis.\\
+The second responsibility of the controller is to execute the actions that result from the evaluations performed by the different knowledge sources. The controller reads the information contained on the blackboard, and depending on the reached hypothesis, actions are executed.\\
+The BasicController, a concrete implementation of the AbstractController class, uses the anomaly ranges defined by Kruegel \etAl \cite{Kruegel:2003:BEC:956415.956436} (summarized on Table \ref{tab:anomalyscore}) to select at which moment the user should be notified of the occurrence of an anomaly. The notification levels, are modeled after the notifications levels as defined by Matthews \etAl \cite{Matthews:2004:TMU:1029632.1029676}.  Starting from the lowest one, ignore. This represents events that tend to be normal or uncommon, however their occurrence requires no attention from the occupant. The next level is low attention. This level may represent events that due to their lower threat level, they do not require de user's immediate attention. This level is followed by medium attention. The events occurring in the home are not common, however they do not need the users attention or action. They can be reported to the user, but no action needs to be taken. The topmost level is high attention. When a very unusual event occurs, then the immediate attention of the user is required. \\
+The implemented action on this concrete class, allow for the system to send a notification to the user's mobile device. More complicated and comprehensive actions may be implemented. Thanks to the association with the EventPublisher (see Section \ref{EventPublisher}), the controller can also change the state of fixtures and send OpenHAB commands, opening the possibility to modify the current state of the home, even depending on the current and future state. %For example, activating sirens, or turning on lights.
+
+%\bigskip
+%\bigskip
+%\bigskip
+%\bigskip
+%\bigskip
+%\bigskip
+
+{\centering
+{\footnotesize
+	\captionof{table}{Anomaly Score Range Level} \label{tab:anomalyscore} 
+	\begin{tabular}{llr}
+		\hline
+		&  \\
+		\textbf{Range}    & 
+		\textbf{Level of Trust}  & \textbf{Notification Level} \\ 
+		\hline
+				&  \\
+    0.00, 0.49 & Normal& Ignore \\ 
+    %Normal& Ignore \\ 
+    0.50, 0.74 & Uncommon &  Ignore\\
+    %Uncommon &  Ignore\\
+	0.75, 0.89  & Irregular&  Low Attention\\
+	%Irregular&  Low Attention\\
+	0.90, 0.94 & Suspicious&  Medium Attention  \\
+	%Suspicious&  Medium Attention  \\
+	0.95, 1.00  & Very Suspicious& High Attention \\
+	%Very Suspicious& High Attention \\
+	\hline
+	&  \\
+	\end{tabular}
+}\par
+}
+
+The blackboard pattern proposed by Buschmann \etAl \cite{Buschmann:1996:PSA:249013} assigns the responsibility of holding the list of knowledge sources to the controller. However, in our system the knowledge sources are contained on the blackboard class because of how OpenHAB handles the life-cycle of its objects. A first stage called the \textit{activation phase}, allows to use the configuration system provided, in order to create and configure resources to be used on later stages. By using this resource, it is possible to use configuration files to keep the instantiation of knowledge sources independent from source code, making it easy to add new ones, or enable, and disable existing ones.\\
+
+
+\subsubsection{AbstractAction}
+The AbstractAction class represent the possible commands that can be executed depending on the hypotheses that are on the blackboard. For example, the home may be equipped with smart lights, and in the event of detecting a human unknown form on the backyard, those lights may be turned on. Currently, the actions associated with the system send the required notifications to the user's cellphone once something very suspicious is detected in the home. 
+
+\subsubsection{StateMachine}
+\label{StateMachine}
+The state machine is used by the controller to store the current threat level of the home. The threat level is selected depending on the hypothesis reached by the experts and stored on the blackboard. The controller reads the blackboard and decides which triggers should be activated in order to change state if needed. However, the state machine is not meant to process al the sensor information and react accordingly, it just maintains the current state and is aware of the possible states after. The state machine does not execute any actions when the state is changed, that responsibility is left to the controller.
+
+\subsubsection{AbstractKnowledgeSource}
+
+The knowledge sources were defined by Bushmann \etAl \cite{Buschmann:1996:PSA:249013} as independent modules that function as specialists that solve problems. They read data stored in the blackboard in order to work on solving a problem. If they generate a hypothesis they write it back on the blackboard for other experts to use.\\
+In our system, the knowledge sources must implement the AbstractKnowledgeSource class. In this abstract class the association between the blackboard and the expert is established. \\
+The knowledge sources in the system are classified into levels. However, this division is not intended to represent a hierarchy between the knowledge sources, but a distinction between the different levels of understanding. The knowledge sources that are grouped together under level one which represent the data experts, level two symbolizes information experts, and level three serve as the knowledge experts.
+
+\insertfigurescale{images/l1experts.png}{Level one knowledge sources (UML class diagram)}{l1experts}{0.20}
+
+The first layer experts, the data experts, depicted in Figure \ref{l1experts} are responsible for taking the sensor values from the OpenHAB's event bus' interface (explained in Section \ref{RosieBinding}), and follow the data model defined by the OpenHAB's specification. 
+
+The abstract class AbstractDataExpert holds if the sensor or actuator is located outdoors or indoors. Also, if the sensor is of type motion, presence, environmental, electrical, or point of entry. The knowledge evaluation transforms the fixture information from OpenHAB's data model into the data model of our system. The naming convention for the subclasses follows the names for the items in OpenHAB. The limited number of combinations between item types's and locations, together with an expert factory, makes the instantiation of the level one experts automatic.
+
+
+\insertfigurescale{images/l2experts.png}{Level two knowledge sources (UML class diagram)}{l2experts}{0.20}
+
+The level two experts depicted on Figure \ref{l2experts}, or information experts, take the data from the data sources of level one, and begin producing information. They are the first knowledge sources to make assertions about the data to extract more information, and what that data means on the context of a home. \\
+On the level two experts is where the parallel between the smart home and computer networks becomes more precise. The experts in this layer take the data produced by the layer one experts, and extract the features as explained in Section \ref{parallel}. The features extracted are summarized in Table \ref*{tab:featuresWithKS}, as well as the experts that generate them.
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+{\centering
+	{\footnotesize
+		\captionof{table}{Fetures extracted by level two experts} \label{tab:featuresWithKS} 
+		\begin{tabular}{llr}
+			\hline
+			&  \\
+			\textbf{Name}     & \textbf{Knowledge source} \\
+			\hline
+			&  \\
+			Number of known presences & KnownPresenceExpert \\ 
+			Duration of known presence & KnownPresenceExpert \\
+			Entry point open & EntryPointExpert \\
+			Duration of open entry point & EntryPointExpert \\
+			Motion detected indoors  & MotionExpertIndoors \\
+			Indoor motion in the last 60 seconds  & MotionExpertIndoors \\
+			Motion detected outdoors  & MotionExpertOutdoors \\
+			Outdoor motion in the last 60 seconds  & MotionExpertOutdoors \\
+			Human figure detected outdoors  & HumanPresenceOutdoorsExpert \\
+			\hline
+			&  \\
+		\end{tabular}
+	}\par
+}
+
+
+%Following a detailed explanation of the level two experts an how they extract the features.
+%The KnownPresenceExpert takes the presence information from the blackboard, and calculates the number of authorized presences, and the time intervals when a known presence is present on the home. 
+%The EntryPointExpert also takes from the blackboard the status of all the points of entry on the house, and also monitors for how long the house remains with open entry points. For motion detection there are tow experts. 
+%One for indoors and one for outdoors. Both of them monitor if there is motion detected in those areas of the house. Those experts also monitor the density of motion, meaning how much times the sensor is triggered each minute. 
+%HumanPresenceOutdoorsExpert monitors if there is a human form detected by the outdoor camera.\\
+
+
+\insertfigurescale{images/l3experts.png}{Level three knowledge sources (UML class diagram)}{l3experts}{0.20}
+
+The level three experts or knowledge experts depicted on Figure \ref{l3experts}, are responsible for taking the information extracted from the level two experts, and applying the selected machine learning algorithms explained in Section \ref{parallel}. This technique uses a three-layer approach to solve the detection problem. The first layer uses a supervised detection algorithm, the second an unsupervised clustering technique, and the third layer is an outlier mining method.
+
+For the second layer of the technique proposed by Gogoi \etAl \cite{Gogoi01042014} is manually implemented in the class OutlierMiningExpert.
+
+The third layer of the technique proposed by Gogoi \etAl uses nearest neighbor for outlier mining \cite{Gogoi01042014}. For implementing this technique we use the Weka's K-nearest neighbors classifier \cite{ibk} in the NearestNeighborsExpert.
+
+The abstract class AbstracMLExpert contains the Weka's Instances object that represent the training set. That way, all the possible implementations of machine learning algorithms that use the Weka framework can access it directly. This abstract class also has the method to read the information from the blackboard, and adds it to the current training set.
+
+
+
+\subsubsection{Tuple}
+The information that may be stored on the blackboard is wrapped in an object of type tuple. Each expert is responsible of creating and using the blackboard to store the tuples. Each tuple, has an attribute of type object, that represents the payload to be stored. When an experts needs to access the payload of a tuple, it must known to which concrete object it is.
+
+\subsubsection{Location}
+The location is an enumeration that states if a sensor is located outdoors or indoors. No other granularity like types of rooms is needed. There is no apparent information gain to distinguish if a sensor is triggered in the kitchen or the living room. The conclusion is that is moment that comes from inside the house, and should only be considered normal if it is from an authorized presence. That does not apply for movement that is detected outdoors. Depending on sensor settings, which are not controlled by the system, a lot of movemennt may be picked up outside, but is not considered an intrusion. 
+
+\subsubsection{Blackboard}
+The main responsibility of the blackboard class is to act as a container for the tuples needed by the knowledge sources. Here, the tuples are stored depending on their type (motion, presence, environmental, electrical, and point of entry - Section \ref{subsytem})  on different tables. That way, it is possible for the interested experts to only query for the information it requires. For example, the expert for the known presences on the home asks for the tuples stored on the presence map. There is also a table where general tuples can be stored. This last map is the one used by the higher-level experts to store their hypotheses. Following the blackboard analogy, the different tables created for the tuples are similar to having distinct areas on the blackboard's surface to write different type of information. The tuples are stored in the tables using a unique name.
+
+The life cycle of OpenHAB's bundles is controlled by the OSGi container. There, an instantiation phase instantiates the classes defined for the bindings. At this point, the container divides that responsibility of instantiating the system's classes, between two of the support classes (RosieBindingProvider and RosieBinding). This separation is a disadvantage, because all the classes of the system that have an association with the Blackboard class need to have the same instance to properly function. Nevertheless, as there is no direct communication mechanism to pass an instance of a class between the two support classes, it is necessary for the Blackboard class to the use of the Singleton pattern \cite{Gamma:1995:DPE:186897}. Nevertheless, to counter most of the disadvantages of this pattern, the dependency injection pattern \cite{Prasanna:2009:DI:1795686} is used. That way, all the classes that are associated with the Blackboard, receive the same instance as a parameter for its instantiation.
+
+\subsubsection{RosieBindingProvider}
+\label{RosieGenericBindingProvider}
+On the instantiation phase of the life cycle of each binding, the OSGi container looks for the implementation of this class as it is responsible of taking the item's configuration files, and setting up the binding depending on that file.  In that configuration file, for each fixture that is going to be used in the Rosie system, three properties must be defined: First, the type of item according to OpenHAB's items specification\cite{openhabItems}. Then, the type of sensor that it belongs to according to the definition in Section \ref{subsytem}. Lastly, the location of the fixture i.e. if located either indoors or outdoors. 
+
+
+\begin{verbatim}
+Contact Big_motion "Big Motion: [%s]" <presence> (l_SmartLab) 
+{rosie="Contact,Motion,Indoor"}
+\end{verbatim}
+
+With that information this class instantiates all of the level one experts, and adds them to the blackboard into they respective tables.
+
+
+\subsubsection{RosieBinding}
+\label{RosieBinding}
+This class is used to connect the system with OpenHAB's event bus, that way every command and update for each specific fixture is passed to Rosie. Once OpenHAB detects a new value or command from one of the fixtures, it writes the updated value on to the event bus. This event is received on the RosieBinding class. With this event, the tuple is created and stored on the blackboard, so the experts can process them.
+
+
+\subsubsection{EventPublisher}
+\label{EventPublisher}
+This class is used to write messages directly on the event bus. This messages can be used to update the value of the items or to send commands to the fixtures connected with OpenHAB. 
+
+\section{Summary}
+
+In the object design chapter the concepts developed in the previous chapters are redefined and unified with respect to the implementation. A parallel between computer networks and the smart home is created. The definition of the machine learning algorithms, as well as the features extracted from the sensor data, is formalized. Also, the interactions and association of the different classes that make up Rosie are depicted and explained.

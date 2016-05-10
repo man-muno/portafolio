@@ -1,0 +1,5 @@
+pom.xml.releaseBackup
+release.properties
+target/
+.project
+.settings/

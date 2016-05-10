@@ -1,0 +1,5 @@
+<activity name="check coolant water">
+	<picture />
+	<text language="english">Check whether the coolant water level is between min and max.</text>
+<!-- 	<text_parameter /> //- calculated parameters according to OBD inputs??? -->
+</activity>

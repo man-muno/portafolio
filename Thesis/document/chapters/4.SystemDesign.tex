@@ -1,0 +1,207 @@
+
+\chapter{System Design}
+\label{chapter:systemdesign}
+Using the models acquired in Chapter \ref{chapter:analysis} it is now possible to construct the system design. First, the system's design goals are identified. Later, in the software architecture, the system is decomposed based on the responsibility and functionality, taking into account the non-functional requirements, the models from previous chapters, and the design goals \cite{Bruegge2004}.
+		
+\section{Design Goals} 
+
+Design goals characterize the qualities of the system that should be optimized \cite{Bruegge2004}:
+
+\begin{enumerate}
+\item \textbf{Generalization} 
+A key concept of the system is generalization. The system must be able to generalize from past behavior, and ascertain whether or not the current sensed behavior is normal. It is not possible to write a program to define what normal behavior is. People's routines depend on many factors: age, occupation, gender, and many others. Furthermore, it is not possible to assure that future behavior will remain consistent with what has been experienced before. Therefore, it is necessary for the overall system architecture to support this changing behavior that the user may demonstrate.
+
+\item \textbf{Minimization} 
+Once the past behavior is learned and the new one is evaluated, it is possible to make erroneous assumptions. In this context, the assumptions mean that the system is not able to recognize abnormal behavior and assumes it is normal. Also, it is possible that the system fails to report abnormal behavior. It is necessary for the overall system architecture to minimize this uncertainty.
+
+\item \textbf{Unubtrusivness}
+The system should not interfere with the normal activities of the user. Sending notifications is only in the cases where something very suspicious is happening in the user's home.
+
+\item \textbf{Reliability}
+The system should be able to send the abnormality notifications to the user. The likelihood of failure should be equal to or less than 1\%. The system will send notifications that do not necessarily mean an intrusion, however this behavior is not considered a failure because the system needs to learn to differentiate what is normal behavior.  \\
+The system also should be able to handle a large number of sensors, and the data stream for those sensors.
+
+\item \textbf{Extensibility with respect to addition of fixtures}
+New products for the smart home are produced every day. The system must allow the user to add and remove fixtures, without needing to restart the system, or conflicting with the fixtures currently running. 
+
+\item \textbf{Extensibility with respect to protocols}
+Even though the research on technologies does not move as fast as the products they support, new communication protocols are available often from proprietary vendors or technology standards consortia. The system must allow the user to add new protocols, without impacting the current running elements. 
+
+\item \textbf{Extensibility with respect to algorithms}
+Advancements in machine learning algorithms, and deep learning infrastructures occur often, sometimes making older implementations or techniques obsolete. The architecture must allow the addition of new algorithms, or removing older ones, without needing to modify the core functionality of the smart home system. 
+
+
+\end{enumerate}
+	
+\section{Software Architecture}
+\subsection{Subsystem Decomposition}
+\label{subsytem}
+
+%\insertfigureanchored{images/subsystemdiagram.png}{Subsystem decomposition (UML component diagram)}{SubsystemModelDiagram}{0.5}
+\insertfigurescale{images/subsystemdiagram.png}{Subsystem decomposition (UML component diagram)}{SubsystemModelDiagram}{0.27}
+
+
+\subsubsection{Sensors}
+
+Each of the sensors represent the physical components that are installed in the user's house. Their interfaces and communication protocols vary from sensor to sensor. The components' interface represent each of the sensor's own specific programming interface.\\
+The types of input that sensors receive can be interpreted and classified as motion, presence, environmental, electrical, and point of entry.\\
+Motion sensors usually measure heat that moves between detection zones. They detect movement but cannot differentiate between human or non-human sources. \\
+Point of entry sensors are a two-element magnetic device, that detect close proximity between two surfaces. One component sits on the non-movable part such as the door frame, while the other part sits on the door itself. When the door is closed the two parts are alongside each other and the magnet is detected. However, when the door or window is opened the sensor stops detecting the magnet. \\
+A presence sensor is also a two part sensors that determines if the two elements are in the same geographical area. They can be worn by a people or a pets, and it can be determined if the wearer enters an area, is currently located on that area, or leaves the area. \\
+Environmental sensors measure different physical values from their surroundings. For example, temperature, humidity, noise. \\
+Electrical sensors asses usage of power lines. They can also measure if an appliance is connected to a electrical socket. 
+
+For this section, a set of sensors has been selected to represent the typical setup offered by different companies. Across these vendors, they tend to supply an starter package that usually has the same types of sensors. Security oriented starter packages come equipped with motions sensors, window or door sensors, presence sensor, and cameras.\\
+Starting with an fixed set of sensors, it is possible to establish a base configuration of a smart home. This arrangement is depicted in Figure \ref{homesetup}. However, this arrangement is not supposed to represent a complete home, just the common places where sensors would be located. 
+The home is divided into two main areas where the sensors are located. The first region is the indoor area. Here the main entrance door is located, a window, and a back door. Each of these elements has a door/window sensor. There is also a movement sensor located in the upper left right corner, and a camera located in the lower left corner. The second area, the outdoor zone, represents am accessible but walled backyard. Here only a motion sensor and a camera are located. In the center of the living quarters a presence sensor is placed, however, this sensors do not need a particular placement like the others.
+\insertfigurescale{images/homesetup.png}{Representation of a possible setup of sensors on a home}{homesetup}{0.7}
+
+
+\subsubsection{Sensor Manager}
+\label{sensorManager}
+Due to the lack of standardization between control protocols, as well as wired and wireless communications standards, an extra component is defined. This component implements support for the different control protocols and communication technologies to communicate with the sensors. The Sensor Manager also reduces coupling between the sensors and other system's components. 
+
+\subsubsection{Rosie}
+
+\insertfigurescale{images/rosie.png}{Focus on the Rosie component (UML component diagram)}{rosie}{0.26}
+
+Rosie is the main component that learns past behavior and analyses new one and interprets if the sensed behavior is abnormal or not. Here is where the main design goals are realized. 
+
+On network intrusion detection algorithms, one of the most useful techniques for reducing uncertainty is to use a hybrid approach (see Section \ref{hybridmethods}). This method employs multiple network detection algorithms working together, in order to improve the detection rate. 
+
+One architectural pattern that enables the collaboration of multiple techniques, to solve a common problem and reduce uncertainty is the blackboard pattern. This pattern was used by Erman \etAl on the Hearsay-II Speech-Understanding System \cite{Erman:1980:HSS:356810.356816}. This architectural style exemplifies other design characteristics that are desired on the solution to this problem \cite{Bruegge2004}. Erman \etAl state that to solve the speech recognition problem, the system needs to be able to collect, and analyze data, set goals to guide the problem-solving process, produce and retain reasoning, and decide when to stop searching for more solutions. They also point out that the capabilities of the Hearsay-II Speech-Understanding system are adaptable to other problem domains \cite{Erman:1980:HSS:356810.356816}.
+\\
+This technique uses a shared knowledge representation called the blackboard. In addition, different sources or experts hold the knowledge of how a problem may be solved. These diverse knowledge sources read from the blackboard the information regarding the problem, then they modify it or produce new knowledge. The new knowledge generated are partial solutions to the problem. The solution candidates are then written back on to the blackboard, where it is made available to other knowledge sources. With each cycle, the hypothesis is transformed and combined into an acceptable solution to the problem. The execution of knowledge sources is ordered by a control component that decides which expert should read and write information of the knowledge, and also when to stop looking for a solution. 
+\\
+The blackboard can also be divided into a set of information levels corresponding to the representation levels of the meaning of that information. Using those levels, the different partial solutions along extra information are stored. However, this division is meant only as a loose hierarchy, where hypothesis from one level abstract elements for the next level. For example, a level one expert takes the presence data from the sensor and writes it on the blackboard. The level two expert is then monitoring when the value of the that sensor changes, that way this expert can provide the intervals during the day when the home has known presences. The level three expert takes the information regarding the presence, as well as the other sensors and can infer if their meaning represent normal or abnormal behavior.
+\\
+The control component plays an important role on the system. Its main responsibility is to choose which knowledge sources are executed. In addition, here are defined the decision criteria for selecting what to do, once the result of a hypothesis is reached.
+
+
+\subsubsection{Notification Manager}
+
+The notification manager is the responsible to send the notifications to the user's mobile device. Its services is used by Rosie when it has detected that there has been an intrusion on the home.
+
+\section{Off-the-Shelf Components}
+
+\subsection{OpenHAB}
+
+For managing the sensors OpenHab \cite{openhabIntro} will be used. This open source project is a platform that helps integrate multiple smart devices using different protocols. The motivating factor behind OpenHab is that the home automation and Internet of things space is filled with devices that work well with other products from the same vendor, but do not inter-operate well across different platforms. 
+
+Conceptually speaking, OpenHab generalizes the possible types of sensors into \textit{items}. They can be seen as a "data-centric functional atomic building blocks" \cite{openhabIntro}, that decouple the data from the sensors or the technologies that they employ. By making data homogeneous, rules and interfaces can be used, added, or replaced independently of the technologies behind them.
+
+From the architectural point of view, OpenHAB is written not to be tied to any running platform. Following the "write once, run anywhere" premise OpenHAB is implemented in Java, where it can be deployed on most systems, including smaller development platforms like the Raspberry Pie or the BeagleBone Black \cite{openhabSupported}.\\
+OpenHAB's architecture consists of a set of OSGi bundles. This provides it with a highly modular structure, which supports removing and adding new functionality on the fly, without stopping running services \cite{openhabRuntime}.
+
+The communication between the runtime environment of OpenHAB and the external sensors or services starts with bundles called \textit{bindings}. They are treated as external packages or add-ons by OpenHAB. That way, functionality can be added or removed by the user with ease by just copying a binding file into a specified folder. The function of the binding is to translate between the events that flow within OpenHAB, and external systems \cite{openhabBinding} or the real world. For example, the Z-Wave binding implements all the necessary logic to connect to the required USB dongle, establish a connection with the configured devices, and send and receive commands to the different sensors or actuators. \\
+The community behind OpenHAB has already develop a large number of bindings. Included bindings for wireless communications standards like Bluetooth, KNX, and Z-Wave; bindings for protocols like MQTT, HTTP, and TCP/UDP; bindings for automation companies like Bticino, Ecobee, and Insteon; and bindings for application integration like Twitter, Google, and ROS Robot Operating System \cite{openhabBinding}.
+
+The communication within OpenHAB itself is performed using a message bus called the \textit{event bus}. This is the communication mechanism between bindings or OpenHAB's runtime environment. On this bus the bindings write events allowing all other bundles read if necessary about the external actions that happen outside of OpenHAB, and also read all the events that occur for the other bindings \\
+Specifically, bindings are able to read and write two types of events. \textit{Commands} are intended to trigger actions or change the state of an item, e.g. turn on a light. \textit{Status} updates inform about state changes of an item, e.g. the temperature is now 28 degrees \cite{openhabBinding}.
+
+OpenHAB also uses an \textit{item repository} to store the current state of all the items. This allows OpenHAB to have a centralized place for all the items current values. This takes the burden of the bindings from collecting the states for all the items, and enables decoupling elements like user interfaces \cite{openhabBinding}.
+
+
+\subsection{ROS}
+
+ROS or Robot Operating System is an open-source framework designed for collaborative software development for robots \cite{ros}. Through tools, libraries, and interfaces, it aims to simplify writing general-purpose software for robots, across a wide variety of platforms. It provides hardware abstraction, low-level device control, message-passing between processes, and package management \cite{rosdocu}. 
+
+With this framework, it is possible to develop self-contained programs, or packages, and distribute them among ROS users. These libraries include functionality for navigation, visualization, kinematics, and other robot-related functionalities. 
+The loosely coupled ROS packages, implement different communication styles. Synchronous RPC-style communication over services, asynchronous streaming of data over topics, and storage of data on a Parameter Server. 
+
+Specifically two packages from the ROS repository are used. First, the face recognition package (called face\_recognition on the ROS' repository) is able to use a camera stream to learn, and identify faces. This package uses the Haar feature-based cascade classifier for object detection present on OpenCV. Once the classifier is trained, it can continuously detect faces, and discern if they are known or not. The results of this process are published on a topic, from which other services can read the result. 
+
+The second package is called the iot\_bridge. This library serves as a bridge between the ROS environment and OpenHAB. With this connection between the two systems, it is possible to configure ROS' existing packages to react to events that occur on the smart home. Specifically for this case, the complete face recognition system is running on ROS, independently from OpenHab, but the result is publish in such a way, that OpenHab can read it as if it where another sensor.
+
+\subsection{IFTTT}
+IFTTT or if this then that, is a service created where the user is able to create short if statements or recipes, where a trigger condition is defined and then an action is executed \cite{iffftwtf}. The core concept of IFTTT is that the triggers and actions are not proprietary services, but cross platform like Facebook, Gmail, Twitter, and many more \cite{iffftbegining}. That way, the user can create recipes that enhance functionality of existing services. For example, a user can create a recipe that every time the Facebook profile picture is changed, IFTTT must change the twitter picture as well. \\
+Mobile devices of the user can also be used for recipe creation. That way it is possible to create a recipe that turns on the smart lighting system, when the user cellphone enters a set of given GPS coordinates. 
+
+Specifically for this case, it is possible to integrate OpenHAB with the user's cellphone. The mobile device will provide the GPS coordinates and when the user is near the home, OpenHAB will be notified. Explicitly, entering the GPS coordinates will change the value of a predefined item on OpenHAB. Also, the capability to trigger a notification on the user's mobile device will be used. When the value of an item is changed IFTTT detects the change, and sends a notification to the user.
+
+\subsection{Weka}
+Weka stands for  Waikato Environment for Knowledge Analysis. It is a framework developed in the University of Waikato in New Zealand. Weka is viewed as a java-based tool box of machine learning algorithms, and data manipulation tools \cite{Hall:2009:WDM:1656274.1656278}. Through
+a graphical workbench users can easily test different machine learning methods on their  data sets. The workbench includes algorithms for regression, classification, clustering, association rule mining and attribute selection. This framework not only provides an API to integrate new machine learning algorithms to it, but as it is open-sourced it is possible to integrate it to existing Java applications. 
+
+
+\section{HW/SW Mapping}
+
+On this section we define the hardware/software platform on which the system was built. The assignment of the different software subsystems to the platforms can be seen on the deployment diagram in Figure \ref{deployment}.
+
+\insertfigurescale{images/deployment.png}{Deployment of Rosie and other subsystems (UML deployment diagram)}{deployment}{0.17}
+
+\begin{enumerate}
+	\item \textbf{Sensor Manager} For the sensor manager OpenHAB is used. This system runs on a MacMini with Ubuntu 15.04 as operating system. Here, the receiver for the communication protocol for the senors is is connected. Z-Wave is used in this case. OpenHAB runs on a OSGi (Open Service Gateway Initiative) container, running on Java.
+	\item \textbf{Rosie} Runs on the same machine, and in the same OSGi container were the Sensor Manager is running. Rosie is implemented as an OpenHAB binding.
+	\item \textbf{Camera} The camera selected is a traditional USB web camera connected to the machine running the system. To perform face recognition, the Robot Operating System is used.
+	\item \textbf{Presence} For detecting presences, the GPS on the user's cellphone is used. When the users within a radius in the GPS coordinates of the home, it is assumed that the users is present. The system uses IFTTT (If This Then That) as a platform to communicate the GPS from the cellphone and the Sensor manager. The operating system of the cellphone is not important, as IFFFT is multi-platform.
+	\item \textbf{Motion and Point of Entry Sensors} These two sensors use the Z Wave wireless communication protocol. Because this technology uses different frequencies, such as Wifi or Bluetooth, it requires the use of a transceiver. Usually the transceiver functionality is provided through a supplied USB dongle. Specifically, for the case of this system, the dongle is connected to a the computer running the OpenHab system.
+	\item \textbf{Notification Manager} Notifications will be sent to the same cellphone used for obtaining the GPS coordinates. For notifications IFTTT is also used. The Sensor Mananger is configured to allow two-way communication between the two components. 
+\end{enumerate}
+
+		\insertfigurescale{images/subsystemdiagramComplete.png}{Comprehensive subsystem decomposition (UML component diagram)}{SubsystemModelDiagramComplete}{0.23}
+
+In Figure \ref{SubsystemModelDiagramComplete} a more comprehensive subsystem diagram is depicted. Here, the selection of off-the-shelf components is integrated to the original software decomposition.
+
+
+%\section{Data Management}
+
+%\section{Access Control and Security}
+
+%\section{Control Flow}
+
+%\bigskip
+
+\section{Boundary Conditions}
+
+\subsection{Inizialization}
+There is no special order to starting all of the components. Because OpenHAB and the bindings run on the same OSGi container, when it is started it takes care of the life cycle process. The ROS environment, and starting its packages services is taken care of by a script that can be run at any moment. 
+
+
+\subsubsection{OpenHAB}
+
+The configuration of the fixtures must be done items file, according the OpenHAB's configuration policies. The Listing \ref{lst:itemsSyntax} shows the basic syntax for the configuration of a single item.  In Listing \ref{lst:itemsExample} an example is presented.
+
+\begin{lstlisting}[caption=Item configuration sintax,label={lst:itemsSyntax}]
+itemtype itemname ["labeltext"] [<iconname>] [(group1, group2, ...)] [{bindingconfig}]
+\end{lstlisting}
+
+The Z-Wave binding configuration, seen in Listing \ref{lst:itemsZWave}. The node ID indicates the number of the node, to which this item is bound.
+
+The endpoint ID is required when using the multi-instance command class. In case a node consists of multiple instances or endpoints, the instance number can be specified using this value. 
+
+The command is optional, but recommended if multiple items are connected to the same device. Without this parameter the binding can not differentiate data. Z-Wave nodes support functionality through command classes. A specific command class can be set to use that functionality of the node. 
+
+
+\begin{lstlisting}[caption=Item configuration sintax,label={lst:itemsZWave}]
+zwave="<nodeId>[:<endpointId>][:command=<command>[,parameter=<value>][,parameter=<value>]...]"
+\end{lstlisting}
+
+The configuration for the Rosie binding is  much simpler than the one from the ZWave binding. First, the item type is defined, as for the OpenHAB specification. Then, the type of sensor according to the Rosie specification is defined. The last parameter is the location parameter where it is specidfied if the sensor is located indoors or outdoors. 
+
+\begin{lstlisting}[caption=Item configuration sintax,label={lst:itemsRosie}]
+rosie="<Item Type>,<Sensor Type>,<Location>"
+\end{lstlisting}
+
+This example defines an item of type contact with name Big\_motion, displaying the icon for presence sensors, belonging to the group I\_Home, bound by two bindings. The first binding is the ZWave, and the second is the Rosie binding.
+
+\begin{lstlisting}[caption=Item configuration sintax,label={lst:itemsExample}]
+Contact Big_motion "Big Motion: " <presence> (l_Home) {zwave="11:0:command=sensor_binary,respond_to_basic=true", rosie="Contact,Motion,Indoor"}
+\end{lstlisting}
+
+
+\subsubsection{ROS}
+The initialization for the ROS environment is coded on the \textit{startCameras.sh} script. This script starts the the ROS environment, the camera capturing program, and the face recognition package, and the bridge between OpenHAB and ROS. In this script the item that will change when a face is detected is defined. 
+
+%\subsubsection{IFTTT}
+	
+
+\subsection{Failure}
+In case of failure from the sensors the system would just stop receiving the data and the anomaly detection algorithms may fail to detect, however the system will continue to function. In case of failure of any components running on ROS, the system will stop receiving the data from that sensor, but the detection algorithms may fail to detect, however the system will continue to function. The case ir similar if IFTTT stops working, nonetheless the notifications to the user will not work. The only component that can fail and result in catastrophic failure is OpenHAB, in which case the complete system should be restarted.
+
+\subsection{Termination}
+The failure of some components hinder the detection process, but are not required to run parts of the system.
+
+
+\section{Summary}
+In this chapter the system design was detailed with the help of the non-functional requirements defined and the models described in Chapters \ref{chapter:elicitation} and \ref{chapter:analysis}. First, the design principles were defined. From that point on, the system architecture was developed. First, the different components that make up the system were explained, and detailed. Each one of the sensors is its own component due to the heterogeneous nature of the technologies used. A sensor manager is introduced to decouple the communication with the sensors and other components. The main component Rosie is also explained, and the architectural styles used to create it. Lastly, the hardware and software decomposition was defined, in order to select the different programming languages and off-the-shelf components used in the system.

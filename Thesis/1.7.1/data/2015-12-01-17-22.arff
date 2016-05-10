@@ -1,0 +1,11 @@
+@relation rel
+
+@attribute date date 'yyyy-MM-dd\'T\'HH:mm:ss'
+@attribute similarity numeric
+@attribute clusterNumber numeric
+@attribute correctClusterAttributes numeric
+@attribute allClusterAttributes numeric
+@attribute distribution numeric
+@attribute intrusion {true,false}
+
+@data

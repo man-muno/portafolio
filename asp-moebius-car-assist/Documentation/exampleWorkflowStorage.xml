@@ -1,0 +1,14 @@
+<workflow name="check coolant water level">
+	<start name="open engine hood" />
+	<activity name="open engine hood">  <!-- if (activity name == other workflow name) -> show detail option  //implizit transition -->
+		<transition value="next" target="locate coolant water reservoir">		
+	</activity>
+	<activity name="locate coolant water reservoir">
+		<transition value="next" target="check coolant water">		
+	</activity>
+	<activity name="check coolant water">
+		<transition value="true" target="end">		
+		<transition value="false" target="end">
+	</activity>
+	<end name="end" /> <!-- returns last transition value -->
+</workflow>		

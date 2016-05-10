@@ -1,0 +1,435 @@
+References
+[1] http://www.softpanorama.org/security/intrusion detection.shtml.
+[2] A., H., Navarro, M., Corchado, E., and Julin, V. RTMOVICAB-IDS: Addressing real-time intrusion detection. Future Generation Computer Systems 29, 1 (January 2013), 250–261.
+[3] Adam  Pocock.	 MIToolbox,  2012.	 MATLAB, http://mloss.org/software/view/325/.
+[4] Aggarwal, C., Wolf, J. L., Yu, P. S., and Procopiue, C. M. Fast algorithms for projected clustering. In ACM SIG-MOD’99 (New York, USA, 1999), ACM, pp. 61–72.
+[5] Aggarwal, C., and Yu, P. S. Finding generalized projected clusters in high dimensional spaces. In ACM SIGMOD Record (2000), vol. 29, ACM, pp. 70–81.
+[6] Agrawal, R., Gehrke, J., Gunopulos, D., and Raghavan, P. Automatic subspace clustering of high dimensional data for data mining applications.  In ACM SIGMOD (Seattle, 1998), ACM, pp. 94–105.
+[7] Agrawal, R., Imieli´nski, T., and Swami, A. Mining association rules between sets of items in large databases. In ACM SIGMOD Record (1993), vol. 22, ACM, pp. 207–216.
+[8] Agrawal, R., Imielinski, T., and Swami, A. Mining association rules between sets of items in large databases. In Proc of the ACM SIGMOD Conference (Washington, DC, USA, May 1993), ACM, pp. 207–216.
+[9] Agrawal, R., and Srikant, R. Mining sequential patterns. In Proc. of the 11th International Conference on Data Engineering (USA, 1995), IEEE CS, pp. 3–14.
+[10] Agyemang, M., Barker, K., and Alhajj, R. A comprehensive survey of numeric and symbolic outlier mining techniques. Intelligence Data Analysis 10, 6 (2006), 521–538.
+[11] Ahirwar, D. K., Saxena, S. K., and Sisodia, M. S. Anomaly detection by naive Bayes & RBF network.  International Journal of Advanced Research in Computer Science and Electronics Engineering 1, 1 (2012), 14–18.
+[12] Ali, A. G., Lu, W., and Tavallaee, M. Network Intrusion Detection and Prevention: Concepts and Techniques. Advances in Information Security. Springer, October 2009.
+[13] Almuallim, H., and Dietterich, T.  Learning with many irrelevant features. In Proc. of the 9th National Conference on Artiﬁcial Intelligence (1991), vol. 2, pp. 547–552.
+[14] Amini, M., Jalili, R., and Shahriari, H. R. RT-UNNID: a practical solution to real-time network-based intrusion detection using unsupervised neural networks. Computers & Security 25, 6 (2006), 459–468.
+[15] Amiri, F., Yousefi, M. M. R., Lucas, C., Shakery, A., and Yazdani, N. Mutual information-based feature selection for intrusion detection systems. Journal of Network and Computer Applications 34, 4 (2011), 1184–1199.
+[16] Amor, N. B., Benferhat, S., and Elouedi, Z. Naive Bayes vs. decision trees in intrusion detection systems.  In Proc. of the ACM Symposium on Applied Computing (SAC’04) (Nicosia, Cyprus, March 14–17 2004), ACM, pp. 420–424.
+[17] Anderson, D., Lunt, T. F., Javitz, H., Tamaru, A., and Valdes, A. Detecting unusual program behavior using the statistical component of the next-generation intrusion detection expert system (nides). Tech. Rep. SRIO CSL-95-06, Computer Science Laboratory, SRI International, USA, 1995.
+[18] Anderson, J. P.  Computer security threat monitoring and surveillance. Tech. rep., James P Anderson Co, Fort Washington, P. A., April 1980.
+[19] Ankerest, M., Breuing, M. M., Kriegel, H. P., and Sander, J. Optics: Ordering points to identify the clusterin structure. In ACM SIGMOD (1999), ACM, pp. 49–60.
+[20] Apte, C., Hong, S. J., Hosking, J., Lepre, J., Pednault, E., and Rosen, B. Decomposition of heterogeneous classiﬁcation problems. Intelligent Data Analysis 2, 1 (1998), 81–96. 21] Arfken, G. Lagrange multipliers. In Mathematical Methods for Physicists 3rd ed (Orlando, 1985), Academic Press, pp. 945–950.
+[22] Ariu, D., Tronci, R., and Giacinto, G. HMMPayl: An intrusion detection system based on hidden Markov models. Computers & Security 30, 4 (2011), 221–241.
+[23] Arumugam, M., Thangaraj,  P., Sivakumar,  P., and Pradeepkumar, P. Implementation of two-class classiﬁers for hybrid intrusion detection. In Proc. of the International Conference on Communication and Computational Intelligence (December 2010), pp. 486–490.
+[24] Axelsson, S. The base-rate fallacy and its implications for the diﬃculty of intrusion detection. In Proc. of the 6th ACM Conference on Computer and Communications Security (New York, NY, USA, 1999), ACM, pp. 1–7.
+[25] Axelsson, S. The base-rate fallacy and the diﬃculty of intrusion detection. ACM Transactions on Information and System Security 3, 3 (August 2000), 186–205.
+[26] Ayad, H., and Kamel, M. Finding natural clusters using multicluster combiner based shared nearest neighbours.  In Proc of Multi-classiﬁer systems (Berlin, Heidelberg, 2003), Springer Verlag, pp. 166–175.
+[27] Bahrololum, M., and Khaleghi, M. Anomaly intrusion detection system ssing Gaussian mixture model. In Proc. of the 3rd International Conference on Convergence and Hybrid Information Technology (Tehran, November 11–13 2008), vol. 1, IEEE Computer Society, pp. 1162–1167.
+[28] Bahrololum, M., Salahi, E., and Khaleghi, M. Anomaly intrusion detection design using hybrid of unsupervised and supervised neural networks.  International Journal of Computer Networks & Communications (IJCNC) 1, 2 (July 2009), 26–33.
+[29] Bakar, Z., Mohemad, R., Ahmad, A., and Andderis, M. A comparative study for outlier detection techniques in data mining. In Proc. of the IEEE Conference on Cybernetics and Intelligent Systems (2006), pp. 1–6.
+[30] Balajinath, B., and Raghavan, S. V. Intrusion detection through learning behavior model.  Computer Communications 24, 12 (July 2001), 1202–1212.
+[31] Bandyopadhyay, S., Maulik, U., and Mukhopadhyay, A. Multiobjective genetic clustering for pixel classiﬁcation in remote sensing imagery. IEEE Transactions on Geoscience and Remote Sensing 45, 2 (2007), 1506–1511.
+[32] Bandyopadhyay, S., and Pal, S. K. Pixel classiﬁcation using variable string genetic algorithms with chromosomal diﬀerentiation. IEEE Transactions on Geoscience and Remote Sensing 39, 2 (2001), 303–308.
+[33] Banks, J. Principles of Quality Control. John Wiley & Sons, New York, USA, 1989.
+[34] Barbara, D., Couto, J., Jajodia, S., and Wu, N. Detecting novel network intrusions using Bayes estimators. In Proc. of the 1st SIAM International Conference on Data Mining (2001).
+[35] Barnett, V., and Lewis, T. Outliers in statistical data. John Wiley and Sons, 1994.
+[36] Barry, B. I. A., and Chan, H. A. A hybrid, stateful and crossprotocol intrusion detection system for converged applications. In Proc. of the OTM Confederated International Conference on the Move to Meaningful Internet Systems, Part II.
+[37] Bauer, E., and Kohavi, R. An empirical comparison of voting classiﬁcation algorithms: Bagging, boosting, and variants. Machine learning 36, 1 (1999), 105–139.
+[38] Bayes, T. An essay towards solving a problem in the doctrine of chances. Philosophical Transactions of the Royal Society of London 53, 6 (1763), 370–418.
+[39] Beckman, R. J., and Cook, R. D. Outliers. Technometrics 25, 2 (1983), 119–149.
+[40] Ben-Dor, A., Shamir, R., and Yakhini, Z. Clustering gene expression patterns.  Journal of Computational Biology 6, 3-4 (1999), 281–297.
+[41] Ben-Hur, A. Pyml-machine learning in python, 2009. Software available at http://pyml.sourceforge.net.
+[42] Beverly, R. A robust classiﬁer for passive tcp/ip ﬁngerprinting. in passive and active network measurement. 5th International Workshop.
+[43] Bezdek, J., and Pal, S. Fuzzy Models for Pattern Recognition, vol. 23. IEEE Press, New York, 1992.
+[44] Bhaskar, T., Kamath, B. N., and Moitra, S. D. A hybrid model for network security systems: Integrating intrusion detection system with survivability. International Journal of Network Security 7, 2 (2008), 249–260.
+[45] Bhuyan, M. H., Bhattacharyya, D. K., and Kalita, J. K. Surveying port scans and their detection methodologies.  The Computer Journal 54, 4 (April 2011), 1–17.
+[46] Bilmes, J. A gentle tutorial on the EM algorithm and its application to parameter estimation for Gaussian mixture and hidden Markov models. Tech. Rep. ICSI-TR-97-021, University of Berkeley, 1997.
+[47] Borah, B., and Bhattacharyya, D. K. A parallelization of density based clustering technique on distributed memory multicomputer. In ADCOM’04 (Ahmedabad, 2004), pp. 536–541.
+[48] Boriah, S., Chandola, V., and Kumar, V. Similarity measures for categorical data: A comparative evaluation. In Proc. of the 8th SIAM International Conference on Data Mining (2008), pp. 243–254.
+[49] Borji, A. Combining heterogeneous classiﬁers for network intrusion detection. In Proc. of the 12th Asian Computing Science Conference on Advances in Computer Science: Computer and Network Security (2007), Springer, pp. 254–260.
+[50] Bousquet, O., and Elisseeff, A. Algorithmic stability and generalization performance.  Advances in Neural Information Processing Systems 13 (2001), 196.
+[51] Breiman, L. Random forests. Machine Learning 45, 1 (2001), 5–32.
+[52] Breiman, L., Freidman, J. H., Olshen, R. A., and Stone, C. J. Classiﬁcation and Regression Trees. Chapman and Hall, 1984.
+[53] Breunig, M. M., Kriegel, H. P., Ng, R. T., and Sander, J. LOF: Identifying density-based local outliers. ACM SIGMOD 29, 2 (June 2000), 93–104.
+[54] Brin, S., Motwani, R., Ullman, J. D., and Tsur, S. Dynamic itemset counting and implication rules for market basket data. vol. 26, Proc. of ACM SIGMOD’97, pp. 255–268.
+[55] Broder, A. Z.  Some applications of Rabin’s ﬁngerprinting method. In Sequences II: Methods in Communications, Security, and Computer Science (1993), Springer Verlag, pp. 143–152.
+[56] Brown, G., Pocock, A., Zhao, M., and Luj´an, M. Conditional likelihood maximisation: A unifying framework for information theoretic feature selection. The Journal of Machine Learning Research 13 (2012), 27–66.
+[57] Burbeck, K., and Nadjm-Tehrani, S. ADWICE — Anomaly detection with real-time incremental clustering. In Proc. of Information Security and Cryptology —ICISC 2004 (Berlin, Germany, May 2005), vol. 3506/2005, Springer, pp. 407 424.
+[58] Cai, Z., Guan, X., Shao, P., Peng, Q., and Sun, G. A rough set theory based method for anomaly intrusion detection in computer network systems. Expert Systems 20, 5 (November 2003), 251–259.
+[59] Cannady, J. Applying CMAC-based On-line Learning to Intrusion Detection. In Proc. of the IEEE-INNS-ENNS International Joint Conference on Neural Networks (2000), vol. 5, pp. 405–410.
+[60] Casas, P., Mazel, J., and Owezarski, P.  UNADA: Unsupervised network anomaly detection using sub-space outliers ranking. In Proc. of the 10th Int’nl IFIP TC 6 Conference on Networking — Volume Part I (Networking’11) (Heidelberg, 2011), Springer Verlag Berlin, pp. 40–51.
+[61] Cha, S. H. Comprehensive survey on distance/similarity measures between probability density functions. International Journal of Mathematical Models and Methods in Applied Science 1, 4 (November 2007), 300–307.
+[62] Chan, P. K., Mahoney, M. V., and Arshad, M. H.  A machine learning approach to anomaly detection.  Tech. Rep. CS-2003-06, Department of Computer Science, Florida Institute of Technology, 2003.
+[63] Chandola, V., Banerjee, A., and Kumar, V.  Anomaly detection: A survey. ACM Computing Surveys 41, 3 (September 2009), 15:1–15:58.
+[64] Chatzigiannakis, V., Androulidakis, G., Pelechrinis, K., Papavassiliou, S., and Maglaris, V.  Data fusion algorithms for network anomaly detection: Classiﬁcation and evaluation. In Proc. of the 3rd Int’nl Conference on Networking and Services (Greece, 2007), IEEE CS, pp. 50–57.
+[65] Chebrolu, S., Abraham, A., and Thomas, J. P. Feature deduction and ensemble design of intrusion detection systems. Computers & Security 24, 4 (2005), 295–307.
+[66] Cheeseman, P., Kelly, J., Self, M., Stutz, J., Taylor, W., and Freeman, D.  AutoClass:  A Bayesian classiﬁcation system. In Proc. of the Fifth International Conference on Machine Learning (ML’88) (1988), vol. 27, Morgan Kaufmann, pp. 54–64.
+[67] Chen, R. C., Cheng, K. F., Chen, Y. H., and Hsieh, C. F. Using rough set and support vector machine for network intrusion detection system. In Proc. of the First Asian Conference on Intelligent Information and Database Systems (2009), IEEE Computer Society, pp. 465–470.
+[68] Chen, W. H., Hsu, S. H., and Shen, H. P. Application of SVM and ANN for intrusion detection. vol. 32, Computers & Operations Research, Elsevier, pp. 2617–2634.
+[69] Chen, Y., Hwang, K., and Ku., W.-S. Collaborative Detection of DDoS Attacks over Multiple Network Domains.  IEEE Transactions on Parallel Distrib. Syst. 18, 12 (December 2007), 1649–1662.
+[70] Chen, Y., Li, Y., Cheng, X., and Guo, L.  Survey and taxonomy of feature selection algorithms in intrusion detection system. In Information Security and Cryptology (2006), Springer, pp. 153–167.
+[71] Cheng, C., Fu, A. W., and Zhang, Y. Entropy based subspace clustering for mining numerical data. In SIGKDD’99 (New York, USA, 1999), vol. 3916, pp. 84–93.
+[72] Cheng, J. C., and Jin, D. S.  A new cell based clustering method for large, high dimensional data in data mining applications. In ACM Symposium on Applied Computing (New York, USA, 2002), ACM, pp. 503–507.
+[73] Chhabra, P., Scott, C., Kolaczyk, E. D., and Crovella,
+M. Distributed spatial anomaly detection. In Proc. of the 27th IEEE International Conference on Computer Communications (2008), pp. 1705–1713.
+[74] Chimphlee, W., Abdullah, A. H., Noor, M., Sap, M., Chimphlee, S., and Srinoy, S.  Unsupervised clustering methods for identifying rare events in anomaly detection.  In Proc. of World Academy of Science, Engineering and Technology (PWASET) (Stankin, Moscow, October 2005), vol. 8, WASET, pp. 253–258.
+[75] Chimphlee, W., Abdullah, A. H., Noor, M. S. M., Srinoy, S., and Chimphlee, S. Anomaly-based intrusion detection using fuzzy rough clustering. In Proc. of the International Conference on Hybrid Information Technology (Washington, DC, USA, 2006), vol. 01, IEEE Computer Society, pp. 329–334.
+[76] Chou, T. S., and Chou, T. N. Hybrid classiﬁer systems for intrusion detection. In Proc. of the 7th Annual Communication Networks and Services Research Conference (2009), IEEE CS, pp. 286–291.
+[77] Christodorescu, M., Jha, S., Seshia, S. A., Song, D., and Bryant, R. E. Semantics-aware malware detection. In Proc. of the 2005 IEEE Symposium on Security and Privacy (Washington, DC, USA, 2005), SP ’05, IEEE Computer Society, pp. 32–46.
+[78] Cisco.com. Cisco IOS NetFlow Conﬁguration Guide, Release 12.4. http://www.cisco.com, September, 2010.
+[79] Claise, B. RFC 3954: Cisco Systems NetFlow Services Export Version 9. http://www.ietf.org/rfc/rfc3954.txt, 2004.
+[80] Combs, G. Wireshark. http://www.wireshark.org/, 2009.
+[81] Compton, P., Preston, P., Edwards, G., and B, K. Knowledge based systems that have some idea of their limits. In Tenth Knowledge Acquisition for Knowledge Based Systems Workshop (1996).
+[82] Curk, T., Demar, J., Xu, Q., Leban, G., Petrovic, U., Bratko, I., Shaulsky, G., and Zupan, B. Microarray data mining with visual programming. Bioinformatics 21 (Feb. 2005), 396–398.
+[83] Daniel, B., Julia, C., Sushil, J., and Ningning, W. ADAM: A testbed for exploring the use of data mining in intrusion detection. ACM SIGMOD Record 30, 4 (2001), 15–24.
+[84] Danielle, L. Global information assurance certiﬁcation paper: Introduction to dsniﬀ. SANS Institute, USA.
+[85] Danke  Mixter.	 Attacks  tools  and  information. http://packetstormsecurity.nl/index.html, 2003.
+[86] Das, K., Schneider, J., and Neill, D. B.  Anomaly pattern detection in categorical datasets. In Proc. of the 14th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (USA, 2008), ACM, pp. 169–176.
+[87] Das, S. Filters, wrappers and a boosting-based hybrid methods for feature selection.  In Machine Learning— Int’nl Workshop (2001), Citeseer, pp. 74–81.
+[88] Dasgupta, D., and Majumdar, N. S.  Anomaly detection in multidimensional data using negative selection algorithm. In Proc. of the IEEE Conference on Evolutionary Computation (2002), IEEE, pp. 1039–1046.
+[89] Dash, M., and Liu, H.  Feature selection for classiﬁcation. Intelligent Data Analysis 1, 1-4 (1997), 131–156.
+[90] Dash, M., and Liu, H. Consistency-based search in feature selection. Artiﬁcial Intelligence 151, 1 (2003), 155–176.
+[91] Davies, D. L., and Bouldin, D. W.  A cluster separation measure. IEEE Transactions on Pattern Analysis and Machine 1, 2 (1979), 224–227.
+[92] de	 Argaez,	 E.	 Internet  world  stats, http://www.internetworldstats. com.
+[93] Debar, H., Dacier, M., and Wespi, A. Towards a taxonomy of intrusion-detection systems.  Computer Networks: Elsevier, pp. 805–822.
+[94] Dempster, A., Laird, N., and Rubin, D. Maximum likelihood from incomplete data via the EM algorithm. Journal of the Royal Statistical Society 39, 1 (1977), 1–38.
+[95] Dempster, A. P. Upper and lower probabilities induced by amultivalued mapping. Ann. Math. Stat. 38 (1967), 325–339.
+[96] Denning, D. E., and Neumann, P. G.  Requirements and model for IDES, a real-time intrusion detection system. Tech. Rep. 83F83-01-00, Computer Science Laboratory, SRI International, USA, 1985.
+[97] Dhilon, I. S., and Modha, D. S. A data clustering algorithm on distributed memory multi-processors. In SIGKDD’99 (San Diego, USA, 1999), vol. 3916.
+[98] Dickerson, J. E. Fuzzy network proﬁling for intrusion detection. In Proc. of the 19th International Conference of the North American Fuzzy Information Processing Society (Atlanta, July 2000), pp. 301–306.
+[99] Dietterich, T. G. An experimental comparison of three methods for constructing ensembles of decision trees: Bagging, boosting, and randomization. Machine Learning 40, 2 (2000), 139–157.
+[100] Ding, C., and Peng, H. Minimum redundancy feature selection from microarray gene expression data. Journal of Bioinformatics and Computational Biology 3, 2 (2005), 185–205.
+[101] Dokas, P., Ertoz, L., Lazarevic, A., Srivastava, J., and Tan, P. N. Data mining for network intrusion detection. In Proc. of the NSF Workshop on Next Generation Data Mining (November 2002).
+[102] Donnet, B., Gueye, B., and Kaafar, M. A. A survey onnetwork coordinates systems, design, and security. IEEE Communication Surveys & Tutorials 12, 4 (October 2010), 488–503.
+[103] Dorigo, M., Maniezzo, V., and Colorni, A. Positive feedback as a search strategy. Tech. rep., Departmento di Elettronica,Politecnico di Milano, Italy, 1992.
+[104] Dorigo, M., Maniezzo, V., and Colorni, A. Ant system:Optimization by a colony of cooperating agents. IEEE Transactions on Systems, Man and Cybernetics, Part B 26, 1 (1996),29–41.
+[105] Duboia, D., and Prade, H. Rough-fuzzy sets and fuzzy-rough sets. International Journal of General Systems 17 (1990), 191– 209.
+[106] Duffield, N. G., Haffner, P., Krishnamurthy, B., and Ringberg, H. Rule-based anomaly detection on IP ﬂows. InProc. of the 28th IEEE International Conference on Computer Communications, Joint Conference of the IEEE Computer and Communications Societies (Rio de Janeiro, Brazil, 2009), IEEE press, pp. 424–432.
+[107] Dunn, J. Well separated clusters and optimal fuzzy partitions. Journal of Cybernetics 4 (1974), 95–104.
+[108] Eaton, J., et al. Gnu Octave. Free Software Foundation, 1997.
+[109] Edgeworth, F. Y.  On discordant observations.  Philosophy Magazine 23, 5 (1887), 364–375.
+[110] Ertoz, L., Eilertson, E., Lazarevic, A., Tan, P., Kumar, V., and Srivastava, J. MINDS — Minnesota Intrusion Detection System, 2004.
+[111] Ertoz, L., Stainbach, M., and Kumar, V. Finding clusters of diﬀerent sizes, shapes and densities in noisy high dimensional data. In SIAM’03 (2003).
+[112] Eskin, E. Anomaly detection over noisy data using learned probability distributions.  In Proc. of the 7th Int’nl Conference on Machine Learning (2000), Morgan Kaufmann Publishers Inc., pp. 255–262.
+[113] Eskin, E., Stolfo, S. J., and Lee, W.  Modeling system call for intrusion detection using dynamic window sizes. In Proc. of DARPA Information Survivability Conference and Exposition (DISCEX II’01) (Anaheim, CA, 12 – 14 June 2001), vol. 1, IEEE Computer Society.
+[114] Ester, M., and Kriegel, H. A density-based algorithm for discovering clusters in large spatial databases with noise. In Proc. 2nd Int’nl Conf. on Knowledge Discovery and Data Mining, Portland (Portland, Aug. 1996), AAAI Press, pp. 226–231.
+[115] Ester, M., Kriegel, H. P., Sander, J., Wimmer, M., and Xu, X. An incremental clustering for mining in a data warehousing environment.  In Proc. of VLDB98 (New York, USA, 1998).
+[116] Estevez-Tapiador, J. M., Garca-Teodoro, P., and DazVerdejo, J. E. Stochastic protocol modeling for anomaly based network intrusion detection.  In Proc. of the 1st International Workshop on Information Assurance (2003), IEEE CS, pp. 3– 12.
+[117] Estevez-Tapiador,  J. M.,  Garcia-Teodoro,  P.,  and Diaz-Verdejo, J. E.  Anomaly detection methods in wired networks: A survey and taxonomy.  Computers & Security 27 (2004), 1569–1584.
+[118] Feng, C., Peng, J., Qiao, H., and Rozenblit, J. W. Alert fusion for a computer host based intrusion detection system. In Proc. of the 14th Annual IEEE International Conference and Workshops on the Engineering of Computer-Based Systems (USA, 2007), IEEE CS, pp. 433–440.
+[119] Fleuret, F. Fast binary feature selection with conditional mutual information. The Journal of Machine Learning Research 5 (2004), 1531–1555.
+[120] Folino, G., Pizzuti, C., and Spezzano, G. An ensemblebased evolutionary framework for coping with distributed intrusion detection.  Genetic Programming and Evolvable Machines 11, 2 (June 2010), 131–146.
+[121] Fred, A. L. N., and Jain, A.  Data clustering using evidence accumulation. In Proc of ICPR’02 (Washington, DC, USA, 2002), IEEE Press, pp. 276–280.
+[122] Freund, Y., and Schapire, R. E. Experiments with a new boosting algorithm. In Proc. of the 13th International Conference on Machine Learning (1996), pp. 325–332.
+[123] Friedman, J. Greedy function approximation: a gradient boosting machine (English summary). The Annals of Statistics 29, 5 (2001), 1189–1232.
+[124] Friedman, J. H., and Meulman, J. J. Clustering objects on subspace of attributes. Journal of the Royal Statistical Society 66 (2004), 815–849.
+[125] Fujimaki, R., Yairi, T., and Machida, K. An approach to spacecraft anomaly detection problem using kernel feature space. In Proc. of the 11th ACM SIGKDD International Conference on Knowledge Discovery in Data Mining (USA, 2005), ACM, pp. 401–410.
+[126] Gaddam, S. R., Phoha, V. V., and Balagani, K. S. KMeans+ID3: A novel method for supervised anomaly detection by cascading k-means clustering and ID3 decision tree learning methods. IEEE Transactions on Knowledge and Data Engineering 19, 3 (Mar 2007), 345–354.
+[127] Gan, G., Ma, C., and Wu, J.  Data Clustering – Theory, Algorithms and Applications. SIAM, 2007.
+[128] Ganti, V., Ramakrishnan, R., and Gehrke, J.  Clustering large datasets in arbitrary metric spaces. In Fifteenth Int’nl Conference on Data Engineering (1998), pp. 502–511.
+[129] Gao, H. H., Yang, H. H., and Wang, X. Y. Ant colony optimization based network intrusion feature selection and detection.  In Proc. of the International Conference on Machine Learning and Cybernetics (August 2005), vol. 6, pp. 3871–3875.
+[130] Gasser, T., Muller, H., and Mammitzsch, V. Kernels for non-parametric curve estimation. Journal of the Royal Statistical Society Series B (Methodological) (1985), 238–252.
+[131] Gelenbe, E.  Dealing with software viruses:  A biological paradigm. Information Security Technical Report 12(4) (2007), 242–250.
+[132] Geng, L., and Jia, H. A novel intrusion detection scheme for network-attached storage based on multisource information fusion. In Proc. of the International Conference on Computational Intelligence and Security (Washington, DC, USA, 2009), IEEE Computer Society, pp. 469–473.
+[133] Ghahramani, Z. An Introduction to hidden Markov models and Bayesian networks. International Journal of Pattern Recognition and Artiﬁcial Intelligence 15, 1 (2001), 9–42.
+[134] Ghoting, A., Otey, M. E., and Parthasarathy, S. Loaded: Link-based outlier and anomaly detection in evolving data sets. In Proc. of the 4th IEEE Int’nl Conference on Data Mining (Brighton, UK, Nov. 2004), IEEE Computer Society, pp. 387– 390.
+[135] Giacinto, G., Perdisci, R., Rio, M. D., and Roli, F. Intrusion detection in computer networks by a modular ensemble of one-class classiﬁers. Information Fusion 9, 1 (January 2008), 69–82.
+[136] Giacinto, G., Roli, F., and Didaci, L. Fusion of multiple classiﬁers for intrusion detection in computer networks. Pattern Recognition Letters 24, 12 (August 2003), 1795–1803.
+[137] Gilbert, E. Pioneer maps of health and disease in England. Geographical Journal 124 (1958), 172–183.
+[138] Gini, C. Variabilita e mutabilita. Journal of the Royal Statistical Society 76, 3 (February 1913), 326–327.
+[139] Gogoi,  P.,  Bhattacharyya,  D. K.,  Borah,  B.,  and Kalita, J. K. A survey of outlier detection methods in network anomaly identiﬁcation. The Computer Journal 54, 4 (2011), 570–588.
+[140] Gogoi, P., Bhuyan, M. H., Bhattacharyya, D. K., and Kalita, J. K. Packet and ﬂow based network intrusion dataset. In Proc. of the 5th Int’nl Conference on Contemporary Computing (IC3-2012) (August 6–8 2012), vol. 306 of CCIS, Springer, pp. 322–334.
+[141] Gogoi,  P.,  Borah,  B.,  and  Bhattacharyya,  D.  K. Anomaly detection analysis of intrusion data using supervised and unsupervised approach.  Journal of Convergence Information Technology 5, 1 (Feb. 2010), 95–110.
+[142] Gogoi, P., Borah, B., and Bhattacharyya, D. K. Network anomaly detection using unsupervised model. Int’nl Journal of Computer Applications (Special Issue on Network Security and Cryptography) NSC, 1 (Dec. 2011), 19–30.
+[143] Goil, S., Nagesh, H., and Choudhary, A. Maﬁa: Eﬃcient and scalable subspace clustering for very large data sets. Tech. rep., Northwestern University, 1999.
+[144] Golberg, D. E. Genetic Algorithms in Search, Optimization and Machine Learning. Addison-Wesley, New York, 1989.
+[145] G´omez, C. Engineering and Scientiﬁc Computing with SciLab. Birkhauser, 1999.
+[146] G´omez, J., Gil, C., Padilla, N., Ba˜nos, R., and Jim´enez, C. Design of a Snort based Hybrid Intrusion Detection System. In Proc of 10th Int’nl Work-Conference on Artiﬁcial Neural Networks: Part II: (2009), Springer, pp. 515–522.
+[147] Gong, W., Fu, W., and Cai, L.  A neural network basedintrusion detection data fusion model. In Proc. of the 3rd Int’nl Joint Conference on Computational Science and Optimization Volume 2 (USA, 2010), IEEE CS, pp. 410–414.
+[148] Guha, S., Rastogi, R., and Shim, K. Cure: An eﬃcient clustering algorithm for large databases. In SIGMOD 1998 (1998), vol. 27, ACM, pp. 73–84.
+[149] Guha, S., Rastogi, R., and Shim, K. Rock: A robust clustering algorithm for categorical attributes. In Int’nl Conference on Data Engineering (1999), pp. 512–521.
+[150] Guyon, I., and Elisseeff, A. An introduction to variable and feature selection. The Journal of Machine Learning Research 3 (2003), 1157–1182.
+[151] Guyon, I., Weston, J., Barnhill, S., and Vapnik, V. Gene selection for cancer classiﬁcation using support vector machines. Machine Learning 46, 1 (2002), 389–422.
+[152] Gwadera, R., Atallah, M. J., and Szpankowski, W. Detection of signiﬁcant sets of episodes in event sequences.  In Proc. of the 4th IEEE International Conference on Data Mining (Washington, DC, USA, 2004), IEEE Computer Society, pp. 3– 10.
+[153] Gwadera, R., Atallah, M. J., and Szpankowski, W. Reliable detection of episodes in event sequences. Knowledge and Information Systems 7, 4 (2005), 415–437.
+[154] Haag, P.  Nfdump & nfsen.  http://nfdump.sourceforge.net/, September, 2010.
+[155] Hall, M. A., and Smith, L. A. Feature subset selection: a correlation based ﬁlter approach. In Proc. of the International Conference on Neural Information Processing and Intelligent Information Systems (1997), Springer, pp. 855–858.
+[156] Han, J., and Kamber, M. Data Mining: Concepts and Techniques. Morgan Kaufmann Publishers, 2000.[157] Han, J., Pei, J., Yin, Y., and Mao, R.  Mining frequent patterns without candidate generation: A frequent-pattern tree approach. Data Mining and Knowledge Discovery, vol 8, pp. 53– 87.
+[158] Handl, J., and Knowles, J.  An evolutionary approach to multi-objective clustering. IEEE Transactions on Evolutionary Computing 11, 1 (2007), 56–76.
+[159] Handl, J., Knowles, J., and Kell, D. B. Computational cluster validation in post-genomic data analysis. Bioinformatics 21 (2005), 3201–3212.
+[160] Hanselman, D., and Littlefield, B. Mastering MATLAB 5: A Comprehensive Tutorial and Reference. Prentice Hall PTR, 1997.
+[161] Hansman, S., and Hunt, R.  A taxonomy of network and computer attacks. Computers & Security 24, 1 (September 2005), 31–43.
+[162] Hartigan, J. A., and Wong, M. A. Algorithm AS 136: A k-means clustering algorithm.  Applied Statistics 28, 1 (1979), 100–108.
+[163] Hawkins, D. Identiﬁcation of Outliers. Chapman and Hall, New York, 1980.
+[164] Hawkins, S., He, H., Williams, G., and Baxter, R. Outlier detection using replicator neural networks. In Proc. of the 4th Int’nl Conference on Data Warehousing and Knowledge Discovery (London, UK, Sep. 2002), Springer Verlag, pp. 170–180.
+[165] Haykin, S. Neural Networks. Prentice Hall, NJ, 1999.
+[166] Heckerman, D. A tutorial on learning with Bayesian networks. Tech. Rep. MSRTR-95-06, Microsoft Research, 1995.
+[167] Hinneburg, A., Er, H., and Keim, D. A. An eﬃcient approach to clustering in large multimedia databases with noise. In Proc. of Knowledge Discovery and Data Mining (1998), AAAI Press, pp. 58–65.
+[168] Hipp, J., Guntzer, U., and Nakhaeizadeh, G. Algorithms for association rule mining — A general survey and comparison. In Proc. of the ACM SIGKDD Int’nl Conference on Knowledge Discovery and Data Mining (Boston, MA, USA, 2000), ACM, pp. 58–64.
+[169] Hodge, V., and Austin, J.  A survey of outlier detection methodologies. Artiﬁcial Intellligence Review 22, 2 (2004), 85– 126.
+[170] Hofmeyr, S. A., Forrest, S., and Somayaji, A. Intrusion detection using sequences of system calls. Journal of Computer Security 6, 3 (1998), 151–180.
+[171] Holland, J. H. Adaptation in Natural and Artiﬁcial Systems. MIT Press, Cambridge, MA, 1975.
+[172] Holmes, G., Donkin, A., and Witten, I. Weka: A machine learning workbench.  In Intelligent Information Systems, 1994 (1994), IEEE, pp. 357–361.
+[173] Hong, S. Use of contextual information for feature ranking and discretization. IEEE Transactions on Knowledge and Data Engineering 9, 5 (1997), 718–730.
+[174] Houtsma, M., and Swami, A. Set oriented mining for association rules in relational databases. IEEE Conference on Data Engineering, pp. 25–34.
+[175] Hruschka, E. R., Campello, R. J., Freitas, A. A., and Carvalho, A. C. A survey of evolutionary algorithms for clustering. IEEE Transactions on Systems, Man and Cybernetics, Part C: Applications and Reviews 29 (1999), 433–439.
+[176] Hruschka, E. R., Campello, R. J., Freitas, A. A., and Carvalho, A. C. A survey of evolutionary algorithms for clustering. IEEE Transactions on Systems, Man and Cybernetics, Part C: Applications and Reviews 39, 2 (2009).
+[177] Hsu, C. W., Chang, C. C., and Lin, C. J.  A practical guide to support vector classiﬁcation. Tech. rep., University of Freiburg, July 2003.
+[178] Hu, Q., Yu, D., Liu, J., and Wu, C. Neighborhood rough set based heterogeneous feature subset selection.  Information Sciences 178, 18 (2008), 3577–3594.
+[179] Huang, Z. Clustering large data sets with mixed numeric and categorical values. In Proc. of the 1st Paciﬁc-Asia Conference on Knowledge Discovery and Data Mining (PAKDD) (1997), pp. 21– 34.
+[180] Hubert, L., and Schultz, J. Quadratic assignment as a general data-analysis strategy. British Journal of Mathematical and Statistical Psychology 29 (1976), 190–241.
+[181] Hung, S. S., and Liu, D. S. M. A user-oriented ontology-based approach for network intrusion detection. Computer Standards & Interfaces 30, 1–2 (January 2008), 78–88.
+[182] Ilgun, K., Kemmerer, R., and Porras, P.  State transition analysis: A rule-based intrusion detection approach. IEEE Transactions on Software Engineering 21, 3 (1995), 181–199.
+[183] Izetta, C., and Granitto, P. Feature selection with simple ANN ensembles. In XV Congreso Argentino de Ciencias de la Computaci´on (2009).
+[184] Jacobson, D. Introduction to Network Security. Chapman and Hall/CRC Press, 2011.
+[185] Jain, A. K., Murty, M. N., and Flynn, P. J. Data clustering: A review. ACM Computing Survey 31, 3 (1999), 264–323.
+[186] Januzaj, E., Kriegel, H. P., and Pfeifle, M.  Towards eﬀective and eﬃcient distributed clustering. In ICDM’03 (Melbourne, FL, 2003), pp. 49–58.
+[187] Jemili, F., Zaghdoud, M., and Ahmed, M. B.  A framework for an adaptive intrusion detection system using Bayesian network. IEEE, pp. 66–70.
+[188] Jensen, F. V.  Introduction to Bayesian Networks.  Springer Verlag, New York, USA, 1996.
+[189] Jiang, J., and Papavassiliou, S. Enhancing network traﬃc prediction and anomaly detection via statistical network traﬃc separation and combination strategies. Computer Communications 29, 10 (June 2006), 1627–1638.
+[190] Jiangab, F., Suia, Y., and Caoa, C. A rough set approach to outlier detection. International Journal of General Systems 37, 5 (Oct. 2008), 519–536.
+[191] Joshi, M. V., Agarwal, R. C., and Kumar, V.  Mining Needle in a Haystack: Classifying Rare Classes via Two-phase Rule Induction. In Proc. of the 7th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (2001), ACM, pp. 293–298.
+[192] Karypsis, G. and Han H. and Kumar V. Chameleon: A hierarchical clustering algorithm using dynamic modeling. IEEE Computer 32, 8 (1999), 68–75.
+[193] Kasarekar, V., and Ramamurthy, B. Distributed hybrid agent based intrusion detection and real time response system. In Proc. of the 1st International Conference on Broadband Networks (USA, 2004), IEEE CS, pp. 739–741.
+[194] Kaufman, L., and Rousseeuw, P. Clustering by Means of Medoids. Reports of the Faculty of Mathematics and Informatics. Delft University of Technology, 1987.
+[195] KDDcup99. Knowledge discovery in databases DARPA archive. http://www.kdd.ics.uci.edu/databases/kddcup99, 1999.
+[196] Khan, L., Awad, M., and Thuraisingham, B. A new intrusion detection system using support vector machines and hierarchical clustering. The VLDB Journal 16, 4 (October 2007), 507–521.
+[197] Khan, M. S. A. Rule based network intrusion detection using genetic algorithm. International Journal of Computer Applications 18, 8 (March 2011), 26–29.
+[198] Khanna, R., and Liu, H. Control theoretic approach to intrusion detection using a distributed hidden Markov model. IEEE Wireless Communications 15, 4 (August 2008), 24–33.
+[199] Khor, K.-C., Ting, C.-Y., and Amnuaisuk, S.-P. A feature selection approach for network intrusion detection. In Proc. on Information Management and Engineering, ICIME’09 (April 2009), pp. 133–137.
+[200] Kim, H., Rozovskii, B. L., and Tartakovsky, A. G. A nonparametric multi-chart CUSUM test for rapid detection of DoS attacks in computer networks. International Journal of Computing and Information Sciences 2, 3 (December 2004), 149–158.
+[201] Kira, K., and Rendell, L.  The feature selection problem: Traditional methods and a new algorithm. In Proc. of the National Conference on Artiﬁcial Intelligence (1992), John Wiley & Sons Ltd., pp. 129–129.
+[202] Knorr, E. M., and Ng, R. T. Algorithms for mining distancebased outliers in large datasets. In Proc. of the 24th Int. Conf.
+on Very Large Databases (New York, USA, Sep. 1998), Morgan Kaufmann, pp. 392–403.
+[203] Knorr, E. M., and Ng, R. T. Finding intentional knowledge of distance-based outliers. In Proc. of the 25th International Conference on Very Large Data Bases (Edinburgh, Scotland, UK, Sep. 1999), Morgan Kaufmann, pp. 211–222.
+[204] Kohavi, R., and John, G. Wrappers for feature subset selection. Artiﬁcial Intelligence 97, 1 (1997), 273–324.
+[205] Kohonen, T. Self-Organizing Maps. Springer, Berlin, 2000.
+[206] Koufakou, A., and Georgiopoulos, M. A fast outlier detection strategy for distributed high-dimensional data sets with mixed attributes. Data Mining and Knowledge Discovery 20, 2 (Mar. 2010), 259–289.
+[207] Kruegel, C., Mutz, D., Robertson, W., and Valeur, F. Bayesian event classiﬁcation for intrusion detection.  In Proc. of the 19th Annual Computer Security Applications Conference (2003).
+[208] Kuang, L. V.  DNIDS: A dependable network intrusion detection system using the CSI-KNN algorithm. Master’s thesis, Queen’s University, Kingston, Ontario, Canada, September 2007.
+[209] Kuhn, M. Building predictive models in R using the caret package. Journal of Statistical Software 28, 5 (2008), 1–26.
+[210] Kukielka, P., and Kotulski, Z. Adaptation of the neural network-based IDS to new attacks detection.  Computing Research Repository abs/1009.2406 (2010).
+[211] Kumar, V., Srivastava, J., and Lazarevic, A.  Managing Cyber Threats—Issues, Approaches and Challenges, vol. 5. Springer, June 7, 2006.
+[212] Kuncheva, L. Combining pattern classiﬁers: Methods and algorithms. IEEE Transactions on Neural Networks 18, 3 (2007), 964–964.
+[213] Kuncheva, L. I., and Rodriguez, J. J. Classiﬁer ensembles with a random linear oracle. IEEE Transactions on Knowledge and Data Engineering 19, 4 (April 2007), 500–508.
+[214] Kursa, M. B., and Rudnicki, W. R.  Feature selection with the boruta package. Journal of Statistical Software 36, 11 (September 2010), 1–13.
+[215] Labib, K., and Vemuri, R.  NSOM: A tool to detect DoS attacks using Self-Organizing Maps. Tech. rep., Department of Applied Science University of California, Davis, 2002.
+[216] Langley, P., Iba, W., and Thomas, K.  An analysis of Bayesian classiﬁers. In Proc. of the Tenth National Conference of Artiﬁcial Intelligence (1992), AAAI Press, pp. 223–228.
+[217] Lee, F.-Y., and Shieh, S.-P. Defending against spoofed DDoS attacks with path ﬁngerprint. Computers & Security 24 (2005), 571–586.
+[218] Lee, H., Chen, C., Chen, J., and Jou, Y. An eﬃcient fuzzy classiﬁer with feature selection based on fuzzy entropy.  IEEE Transactions on Systems, Man, and Cybernetics, Part B: Cybernetics 31, 3 (2001), 426–432.
+[219] Lee, I., and Estivil-Castro, V. Autoclust: Automatic clustering via boundary extraction for mining point dataset. In Proc. of the 5th Int’nl Conference on Geocomputation (2000), Citeseer.
+[220] Lee, S. C., and Heinbuch, D. V. Training a neural-network based intrusion detector to recognize novel attacks. IEEE Trans- actions on Systems, Man, and Cybernetics: Part A 31, 4 (2001), 294–299.
+[221] Lee, W., and Stolfo, S. J. Data mining approaches for intrusion detection. In Proc. of the 7th USENIX Security Symposium (USA, 1998), vol. 7, USENIX Association, pp. 79–94.
+[222] Lee, W., Stolfo, S. J., and Mok, K. W. A data mining framework for building intrusion detection models. In Proc. of the IEEE Symposium on Security and Privacy (Oakland, CA, USA, 1999), IEEE, pp. 120–132.
+[223] Lee, W., Stolfo, S. J., and Mok, K. W. Adaptive intrusion detection—a data mining approach. Artiﬁcial Intelligence Review 14 (2000), 533–567.
+[224] Leon, E., Nasraoui, O., and Gomez, J. Anomaly detection based on unsupervised niche clustering with application to network intrusion detection. IEEE Congress on Evolutionary Computation 1 (2004), 502–508.
+[225] Leung, K., and Leckie, C. Unsupervised anomaly detection in network intrusion detection using clusters. In Proc. of 28th Australasian Conference on Computer Science - Volume 38 (Newcastle, NSW, Australia, January/February 2005), Australian Computer Society, Inc., Darlinghurst, pp. 333 342.
+[226] Li, Y., and Fang, B. X. A lightweight online network anomalydetection scheme based on data mining methods.  In Proc. of the IEEE International Conference on Network Protocols (USA, 2007), IEEE CS, pp. 340–341.
+[227] Li, Y.-Z., Zhao, B., Xu, J., and Yang, G. Anomaly intrusion detection method based on rough set theory. In Proc. of the International Conference on Wavelet Analysis and Pattern Recognition (Hong Kong, August 30–31 2008), IEEE Computer Society.
+[228] Lindqvist, U., and Jonsson, E. How to systematically classify computer security intrusions. IEEE Security and Privacy (1997), 154–163.
+[229] Lippmann, R. P., and Cunningham, R. K. Improving intrusion detection performance using keyword selection and neural networks. MIT Lincoln Laboratory, Rm S4-121.
+[230] Lippmann, R. P., Fried, D. J., Graf, I., Haines, J., Kendall, K., McClung, D., Weber, D., Wyschogord, S. W. D., Cunningham, R. K., and Zissman, M. A. Evaluating intrusion detection systems: The 1998 DARPA oﬄine intrusion detection evaluation. In Proc. of the DARPA Information Survivability Conference and Exposition (January 2000), pp. 12–26.
+[231] Liu, G., Yi, Z., and Yang, S. A hierarchical intrusion detection model based on the PCA neural networks. Neurocomputing 70, 7-9 (2007), 1561–1568.
+[232] Liu, H., and Setiono, R.  Feature selection via discretization. IEEE Transactions on Knowledge and Data Engineering 9, 4 (1997), 642–645.
+[233] Liu, H., Setiono, R., et al. A probabilistic approach to feature selection — A ﬁlter solution. In Machine Learning —Int’nl Workshop (1996), Citeseer, pp. 319–327.
+[234] Liu, H., and Yu, L. Toward integrating feature selection algorithms for classiﬁcation and clustering. IEEE Transactions on Knowledge and Data Engineering 17, 4 (2005), 491–502.
+[235] Locasto, M. E., Wang, K., Keromytis, A. D., and Stolfo, S. J. FLIPS: Hybrid adaptive intrusion prevention. In Recent Advances in Intrusion Detection, Lecture Notes in Computer Science (2006), vol. 3858, Springer, pp. 82 101.
+[236] Lu, W., and Ghorbani, A. A. Network anomaly detection based on wavelet analysis. EURASIP Journal on Advances in Signal Processing 2009, 837601 (January 2009).
+[237] Lu, W., and Tong, H.  Detecting network anomalies using CUSUM and EM clustering. In Proc. of the 4th International Symposium on Advances in Computation and Intelligence (2009), Springer, pp. 297–308.
+[238] Ma, J., and Perkings, S. Online novelty detection on temporal sequences. In Proc. of the 9th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (2003), ACM, pp. 613–618.
+[239] Ma, J., and Perkings, S. Time-series novelty detection using one-class support vector machines. In Proc. of the International Joint Conference on Neural Networks (2003), vol. 3, pp. 1741– 1745.
+[240] Mabu, S., Chen, C., Lu, N., Shimada, K., and Hirasawa, K. An intrusion-detection model based on fuzzy classassociation-rule mining using genetic network programming. IEEE Transactions on Systems, Man, and Cybernetics, Part C: Applications and Reviews 41, 1 (2011), 130–139.
+[241] Mahoney, M. V., and Chan, P. K. Learning non-stationary models of normal network traﬃc for detecting novel attacks. In Proc. of the 8th ACM SIGKDD Int’nl Conference on Knowledge Discovery and Data Mining (2002), ACM Press, pp. 376–385.
+[242] Mahoney, M. V., and Chan, P. K.  Learning rules for anomaly detection of hostile network traﬃc. In Proc. of the 3rd IEEE International Conference on Data Mining (Washington, DC, 2003), IEEE CS.
+[243] Manikopoulos, C., and Papavassiliou, S. Network intrusion and fault detection: A statistical anomaly approach. IEEE Communications Magazine 40, 10 (October 2002), 76–82.
+[244] Mannila, H. Methods and problems in data mining. Proc. of the Int’nl Conference on Database Theory, pp. 41–55.
+[245] Marinova-Boncheva, V. A short survey of intrusion detection systems. Problems of Engineering Cybernetics and Robotics, Institute of Information Technologies, 1113 Soﬁa 58 (2007), 23–30.
+[246] Massicotte, F., Couture, M., Briand, L., and Labiche, Y. Context-based intrusion detection using Snort, Nessus and Bugtraq databases. In Proc. of the Third Annual Conference on Privacy, Security and Trust (2005), New Brunswick, Canada, pp. 1–12.
+[247] Maulik, U., and Bandyopadhyay, S. Fuzzy partitioning using real-coded variable-length genetic algorithm for pixel classiﬁcation. IEEE Transactions on Geoscience and Remote Sensing 41, 5 (2003), 1075–1081.
+[248] Maxion, R. A., and Roberts, R. R.  Proper use of ROC curves in intrusion/anomaly detection. Tech. Rep. CS-TR-871, School of Computing Science, University of Newcastle upon Tyne, November 2004.
+[249] Meyer, P., Schretter, C., and Bontempi, G. Informationtheoretic feature selection in microarray data using variable complementarity. IEEE Journal of Selected Topics in Signal Processing 2, 3 (2008), 261–274.
+[250] Mi, A., and Hai, L.  A clustering-based classiﬁer selection method for network intrusion detection. In Proc. of the 5th International Conference on Computer Science & Education (Hefei, China, August 2010), IEEE, pp. 1001–1004. 
+[251] Mierswa, I., Wurst, M., Klinkenberg, R., Scholz, M.,
+and Euler, T. Yale: Rapid prototyping for complex data mining tasks.  In Proc. of the 12th ACM SIGKDD Int’nl Conference on Knowledge Discovery and Data Mining (2006), ACM, pp. 935–940.
+[252] Mirkovic, J., and Reiher, P. A taxonomy of DDoS attack and DDoS defense mechanisms. vol. 34, ACM SIGCOMM Computer Communication Review, pp. 39–53.
+[253] Mirkovic, J., and Reiher, P. D-ward: A source-end defense against ﬂooding denial-of-service attacks. IEEE Transactions Dependable and Secure Computing 2, 3 (July 2005), 216–232.
+[254] MIT Lincoln Lab., I. S. T. G. The 1998 intrusion detection oﬀ-line evaluation plan, Mar. 1998.
+[255] Mitchell, T. M. Machine Learning. McGraw-Hill, Inc., New York, USA, 1997.
+[256] Mitra, P., and Majumder, D. D. Feature selection and gene clustering from gene expression data. In Proc. of the 17th Int’nl Conference on Pattern Recognition (ICPR’04), Volume 2 (Washington, DC, 2004), IEEE Computer Society, pp. 343–346.
+[257] Mitra, P., Murthy, C., and Pal, S. Unsupervised feature selection using feature similarity. IEEE Transactions on Pattern Analysis and Machine Intelligence 24, 3 (2002), 301–312.
+[258] Mohajerani, M., Moeini, A., and Kianie, M. NFIDS: A Neuro-Fuzzy Intrusion Detection System. In Proc. of the 10th IEEE International Conference on Electronics, Circuits and Systems (December 2003), vol. 1, pp. 348–351.
+[259] Mohammad, E., and Zaine, O. R.  Inverted matrix: Eﬃcient discovery of frequent items in large datsets in the context of interactive mining. vol. 26, Proc. of the ACM SIGKDD’03, pp. 255–268.
+[260] Molina, L., Belanche, L., and Nebot, `A. Feature selection algorithms: A survey and experimental evaluation. In IEEE International Conference on Data Mining (2002), IEEE CS Press, pp. 306–313.
+[261] Montgomery, D. C. Introduction to Statistical Quality Control. John Wiley & Sons, New York, USA, 2000.
+[262] Morin, B., M´e, L., Debar, H., and Ducass´e, M. A logicbased model to support alert correlation in intrusion detection. Information Fusion 10, 4 (October 2009), 285–299.
+[263] Muda, Z., Yassin, W., Sulaiman, M. N., and Udzir, N. I. A K-means and naive Bayes learning approach for better intrusion detection. Information Technology Journal 10 (2011), 648–655.
+[264] Munson, A., and Caruana, R. Cluster ensembles for network anomaly detection.  Tech. Rep. 2006-2047, Cornell University, September 2006.
+[265] Nadaraya, E. On estimating regression. Theory of Probability & Its Applications 9, 1 (1964), 141–142.
+[266] Naldurg, P., Sen, K., and Thati, P. A temporal logic based framework for intrusion detection.  In Proc. of the 24th IFIP WG 6.1 International Conference on Formal Techniques for Networked and Distributed Systems (2004), pp. 359–376
+[267] Neumann, P. G., and Parker, D. B. A summary of computer misuse techniques. In Proc. of the 12th National Computer Security Conference (Baltimore, MD, 1989), pp. 396–407.
+[268] Nguyen, H. H., Harbi, N., and Darmont, J.  An eﬃcient local region and clustering-based ensemble system for intrusion detection. In Proc. of the 15th Symposium on International Database Engineering & Applications (USA, 2011), ACM, pp. 185–191.
+[269] Ning, P., and Jajodia, S. Intrusion Detection Techniques. H Bidgoli (Ed.), The Internet Encyclopedia, 2003.
+[270] Noel, S., Wijesekera, D., and Youman, C. Modern intrusion detection, data mining, and degrees of attack guilt. In Proc. of the International Conference on Applications of Data Mining in Computer Security (2002), Springer.
+[271] Norton, D. An ettercap primer. SANS Institute InfoSec Reading Room.
+[272] Noto, K., Brodley, C., and Slonim, D. Anomaly detection using an ensemble of feature models. In Proc. of the IEEE International Conference on Data Mining (USA, 2010), IEEE CS, pp. 953–958.
+[273] NSL-KDD. NSL-KDD data set for network-based intrusion detection systems. http://iscx.cs.unb.ca/NSL-KDD/, March 2009.
+[274] Otey, M. E., Ghoting, A., and Parthasarathy, S. Fast distributed outlier detection in mixed-attribute data sets. Data Mining and Knowledge Discovery 12, 2-3 (2006), 203–228.
+[275] Otey, M. E., Parthasarathy, S., and Ghoting, A. Fast lightweight outlier detection in mixed-attribute data. In ACM SIGKDD Workshop on Data Mining Methods for Anomaly Detection (2005).
+[276] Owezarski, P., Mazel, J., and Labit, Y. 0 day anomaly detection made possible thanks to machine learning.  In Wired/Wireless Internet Communications, vol. 6074 of LNCS. Springer, 2010, pp. 327–338.
+[277] Papadopoulos,  C.,  Tartakovsky,  A.  G.,  and  Polunchenko, A. S. A hybrid approach to eﬃcient detection of distributed denial-of-service attacks. Tech. rep., Department of Computer Science, Colorado State University, June, 2008.
+[278] Parikh, D., and Chen, T. Data fusion and cost minimization for intrusion detection. IEEE Transactions on Information Forensics and Security 3, 3 (2008), 381–389.
+[279] Park, J., and Sandberg, J. W. Universal approximation using radial basis functions network. Neural Computation 3 (1991), 246–257.
+[280] Park, J. S., Chen, M. S., and Yu, P. S. An eﬃcient hash based algorithm for mining association rules. ACM SIGMOD’95, pp. 175–186.
+[281] Parlos, A., Chong, K., and Atiya, A. Application of the
+recurrent multilayer perceptron in modeling complex process dynamics.  IEEE Transactions on Neural Networks 5, 2 (1994), 255–266.
+[282] Paschalidis, I. C., and Chen, Y. Statistical anomaly detection with sensor networks. ACM Transactions on Sensor Networks 7, 2 (August 2010), 17–23.
+[283] Patcha, A., and Park, J.-M. Detecting denial-of-service attacks with incomplete audit data. In Proc. of the 14th Int’nl Conference on Computer Communications and Networks (ICCCN 2005) (October 2005), IEEE Computer Society, pp. 263–268.
+[284] Patcha, A., and Park, J. M. An overview of anomaly detection techniques: Existing solutions and latest technological trends. Computer Networks 51, 12 (2007), 3448–3470.
+[285] Pawlak, Z.  Rough sets.  In Proc. of the ACM 23rd Annual Conference on Computer Science (1995), ACM, pp. 262–264.
+[286] Pawlak, Z. Rough set approach to knowledge-based decision support. European Journal of Operational Research 99, 1 (1997), 48–57.
+[287] Pawlak, Z., Grzymala-Busse, J., and Ziarko, W. Rough sets. Communications of the ACM 38, 11 (November 1995), 88– 95.
+[288] Paxson, V. Bro: A system for detecting network intruders in real-time. Computer networks 31, 23 (1999), 2435–2463.
+[289] Peddabachigari,  S.,  Abraham,  A.,  Grosan,  C.,  and Thomas, J. Modeling intrusion detection system using hybrid intelligent systems. Journal of Network and Computer Applications 30, 1 (January 2007), 114–132.
+[290] Peng, H., Long, F., and Ding, C. Feature selection based on mutual information criteria of max-dependency, max-relevance, and min-redundancy.  IEEE Transactions on Pattern Analysis and Machine Intelligence 27, 8 (2005), 1226–1238.
+[291] Peng, T., Leckie, C., and Ramamohanarao, K.  Survey of network-based defense mechanisms countering the DoS and DDoS problems. ACM Computing Surveys 39, 1 (April 2007), 1–42.
+[292] Perdisci, R., Ariu, D., Fogla, P., Giacinto, G., and Lee, W. McPAD: A multiple classiﬁer system for accurate payloadbased anomaly detection. Computer Networks 53, 6 (April 2009), 864–881.
+[293] Perdisci, R., Gu, G., and Lee, W. Using an ensemble of oneclass SVM classiﬁers to harden payload-based anomaly detection systems. In Proc. of the 6th International Conference on Data Mining (USA, 2006), IEEE CS, pp. 488–498.
+[294] Petrovskiy, M. I. Outlier detection algorithms in data mining systems. Programming and Computer Software 29, 4 (2003), 228– 237.
+[295] Polikar, R. Ensemble based systems in decision making. IEEE Circuits System Magazine 6, 3 (2006), 21–45.
+[296] Porras, P. A., and Neumann, P. G.  EMERALD: Event monitoring enabling response to anomalous live disturbances. In Proc. of the 20th National Information Systems Security Conference (1997), pp. 353–365.
+[297] Portnoy, L., Eskin, E., and Stolfo, S. J. Intrusion detection with unlabeled data using clustering. In Proc. of ACM Workshop on Data Mining Applied to Security (2001).
+[298] Pras, A., Sperotto, A., Moura, G. C. M., Drago, I., Barbosa, R., Sadre, R., Schmidt, R., and Hofstede, R. Attacks by anonymous? wikileaks proponents not anonymous. Design and Analysis of Communication Systems Group (DACS) CTIT Technical Report, pp. 1–10.
+[299] Prayote, A. Knowledge Based Anomaly Detection. PhD thesis, School of Computer Science and Egineering, University of New South Wales, November 2007.
+[300] Priestley, M., and Chao, M. Non-parametric function ﬁtting. Journal of the Royal Statistical Society. Series B (Methodological) (1972), 385–392.
+[301] Procopiue, C. M., Jones, M., Agarwal, P. K., and Murali, T. M. A Monte Carlo algorithm for fast projective clustering.  In ACM SIGMOD’02 (New York, USA, 2002), ACM, pp. 418–427.
+[302] Provost, F. J., and Fawcett, T. Robust classiﬁcation for imprecise environments.  Machine Learning 42, 3 (2001), 203– 231.
+[303] Puuronen, S., Tsymbal, A., and Skrypnyk, I. Correlationbased and contextual merit-based ensemble feature selection. Advances in Intelligent Data Analysis (2001), 135–144.
+[304] Quinlan, J. R. C4. 5: Programs for Machine Learning, vol. 1. Morgan Kaufmann, 1993.
+[305] Quittek, J., Zseby, T., Claise, B., and Zender, S. RFC 3917: Requirements for IP Flow Information Export: IPFIX, Hawthorn Victoria. http://www.ietf.org/rfc/rfc3917.txt, 2004.
+[306] R Development Core Team. R: A Language and Environment for Statistical Computing.  R Foundation for Statistical Computing, Vienna, Austria, 2012.
+[307] Rabin, M. Fingerprinting by Random Polynomials. TR // Center for Research in Computing Technology, Harvard University. 1981.
+[308] Ramaswamy, S., Rastogi, R., and Shim, K.  Eﬀcient algorithms for mining outliers from large data sets.  In Proc. of the ACM SIGMOD International Conference on Management of Data (2000), ACM, pp. 427–438.
+[309] Ranjan, S., Swaminathan, R., Uysal, M., and Knightly, E.  DDoS-resilient scheduling to counter application layer attacks under imperfect detection. Proc. of IEEE INFOCOM, 2006, Barcelona, Spain, pp. 1–13
+[310] Rauber, T. TOOLDIAG Pattern Recognition Toolbox.
+[311] Reynolds, D. A., Quatieri, T. F., and Dunn, R. B. Speaker veriﬁcation using adapted Gaussian mixture models. Digital Signal Processing 10, 1-3 (2000), 19–41.
+[312] Roesch, M. Snort — Lightweight intrusion detection for networks. In Proc. of the 13th USENIX Conference on System Administration (Washington, DC, 1999), pp. 229–238.
+[313] Rokach, L. Ensemble-based classiﬁers. Artiﬁcial Intelligence Review 33, 1-2 (February 2010), 1–39.
+[314] Romanski,  P.,  and  Romanski,  M.  Package fselector. http://cran.r-project.org/web/packages/FSelector/ (2009).
+[315] Rosenblatt, F.  Two theorems of statistical separability in the perceptron. In Proc. of the Symposium of Mechanization of Thought Processes (HM Stationary Oﬃce, London, 1959), National Physical Laboratory, pp. 421–456.
+[316] Rousseeuw, P. J. Silhouettes: A graphical aid to the interpretation and validation of cluster analysis. Journal of Computational and Applied Mathematics 20, 1 (1987), 53–65.
+[317] Rousseeuw, P. J., and Leroy, A. M. Robust Regression and Outlier Detection. John Wiley & Sons, 1987.
+[318] Saeys, Y., Inza, I., and Larra˜naga, P. A review of feature selection techniques in bioinformatics. Bioinformatics 23,
+19 (2007), 2507–2517.
+[319] Sander, J., Ester, M., Kriegel, H. P., and Xu, X. Density based clustering in spatial databases: The algorithm gdbscan and its applications. Data Mining and Knowledge Discovery 2, 2 (1998), 169–194.
+[320] Sanner, M., et al. Python: a programming language for software integration and development. Journal of Molecular Graph Model 17, 1 (1999), 57–61.
+[321] Sarkar, M., and Yegnanarayana, B.  Fuzzy-rough membership functions.  In Proc. of the IEEE Int’nl Conference on Systems, Man and Cybernetics (San Diego, CA, USA, October 1998), vol. 2, pp. 2028–2033.
+[322] Satten,  C.	 Lossless  gigabit  remote  packet  capture with Linux.  University of Washington Network Systems, http://staﬀ.washington.edu/corey/gulp/, March, 2008.
+[323] Savesere, A., Omiecinski, E., and Navathe, S. An eﬀective algorithm for mining asociation rules in large database. In Proc. of Int’nl Conference on VLDB95 (1995), pp. 432–443.
+[324] Schapire, R. E. A brief introduction to boosting. In Proc. of the 16th International Joint Conference on Artiﬁcial Intelligence (Morgan Kaufmann, 1999), pp. 1401–1406.
+[325] Scheirer, W., and Chuah, M. C. Syntax vs. semantics: Competing approaches to dynamic network intrusion detection. Int’nl Journal Security and Networks 3, 1 (December 2008), 24–35.
+[326] Schiffman, M. D. Libnet 101, part 1: The primer. In Guardent security digital infrastructure (2000).
+[327] Sekar, R., Guang, Y., Verma, S., and Shanbhag, T. A high-performance network intrusion detection system. In Proc. of the 6th ACM Conference on Computer and Communications Security (USA, 1999), ACM, pp. 8–17.
+[328] Sekar, R., Gupta, A., Frullo, J., Shanbhag, T., Tiwari, A., and Yang, H. Speciﬁcation-based anomaly detection: A new approach for detecting network intrusions. In Proc. of the 9th ACM Conference on Computer and Communications Security (2002), pp. 265–274.
+[329] Sekar,  V.,  Duffield,  N.,  Spatscheck,  O.,  van der Merwe, J., and Zhang, H.  LADS: Large-scale automated DDoS detection system. In Proc. of the Annual Conference on USENIX, 2006 (Berkeley, CA), USENIX Association, pp. 16–16.
+[330] Selim, S., Hashem, M., and Nazmy, T. M. Hybrid multi-level intrusion detection system. International Journal of Computer Science and Information Security 9, 5 (2011), 23–29.
+[331] Sequeira, K., and Zaki, M. ADMIT: Anomaly-based data mining for intrusions.  In Proc. of the Eighth ACM SIGKDD Int’nl Conference on Knowledge Discovery and Data Mining(New York, NY, USA, 2002), ACM, pp. 386–395.
+[332] Setiono, R., and Liu, H.  Neural-network feature selector. IEEE Transactions on Neural Networks 8, 3 (1997), 654–662.
+[333] Shabtai, A., Kanonov, U., and Elovici, Y. Intrusion detection for mobile devices using the knowledge-based, temporal abstraction method. Journal of System Software 83, 8 (August 2010), 1524–1537.
+[334] Shafer, G. A Mathematical Theory of Evidence.  Princeton University Press, Princeton, NJ, 1976.
+[335] Shah, S. An introduction to HTTP ﬁngerprinting. http://netsquare.com/httprint/httprint paper.html, 2004.
+[336] Sharan, R., and Shamir, R. Click: A clustering algorithm with applications to gene expression analysis. In Proc. of Intelligent System for Molecular Biology (2000), AAAI Press, pp. 307– 316.
+[337] Sharkey, A. Combining Artiﬁcial Neural Nets: Ensemble and Modular Multi-net Systems. Springer Verlag, New York, 1999.
+[338] Shawn Ostermann.  Tcptrace.  Ohio University, Athens, http://www.tcptrace.org, 2009.
+[339] Sheikholeslami,  G.,  Chatterjee,  S.,  and Zhang,  A. Wavecluster:  A multi-resolution clustering approach for very large spatial database. In Proc. of the int’nl conference on Very Large Data Bases (Seattle, 1998), ACM, pp. 428–439.
+[340] Shifflet, J.  A technique independent fusion model for network intrusion detection. In Proc. of the Midstates Conference on Undergraduate Research in Computer Science and Mathematics (2005), vol. 3, pp. 13–19.
+[341] Shipley, G.  ISS RealSecure pushes past newer IDS players. Network Computing 10, 10 (1999), 95–111.
+[342] Shon, T., Han, K., Park, J., and Chang, H. A novel approach to detect network attacks using G-HMM-based temporal relations between internet protocol packets. EURASIP Journal on Wireless Communications and Networking (2011), 1–14.
+[343] Shon, T., and Moon, J. A hybrid machine learning approach to network anomaly detection. Information Science 177 (2007), 3799–3821.
+[344] Snyder, D. Online intrusion detection using sequences of system calls. Master’s thesis, Department of Computer Science, Florida State University, 2001.
+[345] Sommer, R., and Paxson, V. Outside the closed world: On using machine learning for network intrusion detection. In Proc. of the IEEE Symposium on Security and Privacy (2010), pp. 305– 316.
+[346] Song, S., Ling, L., and Manikopoulo, C. N. Flow-based statistical aggregation schemes for network anomaly detection. In Proc. of the IEEE International Conference on Networking, Sensing (2006), pp. 786–791.
+[347] Song, X., Wu, M., Jermaine, C., and Ranka, S. Conditional anomaly detection. IEEE Transactions on Knowledge and Data Engineering 19, 5 (2007), 631–645.
+[348] Sorensen, S. Competitive Overview of Statistical Anomaly Detection. Juniper Networks, USA, 2004.
+[349] Soule, A., Salamatian, K., and Taft, N. Combining ﬁltering and statistical methods for anomaly detection. In Proc. of the 5th ACM SIGCOMM Conference on Internet Measurement (USA, 2005), ACM, pp. 1–14.
+[350] Sperotto, A., Schaffrath, G., Sadre, R., Morariu, C., Pras, A., and Stiller, B. An overview of IP ﬂow-based intrusion detection. IEEE Communications Surveys & Tutorials 12, 3 (2010), 343–356.
+[351] Srikant, R. Fast algorithms for mining association rules and sequential patterns. PhD thesis, University of Wisconsin, 1996.
+[352] Srikant, R., and Agrawala, R.  Mining generalized association rules.  In Proc. of the 21st VLDB Conference, Zurich, Switzerland (1995), pp. 407–419.
+[353] Stallings, W. Data and Computer Communication, eighth ed. Pearson Prentice Hall, 2007.
+[354] Stibor, T., Timmis, J., and Eckert, C. A comparative study of real-valued negative selection to statistical anomaly detection techniques. In Proc. of the 4th International Conference on Artiﬁcial Immune Systems (2005), vol. LNCS-3627, pp. 262–275.
+[355] Storlokken, R. Labelling clusters in an anomaly based IDS by means of clustering quality indexes. Master’s thesis, Faculty of Computer Science and Media Technology, Gjovik University College, Norway, 2007.
+[356] Stouffer, K. A., Falco, J. A., and Scarfone, K. A. Guide to industrial control systems (ICS) security. Tech. Rep. SP 80082, National Institute of Standards & Technology, Gaithersburg, MD, United States, 2011.
+[357] Strehl, A., and Ghosh, J. Cluster ensembles — A knowledge reuse framework for combining multiple partitions , journal = Journal of Machine Learning Research, volume = 3, number = , month = , year = 2003, pages = 583–617, doi = , publisher = , address = ,.
+[358] Subramoniam,  N.,  Pawar,  P.  S.,  Bhatnagar,  M., Khedekar, N. S., Guntupalli, S., Satyanarayana, N., Vijayakumar, V. A., Ampatt, P. K., Ranjan, R., and Pandit, P. S. Development of a comprehensive intrusion detection system — Challenges and approaches. In Proc. of the 1st International Conference on Information Systems Security (Kolkata, India, 2005), pp. 332–335.
+[359] Sugumaran, V., Muralidharan, V., and Ramachandran, K. Feature selection using decision tree and classiﬁcation throughproximal support vector machine for fault diagnostics of roller bearing. Mechanical Systems and Signal Processing 21, 2 (2007), 930–942.
+[360] Sun, J., Yang, H., Tian, J., and Wu, F. Intrusion detection method based on wavelet neural network. In Proc. of the 2nd International Workshop on Knowledge Discovery and Data Mining (USA, 2009), IEEE CS, pp. 851–854.
+[361] Sutton, S., and Barto, A. G. Reinforcement Learning: An Introduction. The MIT Press, USA, 2011.
+[362] Tajbakhsh, A., Rahmati, M., and Mirzaei, A. Intrusion detection using fuzzy association rules. Applied Soft Computing 9, 2 (March 2009), 462–469.
+[363] Tan, P. N., Steinbach, M., and Kumar, V. Introduction to Data Mining. Addison-Wesley, 2005.
+[364] Tanenbaum, A. S.  Computer Networks, fourth ed.  Pearson Prentice Hall, 2003.
+[365] Tapiador, J. M. E., Teodoro, P. G., and Diaz-Verdejo, J. E. Detection of web-based attacks through Markovian protocol parsing. In Proc. of the 10th IEEE Symposium on Computers and Communications (USA, June 2005), IEEE CS, pp. 457–462.
+[366] Theiler, J., and Cai, D. M. Resampling approach for anomaly detection in multispectral images.  In Proc. of SPIE (2003), vol. 5093, SPIE, pp. 230–240.
+[367] Thottan, M., and Ji, C. Anomaly detection in IP networks. IEEE Transactions on Signal Processing 51, 8 (August 2003), 2191–2204.
+[368] Tomida, S., Hanai, T., Honda, H., and Kobayashi, T. Analysis of expression proﬁle using fuzzy adaptive resonance theory. Bioinformatics 18, 8 (2002), 1073–1083.
+[369] Tong, H., Li, C., He, J., Chen, J., Tran, Q. A., Duan, H. X., and Li, X. Anomaly Internet Network Traﬃc Detection by Kernel Principle Component Classiﬁer. In Proc. of the 2nd International Symposium on Neural Networks (2005), vol. LNCS. 3498, pp. 476–481.
+[370] Tong, X., Wang, Z., and Yu, H. A research using hybrid RBF/Elman neural networks for intrusion detection system secure model. Computer Physics Communications 180, 10 (2009), 1795–1801.
+[371] Trier, O. D., Jain, A., and Taxt, T.  Feature extraction methods for character recognition — A survey. Pattern Recognition 29, 4 (1996), 641–662.
+[372] Tuv, E., Borisov, A., and Torkkola, K.  Feature selection using ensemble based ranking against artiﬁcial contrasts. In IJCNN’06, International Joint Conference on Neural Networks (2006), IEEE, pp. 2181–2186.
+[373] Valdes, A., and Skinner, K. Adaptive model-based monitoring for cyber attack detection. In Proc. of the Recent Advances in Intrusion Detection (Toulouse, France, 2000), pp. 80–92.
+[374] Vanderlooy, S. MATLAB toolbox for machine learning. Tech. Rep. MICC 08-03, Universiteit Maastricht, 2008.
+[375] Vapnik, V. N.  The Nature of Statistical Learning Theory. Springer Verlag, New York, USA, 1995.
+[376] Visconti, A., and Tahayori, H. Artiﬁcial immune system based on interval type-2 fuzzy set paradigm. Applied Soft Computing 11, 6 (September 2011), 4055–4063.
+[377] Viswanath, P., and Babu, V. S. A fast hybrid density based clustering method for large datasets. Pattern Recognition Letters 30 (2009), 1477–1488.
+[378] Wang, K., and Stolfo, S. J. Anomalous payload-based network intrusion detection.  In Proc. of the Recent Advances in Intrusion Detection (2004), Springer, pp. 203–222.
+[379] Wang, W., Yang, J., and Munz, R. R. Sting: A statistical information grid approach to spatial data mining. In Proc. of VLDB97 (Athens, Greece, 1997), pp. 186–195.
+[380] Wang, Y. Statistical Technique for Network Security. Information Science Reference (IGI Global), 2009.
+[381] Wattenberg, F. S., Perez, J. I. A., Higuera, P. C., Fernandez, M. M., and Dimitriadis, I. A. Anomaly detection in network traﬃc based on statistical inference and α-stable modeling. IEEE Transactions on Dependable and Secure Computing 8, 4 (July/August 2011), 494–509.
+[382] Weiss, S. M., and Zhang, T. The Handbook of Data Mining. Lawrence Erlbaum Assoc. Inc., 2003, pp. 426–439.
+[383] Werbos, P. Beyond Regression: New Tools for Predictions and Analysis in the Behavioral Science. PhD thesis, Harvard University, Cambridge, MA, 1974.
+[384] Widrow, B., and Hoff, M. E. Two theorems of statistical separability in the perceptron. In Proc. of IRE Western Electric Show and Convention Record, Part 4 (1960), pp. 96–104.
+[385] Wikimedia,  Foundation.	 Intrusion  detection  system. http://en.wikipedia.org/wiki/Intrusion-detection system, February 2009.
+[386] Wu, S. X., and Banzhaf, W. The use of computational intelligence in intrusion detection systems: A review. Applied Soft Computing 10, 1 (January 2010), 1–35.
+[387] Wu, Z., Ou, Y., and Liu, Y. A taxonomy of network and computer attacks based on responses. In Proc. of the International Conference of Information Technology, Computer Engineering and Management Sciences (China, 2011), IEEE Computer Society, pp. 26–29.
+[388] Xian, J. Q., Lang, F. H., and Tang, X. L. A novel intrusion detection method based on clonal selection clustering algorithm. In Proc. of the International Conference on Machine Learning and Cybernetics, vol. 6. IEEE Press, USA, 2005.
+[389] Xiao, Z., Dellandrea, E., Dou, W., and Chen, L. Esfs: A new embedded feature selection method based on sfs. Rapports de Recherch´e (2008).
+[390] Xie, X. L., and Beni, G. A validity measure for fuzzy clustering.  IEEE Transactions on Pattern Analysis and Machine Intelligence 13, 4 (1991), 841–847.
+[391] Xie, Y., and Yu, S.-Z. Monitoring the application-layer DDoS attacks for popular websites. IEEE/ACM Transactions on Networking 17, 1 (2009), 15–25.
+[392] Xu, X.  Sequential anomaly detection based on temporaldiﬀerence learning: Principles, models and case studies. Applied Soft Computing 10, 3 (2010), 859–867.
+[393] Xu, X., Ester, M., Kriegel, H. P., and Sander, J. A nonparametric clustering algorithm for knowledge discovery in large spatial datasets.  In Proc. on Data Engineering (1998), IEEE Press.
+[394] Xu, X., Jager, J., and Kriegel, H. P. A fast parallel clustering algorithm for large spatial databases. Data Mining and Knowledge Discovery 3, 3 (1999), 263–290.
+[395] Yamanishi, K., and ichi Takeuchi, J.  Discovering outlier ﬁltering rules from unlabeled data: Combining a supervised learner with an unsupervised learner. In Proc. of the 7th ACM SIGKDD Int’nl Conference on Knowledge Discovery and Data Mining (2001), ACM Press, pp. 389–394.
+[396] Yamanishi, K., Takeuchi, J. I., Williams, G., and Milne, P. On-line unsupervised outlier detection using ﬁnite mixtures with discounting learning algorithms. Data Mining and Knowledge Discovery 8 (2004), 275–300.
+[397] Yang, H., Xie, F., and Lu, Y. Clustering and classiﬁcation based anomaly detection. Fuzzy Systems and Knowledge Discovery 4223/2006 (2006), 1082–1091.
+[398] Yang, J., and Honavar, V. Feature subset selection using a genetic algorithm. Intelligent Systems and Their Applications, IEEE 13, 2 (1998), 44–49.
+[399] Yang, J., Wang, W., and Yu, P. δ-clusters: Capturing subspace correlation in a large dataset. In Int’nl Conference on Data Engineering (2002), pp. 517–528.
+[400] Yao, Y., Wei, Y., Gao, F. X., and Yu, G. Anomaly intrusion detection approach using hybrid MLP/CNN neural network. In Proc. of the 6th Int’nl Conference on Intelligent Systems Design and Applications (ISDA’06) (Washington, DC, USA, 2006), IEEE Computer Society, pp. 1095–1102.
+[401] Yarochkin, F. Remote OS detection via TCP/IP stack ﬁngerprinting. http://www.insecure.org, 1998.
+[402] Ye, N. A Markov chain model of temporal behavior for anomaly detection. In Proc. of the 2000 IEEE Workshop on Information Assurance and Security United States Military Academy (West Point, NY, USA), IEEE, pp. 171–174.
+[403] Ye, N., Ehiabor, T., and Zhang, Y. First-order versus highorder stochastic models for computer intrusion detection. Quality and Reliability Engineering International 18, 3 (2002), 243–250.
+[404] Ye, T., Kalyanaraman, S., Harrison, D., Sikdar, B., Mo, B., Kaur, H. T., Vastola, K., and Szymanski, B. Network management and control using collaborative on-line simulation. In Proc. of IEEE Int’nl Conference on Communications (ICC 2001) (Helsinki, Finland, June 2001), IEEE Computer Society Press, Los Alamintos, CA.
+[405] Yeung, D. Y. Host-based intrusion detection using dynamic and static behavioral models.  Pattern Recognition 36 (2003), 229–243.
+[406] Yeung, K. H., Fung, D., and Wong, K. Y. Tools for attacking layer 2 network infrastructure. In Proc. of the Int’nl MultiConference of Engineers and Computer Scientists, vol 2 (2008).a
+[407] Yiu-Ming, C. k*-means: A new generalized k-means clustering algorithm. Pattern Recognition Letters 24, 15 (2003), 2883–2893.
+[408] Yong, H., and Feng, Z. X. Expert system based intrusion detection system. In Proc. of the Int’nl Conference on Information Management, Innovation Management and Industrial Engineering (November 2010), vol. 4, pp. 404–407.
+[409] Yoon, H. S., Ahn, S. Y., Lee, S. H., Cho, S. B., and Kim, J. H. Heterogenous clustering ensemble method for combining diﬀerent cluster results. In LNCS Proc BioDM’06 (Berlin, 2006), vol. 3916, Springer Verlag, pp. 82–92.
+[410] Yu, J., Li, Z., Chen, H., and Chen, X.  A detection and oﬀense mechanism to defend against application layer DDoS attacks.  Third Int’nl Conference on Networking and Services, IEEE.
+[411] Yu, L., and Liu, H. Feature selection for high-dimensional data: A fast correlation-based ﬁlter solution. In Machine Learning Int’nl Workshop (2003), vol. 20, p. 856.
+[412] Yu, M. A nonparametric adaptive CUSUM method and its application in network anomaly detection. Int’nl Journal of Advancements in Computing Technology 4, 1 (2012), 280–288.
+[413] Yu, X.  A new model of intelligent hybrid network intrusion detection system. In Proc. of the International Conference on Bioinformatics and Biomedical Technology (2010), IEEE CS, pp. 386–389.
+[414] Yu, Z., and Tsai, J. J. P. Intrusion Detection– A Machine Learning Approach. Imperial College Press, 2011.
+[415] Zadeh, L. A. Fuzzy logic, neural networks, and soft computing. Communications, ACM 37, 3 (March 1994), 77–84.
+[416] Zadeh, L. A. Role of soft computing and fuzzy logic in the conception, design and development of information/intelligent systems. Lecture Notes in Computer Science 695 (1998), 1–9.
+[417] Zanero, S., and Savaresi, S. M. Unsupervised learning techniques for an intrusion detection system. In Proc. of the 2004 ACM Symposium on Applied Computing (2004), pp. 412–419.
+[418] Zhang, C., Jiang, J., and Kamel, M. Intrusion detection using hierarchical neural networks. Pattern Recognition Letters 26, 6 (May 2005), 779–791. 
+[419] Zhang, C., Zhang, G., and Sun, S. A mixed unsupervised clustering-based intrusion detection. In Proc. of 3rd Int’nl Conference on Genetic and Evolutionary Computing (Gulin, China, October 2009), IEEE Computer Society.
+[420] Zhang, J., and Zulkernine, M. A hybrid network intrusion detection technique using random forests. In Proc. of 1st Int’nl Conference on Availability, Reliability and Security (ARES 2006) (Vienna, Austria, April 2006), IEEE Computer Society, pp. 262– 269.
+[421] Zhang, J., Zulkernine, M., and Haque, A. Random-forestsbased network intrusion detection systems. IEEE Transactions on Systems, Man, and Cybernetics: Part C 38, 5 (2008), 649– 659.
+[422] Zhang, T., Ramakrishnan, R., and Livny, M. BIRCH: An eﬀective data clustering method for very large databases. SIGMOID Record 1996 ACM SIGMOID Int’nl Conference on Management of Data 25 (1996), 103–114.
+[423] Zhang, W., Yang, Q., and Geng, Y. A survey of anomaly detection methods in networks.  In Proc. of the International Symposium on Computer Network and Multimedia Technology (January 2009), pp. 1–3.
+[424] Zhang, Y. F., Xiong, Z. Y., and Wang, X. Q. Distributed intrusion detection based on clustering. In Proc. of the International Conference on Machine Learning and Cybernetics (August 2005), vol. 4, pp. 2379–2383.
+[425] Zhang, Z., Li, J., Manikopoulos, C. N., Jorgenson, J., and Ucles, J. HIDE: A hierarchical network intrusion detection system using statistical preprocessing and neural network classiﬁcation. In Proc. of IEEE Man Systems and Cybernetics Information Assurance Workshop (2001).
+[426] Zhao, M., and Saligrama, V. Anomaly detection with score functions based on nearest neighbor graphs. In Proc. of the 23rd Annual Conference on Neural Information Processing Systems (NIPS) (Vancouver, British Columbia, Canada, December 2009), vol. 22, Curran Associates, Inc., pp. 2250–2258.
+[427] Zhi-dong, L., Wu, Y., Wei, W., and Da-peng, M. Decisionlevel fusion model of multi-source intrusion detection alerts. Journal on Communications 32, 5 (2011), 121–128.
+[428] Zhong, N., Dong, J., and Ohsuga, S. Using rough sets with heuristics for feature selection. Journal of Intelligent Information Systems 16, 3 (2001), 199–214.
+[429] Zhong, S., Khoshgoftaar, T., and Seliya, N. Clusteringbased network intrusion detection. International Journal of Reliability, Quality and Safety Engineering 14, 2 (2007), 169–187.
+[430] Zhou, B., Cheung, D. W., and Kao, B. A fast algorithm for density based clustering in large database. In Proc. of 3rd PAKDD (1999), Springer Verlag, pp. 338–349.
+[431] Zhuowei, L., Das, A., and Nandi, S.  Utilizing statistical characteristics of N-grams for intrusion detection. In Proc. of the International Conference on Cyberworlds (USA, 2003), IEEE CS, pp. 486–494.

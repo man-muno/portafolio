@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint default-activation="eager"
+	xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<reference id="serviceRegistry" interface="de.visiom.carpc.asb.serviceregistry.ServiceRegistry" />
+	<reference id="eventAdmin" interface="org.osgi.service.event.EventAdmin" />
+	<reference id="eventPublisher" interface="de.visiom.carpc.asb.messagebus.EventPublisher" />
+	<reference id="commandPublisher" interface="de.visiom.carpc.asb.messagebus.CommandPublisher" />
+	<reference id="parameterValueRegistry" interface="de.visiom.carpc.asb.parametervalueregistry.ParameterValueRegistry" />
+	
+	<bean id="commandListener" class="de.visiom.carpc.services.navigation.handlers.NavigationRequestHandler"
+		init-method="start">
+		<property name="commandPublisher" ref="commandPublisher" />
+		<property name="eventPublisher" ref="eventPublisher" />
+		<property name="serviceRegistry" ref="serviceRegistry" />
+	</bean>
+
+	<bean id="navigationHandler" class="de.visiom.carpc.services.navigation.handlers.NavigationHandler" init-method="start" destroy-method="end">
+		<property name="serviceRegistry" ref="serviceRegistry" />
+		<property name="eventPublisher" ref="eventPublisher" />
+		<property name="turnByTurnPublisher" ref="turnByTurnPublisher" />
+	</bean>
+	
+	 <service id="commandHandler" interface="org.osgi.service.event.EventHandler" ref="commandListener">
+        <service-properties>
+            <entry key="event.topics" value="visiom/commands/requests" />
+            <entry key="event.filter" value="(serviceName=navigation)" />
+        </service-properties>
+    </service>
+
+	<service id="navigationHandlerListener" interface="org.osgi.service.event.EventHandler" ref="navigationHandler">
+		<service-properties>
+			<entry key="event.topics" value="visiom/updates/*" />
+		</service-properties>
+	</service>
+
+	<bean id="turnByTurnPublisher"
+		class="de.visiom.carpc.services.navigation.publishers.TurnByTurnPublisher"
+		init-method="start">
+		<property name="serviceRegistry" ref="serviceRegistry" />
+		<property name="eventPublisher" ref="eventPublisher" />
+	</bean>
+</blueprint>

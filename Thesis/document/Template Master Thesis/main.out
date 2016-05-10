@@ -1,0 +1,44 @@
+\BOOKMARK [0][-]{section*.3}{Acknowledgements}{}% 1
+\BOOKMARK [0][-]{section*.4}{Abstract}{}% 2
+\BOOKMARK [0][-]{section*.6}{Outline of the Thesis}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
+\BOOKMARK [1][-]{section.1.1}{Problem Statement}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.1}{custom subsections here}{section.1.1}% 6
+\BOOKMARK [1][-]{section.1.2}{Related Work}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.3}{Terminology}{chapter.1}% 8
+\BOOKMARK [0][-]{chapter.2}{Requirements Elicitation}{}% 9
+\BOOKMARK [1][-]{section.2.1}{Scenarios}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{Non-functional Requirements}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.1}{NF1: My requirement}{section.2.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.2}{NF2: My requirement 2}{section.2.2}% 13
+\BOOKMARK [1][-]{section.2.3}{Pseudo Requirements}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.3.1}{PR1: Platform}{section.2.3}% 15
+\BOOKMARK [1][-]{section.2.4}{Functional Model}{chapter.2}% 16
+\BOOKMARK [2][-]{subsection.2.4.1}{Use Cases}{section.2.4}% 17
+\BOOKMARK [2][-]{subsection.2.4.2}{Functional Requirements}{section.2.4}% 18
+\BOOKMARK [1][-]{section.2.5}{Summary}{chapter.2}% 19
+\BOOKMARK [0][-]{chapter.3}{Analysis}{}% 20
+\BOOKMARK [1][-]{section.3.1}{Analysis Object Model}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.2}{Summary}{chapter.3}% 22
+\BOOKMARK [0][-]{chapter.4}{System Design}{}% 23
+\BOOKMARK [1][-]{section.4.1}{Design Goals}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.2}{Subsystem Decomposition}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.3}{HW/SW Mapping}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.4}{Persistent Data Management}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.5}{Access Control and Security}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.6}{Summary}{chapter.4}% 29
+\BOOKMARK [0][-]{chapter.5}{Object Design}{}% 30
+\BOOKMARK [1][-]{section.5.1}{Custom sections here}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.2}{Custom sections here}{chapter.5}% 32
+\BOOKMARK [1][-]{section.5.3}{From the Application Domain to the Solution Domain}{chapter.5}% 33
+\BOOKMARK [2][-]{subsection.5.3.1}{Selection of Programming Language and Off-the-Shelf Components}{section.5.3}% 34
+\BOOKMARK [2][-]{subsection.5.3.2}{Interface Specification}{section.5.3}% 35
+\BOOKMARK [1][-]{section.5.4}{Summary}{chapter.5}% 36
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 37
+\BOOKMARK [1][-]{section.6.1}{Results}{chapter.6}% 38
+\BOOKMARK [1][-]{section.6.2}{Case Study at ....?}{chapter.6}% 39
+\BOOKMARK [1][-]{section.6.3}{Discussion}{chapter.6}% 40
+\BOOKMARK [1][-]{section.6.4}{Future Work}{chapter.6}% 41
+\BOOKMARK [-1][]{part*.11}{Appendix}{}% 42
+\BOOKMARK [0][-]{appendix.A}{This is my appendix chapter}{part*.11}% 43
+\BOOKMARK [0][-]{chapter*.12}{Bibliography}{part*.11}% 44

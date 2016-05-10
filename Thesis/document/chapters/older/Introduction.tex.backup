@@ -1,0 +1,128 @@
+\chapter{Introduction}
+\label{chapter:Introduction}
+
+\section{Problem Statement}
+
+Recent years have seen the increase of interest in smart homes\cite{googletrends}. The number of products geared towards smart homes has also increased, as is it can be seen at trade shows like CES\cite{cnet}. Big manufacturers of consumer electronics have reacted to this trend, and have launched product lines aimed towards that market segment. These products take advantage of wireless communication technologies to control and monitor the environment they are in. Wireless communication technology enables seamless integration of these products into everyday life, enabling more ways of interacting with the environments, making them more comfortable, or even more secure.
+
+\subsection*{Problem}
+According to the statistics gathered by the German police, 2014 saw the highest number of break-ins in 16 years. In comparison with the previous year, there was a 2\% increase of break-in cases\cite{breakins}. These increasing numbers make the people feel less safe in their own homes.
+
+The best known method to secure a household is to hire a security company to provide, install, and also monitor a security system. When a sensor of the security system is triggered, the security company is notified, and can alert both the authorities and the user.
+
+This approach has some drawbacks. The installation of the system comes with a price, because it  involves breaking the walls to hide cables and panels that are used to control the system. In order to monitor the household, the security company has access to the the security system, which may raise user´'s privacy concerns. When the system is triggered, the security company reacts by contacting local authorities or the user. Different events, such as pets being detected, can trigger the system resulting in waste of resources.
+
+One way of tackling some of the existing drawbacks of current security systems, is to take advantage of the increasing ubiquity of smart sensors present in smart spaces. By collecting and analyzing data from smart sensors, it is possible to recognize the usual behavior of the inhabitants of the household \cite{behavior}. Using the data from the same sources, unusual behavior of the inhabitants can be detected \cite{anomaly}.
+
+\subsection*{Proposed Solution}
+Unusual behavior of network users can be recognized using network intrusion detection systems. These systems analyse communication the temporal patterns of network traffic loads and the content of the payload. The same type of information can be found in smart environments. In this thesis, we would like to explore the possibility of applying existing network intrusion detection techniques in smart home environment, with a goal of detecting unusual behavior of inhabitants. Special focus will be set on burglary detection scenarios.
+
+As a part of this thesis, we foresee the development of a software infrastructure that will enable us to compare the performance of different algorithms used in network intrusion detection systems. The architecture of the software will have to enable simple ways of extending the software with new intrusion detection algorithms. Our software will have to support seamless integration with the existing OpenHab framework.
+
+
+\section{Related Work}
+\label{related_work}
+%MavHome, University of Texas at Arlington
+\textbf{Cook \etAl, 2004: MavHome: an agent-based smart home} \cite{1192783} \\
+The University of Texas at Arlington proposed an architecture to model the home as an rational agent that senses what happens on a home through sensors, and then uses actuators to modify the state of the home. MavHome proposes an architecture that allows the home to learn the behavior of the inhabitants and interactions they have with the home. The agent uses a layered architecture\cite{1192783}. The physical layer communicates the system with the hardware components of the house. The communication layer transmits the data between agents. The information layer is responsible to gather, stores, and generates new knowledge that is going to be used on the decision-making process. The decision layer takes the knowledge provided by the information layer and selects actions to be executed. 
+The decision layer has prediction algorithms take sequence of interactions between the inhabitant and the home, and then compares it with previously stored sequences in order to predict the next possible actions. However the events that can be automated are the ones that occur with certain frequency. 
+The University also built two spaces to test the project and a simulation one\cite{inhabitantguidanceofsmartenvironments}. The first one is a workplace environment equipped with work areas, cubicles, a break room, a lounge, and a conference room. The second space is complete apartment. The project also counts with a simulation tool that allows to the machine learning algorithms to be trained, to be later deployed on the real environments. The project arrived at one conclusion that is of importance our hypothesis. Machine learning algorithms can be used to "model and predict inhabitant activities, and that a policy can be learned using this information to automate a smart environment"\cite{inhabitantguidanceofsmartenvironments}.
+%Layered architecture
+
+
+%The Adaptive House, University of Colorado at Boulder
+\textbf{Mozer, 2004: Lessons from an adaptive house}\cite{mozer2004lessons}
+The Adaptive Home is a project for the University of Colorado at Boulder. It started 1996 with the idea that smart home should not provide a different control interface, than the one that users normally uses. The house uses machine learning algorithms to control heating, ventilation, air conditioning systems, water heater, and lighting. The Adaptive Home, after observation of the interaction between the house and the users, is capable of deduct patterns and make predictions. If the users are not happy with the predictions, they can change the values selected by the house using the normal interface. The main objective of the Adaptive Home is comfort while reducing operating costs\cite{mozer2004lessons}.
+The algorithm uses two constraints that need to be optimally satisfied: cost and discomfort. Using reinforcement learning, it is possible to calculate the next action for the current state, or for the next predicted state. Coarse activity identification is also one of the main focuses on the project. Once an activity is identified the system can trigger an event that in turn will change the state of the house\cite{mozer2004lessons} into the predicted one.
+This project provides an interesting perspective to the machine learning part, because it includes a discomfort constraint. It calculates the cost of performing an action, not only with monetary value but also with how annoying the action is if it is wrong. It is also interesting that it does not discretized time into timed intervals, but into event changes that trigger states changes.
+For this project security of the smart home was not explored. However, the use of machine learning algorithms support the idea that it is possible to do activity identification, and execute actions tacking them into 
+
+%Aire project: Focuses on work spaces
+%The Aware Home, Georgia Tech University
+\textbf{Kidd \etAl, 1999: The Aware Home: A Living Laboratory for Ubiquitous Computing Research} \cite{raey} \\
+This project from the Georgia Institute of Technology, was created as "a living laboratory for interdisciplinary design, development and evaluation"\cite{Kientz:2008:GTA:1358628.1358911}. The objective of the project was to provide a platform where different disciplines could test their hypotheses regarding new technologies for the home environment. The team at the Georgia Institute of Technology built a three-stories house and equipped it with sensors that captured and registered almost every event that happened around the house, using pinhole cameras, microphones, voltmeters, etc. The applications here developed target specific scenarios like supporting aging in place, and supporting busy families. 
+The first scenario addresses problems that stay-at-home senior citizens may have. Issues such as safety, accident prevention and detection, aid in daily activities (reminders and familiarization with new technologies), and facilitating communication with the outside. For example, the project \textbf{Memory Mirror}\cite{Kientz:2008:GTA:1358628.1358911} identifies the objects used by the resident, and post them on a mirror creating a reminder. In the case the user has interacted with the object before, the mirror posts usage statistics.
+The supporting busy families scenario is targeted to households where parents work but also need to take care of another family member. The issues include household schedule maintenance, care for individuals with special needs, and make life more enjoyable. The \textbf{Baby Steps} \cite{Kientz:2007:GKU:1240624.1240830} project tracks and logs milestones on the baby's cognitive development cycle, that way if a milestone is missed, the house can provide additional time line information to the doctors.
+The project from the Georgia Institute of Technology is a good example of what it can be done, when a living space is designed and built as a smart space from scratch. The house was thought from the start to have a large set of sensors. For example, for activity recognition the Aware Home has 10 pin-hole cameras in just one room\cite{Kientz:2008:GTA:1358628.1358911}. Our project is focused on living spaces that already exist, and it is not possible to install a high number of sensors.
+From the applications point of view, none of the Aware home project projects tackle the problem of home security or intrusion detection. However, machine learning algorithms are used for activity identification.
+%CyberManor, Internet Home Alliance. Company, not a Uni project
+%CASAS Smart home project. Data sets MavHome comes from them.
+%EasyLiving, Microsoft
+%Hal, MIT Artificial Intelligence Laboratory. No home automation project
+%Home Automation, IBM
+
+%House_n, MIT
+\textbf{Intille, 2004: The Goal: Smart People, Not Smart Homes} \cite{smartpeople} \\
+The Massachusetts Institute of Technology also decided to explore the smart home with a multi-disciplinary approach. Many industry partners and other departments at MIT co-founded the House\underline{ }n project. The goal of this project \cite{smartpeople} was to shift the investigation focus from a smart home that automates all possible activities, to one where the smart home requires user's interaction. That required interaction would help maintaining life stimulating.\cite{smartpeople}.
+Within the House\underline{ }n project, MIT joined forces with industry partners used the  approach of building a live-in laboratory. There, volunteers would move in for a period of time and lead their lives normally, while also being measured by many sensors. The laboratory was built in 2004 and it is called the PlaceLab\cite{placelab}. 
+The focus of this project\cite{placelab} was proactive health care. How the home can influence the occupants to make better dietary choices by providing relevant, just-in-time information\cite{dietary}. Also how the influence of technology can impact independence of aging seniors\cite{aginginplace}. And using different methods of indoor positioning\cite{bhack}, and the implications of user tracking\cite{info:doi/10.2196/jmir.8.4.e29}. All other projects tacked problems from other disciplines like material engineering and architecture.
+%IIB, Trinity College Dublin
+%i-LAND, Ambiente
+%Interactive Workspaces, Stanford University. collaborative work settings
+%Neural network house from 1995. May be too old.
+%PRIMA, Inria
+%The intelligent home 1999. May be too old.
+%Smart Spaces Lab, NIST. Project for working spaces detecting meetigns 
+%SMART Connected Home, GE
+
+
+%Machine learning 
+
+network intrusion detection detections systems have used machine learning algorithms to detect different types of intrusions. Focus on the type of intrusions that help the Smarthome environment
+
+
+
+
+
+
+\textbf{Intille, 2004: The Goal: Smart People, Not Smart Homes} \cite{smartpeople} \\
+The Massachusetts Institute of Technology also decided to explore the smart home with a multi-disciplinary approach. Many industry partners and other departments at MIT co-founded the House\underline{ }n project. The goal of this project \cite{smartpeople} was to shift the investigation focus from a smart home that automates all possible activities, to one where the smart home requires user's interaction. That required interaction would help maintaining life stimulating.\cite{smartpeople}.
+Within the House\underline{ }n project, MIT joined forces with industry partners used the  approach of building a live-in laboratory. There, volunteers would move in for a period of time and lead their lives normally, while also being measured by many sensors. The laboratory was built in 2004 and it is called the PlaceLab\cite{placelab}. 
+The focus of this project\cite{placelab} was proactive health care. How the home can influence the occupants to make better dietary choices by providing relevant, just-in-time information\cite{dietary}. Also how the influence of technology can impact independence of aging seniors\cite{aginginplace}. And using different methods of indoor positioning\cite{bhack}, and the implications of user tracking\cite{info:doi/10.2196/jmir.8.4.e29}. All other projects tacked problems from other disciplines like material engineering and architecture.
+
+
+
+
+
+
+
+
+
+
+
+%\textbf{Tsukada and Yasumura, 2004: UBI-FINGER: A simple gesture input device for mobile and ubiquitous environment, \cite{aisl2004-ubi-finger}} \\
+%Tsukada and Yasumura introduce an interface for mobile environments, called \emph{Ubi-Finger}. The concept enables users to sensuously control various fixtures in the real world using finger gestures. \cite{aisl2004-ubi-finger} The \emph{Ubi-Finger} itself is an input device worn on the fingers. It is connected to a PDA or laptop by a wired serial connection. The target device is defined by infrared sensors attached to each addressable fixture. The actual control commands are transmitted via W-LAN and executed by a server in the background. The gesture recognition is started and stopped using a little button (touch sensor). A target device is then selected by pointing. Afterwards, the device can be controlled with micro-gestures of fingers, like \emph{pushing a switch}, \emph{turning a volume knob}, and so on. \cite{aisl2004-ubi-finger} \\
+%The authors argue that in the communication of human emotions and wills, the non-verbal means were more important than verbal means. Human gestures are considered to be typical examples of non-verbal communication that help people communicate smoothly. They suggest that "human gestures are very useful communication means, and naturally used by everyone". \cite{aisl2004-ubi-finger} The major benefit of applying gesture input methods to operations of real-world devices is an easy-to-understand mapping of operations with an existing metaphor. \\
+%Tsukada and Yasumura's ideas of using pointing and gesturing control mechanisms support the ideas of this thesis. However, there are some disadvantages in the proposed approach. First, the approach requires the installation of additional infrastructure (infrared sensors) on each addressable fixture. Apart from the visual detraction, this solution implies additional costs for the electronic pieces and labor for its installation. Second, the prototype finger is still too big and inconvenient for daily work. The fact that it has to be wired to a PDA might also be distracting for a number of users. \\
+
+\section{Terminology}
+
+The following section introduces definitions of ambiguous words that are used continuously throughout this thesis. 
+
+\begin{itemize}
+
+\item \textbf{Fixture.} A fixture is an instance of a specific fixture type (see below). An instrumented space consists of a number of fixtures that affect the environmental conditions of the occupant. 
+
+\item \textbf{Fixture type.} A fixture type is the generalization of a fixture. Fixture types in the Intelligent Workplace include:
+	\begin{itemize}
+		\item Light
+		\item Addressable plug load
+		\item Window blind
+		\item External louvers
+		\item Operable window
+		\item Coolwave
+	\end{itemize}
+
+\item \textbf{Instrumented space.} An instrumented space is an indoor environment with addressable fixtures
+
+\item \textbf{Smart space.} The word "smart space" is used interchangeably with instrumented space.
+
+\item \textbf{Mobile device.} A mobile device is the user's smart phone or similar device. The developed prototype of this project works with an iPhone as mobile (control-) device.
+
+\item \textbf{Occupant.} The occupant is the user of an instrumented space. The overall project purpose is to provide well-being and comfort to the occupant while reducing the consumed energy.
+
+\item \textbf{User.} The word "user" is used interchangeably with occupant.
+
+\item \textbf{Facility Manager.} The facility manager is the responsible person for maintenance, care and functionality of a building. This thesis assumes that the facility manager is the administrator of the proposed intuitive controller and cares for the initial set up of the system. Especially in non-commercial smart home environments, it has to be considered that the roles of the building owner, occupant and facility manager are actually taken by the same person.
+
+\end{itemize}

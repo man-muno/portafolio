@@ -1,0 +1,48 @@
+<workflow id="Check coolant" category="checks">
+    <triggers>
+        <trigger user="true" value="Check coolant" type="none"/>
+    </triggers>
+    <start name="1"/>
+    <activities>
+        <activity id="1" type="text" text="Open engine hood">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="2"/>
+                <transition user="true" value="How to open the hood?" targetType="workflow" targetID="Open engine hood"/>
+                <!-- <transition user="true" value="Skip the  " targetType="activity" targetID="end"/> -->
+            </transitions>
+        </activity>
+        <activity id="2" type="backgroundTop" text="Locate coolant reservoir" img="coolant_water_reservoir">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="3"/>
+            </transitions>
+        </activity>
+        <activity id="3" type="text" text="Check whether coolant level is above 'min' mark" >
+            <transitions>
+                <transition user="true" value="Level is above 'min'" targetType="activity" targetID="4"/>
+                <transition user="true" value="Level is below 'min'" targetType="activity" targetID="5"/>
+            </transitions>
+        </activity>
+        <activity id="4" type="text" text="Not self-serviceable. Please contact help">
+            <transitions>
+                <transition user="true" value="End coolant check" targetType="activity" targetID="end"/>
+            </transitions>
+        </activity>
+        <activity id="5" type="text" text="Buy coolant (e.g. at gas station)">
+            <transitions>
+                <transition user="true" value="Show next step" targetType="activity" targetID="6"/>
+            </transitions>
+        </activity>
+        <activity id="6" type="text" text="Wait until engine has cooled down to 40°. Current temperature: %s" parameter="coolantTemperature">
+            <transitions>
+                <transition user="false" variableName="coolantTemperature" targetType="activity" valueType="java.lang.Long" condition="below" value="40" targetID="7"/>
+                <transition user="false" variableName="coolantTemperature" targetType="activity" valueType="java.lang.Long" condition="above" value="40" targetID="6"/>
+            </transitions>
+        </activity>
+        <activity id="7" type="text" text="Fill up coolant close to 'max'">
+            <transitions>
+                <transition user="true" value="End coolant check" targetType="activity" targetID="end"/>
+            </transitions>
+        </activity>
+
+    </activities>
+</workflow>

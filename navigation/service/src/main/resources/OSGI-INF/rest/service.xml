@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service path="navigation" name="navigation" ranking="10">
+	<parameters>
+		<restNumericParameter referenceParameter="001" readOnly="true" path="navi_turnByTurn-Distant-to-Maneuver" name="navi_turnByTurn-Distant-to-Maneuver" />
+		<restNumericParameter referenceParameter="002" readOnly="true" path="navi_Range-Max" name="navi_Range-Max" />
+		<restNumericParameter referenceParameter="003" readOnly="true" path="navi_Distance-to-Home" name="navi_Distance-to-Home" />
+		<restNumericParameter referenceParameter="004" readOnly="true" path="navi_Distance-to-Work" name="navi_Distance-to-Work" />
+		<restNumericParameter referenceParameter="005" readOnly="true" path="navi_Distance-to-Station" name="navi_Distance-to-Station" />
+		<restNumericParameter referenceParameter="006" readOnly="true" path="navi_turnByTurn-Distance-to-Dest" name="navi_turnByTurn-Distance-to-Dest" />
+		<restStringParameter referenceParameter = "007" readOnly="true" path="navi_turnByTurn-Message" name= "navi_turnByTurn-Message"/>
+		<restStringParameter referenceParameter="009" readOnly="true" path="navi_turnByTurn-ManeuverType" name="navi_turnByTurn-ManeuverType"/>
+		<restStringParameter referenceParameter = "010" readOnly="true" path="navi_turnByTurn-Street" name= "navi_turnByTurn-Street"/>
+		<restStringParameter referenceParameter = "011" readOnly="true" path="navi_turnByTurn-jsonRoute" name= "navi_turnByTurn-jsonRoute"/>
+		
+		<restSwitchParameter referenceParameter ="012" path="isNavigationActive" name="isNavigationActive" readOnly="false"/>
+		<restStateParameter referenceParameter ="013"  path="destination" name="destination" readOnly="false"/>		
+		<restStringParameter referenceParameter = "014" path= "favorites" name= "favorites" readOnly="false"/>
+		<restStateParameter referenceParameter ="015"  path="routingType" readOnly="false"/>
+		<restStringParameter referenceParameter = "016" path= "destinationAddress" name= "destinationAddress" readOnly="true"/>
+		<restSwitchParameter referenceParameter ="017" path="cancelRouting" name="cancelRouting" readOnly="false"/>
+		
+		
+		<restStringParameter referenceParameter = "024" path= "homeAddress" name= "homeAddress" readOnly="false"/>
+		<restNumericParameter referenceParameter = "025" path= "homeLatitude" name= "homeLatitude" readOnly="flase"/>
+		<restNumericParameter referenceParameter = "026" path= "homeLongitude" name= "homeLongitude" readOnly="false"/>
+		<restStringParameter referenceParameter = "027" path= "homeName" name= "homeName" readOnly="false"/>
+		
+		<restStringParameter referenceParameter = "028" path= "workAddress" name= "workAddress" readOnly="false"/>
+		<restNumericParameter referenceParameter = "029" path= "workLatitude" name= "workLatitude" readOnly="flase"/>
+		<restNumericParameter referenceParameter = "030" path= "workLongitude" name= "workLongitude" readOnly="false"/>
+		<restStringParameter referenceParameter = "031" path= "workName" name= "workName" readOnly="false"/>
+		
+		<restStringParameter referenceParameter = "032" path= "favorite1Address" name= "favorite1Address" readOnly="false"/>
+		<restNumericParameter referenceParameter = "033" path= "favorite1Latitude" name= "favorite1Latitude" readOnly="flase"/>
+		<restNumericParameter referenceParameter = "034" path= "favorite1Longitude" name= "favorite1Longitude" readOnly="false"/>
+		<restStringParameter referenceParameter = "035" path= "favorite1Name" name= "favorite1Name" readOnly="false"/>
+		
+		<restStringParameter referenceParameter = "036" path= "favorite2Address" name= "favorite2Address" readOnly="false"/>
+		<restNumericParameter referenceParameter = "037" path= "favorite2Latitude" name= "favorite2Latitude" readOnly="flase"/>
+		<restNumericParameter referenceParameter = "038" path= "favorite2Longitude" name= "favorite2Longitude" readOnly="false"/>
+		<restStringParameter referenceParameter = "039" path= "favorite2Name" name= "favorite2Name" readOnly="false"/>
+		
+		<restStringParameter referenceParameter = "040" path= "favorite3Address" name= "favorite3Address" readOnly="false"/>
+		<restNumericParameter referenceParameter = "041" path= "favorite3Latitude" name= "favorite3Latitude" readOnly="flase"/>
+		<restNumericParameter referenceParameter = "042" path= "favorite3Longitude" name= "favorite3Longitude" readOnly="false"/>
+		<restStringParameter referenceParameter = "043" path= "favorite3Name" name= "favorite3Name" readOnly="false"/>
+		
+		<restStringParameter referenceParameter = "044" path= "favorite4Address" name= "favorite4Address" readOnly="false"/>
+		<restNumericParameter referenceParameter = "045" path= "favorite4Latitude" name= "favorite4Latitude" readOnly="flase"/>
+		<restNumericParameter referenceParameter = "046" path= "favorite4Longitude" name= "favorite4Longitude" readOnly="false"/>
+		<restStringParameter referenceParameter = "047" path= "favorite4Name" name= "favorite4Name" readOnly="false"/>
+		
+		<restStringParameter referenceParameter = "048" path= "favorite5Address" name= "favorite5Address" readOnly="false"/>
+		<restNumericParameter referenceParameter = "049" path= "favorite5Latitude" name= "favorite5Latitude" readOnly="flase"/>
+		<restNumericParameter referenceParameter = "050" path= "favorite5Longitude" name= "favorite5Longitude" readOnly="false"/>
+		<restStringParameter referenceParameter = "051" path= "favorite5Name" name= "favorite5Name" readOnly="false"/>
+		
+		
+	</parameters>
+</service>
