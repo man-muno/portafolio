@@ -1,0 +1,4 @@
+INDEX VERSION 1.127+/Users/manuel/Projects/Coursera/.metadata/.plugins/org.eclipse.jdt.core
+2029059409.index
+3436824129.index
+4283105948.index

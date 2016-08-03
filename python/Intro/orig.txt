@@ -1,0 +1,14 @@
+Sehr geehrter … ,
+
+durch Ihre Careers-Website bin ich auf die Anzeige … aufmerksam geworden und bewerbe mich hiermit für die ausgeschriebene Position als Software Engineer.
+Eine Tätigkeit in Ihrem Unternehmen, welches an der Spitze der technologischen Entwicklung ist (in welchem Bereich), ist eine einmalige Gelegenheit für mich, um mit meinen Erfahrungen, Kenntnissen und Ideen durch Ihre Produkte und Dienste eine positive Wirkung bei vielen Menschen zu erzielen (da würd ich mir glaub ich noch was anderes überlegen). Die Unternehmenswerte (was für Unternehmenswerte?) stimmen mit meinen eigenen Werten überein.(Gibts das echt so als Formulierung?)
+
+Während meines im …. abgeschlossenen Masters in Informatik an der Technischen Universität München hatte ich die Möglichkeit an innovativen und erfolgreichen Projekten teilzunehmen. Diese Projekte gingen von Service-Entwicklung für vernetzte Autos über Mobilitäts-Lösungen mit Google Glass, Entwicklung eines Führungssystemes (für was?) zwischen der montierten Sensorik bis hin zu Laserprojektor eines Gabelstaplers (hast du das entwickelt? bzw was hast du mit de Laserprojektor gemacht). Im Rahmen meiner Masterarbeit habe ich ein Einbrucherkennungssystem für das Smart Home (Artikel?) entwickelt. Dieses System scannt die Umgebung, wertet über maschinelles Lernen verschiedene Algorithmen aus (so richtig?)  und erkennt dadurch Anomalien im Haus. 
+In meiner Heimat Kolumbien habe ich bereits praktische Erfahrungen mit Java Technologien, relationalen Datenbanken sowie Entwicklung von Service-Oriented Architectures (ist das ein Fachbegriff oder gibts den auch auf deutsch?) in der Bankenbranche gesammelt und hatte die Gelegenheit ein Team von (Software?)-Entwicklern zu leiten.
+Neben meinen Fachkenntnisse besitze ich eine hohe Lernbereitschaft und Eigeninitiative. Ich engagiere mich gerne in einem Team und verfüge durch meine mehrjährige Auslandserfahrung über eine gute Anpassungsfähigkeit an neue Situationen. Englisch und Spanisch beherrsche ich fließend in Sprache und Schrift. 
+
+Um die Stelle als …. an einem Ihrer Standorte in Berlin, Hamburg oder München antreten zu können, bin ich bereit umzuziehen (ich glaub das brauchst du gar nicht, weil du bewirbst dich ja gezielt auf eine Stelle an einem der Standort… da ists ja dann logisch das du dann auch dahin ziehen würdest sonst würdest du dich ja gar nicht darauf bewerben oder?)
+
+Ich freue mich über eine Einladung zum Vorstellungsgespräch.
+
+Mit freundlichen Grüßen,
