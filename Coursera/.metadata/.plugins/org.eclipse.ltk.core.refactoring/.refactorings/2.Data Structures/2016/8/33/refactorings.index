@@ -1,0 +1,3 @@
+1471126789941	Extract local variable 'leftChildPos'
+1471126828922	Extract local variable 'rightChildPos'
+1471126953127	Extract method 'swap'
