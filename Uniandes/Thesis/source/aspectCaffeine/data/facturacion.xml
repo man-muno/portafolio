@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aspect name="facturacion">
+	<transitionPoint name="TP1" pointcut="*Invoke|Shazam">
+		<advice name="invokeFacturacion" type="before">
+	    	<partnerLinks>		
+		       	<partnerLink name="recaudo"
+		                     partnerLinkType="tns:FacturacionShazam"
+		                     myRole="RecaudoRequester"
+		                     partnerRole="RecaudoProvider"
+		                     />
+	    	</partnerLinks>
+		    <variables>
+		        <variable name="facturacionInfo" messageType="tns:FacturacionMessage"/>
+		    </variables>
+	        <assign>
+	            <copy name="copy">
+	                <from name="from">bpel:getVariableData('input', 'payload','/tns:userName')</from>
+	                <to name="to" variable="facturacionInfo" part="payload" query="/tns:result"/>
+	            </copy>
+	        </assign>		    
+			<invoke name="invoke" operation="initiate" partnerLink="recaudo" portType="tns:FacturacionShazam" inputVariable="facturacionInfo"/>
+		</advice>
+	</transitionPoint>
+</aspect>

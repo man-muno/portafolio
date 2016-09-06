@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animation>
+	<addAspect file="./data/aspects/aspect15.xml" enabled="true"/>
+	<removeAspect name="facturacion" processName="HelloWorld" processID="0" instanceID="0"/>
+	<execute-synchronous-call processName="HelloWorld" processID="0" instanceID="0" message="initial message" />
+</animation>

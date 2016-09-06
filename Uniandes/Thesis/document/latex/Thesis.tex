@@ -1,0 +1,178 @@
+%% ----------------------------------------------------------------
+%% Thesis.tex -- MAIN FILE (the one that you compile with LaTeX)
+%% ---------------------------------------------------------------- 
+
+% Set up the document
+\documentclass[letter, 11pt, twoside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
+\graphicspath{{Figures/}}  % Location of the graphics files (set up for graphics to be in PDF format)
+
+% Include any extra LaTeX packages required
+\usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
+\usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
+\usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
+\usepackage[latin1]{inputenc}
+\usepackage{multirow}
+\usepackage[spanish]{babel}
+\usepackage{color}
+\hypersetup{urlcolor=blue, colorlinks=false}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
+\definecolor{lightGrey}{rgb}{0.9, 0.9, 0.9}
+\newcommand{\Hilight}{\makebox[0pt][l]{\color{lightGrey}\rule[-0.45em]{0.8\linewidth}{1.5em}}}
+\setlength{\parindent}{15pt}
+\lstset{
+				language=Java,                % choose the language of the code
+				basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+				numbers=left,                   % where to put the line-numbers
+				numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+				stepnumber=2,                   % the step between two line-numbers. If it's 1 each line will be numbered
+				numbersep=5pt,                  % how far the line-numbers are from the code
+				backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+				showspaces=false,               % show spaces adding particular underscores
+				showstringspaces=false,         % underline spaces within strings
+				showtabs=false,                 % show tabs within strings adding particular underscores
+				frame=single,			% adds a frame around the code
+				tabsize=2,			% sets default tabsize to 2 spaces
+				captionpos=b,			% sets the caption-position to bottom
+				breaklines=true,		% sets automatic line breaking
+				breakatwhitespace=false	% sets if automatic breaks should only happen at whitespace
+}
+\renewcommand{\lstlistingname}{Código}
+%% ----------------------------------------------------------------
+\begin{document}
+\frontmatter	  % Begin Roman style (i, ii, iii, iv...) page numbering
+
+% Set up the Title Page
+\title  {Motor de Aspectos que Resuelve Interferencias Basado en Cumbia: Caso BPEL}
+\authors  {\texorpdfstring
+            {Manuel Muñoz Lara}
+            {Manuel Muñoz Lara}
+            }
+\addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
+\date       {\today}
+\subject    {}
+\keywords   {}
+
+\maketitle
+%% ----------------------------------------------------------------
+
+\setstretch{1.3}  % It is better to have smaller font and larger line spacing than the other way round
+
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+\fancyhead{}  % Clears all page headers and footers
+\rhead{\thepage}  % Sets the right side header to show the page number
+\lhead{}  % Clears the left side page header
+
+\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
+
+%% ----------------------------------------------------------------
+
+% The "Funny Quote Page"
+\pagestyle{empty}  % No headers or footers for the following pages
+
+\null\vfill
+% Now comes the "Funny Quote", written in italics
+\textit{``If you really want something in life you have to work for it. Now quiet, they're about to announce the lottery numbers.''}
+
+\begin{flushright}
+H. J. Simpson
+\end{flushright}
+
+\vfill\vfill\vfill\vfill\vfill\vfill\null
+\clearpage  % Funny Quote page ended, start a new page
+%% ----------------------------------------------------------------
+
+\setstretch{1.3}  % Reset the line-spacing to 1.3 for body text (if it has changed)
+
+% The Acknowledgements page, for thanking everyone
+\acknowledgements{
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+
+Quiero agradecer a todos los integrantes del proyecto Cumbia por su colaboración en el desarrollo de éste trabajo. Especialmente quiero agradecer a mi asesor Jorge Villalobos, por darme la oportunidad de pertenecer al grupo y guiarme en la realización de este trabajo. Sin su habilidad para identificar cuando necesitaba un latigazo o una palabra de apoyo éste trabajo no hubiera sido terminado.
+
+También quiero agradecer muy especialmente a todos mis amigos y personas que se interesaron y se preocuparon por mí durante ésta etapa llena de retos. Especialmente quiero agradecer a\footnote[1]{No están organizados en un orden particular, solamente las "`damas primero"'.} Nadya, Juliana, Felipe, Camilo, Pablo, Mario y Mentor\footnote[2]{No es su nombre real, pero si lo escribo como Carlos Lopez, nadie sabe quien es.}, ya que gracias a ellos me di cuenta que ésta era una etapa más y que para poder superarla necesitaba tanto de un gran esfuerzo personal como del gran apoyo de la gente que me rodea. Ellos fueron los encargados de que no me olvidara que "`si se puede"' porque todos han demostrado que estamos hechos para grandes cosas y que los verdaderos amigos son los que están para ofrecer su ayuda en los momentos más difíciles, pero sobre todo para despejar tu cabeza cuando las cosas se ponen peor. 
+
+Especialmente quiero agradecer a Viviana, ya que sin su apoyo y entendimiento durante todos estos meses de trabajo, no lo hubiera podido lograr. Gracias por esos pequeños mensajes que dejabas regados por todas partes para que yo los encontrara, no te alcanzas a imaginar lo mucho que significa para mí que estés a mi lado durante uno de los momentos más importantes en mi formación como profesional y como persona.
+
+Para finalizar, pero no por eso menos importante, quisiera agradecer de todo corazón a mi familia. A mis padres por demostrar su apoyo incondicional y sobre todo su paciencia conmigo, cuando el trabajo me consumía y era realmente un reto aguantarme. Alguien dijo alguna vez "`If I have seen further it is by standing on the shoulders of giants"' y para mí esos gigantes son mis padres, no conozco mejor ejemplo a seguir de un par de personas trabajadoras, fieles a sus ideales, donde la vida les ha lanzado de todo y ellos han salido victoriosos no de todas, pero juntos siempre. A los tintos con mi hermano Jaime, eran la manera perfecta de poder salir a dar una vuelta, hablar de todo un poco y desconectarse lo suficiente para poder disfrutar de la charla, pero sin olvidar que había que regresar a continuar trabajando. A mi hermana Paola, ya que a pesar de todos los problemas, me mostró que es posible voltearlos y ponerles una cara amable, no es fácil ni rápido, pero se puede. 
+
+\ldots
+
+}
+\clearpage  % End of the Acknowledgements
+%% ----------------------------------------------------------------
+
+\pagestyle{fancy}  %The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+
+
+%% ----------------------------------------------------------------
+\lhead{\emph{Contenido}}  % Set the left side page header to "Contents"
+\tableofcontents  % Write out the Table of Contents
+
+%% ----------------------------------------------------------------
+\lhead{\emph{\Índice de Figuras}}  % Set the left side page header to "List if Figures"
+\listoffigures  % Write out the List of Figures
+
+%% ----------------------------------------------------------------
+\lhead{\emph{Índice de Tablas}}  % Set the left side page header to "List of Tables"
+\listoftables  % Write out the List of Tables
+
+% ----------------------------------------------------------------
+% End of the pre-able, contents and lists of things
+% Begin the Dedication page
+
+%\setstretch{1.3}  % Return the line spacing back to 1.3
+
+%\pagestyle{empty}  % Page style needs to be empty for this page
+%\dedicatory{For/Dedicated to/To my\ldots}
+
+%\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+
+
+%% ----------------------------------------------------------------
+\mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
+\pagestyle{fancy}  % Return the page headers back to the "fancy" style
+
+% Include the chapters of the thesis, as separate files
+% Just uncomment the lines as you write the chapters
+
+\input{./Chapters/Capitulo1} % Introduction
+
+\input{./Chapters/Capitulo2} % BPEL
+
+\input{./Chapters/Capitulo3} % Aspect-Oriented Programming
+
+\input{./Chapters/Capitulo4} % Aspect-Oriented Workflow Languages
+
+\input{./Chapters/Capitulo5} % Cumbia
+
+\input{./Chapters/Capitulo6} % Motor de BPEL usando Open Objects: Caffeine
+
+\input{./Chapters/Capitulo7} % AspectCaffeine
+
+\input{./Chapters/Capitulo8} % Conclusiones
+
+%\input{./Chapters/CapituloN} % 
+
+%% ----------------------------------------------------------------
+% Now begin the Appendices, including them as separate files
+
+%\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+%\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices 
+
+%\input{./Appendices/AppendixA}	% Appendix Title
+
+%\input{./Appendices/AppendixB} % Appendix Title
+
+%\input{./Appendices/AppendixC} % Appendix Title
+
+%\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+\backmatter
+
+%% ----------------------------------------------------------------
+\label{Bibliography}
+\lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
+\bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+\bibliography{Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
+
+\end{document}  % The End
+%% ----------------------------------------------------------------

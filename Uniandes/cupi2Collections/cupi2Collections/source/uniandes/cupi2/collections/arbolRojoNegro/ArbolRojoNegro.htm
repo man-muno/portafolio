@@ -1,0 +1,329 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es-co">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CUPI2 - Página del Proyecto</title>
+<link type="text/css" rel="stylesheet" href="../../../../../arbolRojoNegro/style/cupi2.css">
+</head>
+
+<body>
+
+<table border="1" width="800" id="table1" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#333333">
+	<tr>
+		<td>
+		<table border="0" width="100%" id="table46">
+			<tr>
+				<td>&nbsp;&nbsp; 
+				<img border="0" src="../../../../../arbolRojoNegro/images/logo.gif" width="200" height="72"></td>
+				<td valign="top">
+				<p align="right"><a href="../../../../../arbolRojoNegro/index.htm">Inicio Árbol Rojo Negro</a>&nbsp; |&nbsp;
+				<a href="../../../../../index.htm">Inicio</a></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="h1" height="35">
+			<h1 class="titulo" align="left">&nbsp;&nbsp;&nbsp;Cupi2 Collections - Estructura 
+			Árbol Rojo Negro</font></td>
+	</tr>
+	<tr>
+		<td class="h2" height="22"><script language="JavaScript" src="http://cupi2.uniandes.edu.co/cupi2.collections/web/js/menu.js"></script></td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" width="100%" id="table42" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="100%" valign="top">
+					<table border="0" width="798" id="table44">
+					<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;&gt;&gt; Estructuras de Datos&gt;
+							Árbol Rojo Negro &gt;
+							Visualización Código Fuente&gt;<b>ArbolRojoNegro</b></td>
+					</tr>
+						<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33" valign="top">&nbsp;</td>
+							<td width="691" colspan="2" valign="top">
+							<a href="../../../../../arbolRojoNegro/codigo.htm">Regresar</a></td>
+							<td width="60" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="531" colspan="2"><p class="titulo">
+							ArbolRojoNegro </td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="609" colspan="4">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="23">&nbsp;</td>
+							<td width="664"><b>Paquete:</b> uniandes.cupi2.collections.arbolRojoNegro<p>
+
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;$Id:&nbsp;ArbolRojoNegro.java,v&nbsp;1.8&nbsp;2006/06/20&nbsp;20:34:50&nbsp;da-romer&nbsp;Exp&nbsp;$</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Universidad&nbsp;de&nbsp;los&nbsp;Andes&nbsp;(Bogot&aacute;&nbsp;-&nbsp;Colombia)</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Departamento&nbsp;de&nbsp;Ingenier&iacute;a&nbsp;de&nbsp;Sistemas&nbsp;y&nbsp;Computaci&oacute;n&nbsp;</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Licenciado&nbsp;bajo&nbsp;el&nbsp;esquema&nbsp;Academic&nbsp;Free&nbsp;License&nbsp;version&nbsp;2.1&nbsp;</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Proyecto&nbsp;Cupi2&nbsp;(http://cupi2.uniandes.edu.co)</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Framework:&nbsp;Cupi2Collections</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Autor:&nbsp;Jorge&nbsp;Villalobos&nbsp;-&nbsp;25/02/2006</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Autor:&nbsp;Pablo&nbsp;Barvo&nbsp;-&nbsp;25/02/2006</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>package&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.arbolRojoNegro;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">java.io.Serializable;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.iterador.Iterador;</font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.iterador.IteradorSimple;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Implementaci&oacute;n&nbsp;de&nbsp;un&nbsp;&aacute;rbol&nbsp;binario&nbsp;ordenado&nbsp;balanceado&nbsp;por&nbsp;altura:&nbsp;&aacute;rbol&nbsp;AVL</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#7f7f9f">&lt;T&gt;&nbsp;</font><font color="#3f5fbf">Tipo&nbsp;de&nbsp;datos&nbsp;que&nbsp;contiene&nbsp;cada&nbsp;nodo&nbsp;del&nbsp;&aacute;rbol</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#7f0055"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">ArbolRojoNegro&lt;T&nbsp;</font><font color="#7f0055"><b>extends&nbsp;</b></font><font color="#000000">Comparable&gt;&nbsp;</font><font color="#7f0055"><b>implements&nbsp;</b></font><font color="#000000">Serializable</font><br>
+<font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Atributos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Ra&iacute;z&nbsp;del&nbsp;&aacute;rbol&nbsp;AVL</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">NodoRojoNegro&lt;T&gt;&nbsp;raiz;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Peso&nbsp;del&nbsp;&aacute;rbol&nbsp;AVL</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">peso;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Constructores</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Constructor&nbsp;del&nbsp;&aacute;rbol&nbsp;AVL&nbsp;vac&iacute;o.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;construy&oacute;&nbsp;un&nbsp;&aacute;rbol&nbsp;AVL&nbsp;vac&iacute;o.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">ArbolRojoNegro</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">raiz&nbsp;=&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">peso&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Constructor&nbsp;del&nbsp;&aacute;rbol&nbsp;AVL&nbsp;con&nbsp;ra&iacute;z.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">pre:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">r!=null&nbsp;y&nbsp;p&gt;=0.&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;construy&oacute;&nbsp;un&nbsp;&aacute;rbol&nbsp;AVL&nbsp;vac&iacute;o.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">r&nbsp;Raiz&nbsp;del&nbsp;&aacute;rbol</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">p&nbsp;Peso&nbsp;del&nbsp;&aacute;rbol</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">ArbolRojoNegro</font><font color="#000000">(&nbsp;</font><font color="#000000">NodoRojoNegro&lt;T&gt;&nbsp;r,&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">p&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">raiz&nbsp;=&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">peso&nbsp;=&nbsp;p;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;M&eacute;todos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;la&nbsp;ra&iacute;z&nbsp;del&nbsp;&aacute;rbol&nbsp;para&nbsp;navegarlo.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;la&nbsp;ra&iacute;z&nbsp;del&nbsp;&aacute;rbol&nbsp;para&nbsp;navegarlo.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Ra&iacute;z&nbsp;del&nbsp;&aacute;rbol&nbsp;para&nbsp;navegarlo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">NodoRojoNegro&lt;T&gt;&nbsp;darRaiz</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">raiz;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Agrega&nbsp;un&nbsp;nuevo&nbsp;elemento&nbsp;al&nbsp;&aacute;rbol&nbsp;AVL.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">se&nbsp;agreg&oacute;&nbsp;el&nbsp;elemento&nbsp;al&nbsp;&aacute;rbol&nbsp;de&nbsp;manera&nbsp;ordenada.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">elemento&nbsp;Elemento&nbsp;que&nbsp;se&nbsp;va&nbsp;a&nbsp;agregar</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@throws&nbsp;</font><font color="#3f5fbf">ElementoExisteException&nbsp;El&nbsp;elemento&nbsp;especificado&nbsp;ya&nbsp;existe&nbsp;en&nbsp;el&nbsp;&aacute;rbol</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">insertar</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;elemento&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#7f0055"><b>throws&nbsp;</b></font><font color="#000000">ElementoExisteException</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">raiz&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Caso&nbsp;1:&nbsp;el&nbsp;&aacute;rbol&nbsp;es&nbsp;vac&iacute;o.&nbsp;La&nbsp;ra&iacute;z&nbsp;del&nbsp;&aacute;rbol&nbsp;es&nbsp;negra</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">raiz&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoRojoNegro&lt;T&gt;</font><font color="#000000">(&nbsp;</font><font color="#000000">elemento,&nbsp;NodoRojoNegro.NEGRO&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Caso&nbsp;2:&nbsp;el&nbsp;&aacute;rbol&nbsp;no&nbsp;es&nbsp;vac&iacute;o</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">raiz&nbsp;=&nbsp;raiz.insertar</font><font color="#000000">(&nbsp;</font><font color="#000000">elemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">peso++;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Elimina&nbsp;del&nbsp;&aacute;rbol&nbsp;el&nbsp;elemento&nbsp;que&nbsp;llega&nbsp;como&nbsp;par&aacute;metro.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;elimin&oacute;&nbsp;el&nbsp;elemento&nbsp;especificado&nbsp;si&nbsp;exist&iacute;a&nbsp;en&nbsp;la&nbsp;estructura.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">elemento&nbsp;Elemento&nbsp;que&nbsp;se&nbsp;va&nbsp;a&nbsp;eliminar</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@throws&nbsp;</font><font color="#3f5fbf">ElementoNoExisteException&nbsp;El&nbsp;elemento&nbsp;especificado&nbsp;no&nbsp;existe&nbsp;en&nbsp;el&nbsp;&aacute;rbol</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">eliminar</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;elemento&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#7f0055"><b>throws&nbsp;</b></font><font color="#000000">ElementoNoExisteException</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">raiz&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Caso&nbsp;1:&nbsp;el&nbsp;&aacute;rbol&nbsp;no&nbsp;es&nbsp;vac&iacute;o</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">raiz&nbsp;=&nbsp;raiz.eliminar</font><font color="#000000">(&nbsp;</font><font color="#000000">elemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">peso--;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Caso&nbsp;2:&nbsp;el&nbsp;&aacute;rbol&nbsp;es&nbsp;vac&iacute;o</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">ElementoNoExisteException</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;elemento&nbsp;especificado&nbsp;no&nbsp;existe&nbsp;en&nbsp;el&nbsp;&aacute;rbol&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Localiza&nbsp;y&nbsp;retorna&nbsp;un&nbsp;elemento&nbsp;en&nbsp;el&nbsp;&aacute;rbol&nbsp;AVL,&nbsp;recibiendo&nbsp;un&nbsp;modelo&nbsp;del&nbsp;mismo&nbsp;como&nbsp;par&aacute;metro.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;elemento&nbsp;del&nbsp;&aacute;rbol&nbsp;que&nbsp;corresponde&nbsp;al&nbsp;modelo&nbsp;o&nbsp;null&nbsp;si&nbsp;no&nbsp;existe&nbsp;ninguno.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">modelo&nbsp;Descripci&oacute;n&nbsp;del&nbsp;elemento&nbsp;que&nbsp;se&nbsp;va&nbsp;a&nbsp;buscar&nbsp;en&nbsp;el&nbsp;&aacute;rbol.&nbsp;Debe&nbsp;contener&nbsp;por&nbsp;lo&nbsp;menos&nbsp;la&nbsp;informaci&oacute;n&nbsp;m&iacute;nima&nbsp;necesaria&nbsp;para&nbsp;que&nbsp;el&nbsp;m&eacute;todo&nbsp;de&nbsp;comparaci&oacute;n&nbsp;del</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodo&nbsp;pueda&nbsp;establecer&nbsp;una&nbsp;relaci&oacute;n&nbsp;de&nbsp;orden</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">E&nbsp;elemento&nbsp;del&nbsp;&aacute;rbol&nbsp;que&nbsp;corresponde&nbsp;al&nbsp;modelo&nbsp;o&nbsp;null&nbsp;si&nbsp;no&nbsp;existe&nbsp;ninguno</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">T&nbsp;buscar</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;modelo&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">(&nbsp;</font><font color="#000000">raiz&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;raiz.buscar</font><font color="#000000">(&nbsp;</font><font color="#000000">modelo&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">:&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;los&nbsp;elementos&nbsp;del&nbsp;&aacute;rbol&nbsp;en&nbsp;inorden.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;iterador&nbsp;con&nbsp;los&nbsp;elementos&nbsp;del&nbsp;&aacute;rbol&nbsp;en&nbsp;inorden.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Iterador&nbsp;con&nbsp;los&nbsp;elementos&nbsp;del&nbsp;&aacute;rbol&nbsp;en&nbsp;inorden</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">Iterador&lt;T&gt;&nbsp;inorden</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">IteradorSimple&lt;T&gt;&nbsp;resultado&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">IteradorSimple&lt;T&gt;</font><font color="#000000">(&nbsp;</font><font color="#000000">peso&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">raiz&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;raiz.inorden(&nbsp;resultado&nbsp;);</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">resultado;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;la&nbsp;altura&nbsp;del&nbsp;&aacute;rbol.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;la&nbsp;altura&nbsp;del&nbsp;&aacute;rbol.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Altura&nbsp;del&nbsp;&aacute;rbol</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">darAltura</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">(&nbsp;</font><font color="#000000">raiz&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;raiz.darAltura</font><font color="#000000">(&nbsp;)&nbsp;</font><font color="#000000">:&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;el&nbsp;peso&nbsp;del&nbsp;&aacute;rbol&nbsp;AVL.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;peso&nbsp;del&nbsp;&aacute;rbol.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Peso&nbsp;del&nbsp;&aacute;rbol&nbsp;AVL</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">darPeso</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">peso;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;el&nbsp;elemento&nbsp;mayor&nbsp;del&nbsp;&aacute;rbol&nbsp;AVL.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;elemento&nbsp;mayor&nbsp;del&nbsp;&aacute;rbol&nbsp;AVL&nbsp;o&nbsp;null&nbsp;si&nbsp;el&nbsp;&aacute;rbol&nbsp;est&aacute;&nbsp;vacio.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Elemento&nbsp;mayor&nbsp;del&nbsp;&aacute;rbol&nbsp;AVL&nbsp;o&nbsp;null&nbsp;si&nbsp;el&nbsp;&aacute;rbol&nbsp;est&aacute;&nbsp;vacio</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">T&nbsp;darMayor</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">(&nbsp;</font><font color="#000000">raiz&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;raiz.darMayor</font><font color="#000000">(&nbsp;)&nbsp;</font><font color="#000000">:&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;el&nbsp;elemento&nbsp;menor&nbsp;del&nbsp;&aacute;rbol&nbsp;AVL.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;elemento&nbsp;menor&nbsp;del&nbsp;&aacute;rbol&nbsp;AVL&nbsp;o&nbsp;null&nbsp;si&nbsp;el&nbsp;&aacute;rbol&nbsp;est&aacute;&nbsp;vacio.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Elemento&nbsp;menor&nbsp;del&nbsp;&aacute;rbol&nbsp;AVL&nbsp;o&nbsp;null&nbsp;si&nbsp;el&nbsp;&aacute;rbol&nbsp;est&aacute;&nbsp;vacio</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">T&nbsp;darMenor</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">(&nbsp;</font><font color="#000000">raiz&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;raiz.darMenor</font><font color="#000000">(&nbsp;)&nbsp;</font><font color="#000000">:&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;los&nbsp;elementos&nbsp;del&nbsp;&aacute;rbol&nbsp;utilizando&nbsp;un&nbsp;recorrido&nbsp;por&nbsp;niveles.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;iterador&nbsp;para&nbsp;recorrer&nbsp;los&nbsp;elementos&nbsp;del&nbsp;&aacute;rbol&nbsp;por&nbsp;niveles.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Iterador&nbsp;con&nbsp;los&nbsp;elementos&nbsp;del&nbsp;&aacute;rbol&nbsp;en&nbsp;un&nbsp;recorrido&nbsp;por&nbsp;niveles</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">Iterador&lt;T&gt;&nbsp;darRecorridoNiveles</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">IteradorSimple&lt;T&gt;&nbsp;resultado&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">IteradorSimple&lt;T&gt;</font><font color="#000000">(&nbsp;</font><font color="#000000">darPeso</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">raiz&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;raiz.darRecorridoNiveles(&nbsp;resultado&nbsp;);</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">resultado;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#000000">}</font></code>
+    
+   </td>
+   </tr>
+</table>
+</div>
+</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="23">&nbsp;</td>
+							<td width="664">&nbsp;</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="527" colspan="2">
+							<a href="../../../../../arbolRojoNegro/codigo.htm">Regresar</a></td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="527" colspan="2">&nbsp;
+							</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+<table border="0" width="800" cellspacing="0" cellpadding="0" id="table6">
+	<tr>
+		<td width="65">
+		<p align="center"><a href="http://www.uniandes.edu.co/">
+		<img border="0" src="../../../../../images/logo_uniandes.gif" width="44" height="50"></a></td>
+		<td>Copyright © 2006, <b>Universidad de los Andes</b>. Todos los derechos 
+			reservados<b>.<br>
+			</b>Cupi2Collections - <a href="http://sistemas.uniandes.edu.co/">Departamento de Ingeniería de Sistemas y Computación.</a><br>
+		<b>2006</b></td>
+	</tr>
+</table>
+
+<script language="JavaScript" src="http://cupi2.uniandes.edu.co/cupi2.collections/web/js/menu_general.js"></script>
+</body>
+
+</html>

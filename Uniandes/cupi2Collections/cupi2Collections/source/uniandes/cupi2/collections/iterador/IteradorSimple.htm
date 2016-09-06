@@ -1,0 +1,304 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es-co">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CUPI2 - Página del Proyecto</title>
+<link type="text/css" rel="stylesheet" href="../../../../../iterador/style/cupi2.css">
+</head>
+
+<body>
+
+<table border="1" width="800" id="table1" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#333333">
+	<tr>
+		<td>
+		<table border="0" width="100%" id="table46">
+			<tr>
+				<td>&nbsp;&nbsp; 
+				<img border="0" src="../../../../../iterador/images/logo.gif" width="200" height="72"></td>
+				<td valign="top">
+				<p align="right"><a href="../../../../../iterador/index.htm">Inicio Iterador</a>&nbsp; |&nbsp;
+				<a href="../../../../../index.htm">Inicio</a></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="h1" height="35">
+			<h1 class="titulo" align="left">&nbsp;&nbsp;&nbsp;Cupi2 Collections - Estructura 
+			Iterador</font></td>
+	</tr>
+	<tr>
+		<td class="h2" height="22"><script language="JavaScript" src="http://cupi2.uniandes.edu.co/cupi2.collections/web/js/menu.js"></script></td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" width="100%" id="table42" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="100%" valign="top">
+					<table border="0" width="798" id="table44">
+					<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;&gt;&gt; Estructuras de Datos&gt;
+							Iterador &gt;
+							Visualización Código Fuente&gt;<b>IteradorSimple</b></td>
+					</tr>
+						<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33" valign="top">&nbsp;</td>
+							<td width="691" colspan="2" valign="top">
+							<a href="../../../../../iterador/codigo.htm">Regresar</a></td>
+							<td width="60" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="531" colspan="2"><p class="titulo">
+							IteradorSimple </td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="609" colspan="4">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="23">&nbsp;</td>
+							<td width="664"><b>Paquete:</b> uniandes.cupi2.collections.iterador<p>
+
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;$Id:&nbsp;IteradorSimple.java,v&nbsp;1.22&nbsp;2007/06/05&nbsp;01:19:16&nbsp;man-muno&nbsp;Exp&nbsp;$</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Universidad&nbsp;de&nbsp;los&nbsp;Andes&nbsp;(Bogot&aacute;&nbsp;-&nbsp;Colombia)</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Departamento&nbsp;de&nbsp;Ingenier&iacute;a&nbsp;de&nbsp;Sistemas&nbsp;y&nbsp;Computaci&oacute;n&nbsp;</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Licenciado&nbsp;bajo&nbsp;el&nbsp;esquema&nbsp;Academic&nbsp;Free&nbsp;License&nbsp;version&nbsp;2.1&nbsp;</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Proyecto&nbsp;Cupi2&nbsp;(http://cupi2.uniandes.edu.co)</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Framework:&nbsp;Cupi2Collections</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Autor:&nbsp;Jorge&nbsp;Villalobos&nbsp;-&nbsp;Abr&nbsp;5,&nbsp;2006</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>package&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.iterador;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Implementaci&oacute;n&nbsp;de&nbsp;un&nbsp;iterador&nbsp;simple.&nbsp;A&nbsp;trav&eacute;s&nbsp;de&nbsp;este&nbsp;tipo&nbsp;de&nbsp;iterador&nbsp;s&oacute;lo&nbsp;se&nbsp;pueden&nbsp;recorrer&nbsp;los&nbsp;elementos&nbsp;de&nbsp;la&nbsp;estructura&nbsp;de&nbsp;datos&nbsp;sobre&nbsp;la&nbsp;que&nbsp;se&nbsp;encuentra&nbsp;asociada</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;pero&nbsp;no&nbsp;&eacute;sta&nbsp;no&nbsp;puede&nbsp;ser&nbsp;modificada.</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#7f7f9f">&lt;T&gt;&nbsp;</font><font color="#3f5fbf">Tipo&nbsp;de&nbsp;datos&nbsp;sobre&nbsp;los&nbsp;que&nbsp;se&nbsp;itera</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#7f0055"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">IteradorSimple&lt;T&gt;&nbsp;</font><font color="#7f0055"><b>implements&nbsp;</b></font><font color="#000000">Iterador&lt;T&gt;</font><br>
+<font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Constantes</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;final&nbsp;static&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">NADA&nbsp;=&nbsp;-</font><font color="#990000">1</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Atributos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Elementos&nbsp;sobre&nbsp;los&nbsp;que&nbsp;se&nbsp;est&aacute;&nbsp;iterando</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">T</font><font color="#000000">[]&nbsp;</font><font color="#000000">elems;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Posici&oacute;n&nbsp;que&nbsp;del&nbsp;pr&oacute;ximo&nbsp;elemento&nbsp;a&nbsp;ser&nbsp;visitado</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">posActual;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;La&nbsp;siguiente&nbsp;posici&oacute;n&nbsp;libre&nbsp;en&nbsp;elems.&nbsp;Corresponde&nbsp;en&nbsp;realidad&nbsp;al&nbsp;n&uacute;mero&nbsp;de&nbsp;elementos&nbsp;sobre&nbsp;los&nbsp;que&nbsp;se&nbsp;est&aacute;&nbsp;iterando</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">sigPosLibre;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Constructores</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Constructor&nbsp;de&nbsp;un&nbsp;iterador&nbsp;con&nbsp;el&nbsp;tama&ntilde;o&nbsp;(capacidad)&nbsp;especificado.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;cre&oacute;&nbsp;un&nbsp;iterador&nbsp;con&nbsp;la&nbsp;capacidad&nbsp;especificada.</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">tamanio&nbsp;El&nbsp;tama&ntilde;o&nbsp;que&nbsp;va&nbsp;a&nbsp;tener&nbsp;el&nbsp;iterador</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">IteradorSimple</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">tamanio&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">T</font><font color="#000000">[]&nbsp;)</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Object</font><font color="#000000">[</font><font color="#000000">tamanio</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">sigPosLibre&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">posActual&nbsp;=&nbsp;NADA;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;M&eacute;todos:&nbsp;interface&nbsp;Iterador</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Indica&nbsp;si&nbsp;a&uacute;n&nbsp;hay&nbsp;elementos&nbsp;sobre&nbsp;los&nbsp;cuales&nbsp;iterar.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;true&nbsp;si&nbsp;a&uacute;n&nbsp;no&nbsp;se&nbsp;han&nbsp;recorrido&nbsp;todos&nbsp;los&nbsp;elementos&nbsp;o&nbsp;false&nbsp;en&nbsp;caso&nbsp;contrario.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">True&nbsp;si&nbsp;a&uacute;n&nbsp;no&nbsp;se&nbsp;han&nbsp;recorrido&nbsp;todos&nbsp;los&nbsp;elementos&nbsp;o&nbsp;false&nbsp;en&nbsp;caso&nbsp;contrario</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>boolean&nbsp;</b></font><font color="#000000">haySiguiente</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">elems.length&nbsp;&gt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">posActual&nbsp;+&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">&lt;&nbsp;sigPosLibre;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Retorna&nbsp;el&nbsp;elemento&nbsp;a&nbsp;ser&nbsp;visitado.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">pre:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">A&uacute;n&nbsp;existe&nbsp;al&nbsp;menos&nbsp;un&nbsp;elemento&nbsp;sobre&nbsp;el&nbsp;cual&nbsp;iterar.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;elemento&nbsp;a&nbsp;ser&nbsp;visitado.&nbsp;De&nbsp;no&nbsp;existir&nbsp;un&nbsp;siguiente&nbsp;se&nbsp;retorna&nbsp;null.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">El&nbsp;elemento&nbsp;a&nbsp;ser&nbsp;visitado.&nbsp;De&nbsp;no&nbsp;existir&nbsp;un&nbsp;siguiente&nbsp;se&nbsp;retorna&nbsp;null.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">T&nbsp;darSiguiente</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">(&nbsp;(&nbsp;</font><font color="#000000">posActual&nbsp;+&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">&lt;&nbsp;sigPosLibre&nbsp;&amp;&amp;&nbsp;elems.length&nbsp;&gt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">++posActual&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">:&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Sit&uacute;a&nbsp;el&nbsp;iterador&nbsp;de&nbsp;nuevo&nbsp;al&nbsp;inicio&nbsp;de&nbsp;la&nbsp;colecci&oacute;n&nbsp;de&nbsp;datos&nbsp;con&nbsp;la&nbsp;que&nbsp;se&nbsp;encuentra&nbsp;asociado.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">El&nbsp;iterador&nbsp;se&nbsp;encuentra&nbsp;al&nbsp;inicio&nbsp;de&nbsp;la&nbsp;colecci&oacute;n&nbsp;de&nbsp;datos&nbsp;con&nbsp;la&nbsp;que&nbsp;se&nbsp;encuentra&nbsp;asociada.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">reiniciar</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">posActual&nbsp;=&nbsp;NADA;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;M&eacute;todos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Agrega&nbsp;un&nbsp;nuevo&nbsp;elemento&nbsp;al&nbsp;final&nbsp;del&nbsp;iterador.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;adicion&oacute;&nbsp;el&nbsp;elemento&nbsp;especificado&nbsp;en&nbsp;la&nbsp;&uacute;ltima&nbsp;posici&oacute;n&nbsp;del&nbsp;iterador,&nbsp;y&nbsp;sigPosLibre=&nbsp;sigPosLibre+1.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@throws&nbsp;</font><font color="#3f5fbf">IteradorException&nbsp;Si&nbsp;el&nbsp;iterador&nbsp;no&nbsp;tiene&nbsp;capacidad&nbsp;para&nbsp;m&aacute;s&nbsp;elementos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">agregar</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;elem&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#7f0055"><b>throws&nbsp;</b></font><font color="#000000">IteradorException</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">sigPosLibre&nbsp;&lt;=&nbsp;elems.length&nbsp;-&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">sigPosLibre++&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elem;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">IteradorException</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;L&iacute;mite&nbsp;del&nbsp;iterador&nbsp;alcanzado&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Inserta&nbsp;un&nbsp;nuevo&nbsp;elemento&nbsp;en&nbsp;la&nbsp;primera&nbsp;posici&oacute;n&nbsp;del&nbsp;iterador.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;adicion&oacute;&nbsp;el&nbsp;elemento&nbsp;especificado&nbsp;en&nbsp;la&nbsp;primera&nbsp;posici&oacute;n&nbsp;del&nbsp;iterador,&nbsp;y&nbsp;sigPosLibre=&nbsp;sigPosLibre+1.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@throws&nbsp;</font><font color="#3f5fbf">IteradorException&nbsp;Si&nbsp;el&nbsp;iterador&nbsp;no&nbsp;tiene&nbsp;capacidad&nbsp;para&nbsp;m&aacute;s&nbsp;elementos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">insertar</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;elem&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#7f0055"><b>throws&nbsp;</b></font><font color="#000000">IteradorException</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">sigPosLibre&nbsp;&gt;=&nbsp;elems.length&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">IteradorException</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;L&iacute;mite&nbsp;del&nbsp;iterador&nbsp;alcanzado&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Abre&nbsp;espacio&nbsp;para&nbsp;el&nbsp;nuevo&nbsp;elemento</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;sigPosLibre;&nbsp;i&nbsp;&gt;&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;i--&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;-&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">sigPosLibre++;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elem;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Convierte&nbsp;el&nbsp;iterador&nbsp;a&nbsp;un&nbsp;String.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;la&nbsp;representaci&oacute;n&nbsp;en&nbsp;String&nbsp;del&nbsp;iterador.&nbsp;El&nbsp;String&nbsp;tiene&nbsp;el&nbsp;formato&nbsp;&#34;[numeroElementos]:&nbsp;e1-e2-e3..-en&#34;,&nbsp;donde&nbsp;e1,&nbsp;e2,&nbsp;...,&nbsp;en&nbsp;son&nbsp;los</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;elementos&nbsp;del&nbsp;iterador&nbsp;y&nbsp;numeroElementos&nbsp;su&nbsp;tama&ntilde;o.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">La&nbsp;representaci&oacute;n&nbsp;en&nbsp;String&nbsp;del&nbsp;iterador</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@Override</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">String&nbsp;toString</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">String&nbsp;resp&nbsp;=&nbsp;</font><font color="#2a00ff">&#34;[&#34;&nbsp;</font><font color="#000000">+&nbsp;sigPosLibre&nbsp;+&nbsp;</font><font color="#2a00ff">&#34;]:&#34;</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;sigPosLibre;&nbsp;i++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resp&nbsp;+=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">+&nbsp;</font><font color="#2a00ff">&#34;-&#34;</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">resp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Retorna&nbsp;la&nbsp;siguiente&nbsp;posici&oacute;n&nbsp;libre&nbsp;del&nbsp;iterador&nbsp;(n&uacute;mero&nbsp;de&nbsp;elementos&nbsp;sobre&nbsp;los&nbsp;que&nbsp;se&nbsp;est&aacute;&nbsp;iterando).</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;la&nbsp;siguente&nbsp;posici&oacute;n&nbsp;libre&nbsp;en&nbsp;el&nbsp;iterador.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">La&nbsp;siguente&nbsp;posici&oacute;n&nbsp;libre&nbsp;en&nbsp;el&nbsp;iterador</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">darSigPosLibre</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">sigPosLibre;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Retorna&nbsp;la&nbsp;posici&oacute;n&nbsp;del&nbsp;pr&oacute;ximo&nbsp;elemento&nbsp;a&nbsp;ser&nbsp;visitado.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;la&nbsp;posici&oacute;n&nbsp;del&nbsp;pr&oacute;ximo&nbsp;elemento&nbsp;a&nbsp;ser&nbsp;visitado.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">La&nbsp;posici&oacute;n&nbsp;del&nbsp;pr&oacute;ximo&nbsp;elemento&nbsp;a&nbsp;ser&nbsp;visitado</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">darPosActual</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">posActual;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Retorna&nbsp;el&nbsp;tama&ntilde;o&nbsp;del&nbsp;iterador&nbsp;(n&uacute;mero&nbsp;m&aacute;ximo&nbsp;de&nbsp;elementos&nbsp;que&nbsp;puede&nbsp;recorrer).&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;tama&ntilde;o&nbsp;del&nbsp;iterador.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">El&nbsp;tama&ntilde;o&nbsp;del&nbsp;iterador</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">darLongitud</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">elems.length;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#000000">}</font></code>
+    
+   </td>
+   </tr>
+</table>
+</div>
+</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="23">&nbsp;</td>
+							<td width="664">&nbsp;</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="527" colspan="2">
+							<a href="../../../../../iterador/codigo.htm">Regresar</a></td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="527" colspan="2">&nbsp;
+							</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+<table border="0" width="800" cellspacing="0" cellpadding="0" id="table6">
+	<tr>
+		<td width="65">
+		<p align="center"><a href="http://www.uniandes.edu.co/">
+		<img border="0" src="../../../../../images/logo_uniandes.gif" width="44" height="50"></a></td>
+		<td>Copyright © 2006, <b>Universidad de los Andes</b>. Todos los derechos 
+			reservados<b>.<br>
+			</b>Cupi2Collections - <a href="http://sistemas.uniandes.edu.co/">Departamento de Ingeniería de Sistemas y Computación.</a><br>
+		<b>2006</b></td>
+	</tr>
+</table>
+
+<script language="JavaScript" src="http://cupi2.uniandes.edu.co/cupi2.collections/web/js/menu_general.js"></script>
+</body>
+
+</html>

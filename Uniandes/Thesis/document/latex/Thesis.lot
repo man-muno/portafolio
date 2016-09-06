@@ -1,0 +1,53 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Modelo de join points en Padus\relax }}{43}{table.caption.175}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Modelo de puntos de corte en Padus\relax }}{43}{table.caption.177}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Elementos de la Capa 1\relax }}{58}{table.caption.222}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Estados del Elemento \textit {Process}\relax }}{60}{table.caption.227}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Acciones del elemento \textit {Process}\relax }}{60}{table.caption.228}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Estados del Elemento \textit {StartingPick}\relax }}{61}{table.caption.231}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Acciones del elemento \textit {StartingPick}\relax }}{61}{table.caption.232}
+\contentsline {table}{\numberline {6.6}{\ignorespaces Estados del Elemento \textit {StartingReceive}\relax }}{61}{table.caption.235}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Acciones del elemento \textit {StartingReceive}\relax }}{62}{table.caption.236}
+\contentsline {table}{\numberline {6.8}{\ignorespaces Estados del Elemento \textit {Pick}\relax }}{63}{table.caption.241}
+\contentsline {table}{\numberline {6.9}{\ignorespaces Acciones del elemento \textit {Pick}\relax }}{63}{table.caption.242}
+\contentsline {table}{\numberline {6.10}{\ignorespaces Estados del Elemento \textit {onAlarm}\relax }}{64}{table.caption.245}
+\contentsline {table}{\numberline {6.11}{\ignorespaces Acciones del elemento \textit {onAlarm}\relax }}{64}{table.caption.246}
+\contentsline {table}{\numberline {6.12}{\ignorespaces Estados del Elemento \textit {onMessage}\relax }}{64}{table.caption.249}
+\contentsline {table}{\numberline {6.13}{\ignorespaces Acciones del elemento \textit {onMessage}\relax }}{65}{table.caption.250}
+\contentsline {table}{\numberline {6.14}{\ignorespaces Estados del Elemento \textit {Receive}\relax }}{65}{table.caption.253}
+\contentsline {table}{\numberline {6.15}{\ignorespaces Acciones del elemento \textit {Receive}\relax }}{65}{table.caption.254}
+\contentsline {table}{\numberline {6.16}{\ignorespaces Estados del Elemento \textit {Reply}\relax }}{66}{table.caption.257}
+\contentsline {table}{\numberline {6.17}{\ignorespaces Acciones del elemento \textit {Reply}\relax }}{66}{table.caption.258}
+\contentsline {table}{\numberline {6.18}{\ignorespaces Estados del Elemento \textit {Invoke}\relax }}{66}{table.caption.261}
+\contentsline {table}{\numberline {6.19}{\ignorespaces Acciones del elemento \textit {Invoke}\relax }}{67}{table.caption.262}
+\contentsline {table}{\numberline {6.20}{\ignorespaces Estados del Elemento \textit {Sequence}\relax }}{68}{table.caption.267}
+\contentsline {table}{\numberline {6.21}{\ignorespaces Acciones del elemento \textit {Sequence}\relax }}{68}{table.caption.268}
+\contentsline {table}{\numberline {6.22}{\ignorespaces Estados del Elemento \textit {Flow}\relax }}{68}{table.caption.271}
+\contentsline {table}{\numberline {6.23}{\ignorespaces Acciones del elemento \textit {Flow}\relax }}{69}{table.caption.272}
+\contentsline {table}{\numberline {6.24}{\ignorespaces Estados del Elemento \textit {While}\relax }}{69}{table.caption.275}
+\contentsline {table}{\numberline {6.25}{\ignorespaces Acciones del elemento \textit {While}\relax }}{70}{table.caption.276}
+\contentsline {table}{\numberline {6.26}{\ignorespaces Estados del Elemento \textit {Condicional}\relax }}{71}{table.caption.279}
+\contentsline {table}{\numberline {6.27}{\ignorespaces Acciones del elemento \textit {Condicional}\relax }}{72}{table.caption.280}
+\contentsline {table}{\numberline {6.28}{\ignorespaces Estados del Elemento \textit {Exit}\relax }}{73}{table.caption.285}
+\contentsline {table}{\numberline {6.29}{\ignorespaces Acciones del elemento \textit {Exit}\relax }}{73}{table.caption.286}
+\contentsline {table}{\numberline {6.30}{\ignorespaces Estados del Elemento \textit {Empty}\relax }}{73}{table.caption.289}
+\contentsline {table}{\numberline {6.31}{\ignorespaces Estados del Elemento \textit {Wait}\relax }}{74}{table.caption.292}
+\contentsline {table}{\numberline {6.32}{\ignorespaces Acciones del elemento \textit {Wait}\relax }}{74}{table.caption.293}
+\contentsline {table}{\numberline {6.33}{\ignorespaces Estados del Elemento \textit {Assign}\relax }}{74}{table.caption.296}
+\contentsline {table}{\numberline {6.34}{\ignorespaces Acciones del elemento \textit {Assign}\relax }}{75}{table.caption.297}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {7.1}{\ignorespaces Estados del Elemento \textit {Aspect}\relax }}{92}{table.caption.431}
+\contentsline {table}{\numberline {7.2}{\ignorespaces Acciones del elemento \textit {Aspect}\relax }}{94}{table.caption.432}
+\contentsline {table}{\numberline {7.3}{\ignorespaces Estados del Elemento \textit {TransitionPoint}\relax }}{94}{table.caption.435}
+\contentsline {table}{\numberline {7.4}{\ignorespaces Acciones del elemento \textit {Transition Point}\relax }}{94}{table.caption.436}
+\contentsline {table}{\numberline {7.5}{\ignorespaces Estados del Elemento \textit {Advice}\relax }}{95}{table.caption.439}
+\contentsline {table}{\numberline {7.6}{\ignorespaces Acciones del elemento \textit {Advice}\relax }}{95}{table.caption.440}
+\contentsline {table}{\numberline {7.7}{\ignorespaces Estados del Elemento \textit {Instruction}\relax }}{96}{table.caption.443}
+\contentsline {table}{\numberline {7.8}{\ignorespaces Acciones del elemento \textit {Instruction}\relax }}{96}{table.caption.444}
+\addvspace {10\p@ }

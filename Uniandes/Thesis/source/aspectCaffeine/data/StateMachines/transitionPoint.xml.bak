@@ -1,0 +1,43 @@
+<state-machine name="transitionPoint" initial-state="Init">
+
+<!-- Init -->
+	<state name="Init" enter-event="enterInit" exit-event="exitInit">
+		<transition name="ToExecuting" successor="Executing">
+			<source-event source-name="ME" event-name="executing" />
+			<before-event name="beforeToExecuting" />
+			<after-event name="afterToExecuting" />
+			<actions>
+				<action name="ExecuteFirstTP"
+					class="uniandes.cumbia.aspects.elements.transitionPoint.transitionPoint.ExecuteFirstTP" />
+			</actions>
+		</transition>
+	</state>
+
+	<!-- Executing -->
+	<state name="Executing" enter-event="enterExecuting" exit-event="exitExecuting">
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ME" event-name="finalizing" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions/>
+		</transition>
+		<transition name="ToSelf" successor="Executing">
+			<source-event source-name="ADVICE" event-name="enterFinalizing" />
+			<before-event name="beforeToSelf"/>
+			<after-event name="afterToSelf" />
+			<actions>
+				<action name="ExecuteNextTP"
+					class="uniandes.cumbia.aspects.elements.transitionPoint.transitionPoint.ExecuteNextTP" />
+			</actions>
+		</transition>
+	</state>
+	
+<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event="exitFinalizing"/>
+		<transition name="ToInit" successor="Init">
+			<source-event source-name="ME" event-name="reinit"/>
+			<before-event name="beforeToInit"/>
+			<after-event name="afterToInit"/>
+			<actions/>
+		</transition>	
+</state-machine>

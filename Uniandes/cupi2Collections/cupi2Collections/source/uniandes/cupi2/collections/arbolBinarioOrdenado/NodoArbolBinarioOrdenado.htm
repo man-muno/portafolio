@@ -1,0 +1,424 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es-co">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CUPI2 - Página del Proyecto</title>
+<link type="text/css" rel="stylesheet" href="../../../../../arbolBinarioOrdenado/style/cupi2.css">
+</head>
+
+<body>
+
+<table border="1" width="800" id="table1" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#333333">
+	<tr>
+		<td>
+		<table border="0" width="100%" id="table46">
+			<tr>
+				<td>&nbsp;&nbsp; 
+				<img border="0" src="../../../../../arbolBinarioOrdenado/images/logo.gif" width="200" height="72"></td>
+				<td valign="top">
+				<p align="right"><a href="../../../../../arbolBinarioOrdenado/index.htm">Inicio Árbol Binario Ordenado</a>&nbsp; |&nbsp;
+				<a href="../../../../../index.htm">Inicio</a></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="h1" height="35">
+			<h1 class="titulo" align="left">&nbsp;&nbsp;&nbsp;Cupi2 Collections - Estructura 
+			Árbol Binario Ordenado</font></td>
+	</tr>
+	<tr>
+		<td class="h2" height="22"><script language="JavaScript" src="http://cupi2.uniandes.edu.co/cupi2.collections/web/js/menu.js"></script></td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" width="100%" id="table42" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="100%" valign="top">
+					<table border="0" width="798" id="table44">
+					<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;&gt;&gt; Estructuras de Datos&gt;
+							Árbol Binario Ordenado &gt;
+							Visualización Código Fuente&gt;<b>NodoArbolBinarioOrdenado</b></td>
+					</tr>
+						<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33" valign="top">&nbsp;</td>
+							<td width="691" colspan="2" valign="top">
+							<a href="../../../../../arbolBinarioOrdenado/codigo.htm">Regresar</a></td>
+							<td width="60" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="531" colspan="2"><p class="titulo">
+							NodoArbolBinarioOrdenado </td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="609" colspan="4">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="23">&nbsp;</td>
+							<td width="664"><b>Paquete:</b> uniandes.cupi2.collections.arbolBinarioOrdenado<p>
+
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;$Id:&nbsp;NodoArbolBinarioOrdenado.java,v&nbsp;1.11&nbsp;2007/10/16&nbsp;15:41:45&nbsp;p-marque&nbsp;Exp&nbsp;$</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Universidad&nbsp;de&nbsp;los&nbsp;Andes&nbsp;(Bogot&aacute;&nbsp;-&nbsp;Colombia)</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Departamento&nbsp;de&nbsp;Ingenier&iacute;a&nbsp;de&nbsp;Sistemas&nbsp;y&nbsp;Computaci&oacute;n&nbsp;</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Licenciado&nbsp;bajo&nbsp;el&nbsp;esquema&nbsp;Academic&nbsp;Free&nbsp;License&nbsp;version&nbsp;2.1&nbsp;</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Proyecto&nbsp;Cupi2&nbsp;(http://cupi2.uniandes.edu.co)</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Framework:&nbsp;Cupi2Collections</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Autor:&nbsp;Jorge&nbsp;Villalobos&nbsp;-&nbsp;25/02/2006</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Autor:&nbsp;Pablo&nbsp;Barvo&nbsp;-&nbsp;25/02/2006</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>package&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.arbolBinarioOrdenado;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">java.io.Serializable;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.iterador.IteradorException;</font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.iterador.IteradorSimple;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Nodo&nbsp;de&nbsp;un&nbsp;&aacute;rbol&nbsp;binario&nbsp;ordenado</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#7f7f9f">&lt;T&gt;&nbsp;</font><font color="#3f5fbf">Tipo&nbsp;de&nbsp;elemento&nbsp;que&nbsp;va&nbsp;a&nbsp;contener&nbsp;cada&nbsp;nodo&nbsp;del&nbsp;&aacute;rbol</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#7f0055"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">NodoArbolBinarioOrdenado&lt;T&nbsp;</font><font color="#7f0055"><b>extends&nbsp;</b></font><font color="#000000">Comparable&gt;&nbsp;</font><font color="#7f0055"><b>implements&nbsp;</b></font><font color="#000000">Serializable</font><br>
+<font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Atributos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Elemento&nbsp;almacenado&nbsp;en&nbsp;el&nbsp;nodo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">T&nbsp;elem;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Nodo&nbsp;a&nbsp;la&nbsp;derecha</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">NodoArbolBinarioOrdenado&lt;T&gt;&nbsp;derNodo;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Nodo&nbsp;a&nbsp;la&nbsp;izquierda</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">NodoArbolBinarioOrdenado&lt;T&gt;&nbsp;izqNodo;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Constructores</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Constructor&nbsp;del&nbsp;nodo.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;cre&oacute;&nbsp;un&nbsp;nodo&nbsp;con&nbsp;el&nbsp;elemento&nbsp;especificado&nbsp;y&nbsp;con&nbsp;derNodo=null&nbsp;y&nbsp;izqNodo=&nbsp;null.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">pElemento&nbsp;Elemento&nbsp;que&nbsp;va&nbsp;a&nbsp;ser&nbsp;almacenado&nbsp;en&nbsp;el&nbsp;nodo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">NodoArbolBinarioOrdenado</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;pElemento&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elem&nbsp;=&nbsp;pElemento;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">derNodo&nbsp;=&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">izqNodo&nbsp;=&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;M&eacute;todos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;la&nbsp;ra&iacute;z&nbsp;del&nbsp;&aacute;rbol&nbsp;(elemento&nbsp;del&nbsp;nodo).&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;la&nbsp;ra&iacute;z&nbsp;del&nbsp;&aacute;rbol&nbsp;(elemento&nbsp;del&nbsp;nodo).</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Ra&iacute;z&nbsp;del&nbsp;&aacute;rbol&nbsp;(elemento&nbsp;del&nbsp;nodo)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">T&nbsp;darRaiz</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">elem;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;el&nbsp;hijo&nbsp;derecho&nbsp;del&nbsp;nodo.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;hijo&nbsp;derecho&nbsp;del&nbsp;nodo.&nbsp;Puede&nbsp;ser&nbsp;null.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Hijo&nbsp;derecho&nbsp;del&nbsp;nodo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">NodoArbolBinarioOrdenado&lt;T&gt;&nbsp;darHijoDerecho</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">derNodo;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;el&nbsp;hijo&nbsp;izquierdo&nbsp;del&nbsp;nodo.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;hijo&nbsp;izquierdo&nbsp;del&nbsp;nodo.&nbsp;Puede&nbsp;ser&nbsp;null.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Hijo&nbsp;izquierdo&nbsp;del&nbsp;nodo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">NodoArbolBinarioOrdenado&lt;T&gt;&nbsp;darHijoIzquierdo</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">izqNodo;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Agrega&nbsp;un&nbsp;nuevo&nbsp;elemento&nbsp;en&nbsp;el&nbsp;&aacute;rbol&nbsp;cuya&nbsp;ra&iacute;z&nbsp;es&nbsp;el&nbsp;nodo&nbsp;actual.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">pre:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">pElemento!=null.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;insert&oacute;&nbsp;el&nbsp;elemento&nbsp;especificado&nbsp;en&nbsp;el&nbsp;&aacute;rbol.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">pElemento&nbsp;elemento&nbsp;que&nbsp;se&nbsp;va&nbsp;a&nbsp;agregar</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@throws&nbsp;</font><font color="#3f5fbf">ElementoExisteException&nbsp;Excepci&oacute;n&nbsp;lanzada&nbsp;si&nbsp;el&nbsp;elemento&nbsp;ya&nbsp;existe&nbsp;en&nbsp;el&nbsp;&aacute;rbol</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">insertar</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;pElemento&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#7f0055"><b>throws&nbsp;</b></font><font color="#000000">ElementoExisteException</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Compara&nbsp;el&nbsp;valor&nbsp;con&nbsp;el&nbsp;valor&nbsp;del&nbsp;nodo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">resultado&nbsp;=&nbsp;elem.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">pElemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">resultado&nbsp;==&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Caso&nbsp;1:&nbsp;El&nbsp;elemento&nbsp;est&aacute;&nbsp;en&nbsp;el&nbsp;nodo&nbsp;ra&iacute;z</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">ElementoExisteException</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;Elemento&nbsp;presente&nbsp;en&nbsp;el&nbsp;&aacute;rbol&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else&nbsp;if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">resultado&nbsp;&gt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Caso&nbsp;2:&nbsp;El&nbsp;elemento&nbsp;se&nbsp;debe&nbsp;insertar&nbsp;en&nbsp;el&nbsp;sub&aacute;rbol&nbsp;izquierdo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">izqNodo&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">izqNodo&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolBinarioOrdenado&lt;T&gt;</font><font color="#000000">(&nbsp;</font><font color="#000000">pElemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">izqNodo.insertar</font><font color="#000000">(&nbsp;</font><font color="#000000">pElemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Caso&nbsp;3:&nbsp;El&nbsp;elemento&nbsp;se&nbsp;debe&nbsp;insertar&nbsp;en&nbsp;el&nbsp;sub&aacute;rbol&nbsp;derecho</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">derNodo&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">derNodo&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolBinarioOrdenado&lt;T&gt;</font><font color="#000000">(&nbsp;</font><font color="#000000">pElemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">derNodo.insertar</font><font color="#000000">(&nbsp;</font><font color="#000000">pElemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Elimina&nbsp;el&nbsp;elemento&nbsp;dado&nbsp;como&nbsp;par&aacute;metro,&nbsp;del&nbsp;&aacute;rbol&nbsp;cuya&nbsp;ra&iacute;z&nbsp;es&nbsp;el&nbsp;nodo&nbsp;actual.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;elimin&oacute;&nbsp;el&nbsp;elemento&nbsp;si&nbsp;exist&iacute;a&nbsp;en&nbsp;&aacute;rbol&nbsp;cuya&nbsp;ra&iacute;z&nbsp;es&nbsp;el&nbsp;nodo&nbsp;actual.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">pElemento&nbsp;Elemento&nbsp;que&nbsp;se&nbsp;va&nbsp;a&nbsp;eliminar</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Ra&iacute;z&nbsp;del&nbsp;&aacute;rbol&nbsp;producto&nbsp;de&nbsp;eliminar&nbsp;del&nbsp;&aacute;rbol&nbsp;que&nbsp;comienza&nbsp;en&nbsp;el&nbsp;nodo&nbsp;actual&nbsp;el&nbsp;elemento&nbsp;que&nbsp;llega&nbsp;como&nbsp;par&aacute;metro</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@throws&nbsp;</font><font color="#3f5fbf">ElementoNoExisteException&nbsp;Excepci&oacute;n&nbsp;lanzada&nbsp;si&nbsp;el&nbsp;elemento&nbsp;no&nbsp;se&nbsp;encontr&oacute;&nbsp;en&nbsp;el&nbsp;&aacute;rbol</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">NodoArbolBinarioOrdenado&lt;T&gt;&nbsp;eliminar</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;pElemento&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#7f0055"><b>throws&nbsp;</b></font><font color="#000000">ElementoNoExisteException</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Compara&nbsp;el&nbsp;valor&nbsp;con&nbsp;el&nbsp;valor&nbsp;del&nbsp;nodo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">resultado&nbsp;=&nbsp;elem.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">pElemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">resultado&nbsp;==&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Caso&nbsp;1:&nbsp;El&nbsp;elemento&nbsp;est&aacute;&nbsp;en&nbsp;el&nbsp;nodo&nbsp;ra&iacute;z</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">izqNodo&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">derNodo;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else&nbsp;if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">derNodo&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">izqNodo;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elem&nbsp;=&nbsp;izqNodo.darMayor</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">izqNodo&nbsp;=&nbsp;izqNodo.eliminar</font><font color="#000000">(&nbsp;</font><font color="#000000">elem&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;this</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else&nbsp;if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">resultado&nbsp;&gt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Caso&nbsp;2:&nbsp;El&nbsp;elemento&nbsp;debe&nbsp;estar&nbsp;en&nbsp;el&nbsp;sub&aacute;rbol&nbsp;izquierdo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">izqNodo&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">ElementoNoExisteException</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;elemento&nbsp;no&nbsp;encontrado&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">izqNodo&nbsp;=&nbsp;izqNodo.eliminar</font><font color="#000000">(&nbsp;</font><font color="#000000">pElemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;this</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Caso&nbsp;3:&nbsp;El&nbsp;elemento&nbsp;debe&nbsp;estar&nbsp;en&nbsp;el&nbsp;sub&aacute;rbol&nbsp;derecho</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">derNodo&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">ElementoNoExisteException</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;elemento&nbsp;no&nbsp;encontrado&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">derNodo&nbsp;=&nbsp;derNodo.eliminar</font><font color="#000000">(&nbsp;</font><font color="#000000">pElemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;this</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Busca&nbsp;el&nbsp;elemento&nbsp;cuyo&nbsp;modelo&nbsp;viene&nbsp;dado&nbsp;como&nbsp;par&aacute;metro,&nbsp;en&nbsp;el&nbsp;&aacute;rbol&nbsp;cuya&nbsp;ra&iacute;z&nbsp;es&nbsp;el&nbsp;nodo&nbsp;actual.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">pre:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">modelo!=null.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;elemento&nbsp;que&nbsp;cumple&nbsp;con&nbsp;el&nbsp;modelo&nbsp;o&nbsp;null&nbsp;si&nbsp;no&nbsp;encuentra&nbsp;ninguno.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">modelo&nbsp;Modelo&nbsp;del&nbsp;elemento&nbsp;que&nbsp;se&nbsp;va&nbsp;a&nbsp;buscar</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Elemento&nbsp;que&nbsp;cumple&nbsp;con&nbsp;el&nbsp;modelo&nbsp;o&nbsp;null&nbsp;si&nbsp;no&nbsp;encuentra&nbsp;ninguno</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">T&nbsp;buscar</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;modelo&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Compara&nbsp;el&nbsp;valor&nbsp;con&nbsp;el&nbsp;valor&nbsp;del&nbsp;nodo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">resultado&nbsp;=&nbsp;elem.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">modelo&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">resultado&nbsp;==&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Caso&nbsp;1:&nbsp;El&nbsp;elemento&nbsp;est&aacute;&nbsp;en&nbsp;el&nbsp;nodo&nbsp;ra&iacute;z</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">elem;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else&nbsp;if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">resultado&nbsp;&gt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Caso&nbsp;2:&nbsp;El&nbsp;elemento&nbsp;deber&iacute;a&nbsp;estar&nbsp;en&nbsp;el&nbsp;sub&aacute;rbol&nbsp;izquierdo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">(&nbsp;</font><font color="#000000">izqNodo&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;izqNodo.buscar</font><font color="#000000">(&nbsp;</font><font color="#000000">modelo&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">:&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Caso&nbsp;3:&nbsp;El&nbsp;elemento&nbsp;deber&iacute;a&nbsp;estar&nbsp;en&nbsp;el&nbsp;sub&aacute;rbol&nbsp;derecho</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">(&nbsp;</font><font color="#000000">derNodo&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;derNodo.buscar</font><font color="#000000">(&nbsp;</font><font color="#000000">modelo&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">:&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Agrega&nbsp;los&nbsp;elementos&nbsp;al&nbsp;iterador&nbsp;que&nbsp;llega&nbsp;como&nbsp;par&aacute;metro,&nbsp;utilizando&nbsp;para&nbsp;esto&nbsp;un&nbsp;recorrido&nbsp;en&nbsp;inorden.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">pre:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">resultado!=null.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;resultado&nbsp;del&nbsp;recorrido.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">resultado&nbsp;Resultado&nbsp;del&nbsp;recorrido</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">inorden</font><font color="#000000">(&nbsp;</font><font color="#000000">IteradorSimple&lt;T&gt;&nbsp;resultado&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Agrega&nbsp;los&nbsp;elementos&nbsp;del&nbsp;sub&aacute;rbol&nbsp;izquierdo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">izqNodo&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">izqNodo.inorden</font><font color="#000000">(&nbsp;</font><font color="#000000">resultado&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>try</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Agrega&nbsp;el&nbsp;elemento&nbsp;que&nbsp;se&nbsp;encuentra&nbsp;en&nbsp;el&nbsp;nodo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resultado.agregar</font><font color="#000000">(&nbsp;</font><font color="#000000">elem&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>catch</b></font><font color="#000000">(&nbsp;</font><font color="#000000">IteradorException&nbsp;e&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Nunca&nbsp;deber&iacute;a&nbsp;aparecer&nbsp;esta&nbsp;excepci&oacute;n</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Agrega&nbsp;los&nbsp;elementos&nbsp;del&nbsp;sub&aacute;rbol&nbsp;derecho</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">derNodo&nbsp;!=&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">derNodo.inorden</font><font color="#000000">(&nbsp;</font><font color="#000000">resultado&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;la&nbsp;altura&nbsp;del&nbsp;&aacute;rbol&nbsp;cuya&nbsp;ra&iacute;z&nbsp;es&nbsp;el&nbsp;nodo&nbsp;actual.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;la&nbsp;altura&nbsp;del&nbsp;&aacute;rbol&nbsp;cuya&nbsp;ra&iacute;z&nbsp;es&nbsp;el&nbsp;nodo&nbsp;actual.&nbsp;Entero&nbsp;mayor&nbsp;o&nbsp;igual&nbsp;a&nbsp;1</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Altura&nbsp;del&nbsp;&aacute;rbol&nbsp;cuya&nbsp;ra&iacute;z&nbsp;es&nbsp;el&nbsp;nodo&nbsp;actual</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">darAltura</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">a1&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">izqNodo&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">:&nbsp;izqNodo.darAltura</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">a2&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">derNodo&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">:&nbsp;derNodo.darAltura</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">(&nbsp;</font><font color="#000000">a1&nbsp;&gt;=&nbsp;a2&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;a1&nbsp;+&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">:&nbsp;a2&nbsp;+&nbsp;</font><font color="#990000">1</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Retorna&nbsp;el&nbsp;elemento&nbsp;mayor&nbsp;del&nbsp;&aacute;rbol&nbsp;cuya&nbsp;ra&iacute;z&nbsp;es&nbsp;el&nbsp;nodo&nbsp;actual.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;elemento&nbsp;mayor&nbsp;del&nbsp;&aacute;rbol&nbsp;cuya&nbsp;ra&iacute;z&nbsp;es&nbsp;el&nbsp;nodo&nbsp;actual&nbsp;o&nbsp;null&nbsp;si&nbsp;el&nbsp;&aacute;rbol&nbsp;es&nbsp;vacio.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Elemento&nbsp;mayor&nbsp;del&nbsp;&aacute;rbol&nbsp;cuya&nbsp;ra&iacute;z&nbsp;es&nbsp;el&nbsp;nodo&nbsp;actual&nbsp;o&nbsp;null&nbsp;si&nbsp;el&nbsp;&aacute;rbol&nbsp;es&nbsp;vac&iacute;o</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">T&nbsp;darMayor</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolBinarioOrdenado&lt;T&gt;&nbsp;nodo&nbsp;=&nbsp;mayorElemento</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">(&nbsp;</font><font color="#000000">nodo&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">:&nbsp;nodo.darRaiz</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Retorna&nbsp;el&nbsp;elemento&nbsp;menor&nbsp;del&nbsp;&aacute;rbol&nbsp;cuya&nbsp;ra&iacute;z&nbsp;es&nbsp;el&nbsp;nodo&nbsp;actual.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;elemento&nbsp;menor&nbsp;del&nbsp;&aacute;rbol&nbsp;cuya&nbsp;ra&iacute;z&nbsp;es&nbsp;el&nbsp;nodo&nbsp;actual&nbsp;o&nbsp;null&nbsp;si&nbsp;el&nbsp;&aacute;rbol&nbsp;es&nbsp;vacio.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Elemento&nbsp;menor&nbsp;del&nbsp;&aacute;rbol&nbsp;cuya&nbsp;ra&iacute;z&nbsp;es&nbsp;el&nbsp;nodo&nbsp;actual&nbsp;o&nbsp;null&nbsp;si&nbsp;el&nbsp;&aacute;rbol&nbsp;es&nbsp;vac&iacute;o</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">T&nbsp;darMenor</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolBinarioOrdenado&lt;T&gt;&nbsp;nodo&nbsp;=&nbsp;menorElemento</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">(&nbsp;</font><font color="#000000">nodo&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">:&nbsp;nodo.darRaiz</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Operaciones&nbsp;Auxiliares</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Retorna&nbsp;el&nbsp;nodo&nbsp;con&nbsp;el&nbsp;mayor&nbsp;elemento&nbsp;del&nbsp;&aacute;rbol.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;nodo&nbsp;con&nbsp;el&nbsp;mayor&nbsp;elemento&nbsp;del&nbsp;&aacute;rbol.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Nodo&nbsp;Nodo&nbsp;con&nbsp;el&nbsp;mayor&nbsp;elemento&nbsp;del&nbsp;&aacute;rbol</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">NodoArbolBinarioOrdenado&lt;T&gt;&nbsp;mayorElemento</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">(&nbsp;</font><font color="#000000">derNodo&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;</font><font color="#7f0055"><b>this&nbsp;</b></font><font color="#000000">:&nbsp;derNodo.mayorElemento</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Retorna&nbsp;el&nbsp;nodo&nbsp;menor&nbsp;elemento&nbsp;del&nbsp;&aacute;rbol.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;el&nbsp;nodo&nbsp;con&nbsp;el&nbsp;menor&nbsp;elemento&nbsp;del&nbsp;&aacute;rbol.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Nodo&nbsp;El&nbsp;nodo&nbsp;con&nbsp;el&nbsp;menor&nbsp;elemento&nbsp;del&nbsp;&aacute;rbol</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">NodoArbolBinarioOrdenado&lt;T&gt;&nbsp;menorElemento</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">(&nbsp;</font><font color="#000000">izqNodo&nbsp;==&nbsp;</font><font color="#7f0055"><b>null&nbsp;</b></font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;</font><font color="#7f0055"><b>this&nbsp;</b></font><font color="#000000">:&nbsp;izqNodo.menorElemento</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#000000">}</font></code>
+    
+   </td>
+   </tr>
+</table>
+</div>
+</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="23">&nbsp;</td>
+							<td width="664">&nbsp;</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="527" colspan="2">
+							<a href="../../../../../arbolBinarioOrdenado/codigo.htm">Regresar</a></td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="527" colspan="2">&nbsp;
+							</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+<table border="0" width="800" cellspacing="0" cellpadding="0" id="table6">
+	<tr>
+		<td width="65">
+		<p align="center"><a href="http://www.uniandes.edu.co/">
+		<img border="0" src="../../../../../images/logo_uniandes.gif" width="44" height="50"></a></td>
+		<td>Copyright © 2006, <b>Universidad de los Andes</b>. Todos los derechos 
+			reservados<b>.<br>
+			</b>Cupi2Collections - <a href="http://sistemas.uniandes.edu.co/">Departamento de Ingeniería de Sistemas y Computación.</a><br>
+		<b>2006</b></td>
+	</tr>
+</table>
+
+<script language="JavaScript" src="http://cupi2.uniandes.edu.co/cupi2.collections/web/js/menu_general.js"></script>
+</body>
+
+</html>

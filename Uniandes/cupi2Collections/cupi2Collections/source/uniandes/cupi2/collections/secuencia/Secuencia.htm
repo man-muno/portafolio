@@ -1,0 +1,690 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es-co">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CUPI2 - Página del Proyecto</title>
+<link type="text/css" rel="stylesheet" href="../../../../../secuencia/style/cupi2.css">
+</head>
+
+<body>
+
+<table border="1" width="800" id="table1" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#333333">
+	<tr>
+		<td>
+		<table border="0" width="100%" id="table46">
+			<tr>
+				<td>&nbsp;&nbsp; 
+				<img border="0" src="../../../../../secuencia/images/logo.gif" width="200" height="72"></td>
+				<td valign="top">
+				<p align="right"><a href="../../../../../secuencia/index.htm">Inicio Secuencia</a>&nbsp; |&nbsp;
+				<a href="../../../../../index.htm">Inicio</a></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="h1" height="35">
+			<h1 class="titulo" align="left">&nbsp;&nbsp;&nbsp;Cupi2 Collections - Estructura 
+			Secuencia</font></td>
+	</tr>
+	<tr>
+		<td class="h2" height="22"><script language="JavaScript" src="http://cupi2.uniandes.edu.co/cupi2.collections/web/js/menu.js"></script></td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" width="100%" id="table42" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="100%" valign="top">
+					<table border="0" width="798" id="table44">
+					<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;&gt;&gt; Estructuras de Datos&gt;
+							Secuencia &gt;
+							Visualización Código Fuente&gt;<b>Secuencia</b></td>
+					</tr>
+						<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33" valign="top">&nbsp;</td>
+							<td width="691" colspan="2" valign="top">
+							<a href="../../../../../secuencia/codigo.htm">Regresar</a></td>
+							<td width="60" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="531" colspan="2"><p class="titulo">
+							Secuencia </td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="609" colspan="4">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="23">&nbsp;</td>
+							<td width="664"><b>Paquete:</b> uniandes.cupi2.collections.secuencia<p>
+
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;$Id:&nbsp;Secuencia.java,v&nbsp;1.8&nbsp;2007/10/16&nbsp;15:41:45&nbsp;p-marque&nbsp;Exp&nbsp;$</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Universidad&nbsp;de&nbsp;los&nbsp;Andes&nbsp;(Bogot&aacute;&nbsp;-&nbsp;Colombia)</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Departamento&nbsp;de&nbsp;Ingenier&iacute;a&nbsp;de&nbsp;Sistemas&nbsp;y&nbsp;Computaci&oacute;n&nbsp;</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Licenciado&nbsp;bajo&nbsp;el&nbsp;esquema&nbsp;Academic&nbsp;Free&nbsp;License&nbsp;version&nbsp;2.1&nbsp;</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Proyecto&nbsp;Cupi2&nbsp;(http://cupi2.uniandes.edu.co)</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Framework:&nbsp;Cupi2Collections</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Autor:&nbsp;Daniel&nbsp;Romero-&nbsp;Mayo&nbsp;6&nbsp;de&nbsp;2006</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>package&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.secuencia;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">java.io.Serializable;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.iterador.Iterador;</font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.iterador.IteradorException;</font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.iterador.IteradorSimple;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Representa&nbsp;una&nbsp;secuencia&nbsp;modelada&nbsp;con&nbsp;un&nbsp;arreglo.&nbsp;Sirve&nbsp;principalmente&nbsp;para&nbsp;mostrar&nbsp;la&nbsp;utilizaci&oacute;n&nbsp;de&nbsp;diferentes&nbsp;algoritmos&nbsp;de&nbsp;ordenamiento&nbsp;y&nbsp;b&uacute;squeda.</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#7f7f9f">&lt;T&gt;&nbsp;</font><font color="#3f5fbf">Tipo&nbsp;de&nbsp;datos&nbsp;a&nbsp;almacenar&nbsp;en&nbsp;la&nbsp;secuencia.&nbsp;Los&nbsp;objetos&nbsp;de&nbsp;tipo&nbsp;T&nbsp;deben&nbsp;implementar&nbsp;la&nbsp;interface&nbsp;Comparable</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#7f0055"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">Secuencia&lt;T&nbsp;</font><font color="#7f0055"><b>extends&nbsp;</b></font><font color="#000000">Comparable&gt;&nbsp;</font><font color="#7f0055"><b>implements&nbsp;</b></font><font color="#000000">Serializable</font><br>
+<font color="#000000">{</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Constantes</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Tama&ntilde;o&nbsp;inicial&nbsp;del&nbsp;arreglo</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;final&nbsp;static&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">INIT&nbsp;=&nbsp;</font><font color="#990000">20</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Atributos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Los&nbsp;elementos&nbsp;de&nbsp;la&nbsp;secuencia</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">Elemento&lt;T&gt;</font><font color="#000000">[]&nbsp;</font><font color="#000000">elems;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;N&uacute;mero&nbsp;de&nbsp;elementos&nbsp;actualmente&nbsp;en&nbsp;la&nbsp;lista</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">numElems;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Constructores</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Constructor&nbsp;de&nbsp;la&nbsp;secuencia.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;construy&oacute;&nbsp;una&nbsp;secuencia&nbsp;con&nbsp;capacidad&nbsp;para&nbsp;20&nbsp;elementos.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">Secuencia</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>this</b></font><font color="#000000">(&nbsp;</font><font color="#000000">INIT&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Constructor&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;con&nbsp;la&nbsp;capacidad&nbsp;inicial.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">pre:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">capacidad!=null,&nbsp;capacidad&gt;0.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;construy&oacute;&nbsp;la&nbsp;secuencia&nbsp;con&nbsp;la&nbsp;capacidad&nbsp;inicial&nbsp;especificada.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">capacidad&nbsp;Capacidad&nbsp;para&nbsp;la&nbsp;secuencia</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">Secuencia</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">capacidad&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Elemento</font><font color="#000000">[</font><font color="#000000">capacidad</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">numElems&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;M&eacute;todos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;el&nbsp;elemento&nbsp;en&nbsp;la&nbsp;posici&oacute;n&nbsp;especificada.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post</font><font color="#7f7f9f">&lt;/b&gt;</font><font color="#3f5fbf">:&nbsp;Se&nbsp;retorn&oacute;&nbsp;el&nbsp;elemento&nbsp;en&nbsp;la&nbsp;posici&oacute;n&nbsp;especificada.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">pos&nbsp;Posici&oacute;n&nbsp;del&nbsp;elemento</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Elemento&nbsp;en&nbsp;la&nbsp;posici&oacute;n&nbsp;especificada</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@throws&nbsp;</font><font color="#3f5fbf">IndiceFueraDeRangoException&nbsp;Excepci&oacute;n&nbsp;que&nbsp;es&nbsp;lanzada&nbsp;cuando&nbsp;se&nbsp;pide&nbsp;un&nbsp;elemento&nbsp;cuya&nbsp;posici&oacute;n&nbsp;esta&nbsp;fuera&nbsp;del&nbsp;rango</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">T&nbsp;darElemento</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">pos&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">pos&nbsp;&lt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">||&nbsp;pos&nbsp;&gt;&nbsp;numElems&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">IndiceFueraDeRangoException</font><font color="#000000">(&nbsp;</font><font color="#000000">pos&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">pos&nbsp;</font><font color="#000000">]</font><font color="#000000">.darElemento</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Agrega&nbsp;el&nbsp;elemento&nbsp;al&nbsp;final&nbsp;de&nbsp;la&nbsp;secuencia.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">pre:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">elem!=&nbsp;null.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;agreg&oacute;&nbsp;el&nbsp;elemento&nbsp;especificado&nbsp;al&nbsp;final&nbsp;de&nbsp;la&nbsp;secuencia.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">elem&nbsp;Elemento&nbsp;a&nbsp;agregar</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">agregar</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;elem&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Verifica&nbsp;si&nbsp;hay&nbsp;que&nbsp;aumentar&nbsp;el&nbsp;tama&ntilde;o&nbsp;de&nbsp;la&nbsp;representaci&oacute;n</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">numElems&nbsp;==&nbsp;elems.length&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">IndiceFueraDeRangoException</font><font color="#000000">(&nbsp;</font><font color="#000000">numElems&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">numElems++&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Elemento</font><font color="#000000">(&nbsp;</font><font color="#000000">elem&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;la&nbsp;longitud&nbsp;de&nbsp;la&nbsp;secuencia.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;la&nbsp;longitud&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;(n&uacute;mero&nbsp;de&nbsp;elementos).</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Longitud&nbsp;de&nbsp;la&nbsp;secuencia</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">darLongitud</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">numElems;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Devuelve&nbsp;un&nbsp;iterador&nbsp;con&nbsp;los&nbsp;elementos&nbsp;de&nbsp;la&nbsp;secuencia.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;iterador&nbsp;con&nbsp;los&nbsp;elementos&nbsp;de&nbsp;la&nbsp;secuencia.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Iterador&nbsp;con&nbsp;los&nbsp;elementos&nbsp;de&nbsp;la&nbsp;secuencia</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">Iterador&lt;T&gt;&nbsp;darIterador</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">IteradorSimple&lt;T&gt;&nbsp;respuesta&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">IteradorSimple&lt;T&gt;</font><font color="#000000">(&nbsp;</font><font color="#000000">numElems&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;numElems;&nbsp;i++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>try</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">respuesta.agregar</font><font color="#000000">(&nbsp;(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]</font><font color="#000000">.darElemento</font><font color="#000000">(&nbsp;)&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>catch</b></font><font color="#000000">(&nbsp;</font><font color="#000000">IteradorException&nbsp;e&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Nunca&nbsp;deber&iacute;a&nbsp;ocurrir&nbsp;esta&nbsp;excepci&oacute;n</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">e.printStackTrace</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">respuesta;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Vac&iacute;a&nbsp;la&nbsp;secuencia.</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">La&nbsp;lista&nbsp;se&nbsp;encuentra&nbsp;vac&iacute;a.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">vaciar</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Se&nbsp;borran&nbsp;las&nbsp;referencias&nbsp;a&nbsp;los&nbsp;objetos&nbsp;presentes&nbsp;en&nbsp;la&nbsp;secuencia,&nbsp;para&nbsp;permitir&nbsp;el&nbsp;adecuado</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;trabajo&nbsp;del&nbsp;recolector&nbsp;de&nbsp;basura</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;numElems;&nbsp;i++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">numElems&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Convierte&nbsp;la&nbsp;secuencia&nbsp;a&nbsp;un&nbsp;String.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;la&nbsp;representaci&oacute;n&nbsp;en&nbsp;String&nbsp;de&nbsp;la&nbsp;secuencia.&nbsp;El&nbsp;String&nbsp;tiene&nbsp;el&nbsp;formato&nbsp;&#34;[numeroElementos]:&nbsp;e1-e2-e3..-en&#34;,&nbsp;donde&nbsp;e1,&nbsp;e2,&nbsp;...,&nbsp;en&nbsp;son&nbsp;los</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;elementos&nbsp;que&nbsp;contiene&nbsp;la&nbsp;secuencia&nbsp;y&nbsp;numeroElementos&nbsp;su&nbsp;longitud.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">La&nbsp;representaci&oacute;n&nbsp;en&nbsp;String&nbsp;de&nbsp;la&nbsp;secuencia</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@Override</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">String&nbsp;toString</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">String&nbsp;resp&nbsp;=&nbsp;</font><font color="#2a00ff">&#34;[&#34;&nbsp;</font><font color="#000000">+&nbsp;numElems&nbsp;+&nbsp;</font><font color="#2a00ff">&#34;]:&#34;</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;numElems;&nbsp;i++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resp&nbsp;+=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]</font><font color="#000000">.darElemento</font><font color="#000000">(&nbsp;)&nbsp;</font><font color="#000000">+&nbsp;</font><font color="#2a00ff">&#34;-&#34;</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">resp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Ordenamientos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Ordena&nbsp;la&nbsp;secuencia&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;bubble&nbsp;sort.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;orden&oacute;&nbsp;la&nbsp;secuencia&nbsp;(en&nbsp;orden&nbsp;ascendente)&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;bubble&nbsp;sort.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">bubbleSort</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;numElems;&nbsp;i++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">j&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;j&nbsp;&lt;&nbsp;numElems&nbsp;-&nbsp;i&nbsp;-&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;j++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Si&nbsp;elemento&nbsp;en&nbsp;la&nbsp;posici&oacute;n&nbsp;j&nbsp;es&nbsp;mayor&nbsp;al&nbsp;elemento&nbsp;en&nbsp;la&nbsp;posici&oacute;n&nbsp;j+1</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;se&nbsp;intercambian</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;</font><font color="#000000">]</font><font color="#000000">.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;+&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">]&nbsp;)&nbsp;</font><font color="#000000">&gt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Elemento&lt;T&gt;&nbsp;temp&nbsp;=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;+&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;+&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;temp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Ordena&nbsp;la&nbsp;secuencia&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;insertion&nbsp;sort.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;orden&oacute;&nbsp;la&nbsp;secuencia&nbsp;(en&nbsp;orden&nbsp;ascendente)&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;insertion&nbsp;sort.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">insertionSort</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Organizar&nbsp;la&nbsp;secuencia.&nbsp;La&nbsp;parte&nbsp;desordenada&nbsp;del&nbsp;arreglo&nbsp;inicia&nbsp;en&nbsp;la&nbsp;posici&oacute;n&nbsp;1</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;de&nbsp;la&nbsp;secuencia</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Elemento&lt;T&gt;&nbsp;elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">desordenado&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;desordenado&nbsp;&lt;&nbsp;numElems;&nbsp;desordenado++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Se&nbsp;busca&nbsp;donde&nbsp;insertar&nbsp;el&nbsp;elemento&nbsp;desde&nbsp;el&nbsp;final&nbsp;de&nbsp;la&nbsp;parte&nbsp;ordenada</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;hacia&nbsp;atr&aacute;s</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">desordenado&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">ordenado&nbsp;=&nbsp;desordenado&nbsp;-&nbsp;</font><font color="#990000">1</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while</b></font><font color="#000000">(&nbsp;</font><font color="#000000">ordenado&nbsp;&gt;=&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;elemento.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">ordenado&nbsp;</font><font color="#000000">]&nbsp;)&nbsp;</font><font color="#000000">&lt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">ordenado&nbsp;+&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">ordenado&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ordenado--;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Asignar&nbsp;el&nbsp;elemento&nbsp;en&nbsp;la&nbsp;posici&oacute;n&nbsp;que&nbsp;le&nbsp;corresponde</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">ordenado&nbsp;+&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elemento;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Ordena&nbsp;la&nbsp;secuencia&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;merge&nbsp;sort.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;orden&oacute;&nbsp;la&nbsp;secuencia&nbsp;(en&nbsp;orden&nbsp;ascendente)&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;merge&nbsp;sort.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">mergeSort</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">auxMergeSort</font><font color="#000000">(&nbsp;</font><font color="#990000">0</font><font color="#000000">,&nbsp;numElems&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Ordena&nbsp;los&nbsp;elementos&nbsp;partiendo&nbsp;la&nbsp;secuencia&nbsp;en&nbsp;dos&nbsp;y&nbsp;mezcla&nbsp;las&nbsp;secuencias&nbsp;ordenadas&nbsp;para&nbsp;obtener&nbsp;la&nbsp;secuencia&nbsp;total&nbsp;ordenada.&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">pre:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">primero&gt;=0,&nbsp;primero</font><font color="#7f7f9f">&lt;n,</font><br>
+<font color="#7f7f9f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ultimo&gt;</font><font color="#3f5fbf">primero,&nbsp;ultimo</font><font color="#7f7f9f">&lt;n.&nbsp;&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;orden&oacute;&nbsp;la&nbsp;secuencia&nbsp;(en&nbsp;orden&nbsp;ascendente)&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;merge&nbsp;sort.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">primero&nbsp;Posici&oacute;n&nbsp;del&nbsp;elemento&nbsp;a&nbsp;partir&nbsp;del&nbsp;cual&nbsp;se&nbsp;va&nbsp;a&nbsp;realizar&nbsp;el&nbsp;ordenamiento</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">ultimo&nbsp;Posici&oacute;n&nbsp;del&nbsp;&uacute;ltimo&nbsp;elemento&nbsp;a&nbsp;ser&nbsp;considerado&nbsp;en&nbsp;el&nbsp;ordenamiento</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">auxMergeSort</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">primero,&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">ultimo&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Solo&nbsp;se&nbsp;consideran&nbsp;las&nbsp;subsecuencias&nbsp;con&nbsp;longitud&nbsp;mayor&nbsp;a&nbsp;1</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">ultimo&nbsp;-&nbsp;primero&nbsp;&gt;=&nbsp;</font><font color="#990000">2&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">mitad&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">primero&nbsp;+&nbsp;ultimo&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">/&nbsp;</font><font color="#990000">2</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">auxMergeSort</font><font color="#000000">(&nbsp;</font><font color="#000000">primero,&nbsp;mitad&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">auxMergeSort</font><font color="#000000">(&nbsp;</font><font color="#000000">mitad,&nbsp;ultimo&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">T&nbsp;elemento1&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;</font><font color="#000000">)</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">mitad&nbsp;-&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">T&nbsp;elemento2&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;</font><font color="#000000">)</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">mitad&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Si&nbsp;la&nbsp;parte&nbsp;a&nbsp;mezclar&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;no&nbsp;se&nbsp;encuentra&nbsp;ordenada&nbsp;se&nbsp;realiza&nbsp;la&nbsp;mezcla</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">elemento1.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">elemento2&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">&gt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;primero;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">j&nbsp;=&nbsp;mitad;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">k&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Elemento&lt;T&gt;</font><font color="#000000">[]&nbsp;</font><font color="#000000">auxiliar&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Elemento</font><font color="#000000">[</font><font color="#000000">numElems</font><font color="#000000">]</font><font color="#000000">;&nbsp;</font><font color="#3f7f5f">//&nbsp;En&nbsp;este&nbsp;arreglo&nbsp;quedan&nbsp;los&nbsp;elementos&nbsp;ordenados&nbsp;temporalmente</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while</b></font><font color="#000000">(&nbsp;</font><font color="#000000">i&nbsp;&lt;&nbsp;mitad&nbsp;&amp;&amp;&nbsp;j&nbsp;&lt;&nbsp;ultimo&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]</font><font color="#000000">.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;</font><font color="#000000">]&nbsp;)&nbsp;</font><font color="#000000">&lt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">auxiliar</font><font color="#000000">[&nbsp;</font><font color="#000000">k&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">i++;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">auxiliar</font><font color="#000000">[&nbsp;</font><font color="#000000">k&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">j++;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">k++;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">i&nbsp;&lt;&nbsp;mitad&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#3f7f5f">//&nbsp;Desplazar&nbsp;los&nbsp;elementos&nbsp;de&nbsp;i&nbsp;a&nbsp;mitad-1</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">l&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">cont&nbsp;=&nbsp;i;&nbsp;cont&nbsp;&lt;&nbsp;mitad;&nbsp;cont++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Elemento&lt;T&gt;&nbsp;elemento&nbsp;=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">cont&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">primero&nbsp;+&nbsp;k&nbsp;+&nbsp;l&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elemento;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">l++;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Realizar&nbsp;la&nbsp;copia&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;auxiliar&nbsp;a&nbsp;la&nbsp;definitiva&nbsp;de&nbsp;los&nbsp;elementos&nbsp;ordenados</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">cont&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;cont&nbsp;&lt;&nbsp;k;&nbsp;cont++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Elemento&lt;T&gt;&nbsp;elemento&nbsp;=&nbsp;auxiliar</font><font color="#000000">[&nbsp;</font><font color="#000000">cont&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">primero&nbsp;+&nbsp;cont&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elemento;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Ordena&nbsp;la&nbsp;secuencia&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;quick&nbsp;sort.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;orden&oacute;&nbsp;la&nbsp;secuencia&nbsp;(en&nbsp;orden&nbsp;ascendente)&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;quick&nbsp;sort.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">quickSort</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Ordena&nbsp;la&nbsp;secuencia&nbsp;usando&nbsp;como&nbsp;pivote&nbsp;el&nbsp;elemento&nbsp;que&nbsp;se&nbsp;encuentra&nbsp;en&nbsp;la&nbsp;posici&oacute;n&nbsp;0</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">auxQuickSort</font><font color="#000000">(&nbsp;</font><font color="#990000">0</font><font color="#000000">,&nbsp;numElems&nbsp;-&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Ordena&nbsp;los&nbsp;elementos&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;desde&nbsp;la&nbsp;posici&oacute;n&nbsp;del&nbsp;pivote&nbsp;hasta&nbsp;la&nbsp;posici&oacute;n&nbsp;especificada.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">pre:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">pivote&gt;=0,&nbsp;pivote</font><font color="#7f7f9f">&lt;n,&nbsp;fin&gt;</font><font color="#3f5fbf">=pivote&nbsp;y&nbsp;fin</font><font color="#7f7f9f">&lt;n.&nbsp;&#34;n&#34;&nbsp;corresponde&nbsp;a&nbsp;la&nbsp;longitud&nbsp;de&nbsp;la&nbsp;secuencia.&nbsp;&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;ordenaron&nbsp;los&nbsp;elementos&nbsp;(en&nbsp;orden&nbsp;ascendente)&nbsp;usando&nbsp;como&nbsp;pivote&nbsp;el&nbsp;elemento&nbsp;en&nbsp;posici&oacute;n&nbsp;especificada.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">secuencia&nbsp;Secuencia&nbsp;a&nbsp;ser&nbsp;ordenada</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">pivote&nbsp;Posici&oacute;n&nbsp;del&nbsp;pivote</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">fin&nbsp;Indice&nbsp;en&nbsp;el&nbsp;que&nbsp;terminan&nbsp;los&nbsp;elementos&nbsp;a&nbsp;ser&nbsp;considerados</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">auxQuickSort</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">pivote,&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">fin&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">fin&nbsp;&gt;&nbsp;pivote&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">posPivote&nbsp;=&nbsp;particionQuickSort</font><font color="#000000">(&nbsp;</font><font color="#000000">pivote,&nbsp;fin&nbsp;</font><font color="#000000">)</font><font color="#000000">;&nbsp;</font><font color="#3f7f5f">//&nbsp;Nueva&nbsp;posici&oacute;n&nbsp;del&nbsp;pivote&nbsp;despu&eacute;s&nbsp;de&nbsp;la&nbsp;partici&oacute;n</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">auxQuickSort</font><font color="#000000">(&nbsp;</font><font color="#000000">pivote,&nbsp;posPivote&nbsp;-&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">)</font><font color="#000000">;&nbsp;</font><font color="#3f7f5f">//&nbsp;Se&nbsp;ordenas&nbsp;los&nbsp;elementos&nbsp;que&nbsp;se&nbsp;encuentran&nbsp;antes&nbsp;del&nbsp;pivote</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">auxQuickSort</font><font color="#000000">(&nbsp;</font><font color="#000000">posPivote&nbsp;+&nbsp;</font><font color="#990000">1</font><font color="#000000">,&nbsp;fin&nbsp;</font><font color="#000000">)</font><font color="#000000">;&nbsp;</font><font color="#3f7f5f">//&nbsp;Se&nbsp;ordenan&nbsp;los&nbsp;elementos&nbsp;que&nbsp;est&aacute;n&nbsp;despu&eacute;s&nbsp;del&nbsp;pivote</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Realiza&nbsp;la&nbsp;partici&oacute;n&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;de&nbsp;tal&nbsp;forma&nbsp;que&nbsp;todos&nbsp;los&nbsp;elementos&nbsp;mayores&nbsp;(o&nbsp;iguales)&nbsp;al&nbsp;pivote&nbsp;queden&nbsp;despu&eacute;s&nbsp;de&nbsp;&eacute;ste&nbsp;y&nbsp;todos&nbsp;los&nbsp;menores&nbsp;antes.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">pre:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">pivote&gt;=0,&nbsp;pivote</font><font color="#7f7f9f">&lt;n,&nbsp;fin&gt;</font><font color="#3f5fbf">=pivote&nbsp;y&nbsp;fin</font><font color="#7f7f9f">&lt;n.&nbsp;&#34;n&#34;&nbsp;corresponde&nbsp;a&nbsp;la&nbsp;longitud&nbsp;de&nbsp;la&nbsp;secuencia.&nbsp;&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;realiz&oacute;&nbsp;la&nbsp;partici&oacute;n&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;de&nbsp;tal&nbsp;forma&nbsp;que&nbsp;todos&nbsp;los&nbsp;elementos&nbsp;mayores&nbsp;(o&nbsp;iguales)&nbsp;al&nbsp;pivote&nbsp;quedaron&nbsp;despu&eacute;s&nbsp;de&nbsp;&eacute;ste&nbsp;y&nbsp;todos&nbsp;los&nbsp;menores</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;antes.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">secuencia&nbsp;La&nbsp;secuencia&nbsp;en&nbsp;la&nbsp;que&nbsp;se&nbsp;va&nbsp;a&nbsp;realizar&nbsp;la&nbsp;partici&oacute;n</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">pivote&nbsp;La&nbsp;posici&oacute;n&nbsp;del&nbsp;pivote&nbsp;antes&nbsp;de&nbsp;la&nbsp;partici&oacute;n</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">fin&nbsp;La&nbsp;finalizaci&oacute;n&nbsp;de&nbsp;los&nbsp;elementos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Indice&nbsp;del&nbsp;pivote&nbsp;despu&eacute;s&nbsp;de&nbsp;la&nbsp;partici&oacute;n</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">particionQuickSort</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">pivote,&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">fin&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">posPivote&nbsp;=&nbsp;pivote;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Elemento&lt;T&gt;&nbsp;elementoPivote&nbsp;=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">pivote&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;pivote;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">j&nbsp;=&nbsp;fin;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while</b></font><font color="#000000">(&nbsp;</font><font color="#000000">i&nbsp;&lt;&nbsp;j&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while</b></font><font color="#000000">(&nbsp;</font><font color="#000000">i&nbsp;&lt;&nbsp;j&nbsp;&amp;&amp;&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]</font><font color="#000000">.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">elementoPivote&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">&lt;=&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">i++;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while</b></font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;</font><font color="#000000">]</font><font color="#000000">.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">elementoPivote&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">&gt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">j--;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">j&nbsp;&gt;&nbsp;i&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Elemento&lt;T&gt;&nbsp;temp&nbsp;=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;temp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">pivote&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elementoPivote;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">posPivote&nbsp;=&nbsp;j;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">posPivote;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Ordena&nbsp;la&nbsp;secuencia&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;selection&nbsp;sort.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;orden&oacute;&nbsp;la&nbsp;secuencia&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;selection&nbsp;sort.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">selectionSort</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">menor&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;menor&nbsp;&lt;&nbsp;numElems;&nbsp;menor++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">j&nbsp;=&nbsp;menor&nbsp;+&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;j&nbsp;&lt;&nbsp;numElems;&nbsp;j++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">menor&nbsp;</font><font color="#000000">]</font><font color="#000000">.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;</font><font color="#000000">]&nbsp;)&nbsp;</font><font color="#000000">&gt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Elemento&lt;T&gt;&nbsp;temp&nbsp;=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">j&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">menor&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">menor&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;temp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Ordena&nbsp;la&nbsp;secuencia&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;shake&nbsp;sort.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;orden&oacute;&nbsp;la&nbsp;secuencia&nbsp;(en&nbsp;orden&nbsp;ascendente)&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;shake&nbsp;sort.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">shakeSort</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">izquierda&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">derecha&nbsp;=&nbsp;numElems;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>boolean&nbsp;</b></font><font color="#000000">termino&nbsp;=&nbsp;</font><font color="#7f0055"><b>false</b></font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while</b></font><font color="#000000">(&nbsp;</font><font color="#000000">!termino&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">termino&nbsp;=&nbsp;</font><font color="#7f0055"><b>true</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">derecha--;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;izquierda;&nbsp;i&nbsp;&lt;&nbsp;derecha;&nbsp;i++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]</font><font color="#000000">.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;+&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">]&nbsp;)&nbsp;</font><font color="#000000">&gt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Elemento&lt;T&gt;&nbsp;temp&nbsp;=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;+&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;+&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;temp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">termino&nbsp;=&nbsp;</font><font color="#7f0055"><b>false</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">termino&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>break</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">termino&nbsp;=&nbsp;</font><font color="#7f0055"><b>true</b></font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;derecha;&nbsp;i&nbsp;&gt;&nbsp;izquierda;&nbsp;i--&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]</font><font color="#000000">.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;-&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">]&nbsp;)&nbsp;</font><font color="#000000">&lt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Elemento&lt;T&gt;&nbsp;temp&nbsp;=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;-&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">i&nbsp;-&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;temp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">termino&nbsp;=&nbsp;</font><font color="#7f0055"><b>false</b></font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">izquierda++;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Ordena&nbsp;la&nbsp;secuencia&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;shell&nbsp;sort.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;orden&oacute;&nbsp;la&nbsp;secuencia&nbsp;(en&nbsp;orden&nbsp;ascendente)&nbsp;usando&nbsp;el&nbsp;algoritmo&nbsp;shell&nbsp;sort.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">shellSort</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Organizar&nbsp;la&nbsp;secuencia.&nbsp;El&nbsp;espaciamiento&nbsp;entre&nbsp;las&nbsp;subsecuencias&nbsp;es&nbsp;n/2,</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;donde&nbsp;n&nbsp;es&nbsp;el&nbsp;tama&ntilde;o&nbsp;de&nbsp;la&nbsp;secuencia</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">espacio&nbsp;=&nbsp;numElems&nbsp;/&nbsp;</font><font color="#990000">2</font><font color="#000000">;&nbsp;espacio&nbsp;&gt;&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;espacio&nbsp;/=&nbsp;</font><font color="#990000">2&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">cont&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;cont&nbsp;&lt;&nbsp;espacio;&nbsp;cont++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">auxShellSort</font><font color="#000000">(&nbsp;</font><font color="#000000">cont,&nbsp;numElems,&nbsp;espacio&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Ordena&nbsp;los&nbsp;elementos&nbsp;separados&nbsp;por&nbsp;el&nbsp;espacio&nbsp;dado&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;dentro&nbsp;de&nbsp;los&nbsp;limites&nbsp;establecidos.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">pre:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">inicio&gt;=0,&nbsp;inicio</font><font color="#7f7f9f">&lt;n,&nbsp;fin&gt;</font><font color="#3f5fbf">inicio&nbsp;y&nbsp;fin</font><font color="#7f7f9f">&lt;n-1.&nbsp;&#34;n&#34;&nbsp;corresponde&nbsp;a&nbsp;la&nbsp;longitud&nbsp;de&nbsp;la&nbsp;secuencia.&nbsp;&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">post:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;ordenaron&nbsp;los&nbsp;elementos&nbsp;determinados&nbsp;por&nbsp;el&nbsp;espacio&nbsp;dado.</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">inicio&nbsp;Índice&nbsp;en&nbsp;la&nbsp;que&nbsp;inician&nbsp;los&nbsp;elementos&nbsp;a&nbsp;ser&nbsp;considerados</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">fin&nbsp;Índice&nbsp;en&nbsp;el&nbsp;que&nbsp;terminan&nbsp;los&nbsp;elementos&nbsp;a&nbsp;ser&nbsp;considerados</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">espacio&nbsp;El&nbsp;espacio&nbsp;que&nbsp;hay&nbsp;entre&nbsp;los&nbsp;elementos&nbsp;a&nbsp;ser&nbsp;ordenados</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">auxShellSort</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">inicio,&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">fin,&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">espacio&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Ordena&nbsp;los&nbsp;elementos&nbsp;por&nbsp;inserci&oacute;n&nbsp;de&nbsp;acuerdo&nbsp;al&nbsp;espacio&nbsp;dado</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">desordenado&nbsp;=&nbsp;inicio&nbsp;+&nbsp;espacio;&nbsp;desordenado&nbsp;&lt;&nbsp;fin;&nbsp;desordenado&nbsp;+=&nbsp;espacio&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Se&nbsp;busca&nbsp;donde&nbsp;insertar&nbsp;el&nbsp;elemento&nbsp;desde&nbsp;el&nbsp;final&nbsp;de&nbsp;la&nbsp;parte&nbsp;ordenada</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;hacia&nbsp;atr&aacute;s</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">ordenado;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ordenado&nbsp;=&nbsp;desordenado&nbsp;-&nbsp;espacio;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Elemento&lt;T&gt;&nbsp;elemento&nbsp;=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">desordenado&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while</b></font><font color="#000000">(&nbsp;</font><font color="#000000">ordenado&nbsp;&gt;=&nbsp;inicio&nbsp;&amp;&amp;&nbsp;elemento.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">ordenado&nbsp;</font><font color="#000000">]&nbsp;)&nbsp;</font><font color="#000000">&lt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">ordenado&nbsp;+&nbsp;espacio&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elems</font><font color="#000000">[&nbsp;</font><font color="#000000">ordenado&nbsp;</font><font color="#000000">]</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ordenado&nbsp;-=&nbsp;espacio;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Asignar&nbsp;el&nbsp;elemento&nbsp;en&nbsp;la&nbsp;posici&oacute;n&nbsp;que&nbsp;le&nbsp;corresponde</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">ordenado&nbsp;+&nbsp;espacio&nbsp;</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;elemento;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;B&uacute;squedas</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Busca&nbsp;el&nbsp;elemento&nbsp;especificado&nbsp;de&nbsp;forma&nbsp;secuencial.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;la&nbsp;posici&oacute;n&nbsp;del&nbsp;elemento&nbsp;buscado&nbsp;dentro&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;o&nbsp;-1&nbsp;si&nbsp;no&nbsp;existe.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">elem&nbsp;Elemento&nbsp;a&nbsp;buscar</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Posici&oacute;n&nbsp;del&nbsp;elemento&nbsp;buscado&nbsp;dentro&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;o&nbsp;-1&nbsp;si&nbsp;no&nbsp;existe</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">busquedaSecuencial</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;elem&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">pos&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Elemento&lt;T&gt;&nbsp;aux&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Elemento&lt;T&gt;</font><font color="#000000">(&nbsp;</font><font color="#000000">elem&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#000000">;&nbsp;pos&nbsp;&lt;&nbsp;numElems&nbsp;&amp;&amp;&nbsp;aux.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">pos&nbsp;</font><font color="#000000">]&nbsp;)&nbsp;</font><font color="#000000">!=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;pos++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">pos&nbsp;==&nbsp;numElems&nbsp;?&nbsp;-</font><font color="#990000">1&nbsp;</font><font color="#000000">:&nbsp;pos;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Busca&nbsp;el&nbsp;elemento&nbsp;especificado&nbsp;usando&nbsp;la&nbsp;b&uacute;squeda&nbsp;binaria.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;&nbsp;</font><font color="#3f5fbf">pre:&nbsp;</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">La&nbsp;secuencia&nbsp;se&nbsp;encuentra&nbsp;ordenada.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;b&gt;</font><font color="#3f5fbf">post:</font><font color="#7f7f9f">&lt;/b&gt;&nbsp;</font><font color="#3f5fbf">Se&nbsp;retorn&oacute;&nbsp;la&nbsp;posici&oacute;n&nbsp;del&nbsp;elemento&nbsp;buscado&nbsp;dentro&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;o&nbsp;-1&nbsp;si&nbsp;no&nbsp;existe.&nbsp;</font><font color="#7f7f9f">&lt;br&gt;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">elem&nbsp;Elemento&nbsp;a&nbsp;buscar</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">Posici&oacute;n&nbsp;del&nbsp;elemento&nbsp;buscado&nbsp;dentro&nbsp;de&nbsp;la&nbsp;secuencia&nbsp;o&nbsp;-1&nbsp;si&nbsp;no&nbsp;existe</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">busquedaBinaria</font><font color="#000000">(&nbsp;</font><font color="#000000">T&nbsp;elem&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">pos&nbsp;=&nbsp;-</font><font color="#990000">1</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Elemento&lt;T&gt;&nbsp;aux&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Elemento&lt;T&gt;</font><font color="#000000">(&nbsp;</font><font color="#000000">elem&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">pos&nbsp;=&nbsp;auxBusquedaBinaria</font><font color="#000000">(&nbsp;</font><font color="#000000">aux,&nbsp;</font><font color="#990000">0</font><font color="#000000">,&nbsp;numElems&nbsp;-&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">pos;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">elem</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">inicio</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">fin</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">auxBusquedaBinaria</font><font color="#000000">(&nbsp;</font><font color="#000000">Elemento&lt;T&gt;&nbsp;elem,&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">inicio,&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">fin&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">pos&nbsp;=&nbsp;-</font><font color="#990000">1</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;La&nbsp;b&uacute;squeda&nbsp;s&oacute;lo&nbsp;se&nbsp;realiza&nbsp;si&nbsp;no&nbsp;se&nbsp;a&nbsp;revisado&nbsp;al&nbsp;menos&nbsp;un&nbsp;elemento</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">mitad&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">inicio&nbsp;+&nbsp;fin&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">/&nbsp;</font><font color="#990000">2</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">mitad&nbsp;&lt;=&nbsp;fin&nbsp;&amp;&amp;&nbsp;mitad&nbsp;&gt;=&nbsp;inicio&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">mitad&nbsp;</font><font color="#000000">]</font><font color="#000000">.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">elem&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">==&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#3f7f5f">//&nbsp;Se&nbsp;encontr&oacute;&nbsp;el&nbsp;elemento</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">pos&nbsp;=&nbsp;mitad;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else&nbsp;if</b></font><font color="#000000">(&nbsp;</font><font color="#000000">elems</font><font color="#000000">[&nbsp;</font><font color="#000000">mitad&nbsp;</font><font color="#000000">]</font><font color="#000000">.compareTo</font><font color="#000000">(&nbsp;</font><font color="#000000">elem&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#000000">&gt;&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)&nbsp;</font><font color="#3f7f5f">//&nbsp;El&nbsp;elemento&nbsp;puede&nbsp;estar&nbsp;en&nbsp;la&nbsp;parte&nbsp;izquierda&nbsp;de&nbsp;la&nbsp;secuencia</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">pos&nbsp;=&nbsp;auxBusquedaBinaria</font><font color="#000000">(&nbsp;</font><font color="#000000">elem,&nbsp;inicio,&nbsp;mitad&nbsp;-&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>else</b></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;El&nbsp;elemento&nbsp;puede&nbsp;estar&nbsp;en&nbsp;la&nbsp;parte&nbsp;derecha&nbsp;de&nbsp;la&nbsp;secuencia</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">pos&nbsp;=&nbsp;auxBusquedaBinaria</font><font color="#000000">(&nbsp;</font><font color="#000000">elem,&nbsp;mitad&nbsp;+&nbsp;</font><font color="#990000">1</font><font color="#000000">,&nbsp;fin&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">pos;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#000000">}</font></code>
+    
+   </td>
+   </tr>
+</table>
+</div>
+</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="23">&nbsp;</td>
+							<td width="664">&nbsp;</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="527" colspan="2">
+							<a href="../../../../../secuencia/codigo.htm">Regresar</a></td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="527" colspan="2">&nbsp;
+							</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+<table border="0" width="800" cellspacing="0" cellpadding="0" id="table6">
+	<tr>
+		<td width="65">
+		<p align="center"><a href="http://www.uniandes.edu.co/">
+		<img border="0" src="../../../../../images/logo_uniandes.gif" width="44" height="50"></a></td>
+		<td>Copyright © 2006, <b>Universidad de los Andes</b>. Todos los derechos 
+			reservados<b>.<br>
+			</b>Cupi2Collections - <a href="http://sistemas.uniandes.edu.co/">Departamento de Ingeniería de Sistemas y Computación.</a><br>
+		<b>2006</b></td>
+	</tr>
+</table>
+
+<script language="JavaScript" src="http://cupi2.uniandes.edu.co/cupi2.collections/web/js/menu_general.js"></script>
+</body>
+
+</html>

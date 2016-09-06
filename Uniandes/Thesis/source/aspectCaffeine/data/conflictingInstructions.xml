@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conflictingInstructions>
+	<advice name="advice1">
+		<conflictsWith name="advice4"/>
+		<conflictsWith name="advice7"/>
+		<conflictsWith name="advice11"/>
+	</advice>
+	<instruction name="instruction1">
+		<conflictsWith name="instruction5"/>
+		<conflictsWith name="instruction8"/>
+	</instruction>
+</conflictingInstructions>

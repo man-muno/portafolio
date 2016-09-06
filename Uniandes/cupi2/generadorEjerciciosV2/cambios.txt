@@ -1,0 +1,8 @@
+generar documento de requerimientos no funcionales (y)
+generar panel de imagen (y)
+generar carpeta de imagenes (y)
+generar readme.txt
+arreglar los .bats para que se generen correctamente
+generar documentos de diseño
+preguntar los documentos que se van a necesitar
+Modificar los encabezados de los archivos de interfaz por el de Cupi2 (y)

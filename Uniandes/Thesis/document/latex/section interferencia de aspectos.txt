@@ -1,0 +1,65 @@
+\section{Interferencia de Aspectos}
+
+Casi todos los lenguajes de AOP permiten componer aspectos independientes en un mismo \textit{join point}. Esto fue denominado \textit{shared join point} en \citep{Ref32}. Ésta característica puede causar que se genere comportamiento imprevisto, pero no por mala implementación de los aspectos, sino porque no todos los aspectos son ortogonales lo que puede causar interacciones semánticas inesperadas, poniendo en riesgo la integridad, disponibilidad y fiabilidad de la aplicación base.
+
+\subsection{Ejemplo}
+
+Para ilustrar estos tipos de conflicto, se presenta un ejemplo de dos preocupaciones transversales, tomado de \citep{Ref33} en AspectJ.
+
+La figura \ref{fig:jukebox} muestra un sistema de reproductor de música. Si se selecciona una canción, a través de la interfaz del reproductor (\textit{JukeBoxUI}), se llama el método \textit{play(Song)} de la clase \textit{JukeBox}, pasándole como parámetro la canción que se quiere escuchar. Éste método a su vez llama a \textit{play(String)} en la clase \textit{Player}, quien es la interfaz con el sistema de audio.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/InterferenceExample.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Sistema de reproducción de música]{Sistema de reproducción de música.}
+	\label{fig:jukebox}
+\end{figure}
+
+Si se agregan dos aspectos, uno de ellos dice que se debe revisar si el usuario tiene suficiente dinero, de ser así, se tiene que retirar cierta cantidad cada vez que se llame el método \textit{play}. El segundo aspecto, dice que se debe crear una lista de reproducción que pone en cola todas las canciones.
+
+\begin{lstlisting}[caption= Aspecto de Cobrar., label = code:creditAspect]
+aspect CreditsAspect 
+{
+	void around () : call ( public void Jukebox . play ( Song )) 
+	{
+		if( Credits . instance (). enoughCredits ()) 
+		{
+			Credits . instance (). withdraw ();
+			proceed ();
+		} 
+		else 
+		{
+			throw new NotEnoughCreditsException ();
+		}
+	}
+}
+\end{lstlisting}
+
+El segundo aspecto pone en cola las canciones y inmediatamente retorna el control a quien lo llamó. En el \textit{advice} se llama el método \textit{enqueue(Song)} en la instancia del objeto \textit{Playlist} que es un \textit{singleton}. Éste método pone el objeto \textit{Song} en la cola y comienza a tocar las canciones hasta que esté desocupada.
+
+\begin{lstlisting}[caption= Aspecto de colocar en cola las canciones., label = code:playlistAspect]
+aspect PlaylistAspect 
+{
+	void around ( Song song ): call ( public void Jukebox.play( Song )) && args ( song ) 
+	{
+		Playlist . instance (). enqueue ( song );
+		return ;
+	}
+}
+\end{lstlisting}
+
+Los dos aspectos se van a tejer en el mismo punto de corte, la llamada del método \textit{play(Song)} de la clase \textit{Jukebox}. Al no declarar de ninguna manera cuál de ellos es primero, solo se pueden ordenar de dos maneras. De la primera manera, el aspecto que cobra se aplica primero y luego el aspecto que pone en cola las canciones. De la otra manera, primero se aplica el aspecto que pone en cola las canciones y luego el aspecto que cobra. Sin embargo, al ejecutar primero el aspecto que pone en cola las canciones, el aspecto que cobra nunca es ejecutado por el \textit{return} que se encuentra en el segundo aspecto, como resultado las canciones sonarán sin que sean cobradas al cliente.
+
+De acuerdo a \citep{Ref32}, éstas interferencias semánticas pueden ser clasificadas, de acuerdo al orden de ejecución de los aspectos:
+
+\textbf{No hay diferencias en el comportamiento observable} - Al tener dos aspectos independientes en un \textit{shared join point}, para cualquier orden de ejecución no se verá ninguna diferencia después de la ejecución de los \textit{advice} de los aspectos.
+
+\textbf{Diferente orden exhibe comportamiento diferente} - Distribuidas en tres categorías
+\begin{itemize}
+\item El cambio en el orden de la ejecución de los aspectos presenta cambios observables, pero no hay un requerimiento especifico de como debería ser ese comportamiento.
+\item El orden de los aspectos importa, debido a que hay un requerimiento explicito que indica el orden de ejecución de los \textit{advices} de los aspectos.
+\item No hay ningún requerimiento de orden de la ejecución de los aspectos, pero hay órdenes de ejecución que pueden violar la semántica de los aspectos. Por ejemplo, cuando múltiples \textit{advices} bloquean ciertos recursos pueden ocurrir \textit{deadlocks}, lo que quiere decir que debido a la semántica de los aspectos hay orden de ejecución implícito.
+\end{itemize}
+
+\section{Prupuestas para Resolución de Conflictos}

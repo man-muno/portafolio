@@ -1,0 +1,54 @@
+<state-machine name="startingPick" initial-state="Init">
+
+	<!-- Init -->
+	<state name="Init" enter-event="" exit-event="exitInit">
+		<transition name="ToWaiting" successor="Waiting">
+			<source-event source-name="ME" event-name="activate" />
+			<before-event name="beforeToWaiting" />
+			<after-event name="afterToWaiting" />
+			<actions>
+				<action name="RegisterOnMessage"
+					class="uniandes.cumbia.bpel.elements.startingPoints.actions.RegisterOnMessage" />
+			</actions>
+		</transition>
+	</state>
+
+	<!-- Waiting -->
+	<state name="Waiting" enter-event="enterWaiting" exit-event="exitWaiting">
+		<transition name="ToExecutingME" successor="Executing">
+			<source-event source-name="ME" event-name="messageReceived" />
+			<before-event name="beforeToExecutingME" />
+			<after-event name="afterToExecutingME" />
+			<actions>
+				<action name="ExecuteActivity"
+					class="uniandes.cumbia.bpel.elements.startingPoints.actions.ExecuteActivity" />
+			</actions>
+		</transition>
+		<transition name="ToExecuting" successor="Executing">
+			<source-event source-name="ACT" event-name="exitWaiting" />
+			<before-event name="beforeToExecutingACT" />
+			<after-event name="afterToExecutingACT" />
+			<actions/>
+		</transition>
+	</state>
+
+	<!-- Executing -->
+	<state name="Executing" enter-event="enterExecuting" exit-event="exitExecuting">
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ACT" event-name="enterFinalizing" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions />
+		</transition>
+		<transition name="ToWaitingFromExecuting" successor="Waiting">
+			<source-event source-name="ACT" event-name="enterWaiting" />
+			<before-event name="beforeToWaitingFromExecuting" />
+			<after-event name="afterToWaitingFromExecuting" />
+			<actions />
+		</transition>
+	</state>
+
+
+	<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event=""/>
+</state-machine>

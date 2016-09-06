@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition metamodel="BPEL" modelName="HelloWorld" version="0.1">
+	<metamodel-extensions/>
+	<elements>
+		<open-object name="AdviceProcess0" typeName="Process"/>
+		<open-object name="sequenceAdvice" typeName="Sequence"/>
+		<open-object name="empty" typeName="Empty"/>
+	</elements>
+	<runtime/>
+	<model>
+		<process xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:bpel="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:tns="http://samples.otn.com/helloworld" name="AdviceProcess0" suppressJoinFailure="yes" targetNamespace="http://samples.otn.com/helloworld">
+		    <sequence name="sequenceAdvice">
+		        <empty name="empty"/>
+		    </sequence>
+		</process>
+	</model>
+</definition>

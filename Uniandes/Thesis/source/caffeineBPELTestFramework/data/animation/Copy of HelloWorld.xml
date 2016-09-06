@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animation>
+	<execute-synchronous-call processName="HelloWorld" processID="0"
+		 instanceID="0" message="initial message"/>
+	<execute-asynchronous-call processName="HelloWorld" processID="0"
+		 instanceID="0" message="initial message"/>
+	<process-asynchronous-response processID="0" instanceID="0"
+		 response="initial message"/>
+	<invoke-synchronous-call processID="0" instanceID="0" 
+		 message="initial message" partnerLinkUri="services/HelloWorldService" portType="portType" operation="initiate" />
+	<invoke-asynchronous-call processName="HelloWorld" processID="0" 
+		 instanceID="0" partnerLinkUri="services/HelloWorldService" portType="portType"/>
+	<createTestWsdlService processName="HelloWorld" serviceName="testWSDL" type="dummy"/>
+</animation>

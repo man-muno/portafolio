@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animation>
+	<createTestWsdlService processName="HelloWorld" serviceName="testWSDL" type="counter"/>
+	<execute-synchronous-call processName="HelloWorld" processID="0" instanceID="0" message="initial message" />
+</animation>

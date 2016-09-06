@@ -1,0 +1,35 @@
+<state-machine name="assign" initial-state="Init">
+
+	<!-- Init -->
+	<state name="Init" enter-event="" exit-event="exitInit">
+		<transition name="ToCopying" successor="Copying">
+			<source-event source-name="ME" event-name="start" />
+			<before-event name="beforeToCopying" />
+			<after-event name="afterToCopying" />
+			<actions>
+				<action name="ExecuteFirstCopy" class="uniandes.cumbia.aspect.elements.assign.actions.ExecuteFirstCopy" />
+			</actions>
+		</transition>
+	</state>
+
+	<!-- Copying -->
+	<state name="Copying" enter-event="enterCopying" exit-event="exitCopying">
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ME" event-name="finalized" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions/>
+		</transition>
+		<transition name="ToSelf" successor="Copying">
+			<source-event source-name="ME" event-name="executeNext" />
+			<before-event name="beforeToSelf" />
+			<after-event name="afterToSelf" />
+			<actions>
+				<action name="ExecuteNext" class="uniandes.cumbia.aspect.elements.assign.actions.ExecuteNext" />
+			</actions>
+		</transition>
+	</state>
+
+	<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event=""/>
+</state-machine>

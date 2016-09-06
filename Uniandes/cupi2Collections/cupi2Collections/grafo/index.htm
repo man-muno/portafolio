@@ -1,0 +1,702 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es-co">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CUPI2 - Página del Proyecto</title>
+<link type="text/css" rel="stylesheet" href="style/cupi2.css">
+</head>
+
+<body>
+
+<table border="1" width="800" id="table1" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#333333">
+	<tr>
+		<td>
+		<table border="0" width="100%" id="table40">
+			<tr>
+				<td>&nbsp;&nbsp; 
+				<img border="0" src="images/logo.gif" width="200" height="72"></td>
+				<td valign="top">
+				<p align="right"><a href="index.htm">Inicio</a>&nbsp; |&nbsp;
+				<a href="../index.htm">cupi2Collections </a>&nbsp; |&nbsp;
+				<a href="http://cupi2.uniandes.edu.co/">cupi2WEB</a></p>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="h1" height="35">
+			<h1 class="titulo" align="left">&nbsp;&nbsp;&nbsp;Cupi2 Collections - Estructura Grafo </td>
+	</tr>
+	<tr>
+		<td class="h2" height="22"><script language="JavaScript" src="../js/menu.js"></script></td>
+	</tr>
+
+	<tr>
+		<td>
+			<table border="0" width="100%" id="table42" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="180" bgcolor="#B5D6E6" valign="top"><br>
+<p class="titulomenu">&nbsp;&nbsp; Grafo<table border="0" width="176" id="table43" cellspacing="4">
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="149" colspan="2"><a href="index.htm"><b>
+							Descripción</b></a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2">
+							<a target="_blank" href="../docs/api/uniandes/cupi2/collections/grafo/Grafo.html">
+							Javadoc</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2"><a href="codigo.htm">
+							Visualización Código Fuente</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2"><a href="codigoPruebas.htm">
+							Visualización Código Pruebas</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2">
+							<a href="downloads.htm">Descargas</a></td>
+						</tr>
+					</table>
+					<p></td>
+					<td width="1" bgcolor="#000000"></td>
+					<td width="618" valign="top">
+					<table border="0" width="615" id="table44">
+					<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;&gt;&gt; Estructuras de Datos &gt;
+							Grafo &gt;<b>
+							Descripción</b></td>
+					</tr>
+						<tr>
+							<td width="609" colspan="4">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="25">&nbsp;</td>
+							<td width="17">&nbsp;</td>
+							<td width="510"><div>
+
+					<h1>
+						<span lang="ES">
+Descripción						</span>
+					</h1>
+
+				</div>
+
+
+				<p>
+					<span lang="ES">
+Un
+grafo dirigido es una estructura conformada por un conjunto de
+elementos denominados vértices, y por un conjunto de
+relaciones entre ellos denominados arcos. 					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+En
+un grafo los vértices tienen asociados dos elementos: un
+identificador (único) y una información asociada con
+el elemento. Los arcos están conformados por un
+vértice origen, un vértice destino (estableciendo
+así el sentido de la relación entre los dos
+vértices) y un valor asociado. En los grafos dirigidos no es
+permitido que entre un par de vértices haya más de un
+arco en cada uno de los sentidos.   					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+Algunos conceptos asociados con grafos se presentan a
+continuación:					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Sucesor:						</span>
+					</b>
+ 					<span lang="ES">
+se dice que
+un vértice B es sucesor de un vértice A si existe un
+arco entre A y B talque A es el vértice origen y B el
+vértice destino. En éste mismo caso se dice que A es
+un 						<b>
+predecesor						</b>
+ de B.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Orden:						</span>
+					</b>
+ 					<span lang="ES">
+número
+de elementos (vértices) presentes en un grafo.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Fuente:						</span>
+					</b>
+ 					<span lang="ES">
+vértice que no tiene predecesores.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Sumidero:						</span>
+					</b>
+ 					<span lang="ES">
+vértice de no tiene sucesores.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Camino:						</span>
+					</b>
+ 					<span lang="ES">
+secuencia de
+vértices de la forma <x1, …, xn> entre un
+vértice A (origen) y un vértice B (destino) que
+cumple:					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+o						<span>
+   						</span>
+					</span>
+
+					<span lang="ES">
+xi pertenece al grafo, con 1<=i<=n					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+o						<span>
+   						</span>
+					</span>
+
+					<span lang="ES">
+x1= A y xn= B					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+o						<span>
+   						</span>
+					</span>
+
+					<span lang="ES">
+Xi es predecesor de xi+1 (es decir, hay un arco de
+xi a xi+1), para 1<=i<=n-1					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+La longitud del camino es n-1.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Camino simple:						</span>
+					</b>
+ 					<span lang="ES">
+camino
+en el cual todos los vértices por los cuales pasa son
+diferentes entre sí y diferentes del vértice origen y
+destino.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Costo camino:						</span>
+					</b>
+ 					<span lang="ES">
+suma de
+los valores asociados de los arcos que hacen parte del
+camino.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Ciclo:						</span>
+					</b>
+ 					<span lang="ES">
+camino de
+longitud mayor o igual 1, el cual comienza y termina en el mismo
+vértice.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Ciclo simple:						</span>
+					</b>
+ 					<span lang="ES">
+camino
+de longitud mayor o igual a 1, el cual comienza y termina en el
+mismo vértice.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Grafo acíclico:						</span>
+					</b>
+ 					<span lang="ES">
+grafo que no contiene ciclos.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Camino de Euler:						</span>
+					</b>
+ 					<span lang="ES">
+camino que pasa exactamente una vez por cada uno de los
+arcos del grafo.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Ciclo de Euler:						</span>
+					</b>
+ 					<span lang="ES">
+ciclo
+que pasa exactamente una vez por cada uno de los arcos del grafo.
+						<b>
+ 						</b>
+					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Camino hamiltoniano:						</span>
+					</b>
+ 					<span lang="ES">
+camino que pasa exactamente una vez por cada uno de los
+vértices del grafo. 						<b>
+						</b>
+					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Ciclo hamiltoniano:						</span>
+					</b>
+					<span lang="ES">
+ciclo que pasa exactamente una vez por cada uno de los
+vértices del grafo.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Vértices adyacentes:						</span>
+					</b>
+					<span lang="ES">
+dos vértices son adyacentes si existe al menos un
+arco entre los dos en cualquiera de los dos sentidos.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Cadena:						</span>
+					</b>
+ 					<span lang="ES">
+secuencia de
+vértices de la forma <x1, …, xn> en la que
+cualquier par de vértices consecutivos son
+adyacentes.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Grafo completo:						</span>
+					</b>
+ 					<span lang="ES">
+grafo
+en el que cualquier par dado de sus vértices es
+adyacente.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Grafo conexo:						</span>
+					</b>
+ 					<span lang="ES">
+grafo
+para el cual en cualquier par dado de sus vértices existe
+una cadena que los une.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Grafo fuertemente conexo:						</span>
+					</b>
+ 					<span lang="ES">
+grafo en el cual existe un camino entre cualquier par
+dado de sus vértices.					</span>
+				</p>
+
+
+				<p align="center">
+
+					<span lang="ES">
+						<img width="170" height="226" src="descripcion_grafo_archivos/image002.jpg">
+						</img>
+						<img width="182" height="160" src="descripcion_grafo_archivos/image003.jpg">
+						</img>
+					</span>
+				</p>
+
+
+				<p align="center">
+
+					<span lang="ES">
+Grafo fuertemente conexo y
+completo     Grafo no Conexo					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Grafo Planar:						</span>
+					</b>
+ 					<span lang="ES">
+grafo
+que se puede dibujar en un plano sin que se crucen sus
+arcos.					</span>
+				</p>
+
+
+				<p>
+
+					<span lang="ES">
+·						<span>
+        						</span>
+					</span>
+
+					<b>
+						<span lang="ES">
+Grafos Isomorfos:						</span>
+					</b>
+ 					<span lang="ES">
+dos
+grafos son isomorfos si tienen la misma estructura sin importar que
+tengan diferentes contenidos y/o identificadores en los
+vértices. 						<b>
+ 						</b>
+					</span>
+				</p>
+
+
+				<div>
+
+					<h1>
+						<span lang="ES">
+Ejemplo						</span>
+					</h1>
+
+				</div>
+
+
+				<p align="center">
+					<span lang="ES">
+						<img width="253" height="143" src="descripcion_grafo_archivos/image004.jpg">
+						</img>
+					</span>
+				</p>
+
+
+				<p align="center">
+					<span lang="ES">
+Grafo dirigido					</span>
+				</p>
+
+
+				<p align="center">
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+Aplicando algunos de los
+conceptos mencionados anteriormente sobre éste grafo se
+tiene:					</span>
+				</p>
+
+
+				<ul type="disc">
+					<li>
+						<span lang="ES">
+v5 es sucesor de
+v2.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+v1 es predecesor de
+v2.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+El orden del grafo es
+5.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+v4 es un vértice
+fuente.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+v3 es un
+sumidero.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+El camino de v4 a v2 es
+<v4, v5, v2>.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+El camino <v4, v5, v2>
+es un camino simple.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+El costo del camino <v4,
+v5, v2> es 14.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+El camino <v1, v2, v1>
+es un ciclo simple.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+v5 y v2 son vértices
+adyacentes.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+La secuencia <v4, v5, v2,
+v3> es una cadena.						</span>
+					</li>
+				</ul>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+			</div>
+
+		</body>
+	</td>
+							<td width="45">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="25">&nbsp;</td>
+							<td width="17">&nbsp;</td>
+							<td width="510">&nbsp;</td>
+							<td width="45">&nbsp;</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+<table border="0" width="800" cellspacing="0" cellpadding="0" id="table6">
+	<tr>
+		<td width="65">
+		<p align="center"><a href="http://www.uniandes.edu.co/">
+		<img border="0" src="images/logo_uniandes.gif" width="44" height="50"></a></td>
+		<td>Copyright © 2006, <b>Universidad de los Andes</b>. Todos los derechos 
+			reservados<b>.<br>
+			</b>Cupi2Collections - <a href="http://sistemas.uniandes.edu.co/">Departamento de Ingeniería de Sistemas y Computación.</a><br>
+		<b>2006</b></td>
+	</tr>
+</table>
+<script language="JavaScript" src="../js/menu_general.js"></script>
+</body>
+
+</html>

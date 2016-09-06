@@ -1,0 +1,429 @@
+% Chapter 7
+
+\chapter{AspectCaffine: Extensión de Aspectos a Caffeine} % Write in your own chapter title
+\label{Chapter7}
+\lhead{Chapter 7. \emph{AspectCaffine: Extensión de Aspectos a Caffeine}} % Write in your own chapter title to set the page header
+
+\section{Introducción}
+\textit{AspectCaffeine} es una extensión que se desarrollo sobre \textit{Caffeine} para poder integrar aspectos para resolver las problemáticas expuestas en el capítulo 4. Además se hace una propuesta para manejar la interferencia de aspectos sobre \textit{shared join points}.
+
+Se va a utilizar la categorización descrita en la sección \ref{sec:AOPenWorkflow} para exponer como está construido \textit{AspectCaffeine}.
+
+\section{Modelo de \textit{Join Points}}
+\textit{AspectCaffeine} soporta dos tipos de \textit{join points}: los \textit{join points} de actividades que corresponden a la ejecución de las actividades y los \textit{join points internos}, que corresponden a puntos internos en la ejecución de las actividades. 
+Los \textit{join points} internos se han denominado \textit{transition points}, porque es posible colocarlos en cualquier transición de cualquier actividad BPEL, no solamente dentro de las actividades de interacción.
+\section{Lenguaje de Puntos de Corte}
+De acuerdo con las limitaciones del lenguaje de puntos de corte de \textit{AspectJ} descritas en la sección \ref{section:AspectJPointCuts}, como una solución a éste problema, se ha propuesto que los lenguajes de puntos de corte identifiquen los elementos de acuerdo a sus características, por ejemplo seleccionar cierto elemento que se encuentra en cierta instancia de proceso. 
+
+El lenguaje de puntos de corte para \textit{AspectCaffeine} utiliza un lenguaje similar a los lenguajes de consulta como \textit{XPath} o \textit{XQuery}, la razón para utilizar un lenguaje propio es que el lenguaje también tiene que tener en cuenta las transiciones de los estados de los elementos.
+
+El lenguaje de puntos de corte permite: 
+\begin{itemize}
+\item Seleccionar todos los elementos dado un tipo, para todos los procesos. El ejemplo muestra las instrucciones del lenguaje de puntos de corte para seleccionar todos los elementos de tipo \textit{invoke}, para todos los procesos. 
+
+\begin{lstlisting}[language=xml, caption=Seleccionar todos los elementos dado un tipo para todos los procesos.]
+*Invoke
+\end{lstlisting}
+
+\item Existe una variación al anterior, la cual provee la posibilidad de seleccionar todos los elementos dado un tipo y un nombre, para todos los procesos. Se muestra como se quiere seleccionar todos los elementos de tipo \textit{invoke} que se llaman InvocarServicioFacturacion, para todos los procesos.
+
+\begin{lstlisting}[language=xml, caption=Seleccionar todos los elementos dado un tipo y dado un nombre para todos los procesos.]
+*Invoke[name=InvocarServicioFacturacion]
+\end{lstlisting}
+
+\item También es posible definir que se quiere seleccionar una transición de un elemento dado su tipo para todos los procesos. Para este caso se seleccionará la transición llamada \textit{ToCalculatingNextAdvice}, de todos los elementos de tipo \textit{invoke}, para todos los procesos.
+
+\begin{lstlisting}[language=xml, caption=Seleccionar una transición en todos los elementos dado un tipo para todos los procesos.]
+*Invoke->ToCalculatingNextAdvice
+\end{lstlisting}
+
+\item También es posible seleccionar una transición de un elemento dado su tipo y su nombre para todos los procesos. Para este caso se seleccionará la transición llamada \textit{ToCalculatingNextAdvice}, de todos los elementos de tipo \textit{invoke} llamados \textit{ InvocarServicioFacturacion}, para todos los procesos.
+
+\begin{lstlisting}[language=xml, caption=Seleccionar para todos los procesos una transición dado su nombre en todos los elementos dado el tipo y el nombre.]
+*Invoke[name=InvocarServicioFacturacion]->ToCalculatingNextAdvice
+\end{lstlisting}
+
+\item Seleccionar todos los elementos dado un tipo, para todas las instancias de los procesos dado su nombre. Para este caso se seleccionará todos los elementos de tipo \textit{invoke} para el proceso llamado Shazam.
+
+\begin{lstlisting}[language=xml, caption=Seleccionar para un proceso dado su nombre los elementos dado su tipo]
+*Invoke|Shazam
+\end{lstlisting}
+
+\item Seleccionar todos los elementos dado un tipo y su nombre, para todas las instancias de los procesos dado su nombre. Para este caso se seleccionará todos los elementos de tipo \textit{invoke} con nombre InvocarServicioFacturacion, para el proceso llamado Shazam.
+
+\begin{lstlisting}[language=xml, caption=Seleccionar para un proceso dado su nombre todos los elementos dado el tipo y el nombre.]
+*Invoke[name=InvocarServicioFacturacion]|Shazam
+\end{lstlisting}
+
+
+\item Seleccionar una transición dado su nombre, para todos los elementos dado un tipo y su nombre, para todas las instancias de los procesos dado su nombre. Para este caso se seleccionará la transición llamada ToCalculatingNextAdvice, para todos los elementos de tipo \textit{invoke} con nombre InvocarServicioFacturacion, para el proceso llamado Shazam.
+
+\begin{lstlisting}[language=xml, caption=Seleccionar para un proceso dado su nombre una transición dado su nombre en todos los elementos dado el tipo y el nombre.]
+*Invoke[name=InvocarServicioFacturacion]|Shazam->ToCalculatingNextAdvice
+\end{lstlisting}
+
+
+\item Seleccionar un elemento especifico dado su tipo, su nombre y la ubicación exacta en la estructura de elementos que componen un proceso dado su nombre. Para este ejemplo se seleccionará el elemento llamado InvocarServicioFacturacion de tipo \textit{invoke}, que se encuentra dentro de una elemento \textit{sequence} llamado secuencia, dentro de un proceso llamado Shazam.
+
+\begin{lstlisting}[language=xml, caption=Seleccionar para un proceso dado su nombre un elemento dando su localización y su nombre.]
+*Invoke|Shazam:secuencia:InvocarServicioFacturacion
+\end{lstlisting}
+
+\item Seleccionar una transición de un elemento especifico dado su tipo, su nombre y la ubicación exacta en la estructura de elementos que componen un proceso dado su nombre. Para este ejemplo se seleccionará la transición llamada ToCalculatingNextAdvice, del elemento llamado InvocarServicioFacturacion de tipo \textit{invoke}, que se encuentra dentro de una elemento \textit{sequence} llamado secuencia, dentro de un proceso llamado Shazam.
+
+\begin{lstlisting}[language=xml, caption=Seleccionar para un proceso dado su nombre una transición dado su nombre en todos los elementos dado el tipo el nombre y la ubicación dentro de la estructura.]
+*Invoke|Shazam:secuencia:InvocarServicioFacturacion->ToCalculatingNextAdvice
+\end{lstlisting}
+\end{itemize}	
+
+
+\section{Lenguaje de \textit{Advices}}
+Como se discutió en la sección \ref{section:WorkflowAdviceLanguages}, el lenguaje de los \textit{advices} generalmente es el mismo lenguaje de la aplicación base. Para el caso de \textit{AspectCaffeine} se decidió que el lenguaje de los \textit{advices} sería BPEL.
+El \textit{advice} tiene un atributo tipo, el cual especifica si el \textit{advice} va a ser ejecutado antes, después o en vez del elemento que identifica el punto de corte. 
+
+\subsection{Advice del Aspecto de Facturación}
+En la sección \ref{section:AspectoFacturacion} se mostró un aspecto de facturación, en \textit{AspectCaffeine} ese aspecto se definiría como se muestra en el código \ref{listing:AspectoFacturacion}.
+
+\begin{lstlisting}[language=xml, escapechar=\%, caption= Aspecto de facturación definido en \textit{AspectCaffeine}, label= listing:AspectoFacturacion]
+<?xml version="1.0" encoding="UTF-8"?>
+<aspect name="facturacion">
+	<transitionPoint name="TP1" pointcut="*Invoke|Shazam">
+		<advice name="invokeFacturacion" type="before">
+	    	<partnerLinks>		
+		       	<partnerLink name="recaudo"
+		                     partnerLinkType="tns:FacturacionShazam"
+		                     myRole="RecaudoRequester"
+		                     partnerRole="RecaudoProvider"
+		                     />
+	    	</partnerLinks>
+		    <variables>
+		        <variable name="facturacionInfo" messageType="tns:FacturacionMessage"/>
+		    </variables>
+	        <assign>
+	            <copy name="copy">
+	                <from name="from">bpel:getVariableData('input', 'payload','/tns:userName')</from>
+	                <to name="to" variable="facturacionInfo" part="payload" query="/tns:result"/>
+	            </copy>
+	        </assign>		    
+			<invoke name="invoke" operation="initiate" partnerLink="recaudo" portType="tns:FacturacionShazam" inputVariable="facturacionInfo"/>
+		</advice>
+	</transitionPoint>
+</aspect> 
+\end{lstlisting}
+
+En la línea 4 se puede observar que al \textit{advice} se le da un nombre para que pueda ser identificado. Allí mismo se le da el tipo que para éste caso es un \textit{advice} de tipo \textit{before}. Luego le siguen las líneas que corresponden al código de la solución de la preocupación transversal. Primero se declara un nuevo \textit{partner link} que define la comunicación con el colaborador, luego la variable que tendrá la información que se quiere enviar al colaborador. En seguida, se agregan las nuevas actividades, la primera asigna el valor de la variable que será enviada al servicio colaborador y la segunda la actividad que envía la información.
+
+
+\section{Tejido de Aspectos}
+
+
+\section{Elementos}
+
+Para representar el motor de aspectos de \textit{Caffeine} se decidió crear un nuevo domino que materialice los conceptos de sistemas basados en aspectos. Los elementos que lo componen este nuevo metamodelo son \textit{Aspect}, \textit{TransitonPoint}, \textit{Advice}, \textit{Instruction}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/AspectCaffeine.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Elementos de \textit{AspectCaffeine}]{ Elementos de \textit{AspectCaffeine}.}
+	\label{fig:ElementosAspectCaffeine}
+\end{figure}
+
+
+
+\subsubsection{Elemento \textit{Aspect}}
+\label{section:ElementAspect}
+Como su nombre lo indica, este elemento representa un aspecto, es decir, un conjunto de instrucciones que se encuentran llamado \textit{Advice}, ubicado en cierto punto representado por el \textit{Transition Point}. 
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/Aspect.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Aspect}]{Máquina de estados del elemento \textit{Aspect}.}
+	\label{fig:AspectStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Aspect}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	CalculatingTP & Una vez el elemento es inicializado, pasa a calcular cual es el primer \textit{Transition Point} donde estará ubicado el aspecto.\\ \hline
+	ExecutingTP &  Indica que se ha encontrado el \textit{Transition Point} y está ejecutando los \textit{Advices} designados para ese punto.\\ \hline
+	Finalizing &  En este estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosAspect}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Aspect}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	CalculateFirstTP &  Calcula cual es el primer \textit{Transition Point} que se va a ejecutar.\\ \hline
+	ExecuteTP &  Indica a los \textit{Advices} que allí se encuentran que deben ejecutarse.\\ \hline
+	CalculateNextTP &  Calcula el siguiente \textit{Transition Point}.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesAspect}    % is used to refer this table in the text 
+\end{table}
+
+
+\subsubsection{Elemento \textit{Transition Point}}
+\label{section:ElementTransitionPoint}
+Éste elemento indica un lugar donde debe ejecutarse la lógica contenida en los \textit{Advices}
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/TransitionPoint.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Transition Point}]{Máquina de estados del elemento \textit{Transition Point}.}
+	\label{fig:TransitionPointStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{TransitionPoint}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	CalculatingNextAdvice & Una vez el elemento es inicializado, pasa a calcular cual es el primer \textit{Advice} que debe ser ejecutado.\\ \hline
+	Executing &  Indica que se ha encontrado el \textit{Advice} y está ejecutando las instrucciones.\\ \hline
+	Finalizing &  En este estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosTransitionPoint}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Transition Point}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	CalculateNextAdvice &  Calcula cual es el diguiente \textit{Advice} que se va a ejecutar.\\ \hline
+	ExecuteAdvice &  Indica al \textit{Advice} que allí se encuentra que se debe ejecutar.\\ \hline	\hline
+\end{tabular}
+\label{table:AccionesTransitionPoint}    % is used to refer this table in the text 
+\end{table}
+
+
+\subsubsection{Elemento \textit{Advice}}
+\label{section:ElementAdvice}
+Éste elemento contiene el conjunto de instrucciones que deben ser ejecutadas en ese punto.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/Advice.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Advice}]{Máquina de estados del elemento \textit{Advice}.}
+	\label{fig:AdviceStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Advice}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	ExecutingInstruction &  Indica que está ejecutando las instrucciones.\\ \hline
+	Finalizing &  En este estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosAdvice}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Advice}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	ExecuteInstruction &  Ejecuta la siguiente instrucción en el orden que fue definida.\\ \hline	\hline
+\end{tabular}
+\label{table:AccionesAdvice}    % is used to refer this table in the text 
+\end{table}
+
+
+\subsubsection{Elemento \textit{Instruction}}
+\label{section:ElementAdvice}
+Éste elemento representa una instrucción. 
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/Instruction.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Instruction}]{Máquina de estados del elemento \textit{Instruction}.}
+	\label{fig:InstructionStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Instruction}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Preparing &  Indica que la instrucción está siendo preparada para su ejecución. \\ \hline
+	Executing &  Indica que está ejecutando la instrucción.\\ \hline
+	Finalizing &  En este estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosInstruction}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Instruction}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	PrepareInstruction &  Prepara los posibles argumentos que pueda tener la instrucción.\\ \hline
+	ExecuteInstruction &  Ejecuta la instrucción.\\ \hline	\hline
+\end{tabular}
+\label{table:AccionesInstruction}    % is used to refer this table in the text 
+\end{table}
+
+
+\section{Manejo de Interferencias}
+
+Para realizar el manejo de interferencias en \textit{AspectCaffeine} se hace uso de un archivo que describe cuales son las instrucciones o los \textit{advices} que potencialmente pueden entrar en conflicto con otros. A partir de éste archivo, junto con los \textit{advices} que se encuentran en el motor, se arma un grafo dirigido de \textit{advices} no conflictivos, donde los vértices representan los \textit{advices} y los arcos entre los vértices representan cuales \textit{advices} pueden ser ejecutados después de cada \textit{advice}.
+
+A continuación se muestra un ejemplo de un posible archivo de \textit{advices} conflictivos, para un aspecto que en total tiene cinco \textit{advices}, llamados \textit{advice1},\textit{advice11},\textit{advice5},\textit{advice7} y \textit{advice4}.
+
+\begin{lstlisting}[language=xml, escapechar=\%, caption= Ejemplo de archivo que define los conflictos entre las instrucciones o \textit{advices}, label= listing:ConflictingInstructions]
+<?xml version="1.0" encoding="UTF-8"?>
+<conflicts>
+	<advice name="advice1">
+		<conflictsWith name="advice4"/>
+	</advice>
+	<advice name="advice4">
+		<conflictsWith name="advice7"/>
+		<conflictsWith name="advice11"/>
+	</advice>
+
+	<instruction name="inst1">
+		<conflictsWith name="inst8"/>
+	</instruction>
+	<instruction name="inst3">
+		<conflictsWith name="inst1"/>
+		<conflictsWith name="inst2"/>
+	</instruction>
+</conflicts>
+\end{lstlisting}
+
+A continuación se mostrará gráficamente como se armaría el grafo de \textit{advices} no conflictivos para cada uno de los \textit{advices}.
+
+\subsection*{Advice1}
+De acuerdo al descriptor no es posible ejecutar el \textit{advice4} después del \textit{advice1}, así que no habrá un arco entre esos dos vértices. De igual manera, se definió que no se puede ejecutar la \textit{inst8} después de ejecutar la \textit{inst1}, asé que tampoco existirá un arco entre el \textit{advice1} y el \textit{advice7}. Ver figura \ref{fig:GrafoAdvice1}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/advice1.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Grafo únicamente para el \textit{advice1}]{Grafo únicamente para el \textit{advice1}.}
+	\label{fig:GrafoAdvice1}
+\end{figure}
+
+\subsection*{Advice11}
+En el descriptor no existe ningún tipo de restricción para el \textit{advice11}. Ver figura \ref{fig:GrafoAdvice2}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/advice2.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Grafo únicamente para el \textit{advice11}]{Grafo únicamente para el \textit{advice11}.}
+	\label{fig:GrafoAdvice2}
+\end{figure}
+
+\subsection*{Advice5}
+En el descriptor no existe ningún tipo de restricción para el \textit{advice5}. Ver figura \ref{fig:GrafoAdvice3}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/advice3.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Grafo únicamente para el \textit{advice5}]{Grafo únicamente para el \textit{advice5}.}
+	\label{fig:GrafoAdvice3}
+\end{figure}
+
+\subsection*{Advice7}
+En el descriptor no existe ningún tipo de restricción para el \textit{advice7}. Ver figura \ref{fig:GrafoAdvice4}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/advice4.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Grafo únicamente para el \textit{advice7}]{Grafo únicamente para el \textit{advice7}.}
+	\label{fig:GrafoAdvice4}
+\end{figure}
+
+\subsection*{Advice4}
+De acuerdo al descriptor, ningún \textit{advice} puede ser ejecutado después de ejecutar el \textit{advice4}. Ver figura \ref{fig:GrafoAdvice5}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/advice5.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Grafo únicamente para el \textit{advice4}]{Grafo únicamente para el \textit{advice4}.}
+	\label{fig:GrafoAdvice5}
+\end{figure}
+
+
+Al finalizar el grafo de conflictos se vería como se muestra en la figura \ref{fig:GrafoCompleto}. Ver figura \ref{fig:GrafoCompleto}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/adviceAll.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Grafo completo]{Grafo completo.}
+	\label{fig:GrafoCompleto}
+\end{figure}
+
+El siguiente paso después de obtener el grafo de \textit{advices} no conflictivos, es encontrar una manera de poder ejecutarlos, tratando de que se ejecuten todos. Para esto, a partir del grafo, se obtiene el árbol de recubrimiento correspondiente. 
+
+\subsection{Árbol de Recubrimiento}
+El árbol de recubrimiento se arma utilizando una variación del algoritmo de Wilson\citep{Ref54}, con el cual es posible encontrar un árbol de recubrimiento con probabilidad uniforme. El algoritmo comienza seleccionando un vértice inicial aleatorio. Luego se deben agregar como hijos al árbol los vértices que no se encuentran en el camino hacia la raíz. El proceso debe continuar, por cada uno de los sucesores que tenga el vértice. 
+
+\begin{enumerate}
+\item \textbf{Escoger un Vértice Aleatorio} - De acuerdo al grafo resultante, mostrado en la figura \ref{fig:GrafoCompleto}, se va a escoger un vértice aleatorio. De escoger el vértice \textit{advice4} al no tener sucesores, inmediatamente es descartado porque no es posible continuar armado el árbol.
+
+Como raíz será escogido el \textit{advice7}. Ver figura \ref{fig:Arbol1}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/Arbol1.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Primer paso del algoritmo para obtener el árbol de recubrimiento]{Primer paso del algoritmo para obtener el árbol de recubrimiento.}
+	\label{fig:Arbol1}
+\end{figure}
+
+\item \textbf{Agregar los vértices sucesores como hijos} - El siguiente paso es agregar los vértices adyacentes como hijos en el árbol, que no se encuentren en el camino hacia la raíz. Para éste caso, los vértices adyacentes son \textit{advice1},\textit{advice5},\textit{advice11} y \textit{advice4}. Ver figura \ref{fig:Arbol2}.
+
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/Arbol2.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Segundo paso del algoritmo para obtener el árbol de recubrimiento]{Segundo paso del algoritmo para obtener el árbol de recubrimiento.}
+	\label{fig:Arbol2}
+\end{figure}
+
+\item \textbf{Agregar los siguientes vértices sucesores como hijos} - El siguiente paso es agregar los vértices adyacentes como hijos en el árbol, que no se encuentren en el camino hacia la raíz. Por ejemplo, el \textit{advice7} es un sucesor del \textit{advice5}, pero no se coloca en el árbol porque ya se encuentra en el camino hacia la raíz. Se puede observar en la gráfica que en todas las ramas el \textit{advice4} son hojas, porque no tiene sucesores. Ver figura \ref{fig:Arbol3}.
+
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/Arbol3.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Continuar agregando los vértices sucesores como hijos]{Continuar agregando los vértices sucesores como hijos.}
+	\label{fig:Arbol3}
+\end{figure}
+
+\item \textbf{Árbol Terminado} - El algoritmo continua hasta se llega a que los vértices no tienen más sucesores. En la figura \ref{figArbol4} se puede ver el árbol terminado. Por simplicidad se muestra solo una porción del árbol resaltando una rama que tiene todos los \textit{advices} definidos para el ejemplo. Ver figura \ref{fig:Arbol4}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/Arbol4.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Árbol terminado resaltando una rama con todos los \textit{advices}]{Árbol terminado resaltando una rama con todos los \textit{advices}.}
+	\label{fig:Arbol4}
+\end{figure}
+
+
+
+\end{enumerate}

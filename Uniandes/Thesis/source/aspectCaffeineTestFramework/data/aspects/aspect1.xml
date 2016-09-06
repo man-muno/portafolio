@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition metamodel="Aspect" modelName="facturacion" version="0.1">
+<metamodel-extensions/>
+<elements>
+<open-object name="facturacion" typeName="Aspect"/>
+<open-object name="TP1" typeName="TransitionPoint"/>
+<open-object name="assignFacturacion" typeName="Advice"/>
+<open-object name="agregarElementos" typeName="CreateBPELElementsInstruction"/>
+</elements><runtime/>
+<model>
+<aspect name="facturacion">
+	<transitionPoint name="TP1" pointcut="*Assign">
+		<advice name="assignFacturacion" type="before">
+			<instruction name="agregarElementos" type="createBpelElements" file="./data/aspects/Advice0.model">
+			</instruction>
+		</advice>
+	</transitionPoint>
+</aspect> 
+</model>
+</definition>

@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+
+<!-- 
+	$Id: build2.xml,v 1.1 2008/11/12 19:42:38 man-muno Exp $
+	
+	Proyecto Cumbia
+	(http://cumbia.uniandes.edu.co/)
+	
+	Grupo de Investigación en Construcción de Software
+	Departamento de Ingeniería de Sistemas y Computación
+	Universidad de los Andes
+	Bogotá - Colombia
+	
+	Copyright (c) 2008
+	Todos los derechos reservados
+-->
+<project name="CaffeineBPEL" default="distribute" basedir="../">
+
+	<!-- Basic properties used by the rest of the project -->
+	<property environment="env" />
+
+	<property name="distribution.root" value="../CumbiaDistribution" />
+	<property name="distribution.path" value="${distribution.root}/lib" />
+	<property name="distributionSM.path" value="${distribution.root}/data/BPELStateMachines" />
+
+	<path id="classpath">
+
+		<pathelement location="build" />
+
+		<fileset dir="${distribution.path}">
+			<include name="*.jar" />
+		</fileset>
+
+	</path>
+
+	<path id="client.classpath">
+		<path refid="classpath" />
+	</path>
+
+	<!-- Compiles the project into the ./build directory -->
+	<target name="compile" description="Compile the sources">
+		<mkdir dir="build" />
+
+		<javac destdir="build" debug="on" deprecation="on" optimize="on" classpathref="classpath" source="1.5">
+			<src path="source" />
+		</javac>
+	</target>
+
+	<!-- Deletes the files created by the compilation and packaging targets -->
+	<target name="clean" description="Cleanup">
+		<delete dir="build" />
+		<delete dir="dist" />
+	</target>
+
+	<target name="cleanDistributed" description="Cleanup">
+		<delete file="${distribution.path}/${jar.file}" />
+
+		<delete dir="${distributionSM.path}" file="*.xml" />
+
+		<delete>
+			<fileset dir="${distribution.path}">
+				<filename name="${jar.file}" />
+			</fileset>
+		</delete>
+	</target>
+
+	<!-- 
+	*************************
+			Distribute 
+	*************************
+	-->
+	<!-- 
+		Deploys the .jar file to CumbiaDistribution	
+	-->
+
+	<target name="distribute" depends="jar-pack, cleanDistributed, distributeSM" description="Copies the jar file to the distribution project">
+		<echo message="Deploying the file ${jar.file} to CumbiaDistribution (${distribution.path})" />
+		<copy todir="${distribution.path}">
+			<fileset dir="dist">
+				<filename name="${jar.file}" />
+			</fileset>
+		</copy>
+
+		<antcall target="clean" />
+	</target>
+
+
+	<target name="distributeSM" description="Copies the state machines to the distribution project">
+		<echo message="Deploying the state machines to CumbiaDistribution (${distributionSM.path})" />
+		<copy todir="${distributionSM.path}">
+			<fileset dir="data/StateMachines">
+				<filename name="*.xml" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- 
+	*************************
+	         JAR
+	*************************
+	-->
+
+	<!-- Properties needed for the deployment and undeployment for dependences purposes -->
+	<property file="bin/jar.properties" />
+
+	<!-- 
+		Creates the jar file
+	-->
+	<target name="jar-pack" depends="compile" description="Application Jar">
+		<echo message="Packaging the project inside the file dist/${jar.file}" />
+		<mkdir dir="dist" />
+		<jar jarfile="dist/${jar.file}" basedir="build" />
+	</target>
+
+	<!-- 
+	*************************
+	         Javadoc
+	*************************
+	-->
+	<!-- 
+		Generates the javadoc
+	-->
+	<target name="javadoc" description="Generate the javadoc">
+		<echo message="Generating the Javadoc" />
+		<delete dir="docs/api" />
+		<mkdir dir="docs/api" />
+		<javadoc packagenames="uniandes.cumbia.console.*" sourcepath="source" destdir="docs/api" author="false" version="true" />
+	</target>
+
+</project>

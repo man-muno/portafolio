@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BPELSuitcase>
+  <BPELProcess src="HelloWorld.bpel" id="HelloWorld">
+    <partnerLinkBindings>
+      <partnerLinkBinding name="client">
+        <property name="wsdlLocation">HelloWorld.wsdl</property>
+      </partnerLinkBinding>
+    </partnerLinkBindings>
+    <configurations>
+      <!-- Optional property used to customize the BPEL console test form. -->
+      <property name="testIntroduction"><![CDATA[
+	    This sample takes a string as input, appends Hello to it and 
+	    asynchronously generates a greeting as a response.
+	    ]]></property>
+    </configurations>
+  </BPELProcess>
+</BPELSuitcase>

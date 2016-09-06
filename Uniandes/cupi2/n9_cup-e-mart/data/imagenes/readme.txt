@@ -1,0 +1,1 @@
+La imagen de carro de compras fue tomada de: http://www.pavegraphics.com/img/shopping-cart-ecommerce.gif

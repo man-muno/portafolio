@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	$Id: jboss-service.xml,v 1.1 2009/01/29 21:38:43 man-muno Exp $
+	
+	Proyecto Cumbia
+	(http://agamenon.uniandes.edu.co/~csw)
+	
+	Grupo de Investigación en Construcción de Software
+	Departamento de Ingeniería de Sistemas y Computación
+	Universidad de los Andes
+	Bogotá - Colombia
+	
+	Copyright (c) 2008
+	Todos los derechos reservados
+-->
+
+<server>
+	<mbean code="uniandes.cumbia.bpel.jboss.BpelService"
+		name="jcumbia:service=cumbiaBpelEngine">
+		<depends>jcumbia:service=cumbiaConsole</depends>
+	</mbean>
+</server>

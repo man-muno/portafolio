@@ -1,0 +1,340 @@
+/**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * $Id: prueba.txt,v 1.1 2006/04/12 11:32:52 cupi2ejemplos Exp $
+ * Universidad de los Andes (Bogotá - Colombia)
+ * Departamento de Ingeniería de Sistemas y Computación 
+ * Licenciado bajo el esquema Academic Free License version 2.1 
+ *
+ * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
+ * Ejercicio: cupi2Collections
+ * Autor: Jorge Villalobos - Abr 4, 2006
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+
+package uniandes.cupi2.collections.bitString;
+
+import java.io.*;
+
+/**
+ * Un BitString es un arreglo de bits de longitud variable, cada uno de cuyos elementos se referencia por su posición. Las posiciones se numeran de manera consecutiva,
+ * comenzando en 0.
+ */
+public class BitString
+{
+    // -----------------------------------------------------------------
+    // Atributos
+    // -----------------------------------------------------------------
+    /**
+     * Representación como bytes de los elementos
+     */
+    private byte[] bits;
+
+    /**
+     * Número de bits presentes en la estructura
+     */
+    private int numBits;
+
+    // -----------------------------------------------------------------
+    // Constructores
+    // -----------------------------------------------------------------
+
+    /**
+     * 
+     */
+    public BitString( )
+    {
+        bits = null;
+        numBits = 0;
+    }
+
+    /**
+     * 
+     */
+    public BitString( BitString bs )
+    {
+        if( bs.bits == null )
+        {
+            bits = null;
+            numBits = 0;
+        }
+        else
+        {
+            bits = new byte[bs.bits.length];
+            for( int i = 0; i < bs.bits.length; i++ )
+                bits[ i ] = bs.bits[ i ];
+            numBits = bs.numBits;
+        }
+    }
+
+    /**
+     * 
+     */
+    public BitString( DataInputStream in ) throws IOException
+    {
+        int nBytes = in.readInt( );
+        numBits = in.readInt( );
+        bits = new byte[nBytes];
+        in.read( bits, 0, nBytes );
+    }
+
+    // -----------------------------------------------------------------
+    // Métodos
+    // -----------------------------------------------------------------
+
+    /**
+     * 
+     */
+    public void vaciar( )
+    {
+        bits = null;
+        numBits = 0;
+    }
+
+    /**
+     * 
+     */
+    public int darLongitud( )
+    {
+        return numBits;
+    }
+
+    /**
+     * @param posBit Posición dentro del BitString del bit cuyo valor se quiere establecer
+     */
+    public boolean estaEncendido( int posBit )
+    {
+        // Verifica si dicha posición está en la secuencia de bits
+        if( bits == null || posBit >= numBits )
+            return false;
+        // Localiza el byte en el que se debería encontrar el bit
+        int posByte = posBit / 8;
+        // Crea la máscara para extraer el respectivo bit
+        int posLocal = posBit % 8;
+        byte mascara = 1;
+        for( int i = 0; i < posLocal; i++ )
+        {
+            mascara *= 2;
+        }
+        // Aplica la máscara sobre el respectivo byte
+        int resp = bits[ posByte ] & mascara;
+        return resp != 0;
+    }
+
+    /**
+     * 
+     */
+    public boolean estaApagado( int posBit )
+    {
+        return !estaEncendido( posBit );
+    }
+
+    /**
+     * 
+     */
+    public void asignar( int posBit, boolean bit )
+    {
+        // Localiza el byte en el que se debería encontrar el bit
+        int posByte = posBit / 8;
+        // Verifica si se debe cambiar el tamaño de la representación
+        if( bits == null || posBit >= bits.length * 8 )
+        {
+            if( bits == null )
+            {
+                // Se debe crear el arreglo de bytes e inicializar en cero todas las posiciones
+                bits = new byte[posByte + 1];
+                for( int i = 0; i < posByte + 1; i++ )
+                    bits[ i ] = 0;
+            }
+            else
+            {
+                // Debe aumentarse el tamaño de la representación, inicializando en 0 el nuevo espacio
+                byte[] old = bits;
+                bits = new byte[posByte + 1];
+                for( int i = 0; i < posByte + 1; i++ )
+                    bits[ i ] = i < old.length ? old[ i ] : 0;
+            }
+        }
+        // Se sabe que el byte que representa el bit que se quiere asignar ya tiene una representación explícita
+        // Crea la máscara para asignar el respectivo bit
+        int posLocal = posBit % 8;
+        byte mascara = 1;
+        for( int i = 0; i < posLocal; i++ )
+        {
+            mascara *= 2;
+        }
+        if( bit )
+        {
+            // Aplica la máscara sobre el respectivo byte
+            bits[ posByte ] = ( byte ) ( bits[ posByte ] | mascara );
+        }
+        else
+        {
+            // Crea la máscara para apagar el respectivo bit
+            mascara = ( byte )~mascara;
+            // Aplica la máscara sobre el respectivo byte
+            bits[ posByte ] = ( byte ) ( bits[ posByte ] & mascara );
+        }
+        // Recalcula la longitud de la secuencia de bits
+        if( posBit >= numBits )
+            numBits = posBit + 1;
+    }
+
+    /**
+     * 
+     */
+    public void concatenar( BitString bs )
+    {
+        if( bs.numBits != 0 )
+        {
+            if( bits == null )
+            {
+                bits = new byte[bs.bits.length];
+                for( int i = 0; i < bs.bits.length; i++ )
+                    bits[ i ] = bs.bits[ i ];
+                numBits = bs.numBits;
+            }
+            else
+            {
+                for( int i = 0; i < bs.numBits; i++ )
+                    concatenar( estaEncendido( i ) );
+            }
+        }
+    }
+
+    /**
+     * 
+     */
+    public void concatenar( boolean bit )
+    {
+        asignar( numBits, bit );
+    }
+    
+    /**
+     * 
+     */
+    public void salvar( DataOutputStream out ) throws IOException
+    {
+        out.writeInt( bits.length );
+        out.writeInt( numBits );
+        out.write( bits, 0, bits.length );
+    }
+
+    /**
+     * 
+     */
+    public boolean equals( BitString bs )
+    {
+        if( numBits != bs.numBits )
+            return false;
+        else
+        {
+            // Calcula el número de bytes que debe comparar
+            int long1 = Math.min( bits == null ? 0 : bits.length, bs.bits == null ? 0 : bs.bits.length );
+            int i = 0;
+            for( ; i < long1 && bits[ i ] == bs.bits[ i ]; i++ )
+                ;
+            return i == long1;
+        }
+    }
+
+    /**
+     * 
+     */
+    public String toString( )
+    {
+        StringBuffer bf = new StringBuffer( numBits + 10 );
+        bf.append( "[" + numBits + "]:" );
+        for( int i = 0; i < numBits; i++ )
+        {
+            if( estaEncendido( i ) )
+                bf.append( "1" );
+            else
+                bf.append( "0" );
+        }
+        return bf.toString( );
+    }
+
+    /**
+     * 
+     */
+    public static void main( String[] args ) throws Exception
+    {
+        BitString bs1 = new BitString( );
+
+        // Prueba 1: encendido consecutivo de bits
+        for( int i = 0; i < 50; i += 2 )
+        {
+            bs1.asignar( i, true );
+            bs1.asignar( i + 1, false );
+            System.out.println( bs1 );
+        }
+        bs1.asignar( 75, true );
+        bs1.asignar( 80, false );
+        System.out.println( "------------------------------------------------------" );
+        System.out.println( bs1 );
+        File archivo = new File( ".\\data\\bs.data" );
+
+        // Prueba 2: salvar en un archivo
+        DataOutputStream out = new DataOutputStream( new FileOutputStream( archivo ) );
+        bs1.salvar( out );
+        out.close( );
+
+        // Prueba 3: cargar de un archivo
+        DataInputStream in = new DataInputStream( new FileInputStream( archivo ) );
+        BitString bs2 = new BitString( in );
+        in.close( );
+        System.out.println( bs2 );
+
+        System.out.println( "------------------------------------------------------" );
+
+        // Prueba 4: equals
+        if( bs1.equals( bs2 ) )
+            System.out.println( "OK equals" );
+        else
+            System.out.println( "ERROR equals" );
+
+        bs1.asignar( 75, false );
+        if( bs1.equals( bs2 ) )
+            System.out.println( "ERROR equals" );
+        else
+            System.out.println( "OK equals" );
+
+        bs2.asignar( 75, false );
+        if( bs1.equals( bs2 ) )
+            System.out.println( "OK equals" );
+        else
+            System.out.println( "ERROR equals" );
+
+        // Prueba 5: clonado de BitString y concatenación
+        BitString bs3 = new BitString( bs1 );
+        System.out.println( bs3 );
+        bs3.concatenar( bs1 );
+        System.out.println( bs3 );
+        for( int i = 0; i < 10; i++ )
+        {
+            bs3.concatenar( false );
+            bs3.concatenar( true );
+        }
+        System.out.println( bs3 );
+
+        System.out.println( "------------------------------------------------------" );
+
+        // Prueba 6: apagado consecutivo de bits
+        for( int i = 0; i < 50; i++ )
+        {
+            bs1.asignar( i, false );
+            System.out.println( bs1 );
+        }
+        System.out.println( "------------------------------------------------------" );
+
+        // Prueba 7: apagado de bits y equals
+        bs1.asignar( 100, false );
+        bs1.asignar( 75, false );
+        System.out.println( bs1 );
+        bs2.vaciar( );
+        if( bs1.equals( bs2 ) )
+            System.out.println( "ERROR equals" );
+        else
+            System.out.println( "OK equals" );
+    }
+}

@@ -1,0 +1,17 @@
+Reporte Cup-E-Mart
+
+Sucursal: 
+Cra 1#18-20 - Centro
+	- Línea de Producto:
+		- Nombre: Agua Embotellada
+		- Código: 0asfd
+		- Descripción: Botella de agua mineral
+		- Precio por Unidad: 2000
+		- Fecha: 5 - 2 - 2007
+
+Sucursal: 
+Cll 120#53-20 - Niza
+
+Sucursal: 
+Autopista con 200 - Autopista Norte
+

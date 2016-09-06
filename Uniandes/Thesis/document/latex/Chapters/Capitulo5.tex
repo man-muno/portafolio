@@ -1,0 +1,73 @@
+% Capitulo 5
+
+\chapter{El Proyecto Cumbia} % Write in your own chapter title
+\label{Capitulo5}
+\lhead{Capitulo 5. \emph{El Proyecto Cumbia}} % Write in your own chapter title to set the page header
+
+
+Los sistemas de \textit{workflow} se desenvuelven en diferentes contextos (salud, educación, negocios), debido a que cada contexto presenta necesidades diferentes, los sistemas de \textit{workflow} satisfacen de manera diferente esas necesidades. Sin embargo, todos tienen en común que los problemas se modelan ordenando y sincronizando la ejecución de un conjunto de recursos o elementos para lograr un objetivo en un tiempo especifico. Éstos se conocen como aplicaciones basadas en control. 
+
+Múltiples factores influencian tanto los contextos como las aplicaciones que las soportan y no es común que las arquitecturas de dichas aplicaciones no son lo suficientemente flexibles para poder adaptarse a estos cambios\citep{Ref45}.
+
+El proyecto Cumbia\footnote{Proyecto Cumbia: \url{http://cumbia.uniandes.edu.co}} del grupo de construcción de software de la Universidad de los Andes, es un proyecto de investigación que propone la construcción  de fábricas de software para la familia de aplicaciones basadas en control, donde predomine la evolución y adaptación de dichas aplicaciones. Una aplicación Cumbia, es un conjunto de componentes que se comunican entre sí y uno de los  componentes tiene como responsabilidad manejar el control de la aplicación\citep{Ref50}. 
+
+Dentro de Cumbia, estos componentes se denominan activos. Estos activos están construidos a partir de modelos ejecutables. Los modelos ejecutables a su vez, están definidos por componentes modulares llamados objetos abiertos. Ésta arquitectura permite tener un alto nivel de modularización, lo cual ayuda a construir aplicaciones que cuentan con una arquitectura totalmente flexible, además de exponer un modelo natural de composición de activos, no sólo para definir nuevas aplicaciones sino también para generar activos reutilizables en la generación de aplicaciones de la familia de control\citep{Ref46}.
+
+
+\section{Aplicaciones Orientadas a Control}
+
+El componente de control de una aplicación está compuesto por tres elementos principales. Primero, el conjunto de actividades que se deben ejecutar, segundo por el modelo de asignación de responsables para estas actividades y tercero, por el orden en el cual se debe desarrollar su ejecución. El componente de control es responsable de ordenar, administrar y sincronizar un conjunto de tareas de manera automática para lograr un objetivo dado\citep{Ref46}.
+
+Sin embargo, el componente de control no es el único componente que constituye sistemas complejos. Existen diferentes perspectivas pertenecientes a diferentes dominios, que también deben ser tenidas en cuenta y coordinadas para poder resolver el problema propuesto. Por ejemplo, el conjunto de responsables que se asignarán a las tareas, ciertas restricciones de tiempo que puedan éstar asociadas a la ejecución de cada actividad y el uso de datos o recursos de contenido necesarios para el desarrollo de cada actividad son ejemplos de las preocupaciones que conforman un problema en donde el control es una necesidad principal.
+
+El proyecto Cumbia propone una abstracción de metamodelos para poder modelar todas las perspectivas que hacen parte de un problema. Mediante el uso de los metamodelos, se describen todos los elementos de cada dominio particular y la construcción consecuente de modelos ejecutables conformes, que permitan la composición de las diferentes perspectivas para poder solucionar el problema.
+
+\section{Metamodelos}
+
+De acuerdo a \citep{Ref47} un modelo es la abstracción de un sistema construido para un propósito específico. La especificación de dicha abstracción se conoce como metamodelo. En un metamodelo se identifican los elementos relevantes y la relación entre ellos. Gracias a los metamodelos es posible hacer una clara separación de todas las perspectivas que componen un sistema complejo. Ésta separación permite la representación de dominios que pueden ser comunes para diferentes aplicaciones y además permite crear nuevas soluciones componiendo diferentes dominios.
+
+En Cumbia, cada una de las perspectivas que hacen parte del problema se describen en un metamodelo. La definición de cada metamodelo está compuesta por elementos de un dominio específico que modifica o complementa el componente de control. Por ejemplo, asignación de tiempo, manejo de recursos, manipulación de datos, etc. A cada uno de los metamodelos se agrega semántica de ejecución materializando modelos conformes cuyos elementos se encuentran representados como objetos abiertos. 
+
+Producto de la construcción de modelos conformes a cada uno de estos metamodelos, se obtiene un modelo ejecutable y extensible que cumple con dos características. Primero, ofrece elementos de composición en un nivel de granularidad muy fino, asegurando la flexibilidad del modelo. Segundo, garantiza la extensibilidad y adaptación de los modelos a requerimientos cambiantes para los dominios que representan. La capacidad de composición y extensibilidad de estos modelos, ofrece ventajas relacionadas con modularidad y reutilización en la construcción de soluciones de manera flexible\citep{Ref48}.
+
+\section{Modelo de Objetos Abiertos (OO)}
+\label{section:OpenObjects}
+Cumbia propone que los elementos expresados en los metamodelos, sean implementados de tal manera que puedan exponer fácilmente su semántica de ejecución. La propuesta es que se extienda el modelo tradicional de objetos, de tal manera que sea más fácil componer y coordinar los elementos. 
+
+Cada objeto abierto (ver figura \ref{fig:opnObject}) está compuesto por un objeto tradicional llamado entidad, una máquina de estados y un conjunto de acciones asociadas a las transiciones de los estados.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/opnObject.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Estructura de un objeto abierto]{Estructura de un objeto abierto.}
+	\label{fig:opnObject}
+\end{figure}
+
+
+Los objetos pueden tener muchos estados que son dependientes de los posibles valores que puedan tomar sus atributos en un momento dado, pero no todos los posibles estados son representativos o puedan interesarle a los demás objetos con los que interactúa. La máquina de estados es utilizada para poder exponer los estados relevantes de la entidad a otros objetos. Ya que la máquina de estados es la exposición del estado de la entidad, ésta siempre debe estar sincronizada con el estado interno de la entidad. El objeto interno sincroniza la máquina de estados, moviéndola de un estado a otro, de acuerdo a las acciones que se ejerzan sobre él.
+
+Al utilizar una máquina de estados para exponer el estado de una entidad, es posible escuchar y/o generar eventos para mover otras máquinas de estados. Cuando una maquina de estado escucha un evento, éste es procesado y una transición es tomada para cambiar el estado actual, además de sincronizar su estado interno de ser necesario. En las transiciones de los estados es posible definir acciones, que serán ejecutadas secuencialmente una vez la máquina de estados cambie de un estado a otro a través de esa transición. El uso de acciones permite generar nuevos eventos y de ésta manera obtener coordinación sincrónica con otros objetos abiertos o componentes externos que pueda integrarse al sistema de eventos\citep{Ref49}.
+ 
+
+\section{Modelos Ejecutables Cumbia}
+Un modelo ejecutable representa la instancia de un metamodelo de dominio específico, que gracias al uso de objetos abiertos, tiene semántica de ejecución y también permiten entretejerse a nivel de entidades o de máquinas de estado con otros elementos definidos en el metamodelo.
+
+\subsection{Estrategia de Composición de Modelos} 
+\label{sec:composicion}
+Una vez definidos tanto el modelo de control, como los demás modelos necesarios para obtener una aplicación, se necesita un mecanismo que sea capaz de coordinar la interacción de los elementos de modelos heterogéneos. El mecanismo de entretejido propuesto, utiliza la misma estrategia de composición y coordinación que se usa dentro de cada modelo: los objetos abiertos se coordinan a través del paso de eventos, aún si están definidos en dominios diferentes. Ésta composición se realiza cuando los modelos se ejecutan, no existen tareas intermedias de compilación\citep{Ref48}.
+
+Las ventajas de este tipo de construcciones son enumeradas en \citep{Ref48} como:
+\begin{itemize}
+\item El nivel de granularidad de los puntos de unión disponibles para la composición y coordinación, es más alto que con otras aproximaciones. Estos puntos se encuentran más relacionados con el estado de los elementos y no con el flujo de control o las interfaces, por lo tanto pueden ser modificados de acuerdo con la aplicación específica que se esté construyendo.
+\item Ésta estrategia se puede aplicar en niveles complejos para entretejer preocupaciones sobre aplicaciones que ya contienen otros modelos entretejidos.
+\item Cada preocupación puede ser expresada de manera independiente usando lenguajes o metamodelos diferentes. Gracias a esto, se puede utilizar el metamodelo o mecanismo de extensión más adecuado para cada una de estas preocupaciones.
+\end{itemize}
+
+En la figura \ref{fig:comp} se muestra cómo es posible crear aplicaciones separando los problemas de acuerdo a sus diferentes perspectivas y luego componiéndolas gracias al uso de la materialización de los modelos de cada dominio. En el ejemplo se muestra un modelo de control que especifíca el orden y la sincronización del flujo de trabajo, un modelo de tiempo que permite definir reglas con diferentes patrones de tiempo, el dominio de roles que hace referencia a la estructura de usuarios en roles y los lugares donde ocurre la composición de los 3 modelos, en donde diferentes tareas tienen reglas de tiempo asociadas y son ejecutadas por un rol específico. 
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/application.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Composición de Modelos de Diferentes Dominios]{Composición de Modelos de Diferentes Dominios.}
+	\label{fig:comp}
+\end{figure}

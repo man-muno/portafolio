@@ -1,0 +1,448 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es-co">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Proyecto CUPI2</title>
+<link type="text/css" rel="stylesheet" href="http://cupi2.uniandes.edu.co/style/cupi2.css">
+</head>
+
+<body>
+<table border="1" width="800" id="table1" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#333333">
+	<tr>
+		<td>
+		<table border="0" width="100%" id="table40">
+			<tr>
+				<td>&nbsp;&nbsp;<a href="http://cupi2.uniandes.edu.co/"><img border="0" src="http://cupi2.uniandes.edu.co/imagenes/logo.gif" width="400" height="72"></a></td>
+				<td valign="top">
+				<p align="right"><a href="../../nivel13.htm">Inicio Nivel 13</a>&nbsp;| <a href="http://cupi2.uniandes.edu.co/">Inicio</a></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="h1" height="30">
+			<h1 class="titulo" align="left">&nbsp;&nbsp;&nbsp;Ejemplo - Nivel 13 - 
+			Pintura Puntos
+			</td>
+	</tr>
+	<tr>
+		<td class="h2" height="22"><script language="JavaScript" src="http://cupi2.uniandes.edu.co/js/menu.js"></script></td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" width="100%" id="table42" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="180" bgcolor="#CCCCCC" valign="top"><br>
+<p class="titulomenu">&nbsp;&nbsp; Pintura Puntos<table border="0" width="176" id="table43" cellspacing="4">
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="149" colspan="2"><a href="index.htm"><b>
+							Descripción</b></a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="149" colspan="2">
+							<a href="requerimientos.htm">Requerimientos</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="149" colspan="2"><b>Diagramas</b></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="12">&nbsp;</td>
+							<td width="131">
+							<a target="_blank" href="docs/specs/ModeloConceptual.jpg">
+							Modelo</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="12">&nbsp;</td>
+							<td width="131">
+							<a target="_blank" href="docs/specs/Interfaz.jpg">
+							Interfaz</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="12">&nbsp;</td>
+							<td width="131">
+							<a target="_blank" href="docs/specs/Pruebas.jpg">
+							Pruebas</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2">
+							<a target="_blank" href="docs/api/index.html">
+							Javadoc</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2"><a href="codigo.htm">
+							Visualización Código</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2"><b>
+							<a href="n13_pinturaPuntos.zip">Archivo ZIP</a></b></td>
+						</tr>
+					</table>
+					<p>&nbsp;</td>
+					<td width="1" bgcolor="#000000"></td>
+					<td width="618" valign="top">
+					<table border="0" width="615" id="table44">
+						<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;&gt;&gt; Nivel 
+							13 &gt; Ejemplo - Pintura Puntos &gt; <b>
+							Descripción</b></td>
+						</tr>
+						<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="25">&nbsp;</td>
+							<td width="531" colspan="2"><p class="titulo">
+							Descripción</td>
+							<td width="45">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="609" colspan="4">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="25">&nbsp;</td>
+							<td width="17">&nbsp;</td>
+							<td width="510"><div>
+
+					<h1>
+						<span lang="ES">
+Enunciado						</span>
+					</h1>
+
+				</div>
+
+
+				<p>
+					<span lang="ES">
+Es
+una aplicación que va permitir la edición de dos
+tipos de imágenes:					</span>
+				</p>
+
+
+				<p>
+					<b>
+						<span lang="ES">
+Imagen dispersa por puntos:						</span>
+					</b>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+Una
+imagen en blanco y negro es una estructura de dos dimensiones en la
+cual, en cada posición, se almacena blanco (false) o un
+negro (true). A cada posición también se le conoce
+como píxel. Se dice que una imagen es dispersa cuando el
+número de píxeles blancos es mucho mayor que el
+número de píxeles negros. El formalismo seleccionado
+para representar una imagen dispersa es el siguiente:					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<div align="center">
+
+					<table border="0" cellspacing="0" cellpadding="0" style="margin-left:154.25pt;border-collapse:collapse">
+						<tr>
+							<td width="76" valign="top" style="width:56.7pt;border:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+X(0,0)									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border:solid windowtext 1.0pt; border-left:none;padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+X(0,1)									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border:solid windowtext 1.0pt; border-left:none;padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+X(0,3)									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border:solid windowtext 1.0pt; border-left:none;padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+…									</span>
+								</p>
+
+							</td>
+							<td width="147" valign="top" style="width:110.55pt;border:solid windowtext 1.0pt; border-left:none;padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+X(0,N-1)									</span>
+								</p>
+
+							</td>
+						</tr>
+						<tr>
+							<td width="76" valign="top" style="width:56.7pt;border:solid windowtext 1.0pt; border-top:none;padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+X(1,0)									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border-top:none;border-left:none; border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border-top:none;border-left:none; border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border-top:none;border-left:none; border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+							<td width="147" valign="top" style="width:110.55pt;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+						</tr>
+						<tr>
+							<td width="76" valign="top" style="width:56.7pt;border:solid windowtext 1.0pt; border-top:none;padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+X(2,0)									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border-top:none;border-left:none; border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border-top:none;border-left:none; border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border-top:none;border-left:none; border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+							<td width="147" valign="top" style="width:110.55pt;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+						</tr>
+						<tr>
+							<td width="76" valign="top" style="width:56.7pt;border:solid windowtext 1.0pt; border-top:none;padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+…									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border-top:none;border-left:none; border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border-top:none;border-left:none; border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border-top:none;border-left:none; border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+X(i,j)									</span>
+								</p>
+
+							</td>
+							<td width="147" valign="top" style="width:110.55pt;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+						</tr>
+						<tr>
+							<td width="76" valign="top" style="width:56.7pt;border:solid windowtext 1.0pt; border-top:none;padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+X(M-1,0)									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border-top:none;border-left:none; border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border-top:none;border-left:none; border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+							<td width="76" valign="top" style="width:56.7pt;border-top:none;border-left:none; border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+ 									</span>
+								</p>
+
+							</td>
+							<td width="147" valign="top" style="width:110.55pt;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+								<p align="center">
+									<span lang="ES">
+X(M-1,N-1)									</span>
+								</p>
+
+							</td>
+						</tr>
+					</table>
+
+				</div>
+
+
+				<p>
+					<b>
+						<span lang="ES">
+ 						</span>
+					</b>
+ 					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<div>
+
+					<h1>
+						<span lang="ES">
+Interfaz						</span>
+					</h1>
+
+				</div>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<p align="center">
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<p align="center">
+					<span lang="ES">
+						<img width="664" height="594" src="Descripcion_files/image002.jpg">
+						</img>
+					</span>
+				</p>
+
+			</div>
+
+		</body>
+	</td>
+							<td width="45">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="25">&nbsp;</td>
+							<td width="17">&nbsp;</td>
+							<td width="510">&nbsp;</td>
+							<td width="45">&nbsp;</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+<table border="0" width="800" cellspacing="0" cellpadding="0" id="table6">
+	<tr>
+		<td width="65">
+		<p align="center"><a href="http://www.uniandes.edu.co/">
+		<img border="0" src="http://cupi2.uniandes.edu.co/imagenes/logo_uniandes.gif" width="44" height="50"></a></td>
+		<td>Copyright © 2006, <b>Universidad de los Andes</b>. Todos los derechos 
+reservados<b>.<br>
+</b>Proyecto Cupi2 - <a href="http://sistemas.uniandes.edu.co/">Departamento de Ingeniería de Sistemas y Computación.</a><br>
+<b>2006</b></td>
+	</tr>
+</table>
+
+<script language="JavaScript" src="http://cupi2.uniandes.edu.co/js/menu_general.js"></script>
+</body>

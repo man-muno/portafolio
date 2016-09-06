@@ -1,0 +1,46 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Constelaciones de BPEL4People}}{18}{figure.caption.62}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Sistema de reproducci\'on de m\'usica}}{25}{figure.caption.87}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagrama de \textit {deployment} mostrando los estereotipos para aspectos}}{28}{figure.caption.136}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Proceso de detecci\'on de conflictos}}{31}{figure.caption.149}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Ejemplo de un proceso workflow}}{35}{figure.caption.154}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Ejemplo de recolecci\'on de informaci\'on}}{36}{figure.caption.157}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Ejemplo monitoreo de tiempo de ejecuci\'on}}{37}{figure.caption.159}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Ejemplo agregar una actividad}}{39}{figure.caption.162}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Arquitectura de Padus}}{44}{figure.caption.183}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Estados de una actividad de AO4BPEL}}{46}{figure.caption.199}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Arquitectura del motor de AO4BPEL}}{47}{figure.caption.202}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Estructura de un objeto abierto}}{51}{figure.caption.211}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Composici\'on de Modelos de Diferentes Dominios}}{53}{figure.caption.214}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Elementos de inicio}}{57}{figure.caption.220}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces M\'aquina de estados del elemento \textit {Process}}}{57}{figure.caption.222}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces M\'aquina de estados del elemento \textit {StartingPick}}}{58}{figure.caption.226}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces M\'aquina de estados del elemento \textit {StartingReceive}}}{59}{figure.caption.230}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Elementos de interacci\'on}}{60}{figure.caption.234}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces M\'aquina de estados del elemento \textit {Pick}}}{61}{figure.caption.236}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces M\'aquina de estados del elemento \textit {OnAlarm}}}{61}{figure.caption.240}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces M\'aquina de estados del elemento \textit {onMessage}}}{62}{figure.caption.244}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces M\'aquina de estados del elemento \textit {Receive}}}{63}{figure.caption.248}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces M\'aquina de estados del elemento \textit {Reply}}}{63}{figure.caption.252}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces M\'aquina de estados del elemento \textit {Invoke}}}{64}{figure.caption.256}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Elementos estructuradores}}{65}{figure.caption.260}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces M\'aquina de estados del elemento \textit {Sequence}}}{66}{figure.caption.262}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces M\'aquina de estados del elemento \textit {Flow}}}{67}{figure.caption.266}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces M\'aquina de estados del elemento \textit {While}}}{68}{figure.caption.270}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces M\'aquina de estados del comportamiento \textit {Condicional}}}{69}{figure.caption.274}
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Instrucciones}}{70}{figure.caption.278}
+\contentsline {figure}{\numberline {6.18}{\ignorespaces M\'aquina de estados del elemento \textit {Exit}}}{70}{figure.caption.280}
+\contentsline {figure}{\numberline {6.19}{\ignorespaces M\'aquina de estados del elemento \textit {Empty}}}{71}{figure.caption.284}
+\contentsline {figure}{\numberline {6.20}{\ignorespaces M\'aquina de estados del elemento \textit {Wait}}}{71}{figure.caption.287}
+\contentsline {figure}{\numberline {6.21}{\ignorespaces M\'aquina de estados del elemento \textit {Assign}}}{72}{figure.caption.291}
+\contentsline {figure}{\numberline {6.22}{\ignorespaces Arquitectura de Caffeine}}{73}{figure.caption.295}
+\contentsline {figure}{\numberline {6.23}{\ignorespaces Arquitectura de CaffeineEngine}}{75}{figure.caption.347}
+\contentsline {figure}{\numberline {6.24}{\ignorespaces Arquitectura del CaffeineImporter}}{77}{figure.caption.355}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

@@ -1,0 +1,889 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es-co">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CUPI2 - Página del Proyecto</title>
+<link type="text/css" rel="stylesheet" href="../../../../../../../arbolNArio/style/cupi2.css">
+</head>
+
+<body>
+
+<table border="1" width="800" id="table1" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#333333">
+	<tr>
+		<td>
+		<table border="0" width="100%" id="table46">
+			<tr>
+				<td>&nbsp;&nbsp; 
+				<img border="0" src="../../../../../../../arbolNArio/images/logo.gif" width="200" height="72"></td>
+				<td valign="top">
+				<p align="right"><a href="../../../../../../../arbolNArio/index.htm">Inicio Árbol N Ario</a>&nbsp; |&nbsp;
+				<a href="../../../../../../../index.htm">Inicio</a></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="h1" height="35">
+			<h1 class="titulo" align="left">&nbsp;&nbsp;&nbsp;Cupi2 Collections - Estructura 
+			Árbol N Ario</font></td>
+	</tr>
+	<tr>
+		<td class="h2" height="22"><script language="JavaScript" src="http://cupi2.uniandes.edu.co/cupi2.collections/web/js/menu.js"></script></td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" width="100%" id="table42" cellspacing="0" cellpadding="0">
+				<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;&gt;&gt; Estructuras de Datos&gt;
+							Árbol N Ario &gt;
+							Visualización Código Pruebas&gt;<b>ArbolNArioTest</b></td>
+				</tr>
+				<tr>
+					<td width="100%" valign="top">
+					<table border="0" width="798" id="table44">
+						<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33" valign="top">&nbsp;</td>
+							<td width="691" colspan="2" valign="top">
+							<a href="../../../../../../../arbolNArio/codigoPruebas.htm">Regresar</a></td>
+							<td width="60" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="531" colspan="2"><p class="titulo">
+							ArbolNArioTest </td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="609" colspan="4">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="23">&nbsp;</td>
+							<td width="664"><b>Paquete:</b> uniandes.cupi2.collections.arbolNArio.test<p>
+
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#7f0055"><b>package&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.arbolNArio.test;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.arbolNArio.ArbolNArio;</font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.arbolNArio.NodoArbolNArio;</font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">uniandes.cupi2.collections.iterador.Iterador;</font><br>
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">junit.framework.TestCase;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Esta&nbsp;es&nbsp;la&nbsp;clase&nbsp;usada&nbsp;para&nbsp;verificar&nbsp;los&nbsp;m&eacute;todos&nbsp;de&nbsp;la&nbsp;clase&nbsp;ArbolNArio</font><br>
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#7f0055"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">ArbolNArioTest&nbsp;</font><font color="#7f0055"><b>extends&nbsp;</b></font><font color="#000000">TestCase</font><br>
+<font color="#000000">{</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Atributos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Es&nbsp;la&nbsp;clase&nbsp;donde&nbsp;se&nbsp;har&aacute;n&nbsp;las&nbsp;pruebas</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">ArbolNArio&nbsp;arbol;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;El&nbsp;n&uacute;mero&nbsp;de&nbsp;elementos&nbsp;a&nbsp;manejar&nbsp;en&nbsp;cada&nbsp;escenario</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">numeroElementos;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;M&eacute;todos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;-----------------------------------------------------------------</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Construye&nbsp;un&nbsp;&aacute;rbol&nbsp;con&nbsp;21&nbsp;nodos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">setupEscenario1</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">arbol&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">ArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo0&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo1&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo2&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">2&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo3&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">3&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo4&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">4&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo5&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">5&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo6&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">6&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo7&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">7&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo8&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">8&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo9&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">9&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo10&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">10&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo11&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">11&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo12&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">12&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo13&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">13&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo14&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">14&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo15&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">15&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo16&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">16&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo17&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">17&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo18&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">18&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo19&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">19&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Long&gt;&nbsp;nodo20&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Long&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">20&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;La&nbsp;raiz&nbsp;del&nbsp;arbol&nbsp;es&nbsp;el&nbsp;nodo0</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">arbol.definirRaiz</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo0&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Se&nbsp;agregan&nbsp;los&nbsp;hijos&nbsp;del&nbsp;nodo0</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo0.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo1&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo0.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo2&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo0.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo3&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Se&nbsp;agregan&nbsp;los&nbsp;hijos&nbsp;del&nbsp;nodo1</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo1.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo4&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo1.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo5&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Se&nbsp;agregan&nbsp;los&nbsp;hijos&nbsp;del&nbsp;nodo4</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo4.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo12&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo4.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo13&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo4.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo14&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Se&nbsp;agregan&nbsp;los&nbsp;hijos&nbsp;del&nbsp;nodo5</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo5.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo15&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Se&nbsp;agregan&nbsp;los&nbsp;hijos&nbsp;del&nbsp;nodo2</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo2.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo6&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo2.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo7&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo2.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo8&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Se&nbsp;agregan&nbsp;los&nbsp;hijos&nbsp;del&nbsp;nodo8</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo8.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo16&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo8.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo17&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo8.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo18&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo8.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo19&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo8.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo20&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Se&nbsp;agregan&nbsp;los&nbsp;hijos&nbsp;del&nbsp;nodo&nbsp;3</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo3.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo9&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo3.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo10&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nodo3.agregarHijo</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo11&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">numeroElementos&nbsp;=&nbsp;</font><font color="#990000">21</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Construye&nbsp;un&nbsp;&aacute;rbol&nbsp;vacio&nbsp;de&nbsp;enteros</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">setupEscenario2</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">arbol&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">ArbolNArio&lt;Integer&gt;</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">numeroElementos&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Construye&nbsp;un&nbsp;&aacute;rbol&nbsp;de&nbsp;enteros&nbsp;con&nbsp;tan&nbsp;solo&nbsp;la&nbsp;ra&iacute;z</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">setupEscenario3</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">arbol&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">ArbolNArio&lt;Integer&gt;</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">NodoArbolNArio&lt;Integer&gt;&nbsp;nodo&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">NodoArbolNArio&lt;Integer&gt;</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Integer</font><font color="#000000">(&nbsp;</font><font color="#990000">10&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">arbol.definirRaiz</font><font color="#000000">(&nbsp;</font><font color="#000000">nodo&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">numeroElementos&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Verifica&nbsp;que&nbsp;los&nbsp;niveles&nbsp;del&nbsp;&aacute;rbol&nbsp;se&nbsp;retornen&nbsp;correctamente</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">testDarNivel1</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario1</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Iterador&nbsp;it&nbsp;=&nbsp;arbol.darNivel</font><font color="#000000">(&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">cont&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while</b></font><font color="#000000">(&nbsp;</font><font color="#000000">it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;elemento&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;Uno&nbsp;de&nbsp;los&nbsp;elementos&nbsp;retornados&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#000000">cont&nbsp;</font><font color="#000000">)</font><font color="#000000">,&nbsp;elemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">cont++;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">it&nbsp;=&nbsp;arbol.darNivel</font><font color="#000000">(&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">cont&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while</b></font><font color="#000000">(&nbsp;</font><font color="#000000">it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;elemento&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;Uno&nbsp;de&nbsp;los&nbsp;elementos&nbsp;retornados&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#000000">cont&nbsp;</font><font color="#000000">)</font><font color="#000000">,&nbsp;elemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">cont++;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">it&nbsp;=&nbsp;arbol.darNivel</font><font color="#000000">(&nbsp;</font><font color="#990000">2&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">cont&nbsp;=&nbsp;</font><font color="#990000">4</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while</b></font><font color="#000000">(&nbsp;</font><font color="#000000">it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;elemento&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;Uno&nbsp;de&nbsp;los&nbsp;elementos&nbsp;retornados&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#000000">cont&nbsp;</font><font color="#000000">)</font><font color="#000000">,&nbsp;elemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">cont++;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">it&nbsp;=&nbsp;arbol.darNivel</font><font color="#000000">(&nbsp;</font><font color="#990000">3&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">cont&nbsp;=&nbsp;</font><font color="#990000">12</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while</b></font><font color="#000000">(&nbsp;</font><font color="#000000">it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;elemento&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;Uno&nbsp;de&nbsp;los&nbsp;elementos&nbsp;retornados&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#000000">cont&nbsp;</font><font color="#000000">)</font><font color="#000000">,&nbsp;elemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">cont++;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Verificar&nbsp;que&nbsp;se&nbsp;hayan&nbsp;recorrido&nbsp;todos&nbsp;los&nbsp;elementos&nbsp;del&nbsp;arbol</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;No&nbsp;se&nbsp;recuperaron&nbsp;todos&nbsp;los&nbsp;elementos&nbsp;al&nbsp;recorrer&nbsp;el&nbsp;&aacute;rbol&nbsp;por&nbsp;niveles&#34;</font><font color="#000000">,&nbsp;numeroElementos,&nbsp;cont&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Verifica&nbsp;que&nbsp;el&nbsp;iterador&nbsp;retornado&nbsp;sea&nbsp;vacio&nbsp;para&nbsp;el&nbsp;caso&nbsp;de&nbsp;pedir&nbsp;un&nbsp;nivel&nbsp;que&nbsp;no&nbsp;exista</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">testDarNivel2</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario1</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Iterador&nbsp;it&nbsp;=&nbsp;arbol.darNivel</font><font color="#000000">(&nbsp;</font><font color="#000000">-</font><font color="#990000">1&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertFalse</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;No&nbsp;se&nbsp;deber&iacute;a&nbsp;haber&nbsp;retornado&nbsp;nada&#34;</font><font color="#000000">,&nbsp;it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">it&nbsp;=&nbsp;arbol.darNivel</font><font color="#000000">(&nbsp;</font><font color="#990000">5&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertFalse</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;No&nbsp;se&nbsp;deber&iacute;a&nbsp;haber&nbsp;retornado&nbsp;nada&#34;</font><font color="#000000">,&nbsp;it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario2</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">it&nbsp;=&nbsp;arbol.darNivel</font><font color="#000000">(&nbsp;</font><font color="#000000">-</font><font color="#990000">1&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertFalse</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;No&nbsp;se&nbsp;deber&iacute;a&nbsp;haber&nbsp;retornado&nbsp;nada&#34;</font><font color="#000000">,&nbsp;it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">it&nbsp;=&nbsp;arbol.darNivel</font><font color="#000000">(&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertFalse</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;No&nbsp;se&nbsp;deber&iacute;a&nbsp;haber&nbsp;retornado&nbsp;nada&#34;</font><font color="#000000">,&nbsp;it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Verifica&nbsp;que&nbsp;las&nbsp;hojas&nbsp;sean&nbsp;contadas&nbsp;de&nbsp;forma&nbsp;correcta</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">testContarHojas</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario1</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">hojas&nbsp;=&nbsp;arbol.contarHojas</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;n&uacute;mero&nbsp;de&nbsp;hojas&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;</font><font color="#990000">14</font><font color="#000000">,&nbsp;hojas&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario2</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">hojas&nbsp;=&nbsp;arbol.contarHojas</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;n&uacute;mero&nbsp;de&nbsp;hojas&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;</font><font color="#990000">0</font><font color="#000000">,&nbsp;hojas&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario3</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">hojas&nbsp;=&nbsp;arbol.contarHojas</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;n&uacute;mero&nbsp;de&nbsp;hojas&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;</font><font color="#990000">1</font><font color="#000000">,&nbsp;hojas&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Verifica&nbsp;que&nbsp;la&nbsp;b&uacute;squeda&nbsp;de&nbsp;un&nbsp;elemento&nbsp;se&nbsp;est&eacute;&nbsp;realizando&nbsp;de&nbsp;forma&nbsp;correcta</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">testBuscarElemento1</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario1</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">cont&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;cont&nbsp;&lt;&nbsp;numeroElementos;&nbsp;cont++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;busqueda&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#000000">cont&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;elemento&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">arbol.buscar</font><font color="#000000">(&nbsp;</font><font color="#000000">busqueda&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Verificar&nbsp;que&nbsp;los&nbsp;elementos&nbsp;sean&nbsp;iguales</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;Los&nbsp;elementos&nbsp;no&nbsp;son&nbsp;iguales&#34;</font><font color="#000000">,&nbsp;busqueda,&nbsp;elemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Verifica&nbsp;que&nbsp;se&nbsp;retorne&nbsp;null&nbsp;en&nbsp;la&nbsp;b&uacute;squeda&nbsp;de&nbsp;un&nbsp;elemento&nbsp;inexistente</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">testBuscarElemento2</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario1</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;elemento;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for</b></font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">cont&nbsp;=&nbsp;numeroElementos&nbsp;+&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;cont&nbsp;&lt;&nbsp;numeroElementos&nbsp;*&nbsp;</font><font color="#990000">2</font><font color="#000000">;&nbsp;cont++&nbsp;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;busqueda&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#000000">cont&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">arbol.buscar</font><font color="#000000">(&nbsp;</font><font color="#000000">busqueda&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Verificar&nbsp;que&nbsp;los&nbsp;elementos&nbsp;sean&nbsp;iguales</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertNull</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;No&nbsp;se&nbsp;debio&nbsp;retornar&nbsp;elemento&nbsp;alguno&#34;</font><font color="#000000">,&nbsp;elemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario3</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">arbol.buscar</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">25&nbsp;</font><font color="#000000">)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertNull</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;No&nbsp;se&nbsp;debio&nbsp;retornar&nbsp;elemento&nbsp;alguno&#34;</font><font color="#000000">,&nbsp;elemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Verifica&nbsp;que&nbsp;la&nbsp;altura&nbsp;del&nbsp;&aacute;rbol&nbsp;se&nbsp;retorne&nbsp;correctamente</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">testDarAltura</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario1</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">altura&nbsp;=&nbsp;arbol.darAltura</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;la&nbsp;altura&nbsp;retornada&nbsp;no&nbsp;es&nbsp;correcta&#34;</font><font color="#000000">,&nbsp;</font><font color="#990000">4</font><font color="#000000">,&nbsp;altura&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario2</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">altura&nbsp;=&nbsp;arbol.darAltura</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;la&nbsp;altura&nbsp;retornada&nbsp;no&nbsp;es&nbsp;correcta&#34;</font><font color="#000000">,&nbsp;</font><font color="#990000">0</font><font color="#000000">,&nbsp;altura&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario3</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">altura&nbsp;=&nbsp;arbol.darAltura</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;la&nbsp;altura&nbsp;retornada&nbsp;no&nbsp;es&nbsp;correcta&#34;</font><font color="#000000">,&nbsp;</font><font color="#990000">1</font><font color="#000000">,&nbsp;altura&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Verifica&nbsp;que&nbsp;el&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;se&nbsp;retorne&nbsp;correctamente</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">testDarInorden</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario1</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Iterador&nbsp;it&nbsp;=&nbsp;arbol.darInorden</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Verificar&nbsp;que&nbsp;el&nbsp;recorrido&nbsp;se&nbsp;haya&nbsp;realizado&nbsp;correctamente</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">12&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">4&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">13&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">14&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">15&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">5&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">6&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">2&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">7&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">16&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">8&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">17&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">18&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">19&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">20&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">9&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">3&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">10&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">11&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertFalse</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;No&nbsp;deber&iacute;an&nbsp;haber&nbsp;m&aacute;s&nbsp;elementos&#34;</font><font color="#000000">,&nbsp;it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Verificar&nbsp;el&nbsp;inorden&nbsp;por&nbsp;el&nbsp;m&eacute;todo&nbsp;toString</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">String&nbsp;resp&nbsp;=&nbsp;</font><font color="#2a00ff">&#34;[&#34;&nbsp;</font><font color="#000000">+&nbsp;numeroElementos&nbsp;+&nbsp;</font><font color="#2a00ff">&#34;]:12-4-13-14-1-15-5-0-6-2-7-16-8-17-18-19-20-9-3-10-11-&#34;</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;resp,&nbsp;it.toString</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario2</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">it&nbsp;=&nbsp;arbol.darInorden</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertFalse</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Verifica&nbsp;que&nbsp;el&nbsp;peso&nbsp;del&nbsp;&aacute;rbol&nbsp;se&nbsp;este&nbsp;retornando&nbsp;correctamente</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">testDarPeso</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario1</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">peso&nbsp;=&nbsp;arbol.darPeso</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;peso&nbsp;del&nbsp;&aacute;rbol&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;numeroElementos,&nbsp;peso&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario2</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">peso&nbsp;=&nbsp;arbol.darPeso</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;peso&nbsp;del&nbsp;&aacute;rbol&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;numeroElementos,&nbsp;peso&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario3</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">peso&nbsp;=&nbsp;arbol.darPeso</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;peso&nbsp;del&nbsp;&aacute;rbol&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;numeroElementos,&nbsp;peso&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Verifica&nbsp;que&nbsp;el&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;iterativo&nbsp;se&nbsp;retorne&nbsp;correctamente</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">testDarPostorden</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario1</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Iterador&nbsp;it&nbsp;=&nbsp;arbol.darPostorden</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Verificar&nbsp;que&nbsp;el&nbsp;recorrido&nbsp;se&nbsp;haya&nbsp;realizado&nbsp;correctamente</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">12&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">13&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">14&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">4&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">15&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">5&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">6&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">7&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">16&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">17&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">18&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">19&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">20&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">8&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">2&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">9&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">10&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">11&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">3&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;postorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertFalse</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;No&nbsp;deber&iacute;an&nbsp;haber&nbsp;m&aacute;s&nbsp;elementos&#34;</font><font color="#000000">,&nbsp;it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Verificar&nbsp;el&nbsp;postorden&nbsp;por&nbsp;el&nbsp;m&eacute;todo&nbsp;toString</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">String&nbsp;resp&nbsp;=&nbsp;</font><font color="#2a00ff">&#34;[&#34;&nbsp;</font><font color="#000000">+&nbsp;numeroElementos&nbsp;+&nbsp;</font><font color="#2a00ff">&#34;]:12-13-14-4-15-5-1-6-7-16-17-18-19-20-8-2-9-10-11-3-0-&#34;</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;resp,&nbsp;it.toString</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario2</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">it&nbsp;=&nbsp;arbol.darPostorden</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertFalse</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Verifica&nbsp;que&nbsp;el&nbsp;recorrido&nbsp;en&nbsp;inorden&nbsp;iterativo&nbsp;se&nbsp;retorne&nbsp;correctamente</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">testDarPreorden</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario1</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Iterador&nbsp;it&nbsp;=&nbsp;arbol.darPreorden</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Verificar&nbsp;que&nbsp;el&nbsp;recorrido&nbsp;se&nbsp;haya&nbsp;realizado&nbsp;correctamente</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">4&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">12&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">13&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">14&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">5&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">15&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">2&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">6&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">7&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">8&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">16&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">17&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">18&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">19&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">20&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">3&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">9&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">10&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">elemento&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#990000">11&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">resul&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;en&nbsp;preorden&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;elemento,&nbsp;resul&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertFalse</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;No&nbsp;deber&iacute;an&nbsp;haber&nbsp;m&aacute;s&nbsp;elementos&#34;</font><font color="#000000">,&nbsp;it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Verificar&nbsp;el&nbsp;preorden&nbsp;por&nbsp;el&nbsp;m&eacute;todo&nbsp;toString</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">String&nbsp;resp&nbsp;=&nbsp;</font><font color="#2a00ff">&#34;[&#34;&nbsp;</font><font color="#000000">+&nbsp;numeroElementos&nbsp;+&nbsp;</font><font color="#2a00ff">&#34;]:0-1-4-12-13-14-5-15-2-6-7-8-16-17-18-19-20-3-9-10-11-&#34;</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;resp,&nbsp;it.toString</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario2</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">it&nbsp;=&nbsp;arbol.darPreorden</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertFalse</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;correctamente&#34;</font><font color="#000000">,&nbsp;it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Verifica&nbsp;que&nbsp;el&nbsp;recorrido&nbsp;por&nbsp;niveles&nbsp;se&nbsp;retorne&nbsp;correctamente</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">testDarRecorridoPorNiveles</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario1</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Iterador&nbsp;it&nbsp;=&nbsp;arbol.darRecorridoNiveles</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Verificar&nbsp;que&nbsp;el&nbsp;recorrido&nbsp;por&nbsp;niveles&nbsp;sea&nbsp;correcto</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">cont&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while</b></font><font color="#000000">(&nbsp;</font><font color="#000000">it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Long&nbsp;elemento&nbsp;=&nbsp;</font><font color="#000000">(&nbsp;</font><font color="#000000">Long&nbsp;</font><font color="#000000">)</font><font color="#000000">it.darSiguiente</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;por&nbsp;niveles&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;de&nbsp;forma&nbsp;correcta&#34;</font><font color="#000000">,&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Long</font><font color="#000000">(&nbsp;</font><font color="#000000">cont&nbsp;</font><font color="#000000">)</font><font color="#000000">,&nbsp;elemento&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">cont++;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Verificar&nbsp;que&nbsp;se&nbsp;haya&nbsp;recorrido&nbsp;todos&nbsp;los&nbsp;nodos</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;No&nbsp;se&nbsp;recorrieron&nbsp;todos&nbsp;los&nbsp;nodos&#34;</font><font color="#000000">,&nbsp;numeroElementos,&nbsp;cont&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario2</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">it&nbsp;=&nbsp;arbol.darRecorridoNiveles</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertFalse</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;recorrido&nbsp;por&nbsp;niveles&nbsp;no&nbsp;se&nbsp;realiz&oacute;&nbsp;de&nbsp;forma&nbsp;correcta&#34;</font><font color="#000000">,&nbsp;it.haySiguiente</font><font color="#000000">(&nbsp;)&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Verifica&nbsp;que&nbsp;los&nbsp;tama&ntilde;os&nbsp;de&nbsp;los&nbsp;niveles&nbsp;se&nbsp;retornen&nbsp;correctamente</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">@SuppressWarnings</font><font color="#000000">(</font><font color="#2a00ff">&#34;unchecked&#34;</font><font color="#000000">)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">testDarTamanoNivel</font><font color="#000000">(&nbsp;)</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">setupEscenario1</font><font color="#000000">(&nbsp;)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">tamEsperado;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">tamNivel;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">tamNivel&nbsp;=&nbsp;arbol.darTamanoNivel</font><font color="#000000">(&nbsp;</font><font color="#990000">0&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">tamEsperado&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;tama&ntilde;o&nbsp;del&nbsp;nivel&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;tamEsperado,&nbsp;tamNivel&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">tamNivel&nbsp;=&nbsp;arbol.darTamanoNivel</font><font color="#000000">(&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">tamEsperado&nbsp;=&nbsp;</font><font color="#990000">3</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;tama&ntilde;o&nbsp;del&nbsp;nivel&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;tamEsperado,&nbsp;tamNivel&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">tamNivel&nbsp;=&nbsp;arbol.darTamanoNivel</font><font color="#000000">(&nbsp;</font><font color="#990000">2&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">tamEsperado&nbsp;=&nbsp;</font><font color="#990000">8</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;tama&ntilde;o&nbsp;del&nbsp;nivel&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;tamEsperado,&nbsp;tamNivel&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">tamNivel&nbsp;=&nbsp;arbol.darTamanoNivel</font><font color="#000000">(&nbsp;</font><font color="#990000">4&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">tamEsperado&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;tama&ntilde;o&nbsp;del&nbsp;nivel&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;tamEsperado,&nbsp;tamNivel&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;Verificar&nbsp;que&nbsp;se&nbsp;retorne&nbsp;0&nbsp;para&nbsp;el&nbsp;tama&ntilde;o&nbsp;de&nbsp;niveles&nbsp;que&nbsp;no&nbsp;existan</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">tamNivel&nbsp;=&nbsp;arbol.darTamanoNivel</font><font color="#000000">(&nbsp;</font><font color="#000000">-</font><font color="#990000">1&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">tamEsperado&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertEquals</font><font color="#000000">(&nbsp;</font><font color="#2a00ff">&#34;El&nbsp;tama&ntilde;o&nbsp;del&nbsp;nivel&nbsp;no&nbsp;es&nbsp;correcto&#34;</font><font color="#000000">,&nbsp;tamEsperado,&nbsp;tamNivel&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br>
+<font color="#ffffff"></font><br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br>
+<font color="#000000">}</font></code>
+    
+   </td>
+   </tr>
+</table>
+</div>
+</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="23">&nbsp;</td>
+							<td width="664">&nbsp;</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="527" colspan="2">
+							<a href="../../../../../../../arbolNArio/codigoPruebas.htm">Regresar</a></td>
+							<td width="60">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="33">&nbsp;</td>
+							<td width="527" colspan="2">&nbsp;
+							</td>
+							<td width="60">&nbsp;</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+<table border="0" width="800" cellspacing="0" cellpadding="0" id="table6">
+	<tr>
+		<td width="65">
+		<p align="center"><a href="http://www.uniandes.edu.co/">
+		<img border="0" src="../../../../../../../images/logo_uniandes.gif" width="44" height="50"></a></td>
+		<td>Copyright © 2006, <b>Universidad de los Andes</b>. Todos los derechos 
+			reservados<b>.<br>
+			</b>Cupi2Collections - <a href="http://sistemas.uniandes.edu.co/">Departamento de Ingeniería de Sistemas y Computación.</a><br>
+		<b>2006</b></td>
+	</tr>
+</table>
+
+<script language="JavaScript" src="http://cupi2.uniandes.edu.co/cupi2.collections/web/js/menu_general.js"></script>
+</body>
+
+</html>

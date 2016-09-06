@@ -1,0 +1,492 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es-co">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CUPI2 - Página del Proyecto</title>
+<link type="text/css" rel="stylesheet" href="style/cupi2.css">
+</head>
+
+<body>
+
+<table border="1" width="800" id="table1" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#333333">
+	<tr>
+		<td>
+		<table border="0" width="100%" id="table40">
+			<tr>
+				<td>&nbsp;&nbsp; 
+				<img border="0" src="images/logo.gif" width="200" height="72"></td>
+				<td valign="top">
+				<p align="right"><a href="index.htm">Inicio</a>&nbsp; |&nbsp;
+				<a href="../index.htm">cupi2Collections </a>&nbsp; |&nbsp;
+				<a href="http://cupi2.uniandes.edu.co/">cupi2WEB</a></p>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="h1" height="35">
+			<h1 class="titulo" align="left">&nbsp;&nbsp;&nbsp;Cupi2 Collections - Estructura Árbol Binario </td>
+	</tr>
+	<tr>
+		<td class="h2" height="22"><script language="JavaScript" src="../js/menu.js"></script></td>
+	</tr>
+
+	<tr>
+		<td>
+			<table border="0" width="100%" id="table42" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="180" bgcolor="#B5D6E6" valign="top"><br>
+<p class="titulomenu">&nbsp;&nbsp; Árbol Binario<table border="0" width="176" id="table43" cellspacing="4">
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="149" colspan="2"><a href="index.htm"><b>
+							Descripción</b></a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2">
+							<a target="_blank" href="../docs/api/uniandes/cupi2/collections/arbolBinario/ArbolBinario.html">
+							Javadoc</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2"><a href="codigo.htm">
+							Visualización Código Fuente</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2"><a href="codigoPruebas.htm">
+							Visualización Código Pruebas</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2">
+							<a href="downloads.htm">Descargas</a></td>
+						</tr>
+					</table>
+					<p></td>
+					<td width="1" bgcolor="#000000"></td>
+					<td width="618" valign="top">
+					<table border="0" width="615" id="table44">
+					<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;&gt;&gt; Estructuras de Datos &gt;
+							Árbol Binario &gt;<b>
+							Descripción</b></td>
+					</tr>
+						<tr>
+							<td width="609" colspan="4">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="25">&nbsp;</td>
+							<td width="17">&nbsp;</td>
+							<td width="510"><div>
+
+					<h1>
+						<span lang="ES">
+Descripción:						</span>
+					</h1>
+
+				</div>
+
+
+				<p>
+					<span lang="ES">
+Un
+árbol binario es una estructura de datos recursiva compuesta
+por un elemento (denominado raíz) y dos subárboles
+asociados, también binarios, denominados hijo izquierdo e
+hijo derecho.					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+Algunos conceptos importantes en árboles binarios
+se explican a continuación:					</span>
+				</p>
+
+
+				<ul type="disc">
+					<li>
+						<b>
+							<span lang="ES">
+Árbol vacío:							</span>
+						</b>
+ 						<span lang="ES">
+árbol que no tiene elementos ni subárboles
+asociados.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Hijo:							</span>
+						</b>
+ 						<span lang="ES">
+un elemento B se
+denomina hijo de un elemento A si B es la raíz de alguno de
+los subárboles asociados con A. En este mismo caso se dice
+que A es 							<b>
+Padre							</b>
+ de B.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Hermano:							</span>
+						</b>
+ 						<span lang="ES">
+dos elementos B y C
+son hermanos si son hijos del mismo padre. 							<b>
+							</b>
+						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Hoja:							</span>
+						</b>
+ 						<span lang="ES">
+un elemento de un
+árbol binario es una hoja si sus hijos izquierdo y derecho
+son vacíos.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Elemento no terminal:							</span>
+						</b>
+ 						<span lang="ES">
+todo
+elemento que no sea una hoja se considera elemento no
+Terminal.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Camino:							</span>
+						</b>
+ 						<span lang="ES">
+un camino entre dos
+elementos A y B se define como una secuencia de la forma <E1,
+E2, E3,…, En> en la que el primer elemento es A y el
+último es B y cada elemento es padre de su
+sucesor.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Longitud camino:							</span>
+						</b>
+ 						<span lang="ES">
+la longitud
+de un camino <E1, E2, E3,…, En> es n-1.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Rama:							</span>
+						</b>
+ 						<span lang="ES">
+es un camino que inicia
+en la raíz y finaliza en una hoja.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Peso:							</span>
+						</b>
+ 						<span lang="ES">
+es el número de
+elementos que hay en el árbol.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Altura:							</span>
+						</b>
+ 						<span lang="ES">
+es la longitud del
+camino más largo desde la raíz más
+1.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Nivel de un elemento:							</span>
+						</b>
+ 						<span lang="ES">
+es la
+longitud del camino que parte de la raíz y llega al
+elemento.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Árbol binario completo:							</span>
+						</b>
+ 						<span lang="ES">
+árbol en el que todo elemento no terminal tiene
+asociados exactamente dos subárboles no
+vacíos.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Árbol binario lleno:							</span>
+						</b>
+ 						<span lang="ES">
+árbol binario  completo y que tiene
+además todas sus hojas al mismo nivel.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Recorrido en preorden:							</span>
+						</b>
+ 						<span lang="ES">
+consiste en visitar primero la raíz, luego el
+subárbol izquierdo en preorden y finalmente el
+subárbol derecho en preorden. 						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Recorrido en postorden:							</span>
+						</b>
+ 						<span lang="ES">
+consiste en visitar primero en postorden el
+subárbol izquierdo, luego el derecho y finalmente la
+raíz.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Recorrido en inorden:							</span>
+						</b>
+ 						<span lang="ES">
+consiste
+en visitar primero el subárbol izquierdo en inorden, luego
+la raíz y finalmente el subárbol derecho en
+inorden.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Recorrido por niveles:							</span>
+						</b>
+ 						<span lang="ES">
+consisten en visitar primero la raíz, luego los
+elementos del nivel 1 de izquierda a derecha y así
+sucesivamente hasta visitar todos los elementos del
+árbol.						</span>
+					</li>
+				</ul>
+
+
+				<p>
+					<span lang="ES">
+La
+complejidad de la búsqueda en los árboles binarios es
+O(n), donde n es el peso del árbol.					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+En
+el caso concreto de implementación en Cupi2Collections esta
+estructura fue desarrollada para soportar objetos de cualquier tipo
+haciendo uso de la genericidad brindada por el lenguaje
+Java.					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<div>
+
+					<h1>
+						<span lang="ES">
+Ejemplo:						</span>
+					</h1>
+
+				</div>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<p align="center">
+					<span lang="ES">
+						<img width="315" height="229" src="descripcion_arbolBinario_archivos/image002.jpg">
+						</img>
+					</span>
+				</p>
+
+
+				<p align="center">
+
+					<b>
+						<span lang="ES">
+Árbol
+Binario						</span>
+					</b>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+Aplicando algunos de los
+conceptos mencionados anteriormente sobre éste árbol
+se tiene:					</span>
+				</p>
+
+
+				<ul type="disc">
+					<li>
+						<span lang="ES">
+La raíz del
+árbol es 10.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+La altura del árbol es
+4.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+El peso del árbol es
+7.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+7, 6 y 18 son
+hojas.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+-6 es un elemento no
+terminal.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+15 es hijo de 10.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+25 es padre de 7.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+7 y 6 son
+hermanos.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+El camino entre 10 y 7 es
+<10, 15, 25, 7>						</span>
+					</li>
+					<li>
+						<span lang="ES">
+La longitud del camino entre
+10 y 7 es 3.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+25 está en el nivel
+2.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+El árbol no es
+completo y por tanto tampoco es lleno.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+El recorrido en preorden es
+10, 15, 25, 7, 6, -6, 18.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+El recirrido en postorden es
+7, 6, 25, 15, 18, -6, 10.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+El recorrido en inorden es 7,
+25, 6, 15, 10, -6, 18.						</span>
+					</li>
+					<li>
+						<span lang="ES">
+El recorrido por niveles es
+10, 15, -6, 25, 18, 7, 6.						</span>
+					</li>
+				</ul>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+			</div>
+
+		</body>
+	</td>
+							<td width="45">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="25">&nbsp;</td>
+							<td width="17">&nbsp;</td>
+							<td width="510">&nbsp;</td>
+							<td width="45">&nbsp;</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+<table border="0" width="800" cellspacing="0" cellpadding="0" id="table6">
+	<tr>
+		<td width="65">
+		<p align="center"><a href="http://www.uniandes.edu.co/">
+		<img border="0" src="images/logo_uniandes.gif" width="44" height="50"></a></td>
+		<td>Copyright © 2006, <b>Universidad de los Andes</b>. Todos los derechos 
+			reservados<b>.<br>
+			</b>Cupi2Collections - <a href="http://sistemas.uniandes.edu.co/">Departamento de Ingeniería de Sistemas y Computación.</a><br>
+		<b>2006</b></td>
+	</tr>
+</table>
+<script language="JavaScript" src="../js/menu_general.js"></script>
+</body>
+
+</html>

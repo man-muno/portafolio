@@ -1,0 +1,46 @@
+<state-machine name="invoke" initial-state="Init">
+
+	<!-- Init -->
+	<state name="Init" enter-event="" exit-event="exitInit">
+		<transition name="ToMessageSent" successor="MessageSent">
+			<source-event source-name="ME" event-name="sendMessage" />
+			<before-event name="beforeToMessageSent" />
+			<after-event name="afterToMessageSent" />
+			<actions>
+				<action name="SendMessage"
+					class="uniandes.cumbia.aspect.elements.invoke.actions.SendMessage" />
+			</actions>
+		</transition>
+	</state>
+
+	<!-- MessageSent -->
+	<state name="MessageSent" enter-event="enterMessageSent"
+		exit-event="exitMessageSent">
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ME" event-name="finalized" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions />
+		</transition>
+		<transition name="ToWaiting" successor="Waiting">
+			<source-event source-name="ME" event-name="waitResponse" />
+			<before-event name="beforeToWaiting" />
+			<after-event name="afterToWaiting" />
+			<actions/>
+		</transition>
+	</state>
+
+
+	<!-- Waiting -->
+	<state name="Waiting" enter-event="enterWaiting" exit-event="exitWaiting">
+		<transition name="ToExecutingFromWaiting" successor="Finalizing">
+			<source-event source-name="ME" event-name="messageReceived" />
+			<before-event name="beforeToExecutingFromWaiting" />
+			<after-event name="afterToExecutingFromWaiting" />
+			<actions />
+		</transition>
+	</state>
+
+	<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event=""/>
+</state-machine>

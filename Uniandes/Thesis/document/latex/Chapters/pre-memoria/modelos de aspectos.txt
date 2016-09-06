@@ -1,0 +1,18 @@
+\begin{itemize}
+\item Modelo de Pointcuts y Advices – AspectJ.
+\item Modelo de Recorridos - Demeter, DemeterJ y DJ.
+\item Modelo de Composición de Clases - Hyper/J.
+\item Modelo de Clases Abiertas.
+\item Modelo de Navegador Basado en Consultas - QJBrowser.
+\end{itemize}
+
+
+\subsection*{Modelo de Pointcuts y Advices - AspectJ}
+\subsection*{Modelo de Recorridos - Demeter, DemeterJ y DJ}
+Ésta aproximación está basada en los sistemas basados en el principio la ley de Demeter o el principio del menor conocimiento\citep{Ref29}. Estos sistemas tienen mecanismos que permiten que los programadores definan recorridos, de manera fácil y declarativa, sobre los grafos de los objetos. Esto con el fin de lograr una definición de un recorrido de manera modular, que de lo contrario causaría que el código estuviera disperso en muchas clases.
+\subsection*{Modelo de Composición de Clases - Hyper/J}
+Ésta aproximación está basada en la programación orientada por temas (\textit{Subject-Oriented Programming}\citep{Ref30}). Ésta metodología define que los sistemas pueden ser construidos y extendidos componiendo programas entre sí. Esto permite que las preocupaciones se implementen como programas independientes (parciales), para luego ser compuestos.
+\subsection*{Modelo de Clases Abiertas}
+Ésta aproximación está basada en los mecanismos de clases abiertas. Las clases abiertas hacen posible localizar la declaración de un método o un atributo fuera del cuerpo textual de la declaración de la clase, ayudando así a la modularización del código.
+\subsection*{Modelo de Navegador Basado en Consultas - QJBrowser}
+Ésta aproximación está basada en QJBrowser, la cual es una herramienta de exploración de código que extrae propiedades de un programa, para luego presentarlas de manera jerárquica. Puede ser visto como la construcción de navegadores estructurales hechos a la medida, de acuerdo a la estructura provista por el usuario usando lógica de predicados sobre la estructura del código.

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animation>
+	<execute-synchronous-call processName="HelloWorld" processID="0" instanceID="0" message="initial message" />
+	<execute-synchronous-call processName="HelloWorld" processID="0" instanceID="0" message="not supposed to work" />
+</animation>

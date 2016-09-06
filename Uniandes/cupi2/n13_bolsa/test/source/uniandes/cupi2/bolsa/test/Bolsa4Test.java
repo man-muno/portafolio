@@ -1,0 +1,32 @@
+/**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * $Id$
+ * Universidad de los Andes (Bogotá - Colombia)
+ * Departamento de Ingeniería de Sistemas y Computación 
+ * Licenciado bajo el esquema Academic Free License version 2.1 
+ *
+ * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
+ * Ejercicio: n13_bolsa
+ * Autor: Manuel Munoz - Sep 4, 2006
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+
+package uniandes.cupi2.bolsa.test;
+
+import uniandes.cupi2.bolsa.mundo.*;
+import uniandes.cupi2.bolsa.mundo.bolsa4.*;
+
+/**
+ * Prueba de las operaciones de la bolsa de tipo 4
+ * 
+ */
+public class Bolsa4Test extends AbstractBolsaTest
+{
+    /**
+     * Creación de una instancia con las estructuras concretas de datos
+     */
+     public IBolsa crearInstancia( int inferior, int superior )
+    {
+        return new Bolsa4( inferior, superior );
+    }
+}

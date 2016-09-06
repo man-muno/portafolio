@@ -1,0 +1,18 @@
+<state-machine name="reply" initial-state="Init">
+	
+<!-- Init -->
+	<state name="Init" enter-event="" exit-event="exitInit">
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ME" event-name="send" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions>
+				<action name="SendMessage"
+					class="uniandes.cumbia.bpel.elements.reply.actions.SendMessage" />
+			</actions>
+		</transition>
+	</state>
+	
+<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event=""/>
+</state-machine>

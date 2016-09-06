@@ -1,0 +1,1495 @@
+This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.7) (preloaded format=pdflatex 2008.12.12)  24 FEB 2009 07:55
+entering extended mode
+**D:/Uniandes/Cumbia/Tesis*2/Documento/latex/Thesis.tex
+("D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Thesis.tex"
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, dumylang, nohyphenation, german, ngerman, french, loaded.
+(Thesis.cls
+Document Class: Thesis 2007/22/02 v1.0 LaTeX document class
+("D:\Program Files\MiKTeX 2.7\tex\latex\base\book.cls"
+Document Class: book 2005/09/16 v1.4f Standard LaTeX document class
+("D:\Program Files\MiKTeX 2.7\tex\latex\base\bk11.clo"
+File: bk11.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\setspace\setspace.sty"
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\ieeepes\vmargin.sty"
+Package: vmargin 1999/06/01
+
+Package `vmargin', V2.2, <1999/06/01>
+\PaperWidth=\dimen103
+\PaperHeight=\dimen104
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\fancyhdr\fancyhdr.sty"
+\fancy@headwidth=\skip43
+\f@ncyO@elh=\skip44
+\f@ncyO@erh=\skip45
+\f@ncyO@olh=\skip46
+\f@ncyO@orh=\skip47
+\f@ncyO@elf=\skip48
+\f@ncyO@erf=\skip49
+\f@ncyO@olf=\skip50
+\f@ncyO@orf=\skip51
+)
+("D:\Program Files\MiKTeX 2.7\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+("D:\Program Files\MiKTeX 2.7\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+ ("D:\Program Files\MiKTeX 2.7\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen105
+)) ("D:\Program Files\MiKTeX 2.7\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen106
+)
+("D:\Program Files\MiKTeX 2.7\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen107
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks15
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks16
+\eqnshift@=\dimen108
+\alignsep@=\dimen109
+\tagshift@=\dimen110
+\tagwidth@=\dimen111
+\totwidth@=\dimen112
+\lineht@=\dimen113
+\@envbody=\toks17
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+("D:\Program Files\MiKTeX 2.7\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2001/10/25 v2.2f
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+)
+("D:\Program Files\MiKTeX 2.7\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2002/01/22 v2.2d
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\amsmath\amscd.sty"
+Package: amscd 1999/11/29 v1.2d
+\athelp@=\toks19
+\minaw@=\dimen114
+\bigaw@=\dimen115
+\minCDarrowwidth=\dimen116
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks20
+\thm@bodyfont=\toks21
+\thm@headfont=\toks22
+\thm@notefont=\toks23
+\thm@headpunct=\toks24
+\thm@preskip=\skip55
+\thm@postskip=\skip56
+\thm@headsep=\skip57
+\dth@everypar=\toks25
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\tools\xspace.sty"
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
+\c@example=\count100
+\c@theorem=\count101
+ ("D:\Program Files\MiKTeX 2.7\tex\latex\caption\caption.sty"
+Package: caption 2007/11/04 v3.1e Customising captions (AR)
+
+("D:\Program Files\MiKTeX 2.7\tex\latex\caption\caption3.sty"
+Package: caption3 2007/11/04 v3.1e caption3 kernel (AR)
+ ("D:\Program Files\MiKTeX 2.7\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks26
+)
+\captionmargin=\dimen117
+\captionmargin@=\dimen118
+\captionwidth=\dimen119
+\caption@indent=\dimen120
+\caption@parindent=\dimen121
+\caption@hangindent=\dimen122
+)
+\c@ContinuedFloat=\count102
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("D:\Program Files\MiKTeX 2.7\tex\latex\graphics\graphics.sty"
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+ ("D:\Program Files\MiKTeX 2.7\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 90.
+
+("D:\Program Files\MiKTeX 2.7\tex\latex\graphics\pdftex.def"
+File: pdftex.def 2007/06/12 v0.04h Graphics/color for pdfTeX
+\Gread@gobject=\count103
+))
+\Gin@req@height=\dimen123
+\Gin@req@width=\dimen124
+)
+("D:\Program Files\MiKTeX 2.7\tex\latex\oberdiek\epstopdf.sty"
+Package: epstopdf 2007/11/11 v1.6 Conversion with epstopdf on the fly (HO)
+
+("D:\Program Files\MiKTeX 2.7\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+("D:\Program Files\MiKTeX 2.7\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
+)
+("D:\Program Files\MiKTeX 2.7\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2007/10/18 v3.0 Keyval support for LaTeX options (HO)
+)
+("D:\Program Files\MiKTeX 2.7\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2007/12/12 v0.3 LuaTeX support for pdfTeX utility functions (HO)
+Package pdftexcmds Info: LuaTeX not detected on input line 139.
+)
+
+Package epstopdf Warning: Shell escape feature is not enabled.
+
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 323.
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\subfigure\subfigure.sty"
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip58
+\subfigcapskip=\skip59
+\subfigcaptopadj=\dimen125
+\subfigbottomskip=\skip60
+\subfigcapmargin=\dimen126
+\subfiglabelskip=\skip61
+\c@subfigure=\count104
+\c@lofdepth=\count105
+\c@subtable=\count106
+\c@lotdepth=\count107
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+("D:\Program Files\MiKTeX 2.7\tex\latex\subfigure\subfigure.cfg")
+\subfig@top=\skip62
+\subfig@bottom=\skip63
+)
+("D:\Program Files\MiKTeX 2.7\tex\latex\booktabs\booktabs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen127
+\lightrulewidth=\dimen128
+\cmidrulewidth=\dimen129
+\belowrulesep=\dimen130
+\belowbottomsep=\dimen131
+\aboverulesep=\dimen132
+\abovetopsep=\dimen133
+\cmidrulesep=\dimen134
+\cmidrulekern=\dimen135
+\defaultaddspace=\dimen136
+\@cmidla=\count108
+\@cmidlb=\count109
+\@aboverulesep=\dimen137
+\@belowrulesep=\dimen138
+\@thisruleclass=\count110
+\@lastruleclass=\count111
+\@thisrulewidth=\dimen139
+)
+("D:\Program Files\MiKTeX 2.7\tex\latex\rotating\rotating.sty"
+Package: rotating 1997/09/26 v2.13 Rotation package
+ ("D:\Program Files\MiKTeX 2.7\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count112
+\rot@float@box=\box28
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\listings\listings.sty"
+\lst@mode=\count113
+\lst@gtempboxa=\box29
+\lst@token=\toks27
+\lst@length=\count114
+\lst@currlwidth=\dimen140
+\lst@column=\count115
+\lst@pos=\count116
+\lst@lostspace=\dimen141
+\lst@width=\dimen142
+\lst@newlines=\count117
+\lst@lineno=\count118
+\lst@maxwidth=\dimen143
+ (lstpatch.sty
+
+***
+*** This is a patch for listings 1.3, but you're using
+*** version 1.4.
+***
+*** Patch file not loaded.
+***
+
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count119
+\lst@skipnumbers=\count120
+\lst@framebox=\box30
+)
+("D:\Program Files\MiKTeX 2.7\tex\latex\listings\listings.cfg"
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+ (lstpatch.sty
+
+***
+*** This is a patch for listings 1.3, but you're using
+*** version 1.4.
+***
+ *** Patch file not loaded.
+***
+
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2007/11/20 v6.77g Hypertext links for LaTeX
+
+("D:\Program Files\MiKTeX 2.7\tex\latex\oberdiek\hycolor.sty"
+Package: hycolor 2007/04/11 v1.1 Code for color options of hyperref/bookmark (HO)
+)
+\@linkdim=\dimen144
+\Hy@linkcounter=\count121
+\Hy@pagecounter=\count122
+
+("D:\Program Files\MiKTeX 2.7\tex\latex\confproc\pd1enc.def"
+File: pd1enc.def 1999/03/30 v0.3 PDFDocEncoding (Heiko Oberdiek)
+)
+("D:\Program Files\MiKTeX 2.7\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)
+("D:\Program Files\MiKTeX 2.7\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 2663.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 2663.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 2663.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 2663.
+Package hyperref Info: Option `colorlinks' set `true' on input line 2663.
+Package hyperref Info: Option `unicode' set `true' on input line 2663.
+
+("D:\Program Files\MiKTeX 2.7\tex\latex\hyperref\puenc.def"
+File: puenc.def 2007/11/20 v6.77g Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Option `breaklinks' set `true' on input line 2663.
+Package hyperref Info: Hyper figures OFF on input line 2699.
+Package hyperref Info: Link nesting OFF on input line 2704.
+Package hyperref Info: Hyper index ON on input line 2707.
+Package hyperref Info: Plain pages OFF on input line 2714.
+Package hyperref Info: Backreferencing OFF on input line 2719.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 2875.
+("D:\Program Files\MiKTeX 2.7\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 3045.
+ ("D:\Program Files\MiKTeX 2.7\tex\generic\oberdiek\bitset.sty"
+Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
+("D:\Program Files\MiKTeX 2.7\tex\generic\oberdiek\intcalc.sty"
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+)
+("D:\Program Files\MiKTeX 2.7\tex\generic\oberdiek\bigintcalc.sty"
+Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
+))
+("D:\Program Files\MiKTeX 2.7\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2007/09/29 v1.3 Key value parser with default handler support (HO)
+)
+\Fld@menulength=\count123
+\Field@Width=\dimen145
+\Fld@charsize=\dimen146
+\Field@toks=\toks28
+Package hyperref Info: Hyper figures OFF on input line 3926.
+Package hyperref Info: Link nesting OFF on input line 3931.
+Package hyperref Info: Hyper index ON on input line 3934.
+Package hyperref Info: backreferencing OFF on input line 3941.
+Package hyperref Info: Link coloring ON on input line 3944.
+
+("D:\Program Files\MiKTeX 2.7\tex\generic\oberdiek\atbegshi.sty"
+Package: atbegshi 2007/09/09 v1.6 At begin shipout hook (HO)
+
+("D:\Program Files\MiKTeX 2.7\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2007/12/12 v1.6 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+))
+\Hy@abspage=\count124
+\c@Item=\count125
+\c@Hfootnote=\count126
+)
+*hyperref using default driver hpdftex*
+("D:\Program Files\MiKTeX 2.7\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2007/11/20 v6.77g Hyperref driver for pdfTeX
+\Fld@listcount=\count127
+)
+\c@dummy=\count128
+
+("D:\Program Files\MiKTeX 2.7\tex\latex\tools\longtable.sty"
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip64
+\LTright=\skip65
+\LTpre=\skip66
+\LTpost=\skip67
+\LTchunksize=\count129
+\LTcapwidth=\dimen147
+\LT@head=\box31
+\LT@firsthead=\box32
+\LT@foot=\box33
+\LT@lastfoot=\box34
+\LT@cols=\count130
+\LT@rows=\count131
+\c@LT@tables=\count132
+\c@LT@chunks=\count133
+\LT@p@ftn=\toks29
+)) ("D:\Program Files\MiKTeX 2.7\tex\latex\natbib\natbib.sty"
+Package: natbib 2007/10/30 8.1 (PWD)
+\bibhang=\skip68
+\bibsep=\skip69
+LaTeX Info: Redefining \cite on input line 602.
+\c@NAT@ctr=\count134
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks30
+\verbatim@line=\toks31
+\verbatim@in@stream=\read1
+) (vector.sty
+Package: vector 1994/09/16 v1.0 vector macros for LaTeX2e (nde)
+
+("D:\Program Files\MiKTeX 2.7\tex\latex\tools\calc.sty"
+Package: calc 2005/08/06 v4.2 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count135
+\calc@Bcount=\count136
+\calc@Adimen=\dimen148
+\calc@Bdimen=\dimen149
+\calc@Askip=\skip70
+\calc@Bskip=\skip71
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
+\calc@Ccount=\count137
+\calc@Cskip=\skip72
+)
+\c@vec@elem=\count138
+) ("D:\Program Files\MiKTeX 2.7\tex\latex\base\inputenc.sty"
+Package: inputenc 2006/05/05 v1.1b Input encoding file
+\inpenc@prehook=\toks32
+\inpenc@posthook=\toks33
+
+("D:\Program Files\MiKTeX 2.7\tex\latex\base\latin1.def"
+File: latin1.def 2006/05/05 v1.1b Input encoding file
+)) ("D:\Program Files\MiKTeX 2.7\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen150
+) ("D:\Program Files\MiKTeX 2.7\tex\generic\babel\babel.sty"
+Package: babel 2005/11/23 v3.8h The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("D:\Program Files\MiKTeX 2.7\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("D:\Program Files\MiKTeX 2.7\tex\generic\babel\spanish.ldf"
+Language: spanish.ldf 2005/03/31 v4.2b Spanish support from the babel system
+ ("D:\Program Files\MiKTeX 2.7\tex\generic\babel\babel.def"
+File: babel.def 2005/11/23 v3.8h Babel common definitions
+\babel@savecnt=\count139
+\U@D=\dimen151
+)
+
+Package babel Warning: No hyphenation patterns were loaded for
+(babel)                the language `Spanish'
+(babel)                I will use the patterns loaded for \language=0 instead.
+
+\l@spanish = a dialect from \language0
+\es@quottoks=\toks34
+\es@quotdepth=\count140
+Package babel Info: Making . an active character on input line 509.
+Package babel Info: Making " an active character on input line 540.
+Package babel Info: Making < an active character on input line 641.
+Package babel Info: Making > an active character on input line 642.
+)) ("D:\Program Files\MiKTeX 2.7\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+ ("D:\Program Files\MiKTeX 2.7\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+Package hyperref Info: Option `colorlinks' set `false' on input line 17.
+ ("D:\Program Files\MiKTeX 2.7\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+
+LaTeX Warning: Unused global option(s):
+    [letter].
+
+(Thesis.aux
+
+LaTeX Warning: Label `code:PadusPointCut' multiply defined.
+
+
+LaTeX Warning: Label `table:EstadosStartingReceive' multiply defined.
+
+
+LaTeX Warning: Label `table:AccionesProcess' multiply defined.
+
+
+LaTeX Warning: Label `fig:ElementosEstructuradores' multiply defined.
+
+
+LaTeX Warning: Label `section:ElementProcess' multiply defined.
+
+
+LaTeX Warning: Label `section:ElementAdvice' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+ ("D:\Program Files\MiKTeX 2.7\tex\latex\caption\ltcaption.sty"
+Package: ltcaption 2007/09/01 v1.1 longtable captions (AR)
+)
+Package caption Info: rotating package is loaded.
+Package caption Info: subfigure package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+("D:\Program Files\MiKTeX 2.7\tex\context\base\supp-pdf.tex"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count141
+\scratchdimen=\dimen152
+\scratchbox=\box35
+\nofMPsegments=\count142
+\nofMParguments=\count143
+\MPscratchCnt=\count144
+\MPscratchDim=\dimen153
+\MPnumerator=\count145
+\everyMPtoPDFconversion=\toks35
+)
+\c@lstlisting=\count146
+Package hyperref Info: Link coloring OFF on input line 40.
+ ("D:\Program Files\MiKTeX 2.7\tex\latex\hyperref\nameref.sty"
+Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+
+("D:\Program Files\MiKTeX 2.7\tex\latex\oberdiek\refcount.sty"
+Package: refcount 2006/02/20 v3.0 Data extraction from references (HO)
+)
+\c@section@level=\count147
+)
+LaTeX Info: Redefining \ref on input line 40.
+LaTeX Info: Redefining \pageref on input line 40.
+ (Thesis.out) (Thesis.out)
+\@outlinefile=\write3
+\AtBeginShipoutBox=\box36
+
+------------------------------------------------------------------------------
+ Title Page
+------------------------------------------------------------------------------
+[1
+
+
+
+{C:/Documents and Settings/All Users/Application Data/MiKTeX/2.7/pdftex/config/pdftex.map}] [2
+
+] [3]
+------------------------------------------------------------------------------
+ Agradecimientos
+------------------------------------------------------------------------------
+LaTeX Font Info:    Try loading font information for U+msa on input line 99.
+("D:\Program Files\MiKTeX 2.7\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 99.
+ ("D:\Program Files\MiKTeX 2.7\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+[4
+
+]
+------------------------------------------------------------------------------
+ Tabla de Contenido
+------------------------------------------------------------------------------
+(Thesis.toc
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 2.
+
+Package spanish Info: Replacing undefined sc font
+(spanish)             shape by faked small caps on input line 2.
+Package spanish Info: Replacing undefined sc font
+(spanish)             shape by faked small caps on input line 4.
+Package spanish Info: Replacing undefined sc font
+(spanish)             shape by faked small caps on input line 5.
+[5
+
+
+] [6] [7])
+\tf@toc=\write4
+ [8]
+------------------------------------------------------------------------------
+ \'{I}ndice de Figuras
+------------------------------------------------------------------------------
+(Thesis.lof [9
+
+
+])
+\tf@lof=\write5
+
+! Undefined control sequence.
+<recently read> \Í
+                  
+l.112 \listoffigures
+                      % Write out the List of Figures
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[10]
+------------------------------------------------------------------------------
+ \'{I}ndice de Tablas
+------------------------------------------------------------------------------
+(Thesis.lot [11
+
+
+])
+\tf@lot=\write6
+ [12] ("D:\Uniandes\Cumbia\Tesis 2\Documento\latex\Chapters\Capitulo1.tex"
+Cap\'{\i }tulo 1.
+------------------------------------------------------------------------------
+ 1 Introducci\'on
+------------------------------------------------------------------------------
+[1
+
+
+
+] [2]) ("D:\Uniandes\Cumbia\Tesis 2\Documento\latex\Chapters\Capitulo2.tex" [3] [4
+
+]
+Cap\'{\i }tulo 2.
+------------------------------------------------------------------------------
+ 2 BPEL
+------------------------------------------------------------------------------
+[5] [6] [7] [8] [9] [10]
+Overfull \hbox (8.33278pt too wide) in paragraph at lines 98--99
+\OT1/cmr/m/n/10.95 mente, pa-so a pa-so, como se com-por-ta del pro-ce-so de acuer-do a los datos proporcionados[[]]. 
+ []
+
+[11] [12] [13] [14] [15] [16] [17]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Constellations.pdf): PDF inclusion: found PDF 
+version <1.5>, but at most version <1.4> allowed
+<./Figures/Constellations.pdf, id=1092, 360.41698pt x 211.85323pt>
+File: ./Figures/Constellations.pdf Graphic file (type pdf)
+ <use ./Figures/Constellations.pdf>) [18 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Constellations.pdf>]
+("D:\Uniandes\Cumbia\Tesis 2\Documento\latex\Chapters\Capitulo3.tex" [19] [20
+
+]
+Cap\'{\i }tulo 3.
+------------------------------------------------------------------------------
+ 3 Aspect-Oriented Programming
+------------------------------------------------------------------------------
+[21]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 30.
+ ("D:\Program Files\MiKTeX 2.7\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 30.
+ [22] [23] [24]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/InterferenceExample.pdf): PDF inclusion: found
+ PDF version <1.5>, but at most version <1.4> allowed
+<./Figures/InterferenceExample.pdf, id=2683, 236.38269pt x 61.3541pt>
+File: ./Figures/InterferenceExample.pdf Graphic file (type pdf)
+ <use ./Figures/InterferenceExample.pdf> [25 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/InterferenceExample.pdf
+>]
+Overfull \hbox (14.20198pt too wide) in paragraph at lines 130--131
+\OT1/cmr/m/n/10.95 en el codi-go co-mo lo hace AspectJ[[]], o aprox-i-ma-ciones des-de la eta-pa de modelamiento[[]].
+ []
+
+[26]
+LaTeX Font Info:    Try loading font information for U+lasy on input line 162.
+ ("D:\Program Files\MiKTeX 2.7\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/MotorolaWeavr.pdf): PDF inclusion: found PDF v
+ersion <1.5>, but at most version <1.4> allowed
+<./Figures/MotorolaWeavr.pdf, id=2779, 223.54616pt x 211.47813pt>
+File: ./Figures/MotorolaWeavr.pdf Graphic file (type pdf)
+ <use ./Figures/MotorolaWeavr.pdf> [27] [28 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/MotorolaWeavr.pdf>] [29]
+ [30]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/CompStages.pdf): PDF inclusion: found PDF vers
+ion <1.5>, but at most version <1.4> allowed
+<./Figures/CompStages.pdf, id=2850, 253.3209pt x 341.39983pt>
+File: ./Figures/CompStages.pdf Graphic file (type pdf)
+ <use ./Figures/CompStages.pdf>)
+("D:\Uniandes\Cumbia\Tesis 2\Documento\latex\Chapters\Capitulo4.tex" [31 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Fig
+ures/CompStages.pdf>] [32
+
+]
+Cap\'{\i }tulo 4.
+------------------------------------------------------------------------------
+ 4 Aspect-Oriented Workflow Languages
+------------------------------------------------------------------------------
+[33]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/EjemploShazam.pdf): PDF inclusion: found PDF v
+ersion <1.5>, but at most version <1.4> allowed
+<./Figures/EjemploShazam.pdf, id=2949, 172.16585pt x 241.5559pt>
+File: ./Figures/EjemploShazam.pdf Graphic file (type pdf)
+ <use ./Figures/EjemploShazam.pdf> [34]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/EjemploShazamContador.pdf): PDF inclusion: fou
+nd PDF version <1.5>, but at most version <1.4> allowed
+<./Figures/EjemploShazamContador.pdf, id=2958, 173.4751pt x 352.18716pt>
+File: ./Figures/EjemploShazamContador.pdf Graphic file (type pdf)
+ <use ./Figures/EjemploShazamContador.pdf>
+[35 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/EjemploShazam.pdf, page is rotated 90 degrees>]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/EjemploShazamTemporizador.pdf): PDF inclusion:
+ found PDF version <1.5>, but at most version <1.4> allowed
+<./Figures/EjemploShazamTemporizador.pdf, id=2992, 173.4751pt x 460.85458pt>
+File: ./Figures/EjemploShazamTemporizador.pdf Graphic file (type pdf)
+
+<use ./Figures/EjemploShazamTemporizador.pdf> [36 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/EjemploShazamConta
+dor.pdf, page is rotated 90 degrees>] [37 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/EjemploShazamTemporizador.
+pdf, page is rotated 90 degrees>]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/EjemploShazamPromoCode.pdf): PDF inclusion: fo
+und PDF version <1.5>, but at most version <1.4> allowed
+<./Figures/EjemploShazamPromoCode.pdf, id=3047, 173.92741pt x 291.60956pt>
+File: ./Figures/EjemploShazamPromoCode.pdf Graphic file (type pdf)
+ <use ./Figures/EjemploShazamPromoCode.pdf>
+[38] [39 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/EjemploShazamPromoCode.pdf, page is rotated 90 degrees>]
+[40] [41]
+Underfull \hbox (badness 10000) in paragraph at lines 173--173
+[]\OT1/cmr/m/n/10.95 invoking(Joinpoint, Part-ner-Link, Port-Type,
+ []
+
+
+Overfull \hbox (4.8655pt too wide) in paragraph at lines 166--177
+ [][] 
+ []
+
+[42] [43]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/ArquPadus.pdf): PDF inclusion: found PDF versi
+on <1.5>, but at most version <1.4> allowed
+<./Figures/ArquPadus.pdf, id=3126, 161.7882pt x 161.78821pt>
+File: ./Figures/ArquPadus.pdf Graphic file (type pdf)
+ <use ./Figures/ArquPadus.pdf> [44 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/ArquPadus.pdf>]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 213.
+ ("D:\Program Files\MiKTeX 2.7\tex\latex\base\omlcmr.fd"
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 213.
+ [45]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/AO4BPELStates.pdf): PDF inclusion: found PDF v
+ersion <1.5>, but at most version <1.4> allowed
+<./Figures/AO4BPELStates.pdf, id=3189, 325.215pt x 194.22563pt>
+File: ./Figures/AO4BPELStates.pdf Graphic file (type pdf)
+ <use ./Figures/AO4BPELStates.pdf> [46 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/AO4BPELStates.pdf>]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/AO4BPELArq.pdf): PDF inclusion: found PDF vers
+ion <1.5>, but at most version <1.4> allowed
+<./Figures/AO4BPELArq.pdf, id=3215, 321.54326pt x 94.42145pt>
+File: ./Figures/AO4BPELArq.pdf Graphic file (type pdf)
+ <use ./Figures/AO4BPELArq.pdf> [47 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/AO4BPELArq.pdf>]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Facturacion.pdf): PDF inclusion: found PDF ver
+sion <1.5>, but at most version <1.4> allowed
+<./Figures/Facturacion.pdf, id=3263, 369.23824pt x 240.18407pt>
+File: ./Figures/Facturacion.pdf Graphic file (type pdf)
+ <use ./Figures/Facturacion.pdf>
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/AspectoUbicacion.pdf): PDF inclusion: found PD
+F version <1.5>, but at most version <1.4> allowed
+<./Figures/AspectoUbicacion.pdf, id=3266, 431.07666pt x 473.19847pt>
+File: ./Figures/AspectoUbicacion.pdf Graphic file (type pdf)
+ <use ./Figures/AspectoUbicacion.pdf>
+Overfull \hbox (13.60254pt too wide) in paragraph at lines 286--288
+ [][] 
+ []
+
+[48]) ("D:\Uniandes\Cumbia\Tesis 2\Documento\latex\Chapters\Capitulo5.tex" [49 <D:/Uniandes/Cumbia/Tesis 2/Documento/lat
+ex/Figures/Facturacion.pdf, page is rotated 90 degrees>] [50 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Aspecto
+Ubicacion.pdf, page is rotated 90 degrees>]
+Cap\'{\i }tulo 5.
+------------------------------------------------------------------------------
+ 5 El Proyecto Cumbia
+------------------------------------------------------------------------------
+[51
+
+] [52]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/opnObject.pdf): PDF inclusion: found PDF versi
+on <1.5>, but at most version <1.4> allowed
+<./Figures/opnObject.pdf, id=3355, 305.12196pt x 199.19533pt>
+File: ./Figures/opnObject.pdf Graphic file (type pdf)
+ <use ./Figures/opnObject.pdf> [53 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/opnObject.pdf>] [54]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/application.pdf): PDF inclusion: found PDF ver
+sion <1.5>, but at most version <1.4> allowed
+<./Figures/application.pdf, id=3555, 272.4779pt x 270.4793pt>
+File: ./Figures/application.pdf Graphic file (type pdf)
+ <use ./Figures/application.pdf>)
+("D:\Uniandes\Cumbia\Tesis 2\Documento\latex\Chapters\Capitulo6.tex" [55 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Fig
+ures/application.pdf>] [56
+
+]
+Cap\'{\i }tulo 6.
+------------------------------------------------------------------------------
+ 6 Caffeine v2.0: Motor BPEL sobre Cumbia
+------------------------------------------------------------------------------
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
+[]\OT1/cmr/m/n/10.95 assign (copy,
+ []
+
+
+Underfull \hbox (badness 2781) in paragraph at lines 29--29
+\OT1/cmr/m/n/10.95 query, from, to,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
+\OT1/cmr/m/n/10.95 lit-er-al, ex-pres-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--34
+[]\OT1/cmr/m/n/10.95 if, el-seIf, else
+ []
+
+
+Underfull \hbox (badness 2384) in paragraph at lines 37--38
+[]\OT1/cmr/m/n/10.95 Elemento definido den-tro de pick o even-
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 38--39
+[]\OT1/cmr/m/n/10.95 Elemento definido den-tro de pick y even-
+ []
+
+
+Underfull \hbox (badness 1728) in paragraph at lines 39--39
+[]\OT1/cmr/m/n/10.95 Termina y de-struye los pro-ce-sos de for-ma
+ []
+
+[57]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/startingPoint.pdf): PDF inclusion: found PDF v
+ersion <1.5>, but at most version <1.4> allowed
+<./Figures/startingPoint.pdf, id=3838, 371.1712pt x 239.59203pt>
+File: ./Figures/startingPoint.pdf Graphic file (type pdf)
+ <use ./Figures/startingPoint.pdf>
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/process.pdf): PDF inclusion: found PDF version
+ <1.5>, but at most version <1.4> allowed
+<./Figures/process.pdf, id=3839, 444.84128pt x 182.21382pt>
+File: ./Figures/process.pdf Graphic file (type pdf)
+ <use ./Figures/process.pdf>
+Overfull \hbox (27.36711pt too wide) in paragraph at lines 63--65
+ [][] 
+ []
+
+[58]
+Overfull \hbox (3.3464pt too wide) in paragraph at lines 76--76
+[]\OT1/cmr/m/n/10.95 ExecutingActivity| 
+ []
+
+
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 72--81
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 86--94
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/startingPick.pdf): PDF inclusion: found PDF ve
+rsion <1.5>, but at most version <1.4> allowed
+<./Figures/startingPick.pdf, id=3844, 415.75552pt x 241.24084pt>
+File: ./Figures/startingPick.pdf Graphic file (type pdf)
+ <use ./Figures/startingPick.pdf>
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 111--120
+ [][] 
+ []
+
+[59 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/startingPoint.pdf, page is rotated 90 degrees> <D:/Uniandes/Cumb
+ia/Tesis 2/Documento/latex/Figures/process.pdf, page is rotated 90 degrees>]
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 125--133
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/startingReceive.pdf): PDF inclusion: found PDF
+ version <1.5>, but at most version <1.4> allowed
+<./Figures/startingReceive.pdf, id=3907, 297.70148pt x 99.23384pt>
+File: ./Figures/startingReceive.pdf Graphic file (type pdf)
+ <use ./Figures/startingReceive.pdf> [60 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/startingPick.pdf, page is r
+otated 90 degrees>]
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 150--158
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 162--168
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/interaction.pdf): PDF inclusion: found PDF ver
+sion <1.5>, but at most version <1.4> allowed
+<./Figures/interaction.pdf, id=3930, 371.1712pt x 233.70044pt>
+File: ./Figures/interaction.pdf Graphic file (type pdf)
+ <use ./Figures/interaction.pdf> [61 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/startingReceive.pdf, page is ro
+tated 90 degrees>]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/pick.pdf): PDF inclusion: found PDF version <1
+.5>, but at most version <1.4> allowed
+<./Figures/pick.pdf, id=3956, 455.96233pt x 230.97528pt>
+File: ./Figures/pick.pdf Graphic file (type pdf)
+ <use ./Figures/pick.pdf>
+Overfull \hbox (38.48814pt too wide) in paragraph at lines 187--189
+ [][] 
+ []
+
+
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 196--205
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 210--217
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/onAlarm.pdf): PDF inclusion: found PDF version
+ <1.5>, but at most version <1.4> allowed
+<./Figures/onAlarm.pdf, id=3957, 341.33011pt x 122.33136pt>
+File: ./Figures/onAlarm.pdf Graphic file (type pdf)
+ <use ./Figures/onAlarm.pdf>
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 235--243
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 248--255
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/onMessage.pdf): PDF inclusion: found PDF versi
+on <1.5>, but at most version <1.4> allowed
+<./Figures/onMessage.pdf, id=3958, 337.05281pt x 136.87425pt>
+File: ./Figures/onMessage.pdf Graphic file (type pdf)
+ <use ./Figures/onMessage.pdf> [62 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/interaction.pdf, page is rotated 
+90 degrees>] [63 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/pick.pdf, page is rotated 90 degrees> <D:/Uniandes/
+Cumbia/Tesis 2/Documento/latex/Figures/onAlarm.pdf, page is rotated 90 degrees>]
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 272--280
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 285--291
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/receive.pdf): PDF inclusion: found PDF version
+ <1.5>, but at most version <1.4> allowed
+<./Figures/receive.pdf, id=4046, 338.76373pt x 99.23381pt>
+File: ./Figures/receive.pdf Graphic file (type pdf)
+ <use ./Figures/receive.pdf>
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 308--316
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 321--327
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/reply.pdf): PDF inclusion: found PDF version <
+1.5>, but at most version <1.4> allowed
+<./Figures/reply.pdf, id=4047, 224.13156pt x 110.35484pt>
+File: ./Figures/reply.pdf Graphic file (type pdf)
+ <use ./Figures/reply.pdf> [64 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/onMessage.pdf, page is rotated 90 deg
+rees>]
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 343--350
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 355--361
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/invoke.pdf): PDF inclusion: found PDF version 
+<1.5>, but at most version <1.4> allowed
+<./Figures/invoke.pdf, id=4068, 396.07982pt x 177.93651pt>
+File: ./Figures/invoke.pdf Graphic file (type pdf)
+ <use ./Figures/invoke.pdf> [65 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/receive.pdf, page is rotated 90 degr
+ees> <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/reply.pdf, page is rotated 90 degrees>]
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 378--387
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 392--399
+ [][] 
+ []
+
+File: ./Figures/interaction.pdf Graphic file (type pdf)
+<use ./Figures/interaction.pdf> [66 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/invoke.pdf, page is rotated 90 d
+egrees>]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/sequence.pdf): PDF inclusion: found PDF versio
+n <1.5>, but at most version <1.4> allowed
+<./Figures/sequence.pdf, id=4140, 374.69319pt x 234.39714pt>
+File: ./Figures/sequence.pdf Graphic file (type pdf)
+ <use ./Figures/sequence.pdf>
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 426--435
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 440--447
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/flow.pdf): PDF inclusion: found PDF version <1
+.5>, but at most version <1.4> allowed
+<./Figures/flow.pdf, id=4141, 418.32188pt x 306.2561pt>
+File: ./Figures/flow.pdf Graphic file (type pdf)
+ <use ./Figures/flow.pdf>
+Overfull \hbox (0.8478pt too wide) in paragraph at lines 455--457
+ [][] 
+ []
+
+
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 464--473
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 478--487
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/while.pdf): PDF inclusion: found PDF version <
+1.5>, but at most version <1.4> allowed
+<./Figures/while.pdf, id=4142, 339.61922pt x 323.36537pt>
+File: ./Figures/while.pdf Graphic file (type pdf)
+ <use ./Figures/while.pdf>
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 504--514
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 519--526
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/conditional.pdf): PDF inclusion: found PDF ver
+sion <1.5>, but at most version <1.4> allowed
+<./Figures/conditional.pdf, id=4143, 435.97891pt x 341.7132pt>
+File: ./Figures/conditional.pdf Graphic file (type pdf)
+ <use ./Figures/conditional.pdf>
+Overfull \hbox (18.50478pt too wide) in paragraph at lines 535--537
+ [][] 
+ []
+
+[67] [68 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/sequence.pdf, page is rotated 90 degrees>] [69 <D:/Uniandes
+/Cumbia/Tesis 2/Documento/latex/Figures/flow.pdf, page is rotated 90 degrees>]
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 544--556
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 561--571
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/instructions.pdf): PDF inclusion: found PDF ve
+rsion <1.5>, but at most version <1.4> allowed
+<./Figures/instructions.pdf, id=4203, 365.93423pt x 271.01392pt>
+File: ./Figures/instructions.pdf Graphic file (type pdf)
+ <use ./Figures/instructions.pdf>
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/exit.pdf): PDF inclusion: found PDF version <1
+.5>, but at most version <1.4> allowed
+<./Figures/exit.pdf, id=4204, 220.7097pt x 85.54637pt>
+File: ./Figures/exit.pdf Graphic file (type pdf)
+ <use ./Figures/exit.pdf>
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 597--604
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 609--615
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/empty.pdf): PDF inclusion: found PDF version <
+1.5>, but at most version <1.4> allowed
+<./Figures/empty.pdf, id=4205, 211.2996pt x 72.71445pt>
+File: ./Figures/empty.pdf Graphic file (type pdf)
+ <use ./Figures/empty.pdf> [70 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/while.pdf, page is rotated 90 degrees
+>] [71 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/conditional.pdf, page is rotated 90 degrees>] [72 <D:/Uniande
+s/Cumbia/Tesis 2/Documento/latex/Figures/instructions.pdf, page is rotated 90 degrees> <D:/Uniandes/Cumbia/Tesis 2/Docum
+ento/latex/Figures/exit.pdf, page is rotated 90 degrees>]
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 633--640
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/wait.pdf): PDF inclusion: found PDF version <1
+.5>, but at most version <1.4> allowed
+<./Figures/wait.pdf, id=4308, 294.2796pt x 93.24557pt>
+File: ./Figures/wait.pdf Graphic file (type pdf)
+ <use ./Figures/wait.pdf>
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 657--665
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 670--676
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/assign.pdf): PDF inclusion: found PDF version 
+<1.5>, but at most version <1.4> allowed
+<./Figures/assign.pdf, id=4309, 247.22908pt x 207.87775pt>
+File: ./Figures/assign.pdf Graphic file (type pdf)
+ <use ./Figures/assign.pdf> [73 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/empty.pdf, page is rotated 90 degree
+s> <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/wait.pdf, page is rotated 90 degrees>]
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 692--700
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 705--712
+ [][] 
+ []
+
+<./Figures/Caffeine.pdf, id=4353, 614.295pt x 794.97pt>
+File: ./Figures/Caffeine.pdf Graphic file (type pdf)
+ <use ./Figures/Caffeine.pdf>
+Overfull \hbox (196.82042pt too wide) in paragraph at lines 721--723
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 150.79503pt on input line 725.
+
+[74 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/assign.pdf, page is rotated 90 degrees>]
+("D:\Program Files\MiKTeX 2.7\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+("D:\Program Files\MiKTeX 2.7\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+) [75] [76 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Caffeine.pdf>] [77]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/CaffeineEngine.pdf): PDF inclusion: found PDF 
+version <1.5>, but at most version <1.4> allowed
+<./Figures/CaffeineEngine.pdf, id=4444, 290.95268pt x 219.23183pt>
+File: ./Figures/CaffeineEngine.pdf Graphic file (type pdf)
+ <use ./Figures/CaffeineEngine.pdf> [78 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/CaffeineEngine.pdf, page is 
+rotated 90 degrees>] [79]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/CaffeineImporter.pdf): PDF inclusion: found PD
+F version <1.5>, but at most version <1.4> allowed
+<./Figures/CaffeineImporter.pdf, id=4481, 273.52188pt x 159.59625pt>
+File: ./Figures/CaffeineImporter.pdf Graphic file (type pdf)
+ <use ./Figures/CaffeineImporter.pdf> [80 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/CaffeineImporter.pdf, page
+ is rotated 90 degrees>] [81] [82]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/ProcessTree.pdf): PDF inclusion: found PDF ver
+sion <1.5>, but at most version <1.4> allowed
+<./Figures/ProcessTree.pdf, id=5153, 455.07426pt x 326.34358pt>
+File: ./Figures/ProcessTree.pdf Graphic file (type pdf)
+ <use ./Figures/ProcessTree.pdf>
+Overfull \hbox (37.60007pt too wide) in paragraph at lines 913--915
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/ActivityDetail.pdf): PDF inclusion: found PDF 
+version <1.5>, but at most version <1.4> allowed
+<./Figures/ActivityDetail.pdf, id=5154, 452.43942pt x 318.06264pt>
+File: ./Figures/ActivityDetail.pdf Graphic file (type pdf)
+ <use ./Figures/ActivityDetail.pdf>
+Overfull \hbox (34.96524pt too wide) in paragraph at lines 921--923
+ [][] 
+ []
+
+) ("D:\Uniandes\Cumbia\Tesis 2\Documento\latex\Chapters\Capitulo7.tex" [83] [84 <D:/Uniandes/Cumbia/Tesis 2/Documento/la
+tex/Figures/ProcessTree.pdf>] [85 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/ActivityDetail.pdf>] [86
+
+]
+Cap\'{\i }tulo 7.
+------------------------------------------------------------------------------
+ 7 AspectCaffine: Extensi\'on de Aspectos a Caffeine
+------------------------------------------------------------------------------
+[87] [88] [89] [90] [91]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/AspectCaffeine.pdf): PDF inclusion: found PDF 
+version <1.5>, but at most version <1.4> allowed
+<./Figures/AspectCaffeine.pdf, id=5722, 323.22815pt x 294.22044pt>
+File: ./Figures/AspectCaffeine.pdf Graphic file (type pdf)
+ <use ./Figures/AspectCaffeine.pdf>
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 140.
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Aspect.pdf): PDF inclusion: found PDF version 
+<1.5>, but at most version <1.4> allowed
+<./Figures/Aspect.pdf, id=5723, 380.92456pt x 210.78831pt>
+File: ./Figures/Aspect.pdf Graphic file (type pdf)
+ <use ./Figures/Aspect.pdf>
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 154--163
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 168--176
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/TransitionPoint.pdf): PDF inclusion: found PDF
+ version <1.5>, but at most version <1.4> allowed
+<./Figures/TransitionPoint.pdf, id=5724, 409.53156pt x 220.57492pt>
+File: ./Figures/TransitionPoint.pdf Graphic file (type pdf)
+ <use ./Figures/TransitionPoint.pdf>
+Overfull \hbox (44.87491pt too wide) in paragraph at lines 193--202
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Advice.pdf): PDF inclusion: found PDF version 
+<1.5>, but at most version <1.4> allowed
+<./Figures/Advice.pdf, id=5725, 292.16418pt x 198.95845pt>
+File: ./Figures/Advice.pdf Graphic file (type pdf)
+ <use ./Figures/Advice.pdf> [92] [93 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/AspectCaffeine.pdf> <D:/Uniande
+s/Cumbia/Tesis 2/Documento/latex/Figures/Aspect.pdf, page is rotated 90 degrees>] [94 <D:/Uniandes/Cumbia/Tesis 2/Docume
+nto/latex/Figures/TransitionPoint.pdf, page is rotated 90 degrees>]
+Overfull \hbox (44.87491pt too wide) in paragraph at lines 230--238
+ [][] 
+ []
+
+
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Instruction.pdf): PDF inclusion: found PDF ver
+sion <1.5>, but at most version <1.4> allowed
+<./Figures/Instruction.pdf, id=5922, 335.75566pt x 228.10304pt>
+File: ./Figures/Instruction.pdf Graphic file (type pdf)
+ <use ./Figures/Instruction.pdf>
+Overfull \hbox (3.12506pt too wide) in paragraph at lines 265--274
+ [][] 
+ []
+
+
+Overfull \hbox (3.12505pt too wide) in paragraph at lines 279--285
+ [][] 
+ []
+
+[95 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Advice.pdf, page is rotated 90 degrees>]
+Overfull \hbox (5.81151pt too wide) in paragraph at lines 292--293
+\OT1/cmr/m/n/10.95 para un as-pec-to que en to-tal tiene cin-co \OT1/cmr/m/it/10.95 ad-vices\OT1/cmr/m/n/10.95 , lla-ma-
+dos \OT1/cmr/m/it/10.95 ad-vice1\OT1/cmr/m/n/10.95 ,\OT1/cmr/m/it/10.95 advice11\OT1/cmr/m/n/10.95 ,\OT1/cmr/m/it/10.95 
+advice5\OT1/cmr/m/n/10.95 ,\OT1/cmr/m/it/10.95 advice7
+ []
+
+[96 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Instruction.pdf, page is rotated 90 degrees>]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/advice1.pdf): PDF inclusion: found PDF version
+ <1.5>, but at most version <1.4> allowed
+<./Figures/advice1.pdf, id=5975, 303.81496pt x 221.36368pt>
+File: ./Figures/advice1.pdf Graphic file (type pdf)
+ <use ./Figures/advice1.pdf>
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/advice2.pdf): PDF inclusion: found PDF version
+ <1.5>, but at most version <1.4> allowed
+<./Figures/advice2.pdf, id=5977, 305.60732pt x 240.18407pt>
+File: ./Figures/advice2.pdf Graphic file (type pdf)
+ <use ./Figures/advice2.pdf>
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/advice3.pdf): PDF inclusion: found PDF version
+ <1.5>, but at most version <1.4> allowed
+<./Figures/advice3.pdf, id=5979, 323.53152pt x 221.36368pt>
+File: ./Figures/advice3.pdf Graphic file (type pdf)
+ <use ./Figures/advice3.pdf>
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/advice4.pdf): PDF inclusion: found PDF version
+ <1.5>, but at most version <1.4> allowed
+<./Figures/advice4.pdf, id=5981, 304.71112pt x 239.28786pt>
+File: ./Figures/advice4.pdf Graphic file (type pdf)
+ <use ./Figures/advice4.pdf>
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/advice5.pdf): PDF inclusion: found PDF version
+ <1.5>, but at most version <1.4> allowed
+<./Figures/advice5.pdf, id=5983, 302.91872pt x 220.46748pt>
+File: ./Figures/advice5.pdf Graphic file (type pdf)
+ <use ./Figures/advice5.pdf> [97] [98 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/advice1.pdf, page is rotated 9
+0 degrees> <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/advice2.pdf, page is rotated 90 degrees>] [99 <D:/Uniande
+s/Cumbia/Tesis 2/Documento/latex/Figures/advice3.pdf, page is rotated 90 degrees> <D:/Uniandes/Cumbia/Tesis 2/Documento/
+latex/Figures/advice4.pdf, page is rotated 90 degrees>]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/adviceAll.pdf): PDF inclusion: found PDF versi
+on <1.5>, but at most version <1.4> allowed
+<./Figures/adviceAll.pdf, id=6037, 323.53152pt x 257.21204pt>
+File: ./Figures/adviceAll.pdf Graphic file (type pdf)
+ <use ./Figures/adviceAll.pdf> [100 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/advice5.pdf, page is rotated 90 
+degrees>]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Arbol1.pdf): PDF inclusion: found PDF version 
+<1.5>, but at most version <1.4> allowed
+<./Figures/Arbol1.pdf, id=6053, 62.73465pt x 53.77255pt>
+File: ./Figures/Arbol1.pdf Graphic file (type pdf)
+ <use ./Figures/Arbol1.pdf>
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Arbol2.pdf): PDF inclusion: found PDF version 
+<1.5>, but at most version <1.4> allowed
+<./Figures/Arbol2.pdf, id=6055, 281.40971pt x 142.49727pt>
+File: ./Figures/Arbol2.pdf Graphic file (type pdf)
+ <use ./Figures/Arbol2.pdf>
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Arbol3.pdf): PDF inclusion: found PDF version 
+<1.5>, but at most version <1.4> allowed
+<./Figures/Arbol3.pdf, id=6057, 395.22827pt x 308.29596pt>
+File: ./Figures/Arbol3.pdf Graphic file (type pdf)
+ <use ./Figures/Arbol3.pdf> [101 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/adviceAll.pdf, page is rotated 90 d
+egrees> <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Arbol1.pdf, page is rotated 90 degrees>] [102 <D:/Uniandes/C
+umbia/Tesis 2/Documento/latex/Figures/Arbol2.pdf, page is rotated 90 degrees> <D:/Uniandes/Cumbia/Tesis 2/Documento/late
+x/Figures/Arbol3.pdf, page is rotated 90 degrees>]
+
+pdfTeX warning:  (file D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Arbol4.pdf): PDF inclusion: found PDF version 
+<1.5>, but at most version <1.4> allowed
+<./Figures/Arbol4.pdf, id=6090, 328.8275pt x 376.40509pt>
+File: ./Figures/Arbol4.pdf Graphic file (type pdf)
+ <use ./Figures/Arbol4.pdf> [103 <D:/Uniandes/Cumbia/Tesis 2/Documento/latex/Figures/Arbol4.pdf, page is rotated 90 degr
+ees>] [104])
+("D:\Uniandes\Cumbia\Tesis 2\Documento\latex\Chapters\Capitulo8.tex" [105] [106
+
+]
+Cap\'{\i }tulo 8.
+------------------------------------------------------------------------------
+ 8 Conclusiones y Trabajo Futuro
+------------------------------------------------------------------------------
+[107]) [108]
+------------------------------------------------------------------------------
+ Bibliograf\'{\i }a
+------------------------------------------------------------------------------
+(Thesis.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 51--56
+\OT1/cmtt/m/n/10.95 activevos . com / infocenter / ActiveVOS / v60 / topic / com . activee . bpel . doc /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--63
+[]\OT1/cmr/m/n/10.95 Active End-points.  Pub-li-cacion Web, Oc-tubre 2008.  URL []$\OT1/cmtt/m/n/10.95 http :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--63
+\OT1/cmtt/m/n/10.95 / / www . activevos . com / indepth / b _ capabilities / j _ activeVOS5Designer /
+ []
+
+
+Underfull \hbox (badness 7925) in paragraph at lines 65--70
+[]\OT1/cmr/m/n/10.95 Active End-points.  Ac-tive End-points, Oc-tubre 2008.  URL []$\OT1/cmtt/m/n/10.95 http :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--70
+\OT1/cmtt/m/n/10.95 / / www . activebpel . org / infocenter / ActiveVOS / v50 / index . jsp ? topic = /com .
+ []
+
+[109
+
+
+]
+Underfull \hbox (badness 7468) in paragraph at lines 79--85
+[]\OT1/cmr/m/n/10.95 Oracle.  Or-a-cle bpel pro-cess man-ag-er.  Pub-li-cacion Web, Oc-tubre
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 79--85
+\OT1/cmr/m/n/10.95 2008.  URL []$\OT1/cmtt/m/n/10.95 www . oracle . com / technology / products / ias / bpel / pdf / ora
+cle _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--93
+[]\OT1/cmr/m/n/10.95 Oracle.  Bpel con-sole re-ports.  Pub-li-cacion Web, Oc-tubre 2008.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--93
+\OT1/cmr/m/n/10.95 URL []$\OT1/cmtt/m/n/10.95 http : / / www . oracle . com / technology / products / ias / bpel / pdf /
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--101
+[]\OT1/cmr/m/n/10.95 Oracle.  Bpel con-sole re-ports.  Pub-li-cacion Web, Oc-tubre 2008.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--101
+\OT1/cmr/m/n/10.95 URL []$\OT1/cmtt/m/n/10.95 http : / / www . oracle . com / technology / products / ias / bpel / pdf /
+
+ []
+
+
+Underfull \hbox (badness 4859) in paragraph at lines 121--126
+[]\OT1/cmr/m/n/10.95 Web ser-vices hu-man task (ws-humantask).  Pub-li-cacion Web, Oc-tubre
+ []
+
+
+Underfull \hbox (badness 5711) in paragraph at lines 121--126
+\OT1/cmr/m/n/10.95 2008.  URL []$\OT1/cmtt/m/n/10.95 http : / / download . boulder . ibm . com / ibmdl / pub / software 
+/ dw /
+ []
+
+
+Underfull \hbox (badness 3386) in paragraph at lines 128--133
+[]\OT1/cmr/m/n/10.95 Ws-bpel ex-ten-sion for peo-ple (bpel4people).  Pub-li-cacion Web, Oc-tubre
+ []
+
+
+Underfull \hbox (badness 5711) in paragraph at lines 128--133
+\OT1/cmr/m/n/10.95 2008.  URL []$\OT1/cmtt/m/n/10.95 http : / / download . boulder . ibm . com / ibmdl / pub / software 
+/ dw /
+ []
+
+[110] [111]) [112] (Thesis.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 11490 strings out of 95340
+ 155612 string characters out of 1184154
+ 339536 words of memory out of 1500000
+ 13737 multiletter control sequences out of 110000
+ 17646 words of font info for 65 fonts, out of 1200000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 43i,13n,51p,1820b,1879s stack positions out of 5000i,500n,10000p,200000b,5000s
+<D:/Program Files/MiKTeX 2.7/fonts/type1/bluesky/cm/cmbx10.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/bluesky/cm/cmb
+x12.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/bluesky/cm/cmbx8.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/bluesky/c
+m/cmbx9.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/bluesky/cm/cmbxti10.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/bl
+uesky/cm/cmcsc10.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/bluesky/cm/cmmi9.pfb><D:/Program Files/MiKTeX 2.7/fonts/ty
+pe1/bluesky/cm/cmr10.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/bluesky/cm/cmr12.pfb><D:/Program Files/MiKTeX 2.7/font
+s/type1/bluesky/cm/cmr17.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/bluesky/cm/cmr6.pfb><D:/Program Files/MiKTeX 2.7/f
+onts/type1/bluesky/cm/cmr7.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/bluesky/cm/cmr8.pfb><D:/Program Files/MiKTeX 2.7
+/fonts/type1/bluesky/cm/cmr9.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/bluesky/cm/cmss12.pfb><D:/Program Files/MiKTeX
+ 2.7/fonts/type1/bluesky/cm/cmsy9.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/bluesky/cm/cmti10.pfb><D:/Program Files/M
+iKTeX 2.7/fonts/type1/bluesky/cm/cmti12.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/bluesky/cm/cmti9.pfb><D:/Program Fi
+les/MiKTeX 2.7/fonts/type1/bluesky/cm/cmtt10.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/bluesky/cm/cmtt8.pfb><D:/Progr
+am Files/MiKTeX 2.7/fonts/type1/bluesky/cm/cmtt9.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/public/cour/cour.pfa><D:/P
+rogram Files/MiKTeX 2.7/fonts/type1/bluesky/latex-fonts/lasy10.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/public/cm-su
+per/sfrm0800.pfb><D:/Program Files/MiKTeX 2.7/fonts/type1/public/cm-super/sfrm0900.pfb><D:/Program Files/MiKTeX 2.7/font
+s/type1/public/cm-super/sfrm1000.pfb>
+Output written on Thesis.pdf (124 pages, 4545471 bytes).
+PDF statistics:
+ 6519 PDF objects out of 7423 (max. 8388607)
+ 668 named destinations out of 1000 (max. 131072)
+ 1372 words of extra memory for PDF output out of 10000 (max. 10000000)
+

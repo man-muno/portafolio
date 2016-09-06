@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animation>
+	<createTestWsdlService processName="HelloWorld" serviceName="testWSDL" type="dummy"/>
+	<execute-synchronous-call processName="HelloWorld" serviceName="testWSDL" processID="0" instanceID="0" message="initial message" />
+	<!--<invoke-asynchronous-call serviceName="testWSDL" processName="HelloWorld" processID="0" instanceID="0" message="sent message" /> -->
+</animation>

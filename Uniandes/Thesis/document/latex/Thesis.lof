@@ -1,0 +1,65 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Constelaciones de BPEL4People}}{18}{figure.caption.64}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Sistema de reproducci\'on de m\'usica}}{25}{figure.caption.89}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Diagrama de \textit {deployment} mostrando los estereotipos para aspectos}}{28}{figure.caption.138}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Proceso de detecci\'on de conflictos}}{31}{figure.caption.151}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Ejemplo de un proceso workflow}}{35}{figure.caption.156}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Ejemplo de recolecci\'on de informaci\'on}}{36}{figure.caption.159}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Ejemplo monitoreo de tiempo de ejecuci\'on}}{37}{figure.caption.161}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Ejemplo agregar una actividad}}{39}{figure.caption.164}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Arquitectura de Padus}}{44}{figure.caption.185}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Estados de una actividad de AO4BPEL}}{46}{figure.caption.200}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Arquitectura del motor de AO4BPEL}}{47}{figure.caption.203}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Aspecto de facturaci\'on}}{49}{figure.caption.206}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Aspecto de verificaci\'on de ubicaci\'on}}{50}{figure.caption.208}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Estructura de un objeto abierto}}{53}{figure.caption.215}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Composici\'on de Modelos de Diferentes Dominios}}{55}{figure.caption.218}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Elementos de inicio}}{59}{figure.caption.224}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces M\'aquina de estados del elemento \textit {Process}}}{59}{figure.caption.226}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces M\'aquina de estados del elemento \textit {StartingPick}}}{60}{figure.caption.230}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces M\'aquina de estados del elemento \textit {StartingReceive}}}{61}{figure.caption.234}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Elementos de interacci\'on}}{62}{figure.caption.238}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces M\'aquina de estados del elemento \textit {Pick}}}{63}{figure.caption.240}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces M\'aquina de estados del elemento \textit {OnAlarm}}}{63}{figure.caption.244}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces M\'aquina de estados del elemento \textit {onMessage}}}{64}{figure.caption.248}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces M\'aquina de estados del elemento \textit {Receive}}}{65}{figure.caption.252}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces M\'aquina de estados del elemento \textit {Reply}}}{65}{figure.caption.256}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces M\'aquina de estados del elemento \textit {Invoke}}}{66}{figure.caption.260}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Elementos estructuradores}}{67}{figure.caption.264}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces M\'aquina de estados del elemento \textit {Sequence}}}{68}{figure.caption.266}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces M\'aquina de estados del elemento \textit {Flow}}}{69}{figure.caption.270}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces M\'aquina de estados del elemento \textit {While}}}{70}{figure.caption.274}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces M\'aquina de estados del comportamiento \textit {Condicional}}}{71}{figure.caption.278}
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Instrucciones}}{72}{figure.caption.282}
+\contentsline {figure}{\numberline {6.18}{\ignorespaces M\'aquina de estados del elemento \textit {Exit}}}{72}{figure.caption.284}
+\contentsline {figure}{\numberline {6.19}{\ignorespaces M\'aquina de estados del elemento \textit {Empty}}}{73}{figure.caption.288}
+\contentsline {figure}{\numberline {6.20}{\ignorespaces M\'aquina de estados del elemento \textit {Wait}}}{73}{figure.caption.291}
+\contentsline {figure}{\numberline {6.21}{\ignorespaces M\'aquina de estados del elemento \textit {Assign}}}{74}{figure.caption.295}
+\contentsline {figure}{\numberline {6.22}{\ignorespaces Arquitectura de Caffeine}}{76}{figure.caption.299}
+\contentsline {figure}{\numberline {6.23}{\ignorespaces Arquitectura de CaffeineEngine}}{78}{figure.caption.351}
+\contentsline {figure}{\numberline {6.24}{\ignorespaces Arquitectura del CaffeineDeployer}}{80}{figure.caption.359}
+\contentsline {figure}{\numberline {6.25}{\ignorespaces Vista en forma de \'arbol de los elementos de un proceso}}{84}{figure.caption.375}
+\contentsline {figure}{\numberline {6.26}{\ignorespaces Detalles de una actividad del proceso}}{85}{figure.caption.376}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Elementos de \textit {AspectCaffeine}}}{93}{figure.caption.428}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces M\'aquina de estados del elemento \textit {Aspect}}}{93}{figure.caption.430}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces M\'aquina de estados del elemento \textit {Transition Point}}}{94}{figure.caption.434}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces M\'aquina de estados del elemento \textit {Advice}}}{95}{figure.caption.438}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces M\'aquina de estados del elemento \textit {Instruction}}}{96}{figure.caption.442}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Grafo \'unicamente para el \textit {advice1}}}{98}{figure.caption.466}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Grafo \'unicamente para el \textit {advice11}}}{98}{figure.caption.468}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Grafo \'unicamente para el \textit {advice5}}}{99}{figure.caption.470}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Grafo \'unicamente para el \textit {advice7}}}{99}{figure.caption.472}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Grafo \'unicamente para el \textit {advice4}}}{100}{figure.caption.474}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Grafo completo}}{101}{figure.caption.475}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Primer paso del algoritmo para obtener el \'arbol de recubrimiento}}{101}{figure.caption.478}
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Segundo paso del algoritmo para obtener el \'arbol de recubrimiento}}{102}{figure.caption.480}
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Continuar agregando los v\'ertices sucesores como hijos}}{102}{figure.caption.482}
+\contentsline {figure}{\numberline {7.15}{\ignorespaces \'Arbol terminado resaltando una rama con todos los \textit {advices}}}{103}{figure.caption.484}
+\addvspace {10\p@ }

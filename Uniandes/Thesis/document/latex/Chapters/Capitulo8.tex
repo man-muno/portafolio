@@ -1,0 +1,24 @@
+% Chapter 8
+
+\chapter{Conclusiones y Trabajo Futuro} % Write in your own chapter title
+\label{Chapter8}
+\lhead{Chapter 8. \emph{Conclusiones y Trabajo Futuro}} % Write in your own chapter title to set the page header
+
+
+\section{Conclusiones}
+A lo largo de este trabajo se presentó uno de los problemas, que teniendo en cuenta la cantidad de herramientas que lo soportan, ha sido muy poco explorado. Las preocupaciones transversales y la modularización de ellas son una cara de las aplicaciones orientadas a \textit{workflow} que presenta una gran importancia debido a las ventajas que representa contar con mecanismos que permitan tanto definir nuevas funcionalidades sobre procesos como encapsularlas.
+
+El enfoque de este trabajo de tesis fue la construcción de un motor de BPEL que no solo permitiera la definición de nuevos comportamientos encapsulados, sino también una aproximación para resolver el problema de interferencia entre aspectos, el cual afecta a los lenguajes orientados por aspectos.
+
+Gracias a que se hizo uso de las propuestas realizadas por el proyecto Cumbia, es posible tener un motor de BPEL funcional y  a su vez realizar la fácil integración con otro modelo que representa los comportamientos transversales, sin perder la clara diferenciación entre los elementos que hacen parte de las preocupaciones transversales y los elementos del proceso, otorgándole a los comportamientos transversales identidades de primer orden.
+
+Debido a que se utilizaron objetos abiertos, es posible hacer un fácil monitoreo de los aspectos que están siendo ejecutados en cierto momento en el tiempo o conocer fácilmente cuales son los aspectos que afectan directamente instancias de proceso especificas. Además, gracias a la flexibilidad intrínseca de utilizar modelos ejecutables extensibles, es posible cambiar fácilmente las implementaciones aquí propuestas, de tal manera que se acomoden a las necesidades especificas de diferentes contextos a muy bajo costo. Un ejemplo claro de esto es la posibilidad de definir nuevos \textit{transition points}, donde la manera de ordenar los \textit{advices} sea una estructura que se acomode mejor a las necesidades del negocio, en vez de un grafo dirigido.
+
+Es posible diseñar componentes extra que permitan enriquecer al motor de BPEL que ayuden a manejar requerimientos no funcionales, como la transaccionalidad de los procesos o la seguridad en el intercambio de mensajes. A su vez, la fácil extensión de los motores, permite desarrollar componentes para contextos donde la lógica del negocio está definida usando reglas de negocio.
+
+\section{Trabajo Futuro}
+Como parte del trabajo futuro se propone realizar la misma experimentación sobre otros de los activos existentes del proyecto, como por ejemplo el motor de BPMN.
+
+También se propone hacer una extensión sobre el lenguaje de puntos de corte para tener en cuenta puntos que representan, por ejemplo, cuando una actividad x es ejecutada después de una actividad z o involucrar otros dominios, cómo el de recursos, para tener expresiones que puedan definir puntos de corte donde cierto participante ejecute cierta actividad. También puntos de corte donde se monitoree cuando una variable es modificada o leída.
+
+Otra propuesta es hacer algo similar a lo que hace \textit{Padus}, que permite definir \textit{advices} de tipo \textit{in}, los cuales son colocados dentro de una actividad especifica, por ejemplo dentro de un \textit{flow}. También es posible tener en cuenta otros tipos de \textit{advices} que son utilizados en \textit{AO4BPEL} que pueden ser ejecutados en paralelo al elemento sobre los cuales están definidos.

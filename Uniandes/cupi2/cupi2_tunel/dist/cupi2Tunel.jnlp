@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0"
+codebase="http://cupi2.uniandes.edu.co/recursos/cupi2Tunel/"
+href="cupi2Tunel.jnlp">
+<information>
+<title>Cupi2Tunel</title>
+<vendor>cupi2.uniandes.edu.co</vendor>
+<offline-allowed/>
+</information>
+<resources>
+<jar href="cupi2Tunel.jar"/>
+<j2se version="1.4+"
+href="http://java.sun.com/products/autodl/j2se"/>
+</resources>
+<application-desc main-class="uniandes.cupi2.tunel.interfaz.InterfazTunel"/>
+<security>
+<all-permissions/>
+</security>
+</jnlp>

@@ -1,0 +1,51 @@
+<state-machine name="pick" initial-state="Init">
+	
+<!-- Init -->
+	<state name="Init" enter-event="" exit-event="exitInit">
+		<transition name="ToWaiting" successor="Waiting">
+			<source-event source-name="ME" event-name="activate" />
+			<before-event name="beforeToWaiting" />
+			<after-event name="afterToWaiting" />
+			<actions>
+				<action name="InitElements"
+					class="uniandes.cumbia.bpel.elements.pick.actions.InitElements" />
+			</actions>
+		</transition>
+	</state>
+	
+<!-- Waiting -->
+	<state name="Waiting" enter-event="enterWaiting" exit-event="exitWaiting">
+		<transition name="FinalizeOnAlarm" successor="Executing">
+			<source-event source-name="onAlarm"	event-name="exitCounting"/>
+			<before-event name="beforeFinalizingOnAlarm" />
+			<after-event name="afterFinalizingOnAlarm" />
+			<actions>
+				<action name="ExecuteOnAlarm"
+					class="uniandes.cumbia.bpel.elements.pick.actions.Execute" />
+			</actions>
+		</transition>
+		<transition name="FinalizeOnMessage" successor="Executing">
+			<source-event source-name="onMessage" event-name="exitWaiting" />
+			<before-event name="beforeFinalizingOnMessage" />
+			<after-event name="afterFinalizingOnMessage" />
+			<actions>
+				<action name="ExecuteOnMessage"
+					class="uniandes.cumbia.bpel.elements.pick.actions.Execute" />
+			</actions>
+		</transition>		
+	</state>
+	
+		
+<!-- Executing -->
+	<state name="Executing" enter-event="enterExecuting" exit-event="exitExecuting">
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ACT" event-name="enterFinalizing" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions />
+		</transition>
+	</state>
+	
+<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event=""/>
+</state-machine>

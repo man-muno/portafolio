@@ -1,0 +1,310 @@
+\begin{thebibliography}{44}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[OASIS(2008)]{Ref5}
+OASIS.
+\newblock History of bpel.
+\newblock Publicación Web, Octubre 2008.
+\newblock URL \url{http://bpel.xml.org/history}.
+
+\bibitem[TC(2007)]{Ref6}
+OASIS Web Services Business Process Execution Language~(WSBPEL) TC.
+\newblock Web services business process execution language version 2.0.
+\newblock Publicación Web, Abril 2007.
+\newblock URL \url{http://docs.oasis-open.org/wsbpel/2.0/wsbpel-v2.0.html}.
+
+\bibitem[S. et~al.(2005)S., F., F., T., and D.]{Ref7}
+Weerawarana S., Curbera F., Leymann F., Storey T., and Ferguson D.
+\newblock \emph{Web Services Platform Architecture : SOAP, WSDL, WS-Policy,
+  WS-Addressing, WS-BPEL, WS-Reliable Messaging, and More}.
+\newblock {Prentice Hall PTR}, March 2005.
+\newblock ISBN 0131488740.
+\newblock URL
+  \url{http://www.amazon.ca/exec/obidos/redirect?tag=citeulike09-20\&amp;path=%
+ASIN/0131488740}.
+
+\bibitem[Endpoints(2008{\natexlab{a}})]{Ref8}
+Active Endpoints.
+\newblock Bpel open source.
+\newblock Publicación Web, Octubre 2008{\natexlab{a}}.
+\newblock URL \url{http://www.activevos.com/community-open-source.php}.
+
+\bibitem[Endpoints(2008{\natexlab{b}})]{Ref12}
+Active Endpoints.
+\newblock Publicación Web, Octubre 2008{\natexlab{b}}.
+\newblock URL
+  \url{http://www.activevos.com/indepth/b_capabilities/d_DeployingVignette/Dep%
+loying.html}.
+
+\bibitem[Endpoints(2008{\natexlab{c}})]{Ref15}
+Active Endpoints.
+\newblock Publicación Web, Octubre 2008{\natexlab{c}}.
+\newblock URL
+  \url{http://www.activevos.com/indepth/b_capabilities/e_ReportingVignette/Rep%
+orting.html}.
+
+\bibitem[Endpoints(2008{\natexlab{d}})]{Ref16}
+Active Endpoints.
+\newblock Publicación Web, Octubre 2008{\natexlab{d}}.
+\newblock URL
+  \url{http://infocenter.activevos.com/infocenter/ActiveVOS/v60/topic/com.acti%
+vee.bpel.doc/aeDataSource_UserReports.pdf}.
+
+\bibitem[Endpoints(2008{\natexlab{e}})]{Ref9}
+Active Endpoints.
+\newblock Publicación Web, Octubre 2008{\natexlab{e}}.
+\newblock URL
+  \url{http://www.activevos.com/indepth/b_capabilities/j_activeVOS5Designer/Ac%
+tiveVOSDemonstration.html}.
+
+\bibitem[Endpoints(2008{\natexlab{f}})]{Ref10}
+Active Endpoints.
+\newblock Active Endpoints, Octubre 2008{\natexlab{f}}.
+\newblock URL
+  \url{http://www.activebpel.org/infocenter/ActiveVOS/v50/index.jsp?topic=/com%
+.activee.bpel.doc/html/UG20-5.html}.
+
+\bibitem[Oracle(2008{\natexlab{a}})]{Ref17}
+Oracle.
+\newblock Oracle bpel process manager 10.1.2.0.x quick start tutorial.
+\newblock Publicación Web, Octubre 2008{\natexlab{a}}.
+\newblock URL
+  \url{http://download.oracle.com/otndocs/products/bpel/quickstart.pdf}.
+
+\bibitem[Oracle(2008{\natexlab{b}})]{Ref18}
+Oracle.
+\newblock Oracle bpel process manager.
+\newblock Publicación Web, Octubre 2008{\natexlab{b}}.
+\newblock URL
+  \url{www.oracle.com/technology/products/ias/bpel/pdf/oracle_bpel_process_man%
+ager_datasheet.pdf}.
+
+\bibitem[Oracle(2008{\natexlab{c}})]{Ref19}
+Oracle.
+\newblock Bpel console reports.
+\newblock Publicación Web, Octubre 2008{\natexlab{c}}.
+\newblock URL
+  \url{http://www.oracle.com/technology/products/ias/bpel/pdf/bpelreportsfeatu%
+repreview.pdf}.
+
+\bibitem[Oracle(2008{\natexlab{d}})]{Ref20}
+Oracle.
+\newblock Bpel console reports.
+\newblock Publicación Web, Octubre 2008{\natexlab{d}}.
+\newblock URL
+  \url{http://www.oracle.com/technology/products/ias/bpel/pdf/bpelunittestwebc%
+onference.pdf}.
+
+\bibitem[J. et~al.(2006)J., M., and S.]{Ref21}
+Matjaz J., Benny M., and Poornachandra S.
+\newblock \emph{Business process execution language for web services : an
+  architect and developer's guide to orchestrating web services using BPEL4WS}.
+\newblock Packt Publ., 2nd ed. edition, 2006.
+\newblock ISBN 1-904811-81-7=978-1-904811-81-7.
+\newblock URL
+  \url{http://gso.gbv.de/DB=2.1/CMD?ACT=SRCHA&SRT=YOP&IKT=1016&TRM=ppn+5098255%
+40&sourceid=fbw_bibsonomy}.
+
+\bibitem[ODE(2008)]{Ref22}
+Apache ODE.
+\newblock Developing, deploying and running a hello world bpel process with the
+  eclipse bpel designer and apache ode.
+\newblock Publicación Web, Octubre 2008.
+\newblock URL
+  \url{http://people.apache.org/~vanto/HelloWorld-BPELDesignerAndODE.pdf}.
+
+\bibitem[Ref(2008{\natexlab{a}})]{Ref25}
+Web services human task (ws-humantask).
+\newblock Publicación Web, Octubre 2008{\natexlab{a}}.
+\newblock URL
+  \url{http://download.boulder.ibm.com/ibmdl/pub/software/dw/specs/ws-bpel4peo%
+ple/WS-HumanTask_v1.pdf}.
+
+\bibitem[Ref(2008{\natexlab{b}})]{Ref24}
+Ws-bpel extension for people (bpel4people).
+\newblock Publicación Web, Octubre 2008{\natexlab{b}}.
+\newblock URL
+  \url{http://download.boulder.ibm.com/ibmdl/pub/software/dw/specs/ws-bpel4peo%
+ple/BPEL4People_v1.pdf}.
+
+\bibitem[G. et~al.(1997)G., J., A., C., C., J., and J.]{Ref26}
+Kiczales G., Lamping J., Mendhekar A., Maeda C., Lopes C., Loingtier J., and
+  Irwin J.
+\newblock Aspect-oriented programming.
+\newblock In \emph{European Conference on Object-Oriented Programming}, June
+  1997.
+\newblock URL
+  \url{http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.53.6608}.
+
+\bibitem[G. et~al.(2001)G., E., J., M., J., and W.]{Ref27}
+Kiczales G., Hilsdale E., Hugunin J., Kersten M., Palm J., and Griswold W.
+\newblock An overview of aspectj.
+\newblock In \emph{ECOOP '01: Proceedings of the 15th European Conference on
+  Object-Oriented Programming}, pages 327--353, London, UK, 2001.
+  Springer-Verlag.
+\newblock ISBN 3-540-42206-4.
+
+\bibitem[Lieberherr et~al.(1988)Lieberherr, Holland, and Riel]{Ref29}
+Karl~J. Lieberherr, Ian~M. Holland, and Arthur~J. Riel.
+\newblock Object-oriented programming: An objective sense of style.
+\newblock In \emph{OOPSLA}, pages 323--334, 1988.
+
+\bibitem[W. and H.(1993)]{Ref30}
+Harrison W. and Ossher H.
+\newblock Subject-oriented programming: a critique of pure objects.
+\newblock In \emph{OOPSLA '93: Proceedings of the eighth annual conference on
+  Object-oriented programming systems, languages, and applications}, volume~28,
+  pages 411--428. ACM Press, October 1993.
+\newblock \doi{http://dx.doi.org/10.1145/165854.165932}.
+\newblock URL \url{http://dx.doi.org/10.1145/165854.165932}.
+
+\bibitem[H. and G.(2003)]{Ref28}
+Masuhara H. and Kiczales G.
+\newblock A modeling framework for aspect-oriented mechanisms.
+\newblock In \emph{In Proc. of the 17th European Conference on Object-Oriented
+  Programming (ECOOP)}, volume 2734 of LNCS, pages 2--28. Springer, 2003.
+
+\bibitem[A.(2007)]{Ref40}
+Charfi A.
+\newblock \emph{Aspect-Oriented Workflow Languages: AO4BPEL and Applications}.
+\newblock PhD thesis, TU Darmstadt, Fachbereich Informatik, 2007.
+
+\bibitem[E. and J.(2004)]{Ref31}
+Hilsdale E. and Hugunin J.
+\newblock Advice weaving in aspectj.
+\newblock In \emph{AOSD '04: Proceedings of the 3rd international conference on
+  Aspect-oriented software development}, pages 26--35, New York, NY, USA, 2004.
+  ACM.
+\newblock ISBN 1-58113-842-3.
+\newblock \doi{http://doi.acm.org/10.1145/976270.976276}.
+
+\bibitem[I. et~al.(2005)I., L., and M.]{Ref32}
+Nagy I., Bergmans L., and Aksit M.
+\newblock Composing aspects at shared join points.
+\newblock In \emph{NODe 2005, GSEM 2005, Erfurt, Germany, September 20-22,
+  2005}, volume p-69 of \emph{Lecture Notes in Informatics 69}, pages 19--38,
+  2005.
+\newblock URL \url{http://doc.utwente.nl/54193/}.
+
+\bibitem[P.E.A. et~al.(2005)P.E.A., T., L.M.J., and M.]{Ref33}
+Durr P.E.A., Staijen T., Bergmans L.M.J., and Aksit M.
+\newblock Reasoning about semantic conflicts between aspects.
+\newblock In \emph{EIWAS 2005: 2nd European Interactive Workshop on Aspects in
+  Software}, 2005.
+\newblock URL \url{http://doc.utwente.nl/54430/}.
+
+\bibitem[R.(2004)]{Ref35}
+Miles R.
+\newblock \emph{AspectJ Cookbook}.
+\newblock O'Reilly Media, Inc., 2004.
+\newblock ISBN 0596006543.
+
+\bibitem[R. et~al.(2006)R., S., R., G., J., N., E., and G.]{Ref36}
+Reddy~Y. R., Ghosh S., France R., Straw G., Bieman J., McEachen N., Song E.,
+  and Georg G.
+\newblock Directives for composing aspect-oriented design class models.
+\newblock \emph{Trans. Aspect-Oriented Software Development}, pages 75--105,
+  2006.
+
+\bibitem[M. and S.(2003)]{Ref37}
+Sihman M. and Katz S.
+\newblock \emph{Superimpositions and aspect-oriented programming}, volume~46.
+\newblock 2003.
+
+\bibitem[J.()]{Ref38}
+Zhang J.
+\newblock Aspect interference and composition in the motorola aspect-oriented
+  modeling weaver.
+
+\bibitem[P.E.A.(2008)]{Ref39}
+Durr P.E.A.
+\newblock \emph{Resource-based Verification for Robust Composition of Aspects}.
+\newblock PhD thesis, Univeristy of Twente, Enschede, June 2008.
+
+\bibitem[Ltd.(2008)]{Ref41}
+Shazam~Entertaiment Ltd.
+\newblock Shazam, Julio 2008.
+\newblock URL
+  \url{http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=28499%
+3459}.
+
+\bibitem[Mellodis(2008)]{Ref42}
+Mellodis.
+\newblock Midomi, Julio 2008.
+\newblock URL
+  \url{http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=28497%
+2998&mt=8}.
+
+\bibitem[M. et~al.(2006)M., K., N., W., V., E., and W.]{Ref43}
+Braem M., Verlaenen K., Joncheere N., Vanderperren W., Straeten V., Truyen E.,
+  and Joosen W.
+\newblock Isolating process-level concerns using padus.
+\newblock In \emph{In Proceedings of the 4th International Conference on
+  Business Process Management (BPM 2006}. Springer-Verlag, 2006.
+
+\bibitem[Office()]{Ref44}
+United States~Copyright Office.
+\newblock The digital millennium copyright act of 1998.
+\newblock URL \url{http://www.copyright.gov/legislation/dmca.pdf}.
+
+\bibitem[J. et~al.(2007{\natexlab{a}})J., M., and D.]{Ref45}
+Villalobos J., Sánchez M., and Romero D.
+\newblock Executable models as composition elements in the construction of
+  families of applications.
+\newblock In \emph{6th International Workshop on the Foundations of
+  Coordination Languages and Software Architectures (FOCLASA)}, Lisboa,
+  Portugal, 2007{\natexlab{a}}.
+
+\bibitem[N. and C.(2008)]{Ref50}
+Calderón N. and Vega C.
+\newblock Composición y adaptación de modelos ejecutables extensibles para
+  aplicaciones elearning. caso ims-ld.
+\newblock Master's thesis, Universidad de los Andes, 2008.
+
+\bibitem[C(2007)]{Ref46}
+Jiménez C.
+\newblock Composición de modelos ejecutables extensibles en una fábrica de
+  aplicaciones basadas en workflows.
+\newblock Master's thesis, Universidad de los Andes, 2007.
+
+\bibitem[et~al(2001)]{Ref47}
+Bezivin et~al.
+\newblock Towards a precise definition of the omg/mda framework. automated
+  software engineering.
+\newblock In \emph{Proceedings. 16th Annual International Conference}, pages
+  273 -- 280, 2001.
+
+\bibitem[J. et~al.(2007{\natexlab{b}})J., M., and I.]{Ref48}
+Villalobos J., Sánchez M., and Barrero I.
+\newblock Enriching a process engine with flexible time management through
+  model weaving.
+\newblock 2007{\natexlab{b}}.
+
+\bibitem[S.(2007)]{Ref49}
+Moreno S.
+\newblock A testing framework for dynamic composable executable models.
+\newblock Master's thesis, Universidad de los Andes, 2007.
+
+\bibitem[D(2007)]{Ref51}
+Romero D.
+\newblock Modelos ejecutables extensibles como activos en una fábrica de
+  motores de workflow: Caso bpel.
+\newblock Master's thesis, Universidad de los Andes, 2007.
+
+\bibitem[P. and M.(2006)]{Ref52}
+Barvo P. and Sánchez M.
+\newblock Construcción de una línea de producción de motores de workflow basada
+  en modelos ejecutables.
+\newblock Master's thesis, Universidad de los Andes, 2006.
+
+\bibitem[D.B.(1996)]{Ref54}
+Wilson D.B.
+\newblock Generating random spanning trees more quickly than the cover time.
+\newblock In \emph{Proceedings of the Twenty-eighth Annual ACM Symposium on the
+  Theory of Computing}, pages 296--303. ACM, 1996.
+
+\end{thebibliography}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition metamodel="BPEL" modelName="HelloWorld" version="0.1">
+<metamodel-extensions/>
+<elements>
+<open-object name="HelloWorld" typeName="Process"/>
+<standard-object name="client" typeName="Channel"/>
+<standard-object name="input" typeName="Data"/>
+<standard-object name="output" typeName="Data"/>
+<open-object name="receiveInput" typeName="StartingReceive"/>
+<open-object name="invoke" typeName="Invoke"/>
+<open-object name="sequence" typeName="Sequence"/>
+<open-object name="AssignElement6a54f9" typeName="Assign"/>
+<standard-object name="copy" typeName="Copy"/>
+<standard-object name="from" typeName="From"/>
+<standard-object name="to" typeName="To"/>
+<open-object name="replyOutput" typeName="Reply"/>
+</elements><runtime/>
+<model>
+<process xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:bpel="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:tns="http://samples.otn.com/helloworld" name="HelloWorld" suppressJoinFailure="yes" targetNamespace="http://samples.otn.com/helloworld">
+         
+    <!-- List of services participating in this BPEL process -->    
+    <partnerLinks>
+        <!--
+        The 'client' role represents the requester of this service. It is 
+        used for callback. The location and correlation information associated
+        with the client role are automatically set using WS-Addressing.
+        -->
+        <partnerLink myRole="HelloWorldProvider" name="client" partnerLinkType="tns:HelloWorld" partnerLinkUri="HelloWorld.wsdl" partnerRole="HelloWorldRequester"/>
+    </partnerLinks>
+  
+    <!-- List of messages and XML documents used as part of this 
+         BPEL process 
+         -->    
+    <variables>
+        <!-- Reference to the message passed as input during initiation -->
+        <variable messageType="HelloWorldRequestMessage" name="input"><message><part className="uniandes.cumbia.bpel.test.instantiation.utils.UserName" name="payload"/></message></variable>
+                  
+        <!-- Reference to the message that will be sent back to the 
+             requestor during callback
+             -->
+        <variable messageType="HelloWorldResultMessage" name="output"><message><part className="uniandes.cumbia.bpel.test.instantiation.utils.Result" name="payload"/></message></variable>
+    </variables>
+
+    <!-- Orchestration Logic -->
+    
+    <sequence name="sequence">
+        
+        <!-- Receive input from requestor. 
+             Note: This maps to operation defined in HelloWorld.wsdl 
+             -->
+        <receive createInstance="yes" name="receiveInput" operation="initiate" partnerLink="client" portType="tns:HelloWorld" variable="input"/>
+        
+        <!-- Generate content of output message based on the content of the
+             input message.
+             -->
+             
+		<invoke name="invoke" operation="initiate" partnerLink="client" portType="tns:HelloWorld" inputVariable="input" outputVariable="output"/>             
+        <assign name="AssignElement6a54f9">
+            <copy name="copy">
+                <from name="from">concat('Hello ',bpel:getVariableData('input', 'payload','/tns:userName'))</from>
+                <to name="to" part="payload" query="/tns:result" variable="output"/>
+            </copy>
+        </assign>
+
+
+        <!-- Asynchronous callback to the requester.
+             Note: the callback location and correlation id is transparently handled 
+             using WS-addressing.
+             -->
+        <reply name="replyOutput" operation="onResult" partnerLink="client" portType="tns:HelloWorldCallback" variable="output"/>
+    </sequence>
+</process></model></definition>

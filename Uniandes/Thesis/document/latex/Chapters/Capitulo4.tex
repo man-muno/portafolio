@@ -1,0 +1,300 @@
+% Capitulo 4
+
+\chapter{Aspect-Oriented Workflow Languages} % Write in your own chapter title
+\label{Capitulo4}
+\lhead{Capitulo 4. \emph{BPEL}} % Write in your own chapter title to set the page header
+
+\section{Introducción}
+Éste capítulo presenta las limitaciones de los lenguajes de \textit{workflow} con respecto a la modularidad de las preocupaciones transversales y la modularidad de los cambios. Dentro de las limitaciones de los sistemas de \textit{workflow} se encuentran la falta de soporte a los comportamientos transversales (\textit{crosscutting concerns}), es decir que los lenguajes no ofrecen elementos necesarios para implementar modularmente requerimientos que afectan transversalmente los procesos, tales como monitoreo de actividades, recolección de datos, métricas, etc. Actualmente, para poder implementar estos cambios, es necesario modificar la especificación del proceso, lo que tiene varias implicaciones negativas: 
+\begin{itemize}
+\item Las preocupaciones transversales pueden afectar más de un proceso, en más de un punto. Si el programador tiene que modificar la definición de los procesos para agregar éste comportamiento, debe conocer todos los procesos y todos los lugares dentro de los procesos donde debe realizar la modificación. Éste es un procedimiento largo, donde la probabilidad de inyectar errores es muy alta. 
+\item Modificar la especificación del proceso para satisfacer las preocupaciones transversales causa que  no exista una clara separación entre los elementos que componen el proceso y los elementos que soportan los comportamientos transversales. 
+\item Debido a que el comportamiento que satisface las preocupaciones transversales se encuentra dispersado a través de los procesos, no hay manera de que los elementos que soportan los comportamientos transversales puedan ser activados o desactivados durante la ejecución del proceso.
+\item No poder expresar los cambios sobre una definición de procesos como entidades de primera clase implica que la única manera de poder conocer los cambios que ha sufrido un proceso, es comparando el proceso inicial con el actual para luego deducir los cambios.
+\end{itemize}
+
+
+\section{Problemas de Modularización de Lenguajes de Workflow}
+Para poder ilustrar los problemas de moldularización de los lenguajes de \textit{workflow}, se establece el siguiente ejemplo de un proceso. 
+
+\subsection{Ejemplo}
+\label{sec:EjemploInterferencia}
+En el mercado existen aplicaciones para dispositivos móviles, mediante las cuales es posible identificar una canción, registrando a través de un micrófono un fragmento corto que esté sonando en la radio o en televisión. Una vez identificada la canción, es ofrecida al usuario para que la compre de diferentes tiendas de música en línea. Ejemplos de éstas aplicaciones son Shazam\citep{Ref41} y Midomi\citep{Ref42}. 
+
+En la figura \ref{fig:EjemploShazam} se muestra como puede ser el proceso de una de éstas aplicaciones. El proceso comienza cuando es recibida la información capturada a través del micrófono por la aplicación. Una vez la solicitud es recibida, la siguiente actividad es encargada de comunicarse con el servicio que analiza la canción y como resultado provee la información completa de la canción. Al tener la información de la canción, dos actividades de búsqueda interactúan con dos tiendas de música en línea, para buscar la información de compra para la canción. Luego la información es consolidada para posteriormente ser retornada al usuario.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/EjemploShazam.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Ejemplo de un proceso workflow]{Ejemplo de un proceso workflow.}
+	\label{fig:EjemploShazam}
+\end{figure}
+
+\subsection{Problemas de Modularización de Preocupaciones Transversales}
+Para poder ilustrar como los lenguajes de \textit{workflow} no tienen los mecanismos necesarios de modularización para las preocupaciones transversales, se presentaran algunos ejemplos de recolección de información y monitoreo de tiempo de ejecución de actividades, basados en \citep{Ref40}.
+\subsubsection{Recolección de Información}
+Pueden existir varios modelos de precios por usar los Web services de iTunes y de Amazon.com. Las políticas de recaudación pueden ser cobrar por cada llamado que se haga al Web service, cobrar a la empresa que haga más de cierto número de consultas o cobrar por consultas que no resulten en una compra. En caso de existir dichas políticas de cobro, el sistema debe poder llevar las cuentas de cuantos accesos a los Web services ha realizado el usuario, de ésta manera es posible corroborar que los cobros realizados por las tiendas de música en línea es correcto. Para verificar la veracidad de una cuenta, el sistema debe contar cuantas veces el proceso ha ejecutado la actividad que se comunica con las tiendas de música. 
+
+Para poder implementar la funcionalidad de recolección de información, se debe modificar todos los procesos de tal manera que cuando alguno de ellos se comunique con alguna de las tiendas de música en línea se lleve la cuenta, cómo lo muestra la figura \ref{fig:EjemploShazamContador}.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/EjemploShazamContador.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Ejemplo de recolección de información]{Ejemplo de recolección de información.}
+	\label{fig:EjemploShazamContador}
+\end{figure}
+Para poder implementar éste cambio en BPEL, es necesario tener un Web service cuya funcionalidad es llevar la cuenta de los contadores. Se debe modificar la definición del proceso para agregar tanto las variables donde se va a llevar la cuenta, como los \textit{partner links} para poderse comunicar con el Web service anteriormente mencionado. Asimismo es necesario modificar la estructura del proceso para agregar un nuevo \textit{assign} antes de hacer el llamado a el Web Service que comunica el proceso con cada tienda de música en línea, para poder establecer el valor del contador en la variable, para luego ser enviada a través de un nuevo \textit{invoke} que llama el Web service para incrementar el contador.
+
+La recolección de datos es transversal, porque puede ocurrir en diferentes puntos del proceso, en diferentes procesos. La adición de la definición de las variables y de los \textit{partner links} tienen que repetirse en todos los procesos y también tiene que agregarse el \textit{assign} y el \textit{invoke} por cada ocurrencia de una actividad qué se comunica con las tiendas de música en línea, dispersando y repitiendo los mismos elementos muchas veces. Además, no se va a tener una separación clara entre cuales son los elementos del proceso y cuáles son los elementos usados para satisfacer las preocupaciones transversales.
+
+\subsubsection{Monitoreo de Tiempo de Ejecución de Actividades}
+Las organizaciones que utilizan \textit{workflows} usualmente están interesadas en medir los tiempos de ejecución de ciertas actividades de los procesos\citep{Ref40}. Si el sistema de \textit{workflow} que se utilice no provee las herramientas necesarias para poder realizar el monitoreo del tiempo de ejecución de las actividades, una de las opciones es agregar ésta funcionalidad directamente sobre el proceso. Si se quiere agregar ésta funcionalidad a las dos actividades de búsqueda en el proceso de la figura \ref{fig:EjemploShazam}, obliga modificar el proceso para agregar una actividad cuando se quiere comenzar a monitorear el tiempo de ejecución antes de la actividad a monitorear y agregar otra actividad después, para detener el monitoreo, como lo muestra la figura \ref{fig:EjemploShazamTemporizador}.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/EjemploShazamTemporizador.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Ejemplo monitoreo de tiempo de ejecución]{Ejemplo monitoreo de tiempo de ejecución.}
+	\label{fig:EjemploShazamTemporizador}
+\end{figure}
+Una posible implementación en BPEL, es crear un Web service de auditoría e invocar operaciones para iniciar o parar un temporizador. Se debe modificar la definición del proceso para agregar tanto las variables donde se va a llevar la información de la actividad que está siendo monitoreada, como los \textit{partner links} para poderse comunicar con el Web service anteriormente mencionado. Asimismo es necesario modificar la estructura del proceso para agregar un nuevo \textit{invoke} antes de la actividad que se quiere monitorear y un \textit{invoke} después de la misma.
+
+El monitoreo del tiempo de ejecución de una actividad también es transversal, porque puede ocurrir en diferentes puntos del proceso, en diferentes procesos. La cantidad de elementos que se debe agregar es aún mayor que en el ejemplo anterior.
+
+\subsection{Problemas de Modularización de Cambios}
+\label{sec:ProblemasModularizacion}
+Para ilustrar las deficiencias que tienen los lenguajes de \textit{workflow} con respecto a la modularización de los cambios, se presentarán algunos ejemplos de recolección de información y monitoreo de tiempo de ejecución de actividades, basados en \citep{Ref40}.
+
+De acuerdo a \citep{Ref40} los cambios que puede sufrir una definición de un \textit{workflow} son los siguientes:
+\begin{itemize}
+\item \textbf{Cambios Evolutivos} - Los contextos donde se utilizan los sistemas de \textit{workflow} son altamente cambiantes. Multiples elementos pueden afectar en cualquier momento una definición de procesos, por ejemplo, nuevas estrategias de negocio, colaboraciones, nuevas condiciones externas, avance tecnológicos y cambios organizacionales. Estos cambios tienen que ser soportados  por los lenguajes de \textit{workflow}, ya que un cambio evolutivo va a afectar a todos los procesos junto con sus instancias.
+\item \textbf{Cambios Ad-hoc} - Los cambios ad-hoc generalmente ocurren porque es imposible tener en cuenta todas las situaciones excepcionales al momento de diseñar un proceso. Pueden ocurrir comportamientos inesperados debido a la interacción con usuarios, eventos impredecibles o situaciones erróneas. Los sistemas de \textit{workflow} deberían proveer soporte para la adaptación dinámica de las instancias de \textit{workflow}, para poder corregir dichas situaciones excepcionales.
+\end{itemize}
+
+Para poder ilustrar como los lenguajes de \textit{workflow} no tienen los mecanismos necesarios de modularización de cambios, se presentaran algunos ejemplos de incorporación de un cambio evolutivo y un cambio ad-hoc, a partir del proceso mostrado en la figura \ref{fig:EjemploShazam}. Estos ejemplos son basados en \citep{Ref40}.
+\subsubsection{Agregar una Actividad}
+Se quiere modificar el proceso para que después de buscar la canción en las tiendas de música en línea, tenga una actividad extra que busque si el usuario es elegible para un código de promoción, cómo se muestra en la figura \ref{fig:EjemploShazamPromoCode}. 
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/EjemploShazamPromoCode.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Ejemplo agregar una actividad]{Ejemplo agregar una actividad.}
+	\label{fig:EjemploShazamPromoCode}
+\end{figure}
+
+Para poder realizar éste cambio, el programador tiene que bajar el proceso, modificarlo y luego volverlo a subir al servidor. En BPEL, se debe agregar un nuevo \textit{partner link} hacia el servicio que retorna un código de promoción. Además, debe agregar dos nuevas variables donde mantendrá la información de entrada y de salida para la actividad de búsqueda. En cuanto a la modificación del control del proceso, es necesario agregar tres nuevas actividades. Primero, un \textit{assign} donde se establecerá el valor de la variable de entrada para la búsqueda del código de promoción. Segundo, un \textit{invoke} que es quién llama al servicio de búsqueda. Tercero, otro \textit{assign} que copia la información de la búsqueda a la respuesta del proceso.
+
+\section{AOP en Contextos Workflow}
+\label{sec:AOPenWorkflow}
+Gracias a que la orientación por aspectos es una descomposición de uso general y paradigma de modularización, puede ser utilizado en otros contextos\citep{Ref40}. De la misma manera que AOP permite reducir la cantidad de código enredado y repetido, y agregar nuevo comportamiento de manera modular en los lenguajes de programación\citep{Ref27}, se ha propuesto aplicar está técnica dentro de los contextos de programación. 
+
+Los lenguajes orientados por aspectos definen nuevos elementos al lenguaje que serán utilizados junto con los elementos del lenguaje existentes para proveer soporte a la modularidad, encapsulando los comportamientos transversales y los nuevos comportamientos. Estos elementos son:
+
+\subsection{Modelo de \textit{Join Points}}
+\label{sec:ModeloDeJoinPoints}
+El modelo de \textit{join points} define los lugares donde los \textit{advices} van a ser ubicados en la ejecución de la aplicación base. Son puntos bien definidos, que proveen un marco de referencia común que hace posible que la ejecución del código del programa y la ejecución del código del \textit{advice} sea coordinada. 
+
+De acuerdo a \citep{Ref40}, el modelo de \textit{join points} más intuitivo es basado en las actividades. La idea del modelo es que los \textit{join points} corresponden a las ejecuciones de las actividades y pueden ser diferenciados en dos:
+\textbf{\textit{Join points} de Actividades} - Son \textit{joint points} de grano grueso, es decir, estos puntos capturan el inicio o la terminación de la ejecución de una actividad.
+\textbf{\textit{Join points} Internos} - Son \textit{join points} de grano fino, capturan puntos internos en la ejecución de una actividad. Estos son necesarios cuando los \textit{join points} de actividades no son lo suficientemente granulares para poder implementar algún comportamiento transversal.
+
+\subsection{Lenguaje de Puntos de Corte}
+El lenguaje de puntos de corte es utilizado para seleccionar un conjunto específico de \textit{join points}. 
+
+El lenguaje de puntos de corte, en contextos de \textit{workflows} puede ser pensado de dos maneras. La primera aproximación es desarrollando un lenguaje de texto, como XML, donde mediante instrucciones específicas o utilizando expresiones, se defina donde se quiere componer el nuevo comportamiento. La segunda es poder seleccionar sobre una representación gráfica del proceso, donde se quiere componer algún comportamiento nuevo. Ésta aproximación tiene la ventaja que la composición del nuevo comportamiento la puede hacer cualquier persona que esté familiarizada con el proceso, ya que se requeriría una herramienta donde gráficamente se pueda seleccionar donde se quiere hacer la composición, para que después la herramienta genere un archivo de texto o se comunique directamente con el servidor.
+
+\subsection{Lenguaje de \textit{Advices}}
+\label{section:WorkflowAdviceLanguages}
+El lenguaje de \textit{advices} define la funcionalidad que debe ser ejecutada en los \textit{join points} específicos. El \textit{advice} es un fragmento de código que es ejecutado cuando se alcanza un \textit{join point} identificado por el respectivo punto de corte. El lenguaje de \textit{advices} generalmente es el mismo lenguaje que la aplicación base. En lenguajes de \textit{workflow} orientados por aspectos el lenguaje de \textit{advices} debería ser el mismo que el lenguaje de \textit{workflow} base, para evitar equivocaciones de quien está programando los \textit{advices}\citep{Ref43}. De acuerdo al modelo discutido en \ref{sec:ModeloAspectJ} los \textit{advices} pueden ser ejecutados antes, después, o en vez de los \textit{join points} que son seleccionados por el punto de corte. 
+
+\subsection{Tejido de Aspectos}
+\label{section:WorkflowAspectWeaving}
+El tejido de aspectos es la parte de la implementación que debe asegurar que el código de los \textit{advices} y él de la aplicación base se ejecuten de manera coordinada, en los \textit{join points} que fueron definidos para cada aspecto.
+
+Existen dos maneras de hacer el tejido entre un proceso y sus aspectos\citep{Ref40}. De la primera forma, se conoce como tejido estático. Usando ésta manera de tejido, el proceso y los aspectos son tejidos antes de que se haga \textit{deploy} del proceso al motor. La otra forma se conoce como tejido dinámico y ocurre en ejecución. Estás dos aproximaciones implican dos maneras diferentes de implementar los motores donde se van a ejecutar tanto los procesos como los aspectos\citep{Ref40}.
+
+\subsubsection{Transformación de Procesos}
+De ésta manera debe existir una herramienta de transformación, que a partir de la definición del proceso y la definición de los aspectos, genere una nueva definición de proceso. Ésta aproximación soporta la composición estática, muy similar a como funciona AspectJ (sección \ref{sec:ModeloAspectJ}).
+
+Una de las ventajas que tiene está aproximación es que cualquier motor de BPEL puede tomar la definición de proceso producida por la herramienta de transformación y hacer \textit{deploy} del proceso sin modificar el motor. En cambio, la desventaja más clara, es que la composición no puede ser realizada en tiempo de ejecución y por tanto, los aspectos no pueden tener puntos de corte que estén relacionados con información que solo se tiene en ejecución, a menos que se tengan en cuenta todas las posibilidades en diseño. Además, con ésta aproximación, los aspectos no son definidos como entidades de primera clase, lo que implica que no se les puede hacer \textit{deploy} o \textit{undeploy} en tiempo de ejecución.
+
+\subsubsection{Modificación del Motor para Verificación de Aspectos}
+En ésta aproximación, el motor tiene que ser modificado para verificar sí debe realizar la ejecución de un aspecto antes o después de la ejecución de cada actividad.
+
+Ésta aproximación soporta la composición dinámica entre los aspectos y procesos. A diferencia de la aproximación anterior, permite hacer \textit{deploy} y \textit{undeploy} de los aspectos, sin necesidad de crear nuevas instancias de procesos, lo cual es importante en caso de tener procesos que tardan mucho tiempo en ejecutar, ya que sería necesario detener la instancia, modificarla y tener políticas para poder retornar la instancia al estado en el que se encontraba, como también políticas para manejar las posibles inconsistencias. Ésta aproximación trata a los aspectos como entidades de primera clase, permitiendo que se puedan implementar funcionalidades de administración en el motor. La desventaja de ésta aproximación es que los archivos que componen a los aspectos están ligados a un solo motor.
+
+\section{Lenguajes de BPEL Orientados Por Aspectos}
+A continuación se discuten dos de los lenguajes de BPEL orientados por aspectos más conocidos, utilizando los elementos descritos en la sección \ref{sec:AOPenWorkflow}.
+
+\subsection{Padus}
+\subsubsection{Modelo de \textit{Join Points}}
+
+En Padus\citep{Ref43} el modelo de \textit{join points} está relacionado con las actividades. Existen once tipos de \textit{join points} definidos para Padus, cada uno relacionado con una actividad BPEL especifica (ver tabla \ref{table:PadusJoinPoints}).
+
+\begin{table}[htbp] 
+\caption{Modelo de join points en Padus}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{c}    % centered columns (4 columns) 
+\hline\hline                        %inserts double horizontal lines 
+Join Point \\ [0.5ex]  % inserts table 
+%heading 
+\hline                      % inserts single horizontal line 
+		invoking \\ 
+		receiving \\ 
+		throwing \\ 
+		compensating \\ 
+		replying \\ 
+		assigning \\ 
+		terminating \\ 
+		doingNothing (``empty") \\ 
+		sequencing \\ 
+		looping (``while") \\ 
+		flowing \\ 
+		switching \\ 
+		picking \\ 
+		scoping \\  [1ex]        % [1ex] adds vertical space 
+\hline          %inserts single line 
+\end{tabular} 
+\label{table:PadusJoinPoints}% is used to refer this table in the text 
+\end{table} 
+
+\subsubsection{Lenguaje de Puntos de Corte}
+El lenguaje de puntos de corte de Padus\citep{Ref43} está compuesto por una serie de predicados que restringen los tipos de \textit{join points} (ver tabla \ref{table:PadusJoinPoints}) a partir de sus propiedades.  Los predicados definidos pueden ser combinados con predicados de Prolog, para así poder restringir también sobre los tipos de datos, buscar en listas, etc. Como en los \textit{join points}, los predicados del lenguaje de puntos de corte, también permite definir o exponer propiedades de los \textit{join points}, para ser utilizadas en ejecución.
+\begin{table}[htbp] 
+\caption{Modelo de puntos de corte en Padus}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{8cm} p{6cm}}    % centered columns (4 columns) 
+\hline\hline                        %inserts double horizontal lines 
+Predicado & Descripción \\ [0.5ex]  % inserts table 
+%heading 
+\hline                      % inserts single horizontal line 
+		invoking(Joinpoint, Name, PartnerLink, PortType, Operation, InputVariable, OutputVariable) & Todos los atributos posibles \\ 
+		invoking(Joinpoint, Name, PartnerLink, PortType, Operation) & No importan los nombres de las variables de salida \\ 
+		invoking(Joinpoint, PartnerLink, PortType, Operation) & Solo importan el partner link, el portType y operation \\ [1ex]        % [1ex] adds vertical space  
+\hline          %inserts single line 
+\end{tabular} 
+\label{table:PadusPointCuts}% is used to refer this table in the text 
+\end{table} 
+
+\begin{lstlisting}[float, caption= Ejemplo de un punto de corte que identifica \textit{join points} que llaman una operación cuyo nombre comienza con ``send"., label = code:PadusPointCut]
+invoking(Joinpoint, 'smsService', 'smsServicePT', Operation),startsWith(Operation, 'send')
+\end{lstlisting}
+
+En el código \ref{code:PadusPointCut} se muestra un ejemplo tomado de \citep{Ref43}, donde un punto de corte que identifica \textit{join points} que llaman una operación cuyo nombre comienza con ``send".
+
+\begin{lstlisting}[caption = Ejemplo de un punto de corte, label = code:PadusPointCut]
+invoking(Joinpoint, 'smsService', 'smsServicePT', Operation),startsWith(Operation, 'send')
+\end{lstlisting}
+
+
+\subsubsection{Lenguaje de \textit{Advices}}
+El lenguaje de los \textit{advices} en Padus\citep{Ref41} se define dentro de un elemento XML, utilizando los elementos definidos en BPEL. Éste lenguaje también permite definir \textit{advices} que pueden ser ejecutados antes, después y en vez de la actividad que se haya seleccionado. Padus también introduce un concepto nuevo que es el \textit{in advice}. Éste tipo de \textit{in advice} permite agregar comportamiento extra dentro de una actividad, por ejemplo, agregando una nueva actividad dentro de un \textit{flow}.
+\subsubsection{Tejido de Aspectos}
+De los dos tipos de tejido, discutidos en la sección \ref{section:WorkflowAspectWeaving}, Padus hace el tejido de manera estática, es decir, hace una transformación del proceso base y de los aspectos (figura \ref{fig:ArquPadus} tomada de \citep{Ref43}), para generar un proceso nuevo. La motivación detrás de usar esta aproximación, es que Padus es utilizado en un contexto donde se espera que el motor se desempeñe con una alta eficiencia.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/ArquPadus.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Arquitectura de Padus]{Arquitectura de Padus.}
+	\label{fig:ArquPadus}
+\end{figure}
+
+\subsection{AO4BPEL}
+\subsubsection{Modelo de \textit{Join Points}}
+AO4BPEL soporta \textit{join points} de actividad y \textit{join points} internos\citep{Ref40} (sección \ref{sec:ModeloDeJoinPoints}). Los \textit{join points} internos pueden capturar puntos definidos dentro de las actividades, por ejemplo, justo antes de enviar un mensaje en un \textit{invoke}.
+
+\subsubsection{Lenguaje de Puntos de Corte}
+El lenguaje de puntos de corte en AO4BPEL\citep{Ref40} es XPath, debido a que es un leguaje basado en consultas, que provee mecanismos para que los puntos de corte no sean estáticos y sean definibles por el usuario, además de utilizar los atributos de los elementos BPEL para restringir mejor los \textit{join points} deseados. Gracias a que BPEL es un leguaje basado en XML, el uso de XPath es una decisión natural, porque permite seleccionar fácilmente las actividades BPEL como puntos de corte.
+
+Un ejemplo tomado de \citep{Ref40}, de un punto de corte que selecciona todas las actividades \textit{invoke}, cuyo nombre sea \textit{travelPackage} en cualquier proceso.
+
+\begin{lstlisting}[caption= Ejemplo de un punto de corte en AO4BPEL., label = code:AO4BPELPointCut]
+<pointcut>
+//invoke[@operation="findAFlight"]
+</pointcut>
+\end{lstlisting}
+
+Utilizado las ventajas de XPath, se pueden restringir los \textit{join points} de acuerdo a los atributos de los elementos, como lo muestra el siguiente ejemplo, donde se restringe que el \textit{join point} solo se aplicará sobre la operación \textit{findAFlight} del proceso llamado \textit{travelPackage}.
+\begin{lstlisting}[caption= Ejemplo de un punto de corte en AO4BPEL., label = code:AO4BPELPointCutProcess]
+<pointcut>
+/process[@name="travelPackage"]//invoke[@operation="findAFlight"]
+</pointcut>
+\end{lstlisting}
+
+\subsubsection{Lenguaje de \textit{Advices}}
+El lenguaje de \textit{advices} que AO4BPEL utiliza es una versión modificada de BPEL\citep{Ref40}. El lenguaje provee elementos para que sea posible acceder al contexto de la instancia donde se está ejecutando, es decir, ofrece elementos para acceder a valores de variables del \textit{join point} donde se encuentra, entre otras. El lenguaje de \textit{advices} también permite definir si el \textit{advice} se va a ejecutar antes, después o en vez de una actividad o del envió o recepción de un mensaje.
+
+\subsubsection{Tejido de Aspectos}
+Para el caso de AO4BPEL, el tejido se hace de manera dinámica, es decir, la implementación del motor incluye verificaciones dentro del ciclo de vida de la actividad, para saber luego decidir si se debe ejecutar algún aspecto en el punto de corte que se está ejecutando.
+
+\subsubsection*{¿Dónde se Hacen las Verificaciones?}
+Para implementar AO4BPEL fue extendido BPWS4J, un motor de orquestación producido por IBM. AO4BPEL modifica los estados del ciclo de vida de una actividad para incluir las verificaciones de si se debe ejecutar algún aspecto. 
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/AO4BPELStates.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Estados de una actividad de AO4BPEL]{Estados de una actividad de AO4BPEL.}
+	\label{fig:AO4BPELStates}
+\end{figure}
+
+El ciclo de vida de una actividad se muestra en la figura \ref{fig:AO4BPELStates}\citep{Ref40}. Las verificaciones de los \textit{advices} son hechas dependiendo si el \textit{advice} es de tipo \textit{before}, \textit{after} o \textit{around} o si los \textit{advices} son de tipo interno. La verificación para los \textit{advices} de tipo \textit{before} se hace cuando la actividad pasa de estado \textit{enabled} a estado \textit{running}. La verificación para los \textit{advices} de tipo \textit{after} se hace cuando la actividad sale del estado \textit{complete}. Para los \textit{advices} internos, las verificaciones solo se hacen si la actividad es una actividad de interacción (sección \ref{sec:ActividadesInteraccion}) ya que el comportamiento se puede tejer antes, después o en vez de recibir o mandar un mensaje. En éste caso, las verificaciones se encuentran dentro del estado \textit{running}.
+
+\subsubsection*{¿Qué se Verifica?}
+Para cada uno de los posibles \textit{join points} es necesario verificar si existe un punto de corte asociado, a ese lugar en particular para la actividad que se está ejecutando. En AO4BPEL el proceso comienza desde el momento que se hace \textit{deploy} de un aspecto. Al hacer \textit{deploy} del aspecto se evalúan las expresiones de los puntos de corte sobre los documentos XML de los aspectos, para obtener así una serie de nodos XML para cada expresión de los puntos de corte, para luego poder extraer metainformación, como nombres, tipos de actividad, etc, para ser guardada. Luego, al ejecutar una actividad, se compara la metainformación de la actividad con la mentainformación que fue previamente obtenida y en caso de concordar, quiere decir que ese punto de corte corresponde a esa actividad.
+
+\subsubsection*{Ejecución de los \textit{Advice}}
+Para hablar acerca de cómo AO4BPEL ejecuta los \textit{advices}, es necesario hablar acerca de su arquitectura.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/AO4BPELArq.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Arquitectura del motor de AO4BPEL]{Arquitectura del motor de AO4BPEL.}
+	\label{fig:AO4BPEArq}
+\end{figure}
+Al motor BPWS4J se le agregaron dos componentes, el \textit{aspect deployment tool} y el \textit{aspect runtime}.  \textit{\textbf{Aspect deployment tool}} es una aplicación Web que permite hacer una administración sencilla de los aspectos. A través de éste componente se puede hacer \textit{deploy} y \textit{undeploy} de los aspectos, junto con conocer cuáles son los aspectos que se encuentran en el servidor. El \textit{\textbf{Aspect runtime}} es responsable de manejar y ejecutar los aspectos. Éste componente es quién es responsable de realizar las verificaciones de los puntos de corte.
+Debido a que el comportamiento está definido en el \textit{advice} usando BPEL, el \textit{aspect runtime} delega la ejecución de esa actividad al interpretador BPEL y coordina la ejecución así\citep{Ref40}:
+\begin{itemize}
+\item Si el tipo del \textit{advice} es \textit{before} o \textit{after} se suspende la ejecución del proceso hasta que se complete la actividad del \textit{advice}, luego continua la ejecución del proceso con la actividad suspendida.
+\item Si el tipo del \textit{advice} es \textit{around} la ejecución del proceso se suspende, luego, al terminar de ejecutar la actividad del \textit{advice}, la actividad suspendida salta el estado \textit{running}, terminando su ejecución.
+\end{itemize}
+
+\section{Interferencia de Aspectos en Contextos Workflow}
+A continuación se presenta un ejemplo para ilustrar como los problemas de interferencia en aspectos, se presentan también en contextos de \textit{workflows}. Se agregarán dos aspectos al ejemplo utilizado en la sección \ref{sec:EjemploInterferencia}.
+\subsection{Facturación por Busqueda}
+\label{section:AspectoFacturacion}
+Se quiere agregar la funcionalidad que se le cobre al usuario de la aplicación por cada búsqueda que se realiza en las tiendas de música en línea. Para implementar éste cambio en las reglas de negocio se  implementa usando un aspecto. 
+
+Una posible implementación es tejer una actividad que envíe la información del usuario a un servicio de recaudo para que la consulta sea agregada a su cuenta como se muestra en la figura \ref{fig:AspectoFacturacion}. 
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/Facturacion.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Aspecto de facturación]{Aspecto de facturación.}
+	\label{fig:AspectoFacturacion}
+\end{figure}
+
+\subsection{Cambios en las Políticas de Distribución}
+Debido a que en Estados Unidos existe una ley llamada \textit{Digital Millennium Copyright Act (DMCA)}\citep{Ref44} el contenido que es distribuido fuera de Estados Unidos debe ser restringido. Es por éste cambio en las reglas de negocio que se debe hacer una verificación de la ubicación donde se originó la solicitud. Para implementar éste cambio también se usa un aspecto.
+
+Una posible implementación es colocar un aspecto en vez (\textit{around}) de las actividades que buscan las canciones en las tiendas de música en línea, de tal manera que se verifique la localización del usuario antes de buscar la canción y de ser una ubicación no permitida, no hacer nada, como se muestra en la figura \ref{fig:AspectoUbicacion}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/AspectoUbicacion.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Aspecto de verificación de ubicación]{Aspecto de verificación de ubicación.}
+	\label{fig:AspectoUbicacion}
+\end{figure}
+
+
+\subsection{Interferencia Entre los Aspectos}
+
+Para el caso de la composición de los dos aspectos anteriores en un \textit{join point} compartido, la interferencia se da porque es posible cobrarle a un usuario por una consulta que no se realiza.  Primero el proceso recibe la información del fragmento, junto con la ubicación del usuario. Luego se llama la actividad que procesa el fragmento para obtener la información acerca de la canción. El siguiente paso es ejecutar el primer aspecto, invocando el servicio de recaudo para registrar el cobro del acceso al usuario. Luego, se procede a ejecutar el siguiente aspecto, el cual verifica la ubicación del usuario y en el caso que no se encuentre en una ubicación válida, no realiza la búsqueda en la tienda de música en línea y no se tiene en cuenta el hecho que ya se le cobró por esa consulta. Sí el primer aspecto no fuera un aspecto de tipo antes sino de tipo después, ocurriría lo mismo porque no se haría el acceso hacia el servicio de búsqueda, pero se le terminaría cobrando al usuario.  
+
+Las políticas de ordenamiento definidas por \textit{Padus} y por \textit{AO4BPEL} no funcionarían, porque no es posible definir un orden donde se puedan ejecutar los aspectos sin que ocurra el problema de interferencia entre ellos. 
+
+
+

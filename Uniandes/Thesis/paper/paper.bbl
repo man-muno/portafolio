@@ -1,0 +1,170 @@
+\begin{thebibliography}{10}
+
+\bibitem{Ref40}
+C.~A.
+\newblock {\em Aspect-Oriented Workflow Languages: AO4BPEL and Applications}.
+\newblock PhD thesis, TU Darmstadt, Fachbereich Informatik, 2007.
+
+\bibitem{Ref46}
+J.~C.
+\newblock Composición de modelos ejecutables extensibles en una fábrica de
+  aplicaciones basadas en workflows.
+\newblock Master's thesis, Universidad de los Andes, 2007.
+
+\bibitem{Ref51}
+R.~D.
+\newblock Modelos ejecutables extensibles como activos en una fábrica de
+  motores de workflow: Caso bpel.
+\newblock Master's thesis, Universidad de los Andes, 2007.
+
+\bibitem{Ref54}
+W.~D.B.
+\newblock Generating random spanning trees more quickly than the cover time.
+\newblock In {\em Proceedings of the Twenty-eighth Annual ACM Symposium on the
+  Theory of Computing}, pages 296--303. ACM, 1996.
+
+\bibitem{Ref31}
+H.~E. and H.~J.
+\newblock Advice weaving in aspectj.
+\newblock In {\em AOSD '04: Proceedings of the 3rd international conference on
+  Aspect-oriented software development}, pages 26--35, New York, NY, USA, 2004.
+  ACM.
+
+\bibitem{Ref47}
+B.~et~al.
+\newblock Towards a precise definition of the omg/mda framework. automated
+  software engineering.
+\newblock In {\em Proceedings. 16th Annual International Conference}, pages 273
+  -- 280, 2001.
+
+\bibitem{Ref27}
+K.~G., H.~E., H.~J., K.~M., P.~J., and G.~W.
+\newblock An overview of aspectj.
+\newblock In {\em ECOOP '01: Proceedings of the 15th European Conference on
+  Object-Oriented Programming}, pages 327--353, London, UK, 2001.
+  Springer-Verlag.
+
+\bibitem{Ref26}
+K.~G., L.~J., M.~A., M.~C., L.~C., L.~J., and I.~J.
+\newblock Aspect-oriented programming.
+\newblock In {\em European Conference on Object-Oriented Programming}, June
+  1997.
+
+\bibitem{Ref28}
+M.~H. and K.~G.
+\newblock A modeling framework for aspect-oriented mechanisms.
+\newblock In {\em In Proc. of the 17th European Conference on Object-Oriented
+  Programming (ECOOP)}, volume 2734 of LNCS, pages 2--28. Springer, 2003.
+
+\bibitem{Ref32}
+N.~I., B.~L., and A.~M.
+\newblock Composing aspects at shared join points.
+\newblock In {\em NODe 2005, GSEM 2005, Erfurt, Germany, September 20-22,
+  2005}, volume p-69 of {\em Lecture Notes in Informatics 69}, pages 19--38,
+  2005.
+
+\bibitem{Ref45}
+V.~J., S.~M., and R.~D.
+\newblock Executable models as composition elements in the construction of
+  families of applications.
+\newblock In {\em 6th International Workshop on the Foundations of Coordination
+  Languages and Software Architectures (FOCLASA)}, Lisboa, Portugal, 2007.
+
+\bibitem{Ref48}
+V.~J., S.~M., and B.~I.
+\newblock Enriching a process engine with flexible time management through
+  model weaving.
+\newblock 2007.
+
+\bibitem{Ref38}
+Z.~J.
+\newblock Aspect interference and composition in the motorola aspect-oriented
+  modeling weaver.
+
+\bibitem{Ref29}
+K.~J. Lieberherr, I.~M. Holland, and A.~J. Riel.
+\newblock Object-oriented programming: An objective sense of style.
+\newblock In {\em OOPSLA}, pages 323--334, 1988.
+
+\bibitem{Ref41}
+S.~E. Ltd.
+\newblock Shazam, Julio 2008.
+
+\bibitem{Ref43}
+B.~M., V.~K., J.~N., V.~W., S.~V., T.~E., and J.~W.
+\newblock Isolating process-level concerns using padus.
+\newblock In {\em In Proceedings of the 4th International Conference on
+  Business Process Management (BPM 2006}. Springer-Verlag, 2006.
+
+\bibitem{Ref37}
+S.~M. and K.~S.
+\newblock {\em Superimpositions and aspect-oriented programming}, volume~46.
+\newblock 2003.
+
+\bibitem{Ref42}
+Mellodis.
+\newblock Midomi, Julio 2008.
+
+\bibitem{Ref50}
+C.~N. and V.~C.
+\newblock Composición y adaptación de modelos ejecutables extensibles para
+  aplicaciones elearning. caso ims-ld.
+\newblock Master's thesis, Universidad de los Andes, 2008.
+
+\bibitem{Ref5}
+OASIS.
+\newblock History of bpel.
+\newblock Publicación Web, Octubre 2008.
+
+\bibitem{Ref52}
+B.~P. and S.~M.
+\newblock Construcción de una línea de producción de motores de workflow basada
+  en modelos ejecutables.
+\newblock Master's thesis, Universidad de los Andes, 2006.
+
+\bibitem{Ref39}
+D.~P.E.A.
+\newblock {\em Resource-based Verification for Robust Composition of Aspects}.
+\newblock PhD thesis, Univeristy of Twente, Enschede, June 2008.
+
+\bibitem{Ref33}
+D.~P.E.A., S.~T., B.~L.M.J., and A.~M.
+\newblock Reasoning about semantic conflicts between aspects.
+\newblock In {\em EIWAS 2005: 2nd European Interactive Workshop on Aspects in
+  Software}, 2005.
+
+\bibitem{Ref35}
+M.~R.
+\newblock {\em AspectJ Cookbook}.
+\newblock O'Reilly Media, Inc., 2004.
+
+\bibitem{Ref36}
+R.~Y. R., G.~S., F.~R., S.~G., B.~J., M.~N., S.~E., and G.~G.
+\newblock Directives for composing aspect-oriented design class models.
+\newblock {\em Trans. Aspect-Oriented Software Development}, pages 75--105,
+  2006.
+
+\bibitem{Ref49}
+M.~S.
+\newblock A testing framework for dynamic composable executable models.
+\newblock Master's thesis, Universidad de los Andes, 2007.
+
+\bibitem{Ref7}
+W.~S., C.~F., L.~F., S.~T., and F.~D.
+\newblock {\em Web Services Platform Architecture : SOAP, WSDL, WS-Policy,
+  WS-Addressing, WS-BPEL, WS-Reliable Messaging, and More}.
+\newblock {Prentice Hall PTR}, March 2005.
+
+\bibitem{Ref6}
+O.~W. S. B. P. E. L.~W. TC.
+\newblock Web services business process execution language version 2.0.
+\newblock Publicación Web, Abril 2007.
+
+\bibitem{Ref30}
+H.~W. and O.~H.
+\newblock Subject-oriented programming: a critique of pure objects.
+\newblock In {\em OOPSLA '93: Proceedings of the eighth annual conference on
+  Object-oriented programming systems, languages, and applications}, volume~28,
+  pages 411--428. ACM Press, October 1993.
+
+\end{thebibliography}

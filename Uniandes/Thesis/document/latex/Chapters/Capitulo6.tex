@@ -1,0 +1,925 @@
+% Capitulo 6
+
+\chapter{Caffeine v2.0: Motor BPEL sobre Cumbia} % Write in your own chapter title
+\label{Capitulo6}
+\lhead{Capitulo 6. \emph{Caffeine v2.0: Motor BPEL sobre Cumbia}} % Write in your own chapter title to set the page header
+
+
+\section{Introducción}
+Caffeine es un proyecto desarrollado dentro del marco de investigación del proyecto Cumbia. La primera versión de este motor fue desarrollada por Daniel Romero como trabajo de tesis\citep{Ref51}. Con el objetivo de poder extender la funcionalidad del motor para hacerlo orientado por aspectos, fue necesario rediseñarlo y reimplementarlo, es por eso que se desarrollo la versión 2.0.
+
+\section{Elementos Presentes}
+En el trabajo desarrollado en \citep{Ref51}, se propone una metodología para construir motores de \textit{workflow} usando Cumbia. Dentro de la metodología se propone que los elementos del lenguaje deben ser agrupados por capas, de tal manera que sea posible hacer un desarrollo incremental del motor de \textit{workflow} que se busca construir\citep{Ref51}. Allí mismo se hizo una división de los elementos BPEL en tres capas. En la primera capa se colocó todos los elementos de BPEL que se consideran necesarios para poder definir un proceso de forma completa (sin manejo de fallas ni funcionalidad adicional). En la segunda capa, se clasificaron los elementos asociados con el manejo de fallas y transacciones. En la tercera capa se encuentran los elementos que permiten extender el lenguaje, definiendo elementos personalizables. Los elementos desarrollados en la segunda versión de Caffeine son los elementos que se muestran en la tabla \ref{table:ElementosCapa1}.
+
+\begin{table}[htbp] 
+\caption{Elementos de la Capa 1}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{ p{3cm} p{8cm}}    % centered columns (4 columns) 
+\hline\hline                        %inserts double horizontal lines 
+Elemento & Descripción\\ [0.5ex]  % inserts table 
+%heading 
+\hline                      % inserts single horizontal line 
+process & Elemento raíz. \\      % inserting body of the table 
+partnerLink & Describe un servicio colaborador, incluyendo roles (de cada parte involucrada) y la operación a ser invocada (WSDL portType). \\ 
+variables & Elemento para declarar un conjunto de variables.  \\ 
+variable & Dato usado en el proceso. \\ 
+receive & Bloqueo para esperar de un mensaje proveniente de uno de los partnerLink del proceso.   \\ 
+reply & Respuesta enviada a uno de los partnerLink.   \\ 
+invoke & Invoca uno de los servicios colaboradores, bien sea de forma asíncrona o sincrónica.  \\ 
+assign (copy, query, from, to, literal, expression) & Permite copiar datos en las variables.  \\ 
+wait (until, for) & Suspende la operación por un período dado de tiempo.  \\ 
+empty & No hacer nada. \\ 
+sequence & Ejecuta una serie de actividades en orden secuencial.  \\ 
+flow & Ejecución de actividades de forma paralela. \\ 
+if, elseIf, else (condition) & Instrucción condicional. \\ 
+while & Instrucción repetitiva.\\ 
+pick & Bloquearse y esperar por un mensaje o alarma. \\ 
+onMessage & Elemento definido dentro de pick o eventHandler. Bloquearse y esperar por un mensaje. \\ 
+onAlarm & Elemento definido dentro de pick y eventHandler. Bloquearse y esperar a que un periodo de tiempo se cumpla. \\ 
+exit & Termina y destruye los procesos de forma inmediata. \\ [1ex]        % [1ex] adds vertical space 
+\hline          %inserts single line 
+\end{tabular} 
+\label{table:ElementosCapa1}    % is used to refer this table in the text 
+\end{table}
+
+Debido a la cantidad de elementos, se decidió dividirlos en categorías para mejor ilustración.
+
+\subsection{Elementos de Inicio}
+Para poder iniciar un proceso BPEL se deben definir elementos para que al recibir un mensaje se instancie el proceso\citep{Ref6}, esos elementos se encuentran agrupados en ésta categoría. 
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/startingPoint.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Elementos de inicio]{Elementos de inicio.}
+	\label{fig:ElementosInicio}
+\end{figure}
+
+\subsubsection{Elemento \textit{Process}}
+\label{section:ElementProcess}
+Éste elemento es el encargado de agrupar todas las actividades para alcanzar un objetivo.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/process.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Process}]{Máquina de estados del elemento \textit{Process}.}
+	\label{fig:ProcessStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Process}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Waiting & Una vez el elemento es inicializado, queda en espera hasta que se reciba el mensaje que indica que va a comenzar su ejecución. Éste estado también es utilizado para indicar que el proceso está detenido, debido a que alguna actividad interna bloquea el proceso.\\ \hline
+	ExecutingActivity &  Éste estado indica que se encuentra ejecutando una actividad interna.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosProcess}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Process}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	InitActivities &  Realiza todas las actividades necesarias para inicializar las actividades internas del proceso.\\ \hline
+	Execute &  Ejecuta la primera actividad definida para el proceso.\\ \hline
+	ExecuteNext &  Ejecuta la siguiente actividad en el proceso.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesProcess}    % is used to refer this table in the text 
+\end{table}
+
+
+
+
+\subsubsection{Elemento \textit{StartingPick}}
+El elemento \textit{StartingPick} representa cuando un \textit{Pick} es configurado para que cuando llegue un mensaje inicie la ejecución del proceso. 
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/startingPick.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{StartingPick}]{Máquina de estados del elemento \textit{StartingPick}.}
+	\label{fig:StartingPickStateMachine}
+\end{figure}
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{StartingPick}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del proceso.\\ \hline
+	Waiting & Una vez el elemento es inicializado, queda en espera hasta que se reciba el mensaje que indica que va a comenzar su ejecución. Este estado también es utilizado para indicar que el proceso está detenido, debido a que alguna actividad interna bloquea el proceso.\\ \hline
+	Executing &  Éste estado indica que se encuentra ejecutando la actividad asociada al elemento.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosStartingReceive}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{StartingPick}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	 RegisterOnMessage &  Registra al elemento como un elemento que está esperando un mensaje.\\ \hline
+	 ExecuteActivity &  Ejecuta la actividad asociada al elemento.\\ \hline
+
+	\hline
+\end{tabular}
+\label{table:AccionesStartingPick}    % is used to refer this table in the text 
+\end{table}
+
+
+
+\subsubsection{Elemento \textit{StartingReceive}}
+El elemento \textit{StartingReceive} representa cuando un \textit{Receive} es configurado para que cuando llegue un mensaje inicie la ejecución del proceso. 
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/startingReceive.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{StartingReceive}]{Máquina de estados del elemento \textit{StartingReceive}.}
+	\label{fig:StartingReceiveStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{StartingReceive}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial de la actividad.\\ \hline
+	Waiting & Una vez el elemento es inicializado, queda en espera hasta que se reciba el mensaje que indica que va a comenzar su ejecución.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosStartingReceive}    % is used to refer this table in the text 
+\end{table}
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{StartingReceive}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	RegisterReceive &  Registra al elemento como un elemento que está esperando un mensaje.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesStartingReceive}    % is used to refer this table in the text 
+\end{table}
+
+
+
+\subsection{Elementos de Interacción}
+Los elementos de interacción son aquellos que pueden enviar o recibir mensajes de los colaboradores y realizar una acción conforme.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/interaction.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Elementos de interacción]{Elementos de interacción.}
+	\label{fig:ElementosInteraccion}
+\end{figure}
+
+
+\subsubsection{Elemento \textit{Pick}}
+El elemento \textit{Pick} espera la ocurrencia de exactamente un evento de un conjunto de eventos, luego ejecuta la actividad asociada con ese evento. Después que se ha seleccionado un evento, los demás eventos no son aceptados\citep{Ref6}.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/pick.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Pick}]{Máquina de estados del elemento \textit{Pick}.}
+	\label{fig:PickStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Pick}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Waiting & Una vez el elemento es inicializado, queda en espera hasta que se dispare el temporizador de alguno de sus \textit{onAlarm} o alguno de sus \textit{onMessage} reciba un mensaje. \\ \hline
+	Executing &  Una vez seleccionada la actividad, pasa a ejecutarla. Éste estado indica que se encuentra ejecutando dicha actividad.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosPick}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Pick}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	InitElements &  Realiza todas las actividades necesarias para inicializar los \textit{onAlarm} y \textit{onMessage} asociados al elemento.\\ \hline
+	Execute &  Ejecuta la actividad que fue seleccionada.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesProcess}    % is used to refer this table in the text 
+\end{table}
+
+
+
+
+\subsubsection{Elemento \textit{OnAlarm}}
+ El elemento \textit{onAlarm} corresponde a un temporizador, que tiene una actividad asociada. Cuando el temporizador se termina, se lo informa al \textit{Pick} al que pertenece, para que este tome la decisión si se debe ejecutar o no  la actividad.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/onAlarm.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{OnAlarm}]{Máquina de estados del elemento \textit{onAlarm}.}
+	\label{fig:onAlarmStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{onAlarm}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Counting & Indica que el temporizador del elemento se encuentra activo.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó, debido a que el temporizador terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosOnAlarm}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{onAlarm}}
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	StartCounter &  Inicia el temporizador del elemento.\\ \hline
+	SetActivityOnPick &  Le indica al \textit{Pick} al que pertenece, que termino el temporizador y le pasa la actividad. Es responsabilidad del \textit{Pick} decidir si esa es la actividad que se debe ejecutar.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesOnAlarm}    % is used to refer this table in the text 
+\end{table}
+
+
+
+\subsubsection{Elemento \textit{OnMessage}}
+El elemento \textit{onMessage} espera hasta recibir un mensaje de un colaborador.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/onMessage.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{onMessage}]{Máquina de estados del elemento \textit{onMessage}.}
+	\label{fig:onMessageStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{onMessage}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Waiting & Una vez el elemento es inicializado, queda en espera hasta que se reciba un mensaje.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosOnMessage}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{onMessage}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	RegisterOnMessage &  Ejecuta la actividad asociada al elemento.\\ \hline
+	SetActivityOnPick &  Le indica al \textit{Pick} al que pertenece, que recibo un mensaje y le pasa la actividad. Es responsabilidad del \textit{Pick} decidir si esa es la actividad que se debe ejecutar.\\	\hline
+\end{tabular}
+\label{table:AccionesOnMessage}    % is used to refer this table in the text 
+\end{table}
+
+
+
+\subsubsection{Elemento \textit{Receive}}
+El elemento \textit{Receive} es el encargado de recibir mensajes de los colaboradores.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/receive.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Receive}]{Máquina de estados del elemento \textit{Receive}.}
+	\label{fig:ReceiveStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Receive}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Waiting & Una vez el elemento es inicializado, queda en espera hasta que se reciba un mensaje.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosReceive}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Receive}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	RegisterOnMessage &  Ejecuta la actividad asociada al elemento.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesReceive}    % is used to refer this table in the text 
+\end{table}
+
+
+\subsubsection{Elemento \textit{Reply}}
+El elemento \textit{Reply} es utilizado para enviar una respuesta a una solicitud previamente aceptada, a través de un elemento de interacción.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/reply.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Reply}]{Máquina de estados del elemento \textit{Reply}.}
+	\label{fig:ReplyStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Reply}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosReply}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Reply}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	SendMessage &  Envía el mensaje.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesReply}    % is used to refer this table in the text 
+\end{table}
+
+
+
+\subsubsection{Elemento \textit{Invoke}}
+El elemento \textit{Invoke}  es utilizado para enviar mensajes a los colaboradores. Éste elemento puede ser configurado para que envíe el mensaje y termine o para que envíe el mensaje y quede esperando una respuesta.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/invoke.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Invoke}]{Máquina de estados del elemento \textit{Invoke}.}
+	\label{fig:InvokeStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Invoke}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	MessageSent & Indica que envío el mensaje al colaborador.\\ \hline
+	Waiting &  Este estado solo es alcanzado si el elemento tiene que esperar una respuesta del colaborador.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosInvoke}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Invoke}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	SendMessage &  Envía el mensaje al colaborador.\\ \hline
+	RegisterReceive &  Registra que es una actividad que está esperando la llegada de un mensaje.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesInvoke}    % is used to refer this table in the text 
+\end{table}
+
+
+\subsection{Elementos Estructuradores}
+Los elementos estructuradores son los que forman el proceso, influenciando en que orden se van a ejecutar los elementos que se encuentran dentro de ellos. 
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/interaction.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Elementos estructuradores]{Elementos estructuradores.}
+	\label{fig:ElementosEstructuradores}
+\end{figure}
+
+
+\subsubsection{Elemento \textit{Sequence}}
+Éste elemento contiene una o más actividades que son ejecutadas en serie.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/sequence.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Sequence}]{Máquina de estados del elemento \textit{Sequence}.}
+	\label{fig:SequencetateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Sequence}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Executing &  Este estado indica que se encuentra ejecutando una actividad interna.\\ \hline
+	Waiting & Debido a que la ejecución de un elemento puede bloquear el proceso, el elemento \textit{Sequence} se bloquea hasta que la actividad en ejecución también se desbloquee.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosSequence}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Sequence}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	ExecuteFirst &  Ejecuta la primera actividad de la secuencia.\\ \hline
+	ExecuteNext &  Ejecuta la siguiente actividad, de no haber siguiente le indica al elemento que terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesSequence}    % is used to refer this table in the text 
+\end{table}
+
+
+
+\subsubsection{Elemento \textit{Flow}}
+El elemento \textit{Flow} contiene una o más actividades que son ejecutadas en paralelo.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/flow.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Flow}]{Máquina de estados del elemento \textit{Flow}.}
+	\label{fig:FlowStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Flow}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Executing &  Este estado indica que se encuentra ejecutando alguna de las actividades internas.\\ \hline
+	Waiting & Debido a que la ejecución de un elemento puede bloquear el proceso, el elemento \textit{Flow} debe esperar hasta que todas las actividades internas se desbloqueen.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosFlow}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Flow}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	ExecuteAll &  Ejecuta todas las actividades que contiene.\\ \hline
+	CheckAllTerminated &  Verifica que todas las actividades hayan terminado su ejecución.\\ \hline
+	AddWaiting &  Agrega a un contador que una actividad está esperando.\\ \hline
+	SubtractWaiting &  Resta del contador una actividad que dejo de esperar.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesFlow}    % is used to refer this table in the text 
+\end{table}
+
+
+
+\subsubsection{Elemento \textit{While}}
+Éste elemento provee una ejecución repetida para el elemento que contiene.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/while.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{While}]{Máquina de estados del elemento \textit{While}.}
+	\label{fig:WhileStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{While}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Evaluating &  Indica que se encuentra evaluando la condición de repetición del \textit{While}.\\ \hline
+	Executing&  Una vez evaluada la condición como cierta, debe pasar a ejecutar el elemento. Este estado indica que se encuentra ejecutando la actividad interna.\\ \hline
+	Waiting & El elemento interno puede pasar a un estado de espera, lo que bloquea el elemento \textit{While} hasta que la actividad interna se desbloquee.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosWhile}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{While}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	Evaluate &  Evalúa la condición de repetición del elemento.\\ \hline
+	Execute &  Ejecuta el elemento interno.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesWhile}    % is used to refer this table in the text 
+\end{table}
+
+
+
+
+\subsubsection{Elemento \textit{Condicional}}
+BPEL no tiene un elemento llamado "`condicional"', pero provee elementos como \textit{If, ElseIf, Else} para proveer este comportamiento. Se decidió encapsular a los tres elementos dentro de una actividad \textit{Condicional}  para poder exponer el estado de la ejecución de los tres elementos, en uno solo.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/conditional.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del comportamiento \textit{Condicional}]{Máquina de estados del elemento \textit{Condicional}.}
+	\label{fig:CondicionalStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Condicional}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	If & Indica que el elemento está realizando la evaluación de la condición que se encuentra definida para el \textit{If}.\\ \hline
+	ElseIf&  Indica que la evaluación del elemento \textit{If} fue negativa, y que está realizando la evaluación de la condición que se encuentra definida para cada uno de los \textit{ElseIf}.\\ \hline
+	Else &  Indica que la evaluación de todas las condiciones de los elementos \textit{ElseIf} fue negativa, resultando en la ejecución de la condición por defecto o en la ejecución de nada.\\ \hline
+	Executing &  Indica que encontró una condición verdadera y que está ejecutando la actividad del elemento correspondiente.\\ \hline
+	Waiting & Si la actividad en ejecución debe bloquearse, el elemento tiene que esperar hasta que la actividad continúe con su ejecución.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosCondicional}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Condicional}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	EvaluateIf &  Evalua la condición del elemento \textit{If}, en caso de ser verdadera ejecuta la actividad allí definida, de lo contrario comienza a evaluar los \textit{ElseIf}.\\ \hline
+	ExecuteIf &  Ejecuta la actividad definida para el elemento \textit{If}.\\ \hline
+	EvaluateElseIf &  Evalua la condición de los elementos \textit{ElseIf}, en caso de encontrar uno que sea verdadera, ejecuta su actividad asociada.\\ \hline
+	ExecuteElseIf &  Ejecuta la actividad asociada con el elemento \textit{ElseIf}.\\ \hline
+	ExecuteElse &  Ejecuta la actividad asociada al elemento \textit{Else}.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesCondicional}    % is used to refer this table in the text 
+\end{table}
+
+\subsection{Instrucciones}
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/instructions.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Instrucciones]{Instrucciones.}
+	\label{fig:ElementosEstructuradores}
+\end{figure}
+
+
+
+\subsubsection{Elemento \textit{Exit}}
+Éste elemento es utilizado para terminar de ejecutar la instancia del proceso.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/exit.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Exit}]{Máquina de estados del elemento \textit{Exit}.}
+	\label{fig:ExitStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Exit}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosExit}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Exit}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	ExitProcess &  Realiza todas las actividades necesarias para terminar la ejecución de la instancia del proceso.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesExit}    % is used to refer this table in the text 
+\end{table}
+
+
+
+
+\subsubsection{Elemento \textit{Empty}}
+Este es un elemento que representa una actividad que no hace nada.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/empty.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Empty}]{Máquina de estados del elemento \textit{Empty}.}
+	\label{fig:EmptyStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Empty}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosEmpty}    % is used to refer this table in the text 
+\end{table}
+
+
+
+\subsubsection{Elemento \textit{Wait}}
+Éste elemento especifica una espera de un tiempo determinado o hasta que determinado plazo sea alcanzado.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/wait.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Wait}]{Máquina de estados del elemento \textit{Wait}.}
+	\label{fig:WaitStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Wait}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Waiting & Indica que la actividad se encuentra esperando que se venza el plazo determinado se termine un temporizador.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosWait}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Wait}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	StartingWait &  Inicia el temporizador.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesWait}    % is used to refer this table in the text 
+\end{table}
+
+
+\subsubsection{Elemento \textit{Assign}}
+Éste elemento es utilizado para copiar datos de una variable a otra o para insertar nuevos valores.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/assign.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Máquina de estados del elemento \textit{Assign}]{Máquina de estados del elemento \textit{Assign}.}
+	\label{fig:AssignStateMachine}
+\end{figure}
+
+\begin{table}[htbp] 
+\caption{Estados del Elemento \textit{Assign}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.2\textwidth}|p{0.75\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Descripción de Estados}}} \\ \hline\hline	
+	Init &  Es el estado inicial del elemento.\\ \hline
+	Copying & Indica que se está copiando los valores de una variable a otra.\\ \hline
+	Finalizing &  En éste estado se indica que la ejecución del elemento ya terminó.\\ \hline
+	\hline
+\end{tabular}
+\label{table:EstadosAssign}    % is used to refer this table in the text 
+\end{table}
+
+\begin{table}[htbp] 
+\caption{Acciones del elemento \textit{Assign}}  % title of Table 
+\centering          % used for centering table 
+\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+	\multicolumn{2}{l}{\textbf{\large{Acciones}}} \\ \hline\hline	
+	ExecuteFirstCopy &  Realiza la copia del primer elemento interno.\\ \hline
+	ExecuteNext &  Realiza la copia del siguiente elemento si existe.\\ \hline
+	\hline
+\end{tabular}
+\label{table:AccionesAssign}    % is used to refer this table in the text 
+\end{table}
+
+
+\section{Arquitectura}
+
+En ésta sección se hablará de la arquitectura de Caffeine.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/Caffeine.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Arquitectura de Caffeine]{Arquitectura de Caffeine.}
+	\label{fig:CaffeineArq}
+\end{figure}
+
+\subsection{CumbiaOpenObjectsKernel}
+\label{section:CumbiaOpenObjectsKernel}
+El trabajo con metamodelos ejecutables extensibles ha sido un trabajo constante en el proyecto Cumbia. A partir de la tesis de maestria de Pablo Barvo y Mario Sánchez\citep{Ref52} se desarrolló un \textit{framework} para la fácil generación de otras aplicaciones y fácil definición de nuevos metamodelos ejecutables usando objetos abiertos. 
+A continuación se describe a grandes rasgos cuales son las responsabilidades de éste \textit{framework} y a describir algunos de sus elementos. Éste componente fue desarrollado por Mario Sánchez, uno de los integrantes del Proyecto Cumbia como parte de su trabajo doctoral. 
+
+La responsabilidad principal de éste \textit{Kernel}, es la de a partir de una serie de archivos que definen el metamodelo, crear e instanciar sus modelos, siendo sus elementos objetos abiertos o elementos que puedan generar o esperar eventos. Además, es el responsable de realizar la coordinación de todas las máquinas de estado de los objetos.
+
+El primer archivo que debe crearse para poder utilizar el  \textit{framework} es un XML (código \ref{listing:BPELMetamodel}) donde se definen cuales son los elementos que componen el metamodelo. De igual manera en éste archivo se indica cuál es el descricptor que define la máquina de estados para cada elemento.
+\begin{lstlisting}[language=xml,float, escapechar=\%, caption= Archivo de declaración de los elementos del metamodelo., label=listing:BPELMetamodel ]
+<metamodel name="BPEL" version="0.1">
+	
+	<!-- State machines used by the elments of the metamodel -->
+	<state-machine-reference name="assign" file="assign.xml" />
+	...
+	<state-machine-reference name="while" file="while.xml" />	
+	
+	<!-- Elements of the metamodel -->
+	<type name="Assign" class="uniandes.cumbia.bpel.elements.assign.Assign" statemachine="assign"/>
+	...
+	<type name="Copy" class="uniandes.cumbia.bpel.elements.assign.copy.Copy"/>
+	...
+	<type name="From" class="uniandes.cumbia.bpel.elements.assign.from.From"/>
+	
+	...
+</metamodel>
+\end{lstlisting}
+
+Luego de tener la definición de los elementos que componen el metamodelo, se debe implementar para cada metamodelo definido una serie de activos que permitan construir e instanciar el modelo con la estructura especifica, de tal manera el \textit{Kernel} sabe como cargar de un archivo la estructura del modelo. Además de saber cómo cargar la estructura del modelo, debe saber cuál es el modelo que debe crear, éste se define en un archivo archivo que contiene específicamente cuales son los elementos que componen un modelo en particular (código \ref{listing:ModelXML}). Por último, se debe crear la implementación de todos los elementos que hacen parte del modelo y asociarlos al \textit{Kernel}.
+
+\begin{lstlisting}[language=xml,float, escapechar=\%, caption= Archivo de definición de los elementos del metamodelo., label=listing:ModelXML]
+<?xml version="1.0" encoding="UTF-8"?>
+<definition metamodel="BPEL" modelName="HelloWorld" version="0.1">
+		<metamodel-extensions/>
+		<elements>
+			<open-object name="HelloWorld" typeName="Process"/>
+			...
+			<open-object name="replyOutput" typeName="Reply"/>
+		</elements>
+		<runtime/>
+		<model>
+			<process ...>
+			         
+			    <!-- List of services participating in this BPEL process -->    
+			    <partnerLinks>
+			    ...
+			    </partnerLinks>
+			  
+			    <!-- List of messages and XML documents used as part of this BPEL process -->    
+			    <variables>
+			    ...
+			    </variables>
+			
+			    <!-- Orchestration Logic -->
+			    <sequence name="sequence">
+					...			        
+			    </sequence>
+			</process>
+		</model>
+</definition>
+\end{lstlisting}
+
+
+
+
+
+
+\subsection{CaffeineEngine}
+Éste es el componente principal de Caffeine. Éste es el motor encargado de hacer \textit{deploy} de las definiciones de los procesos, crear las nuevas instancias de los procesos y el encargado de hacer la coordinación del intercambio de mensajes. Ver figura \ref{fig:CaffeineEngineArq}.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/CaffeineEngine.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Arquitectura de CaffeineEngine]{Arquitectura de CaffeineEngine.}
+	\label{fig:CaffeineEngineArq}
+\end{figure}
+
+\subsubsection*{\textit{Process Space}}
+El \textit{Process Space} es encargado de mantener las definiciones de proceso y crear las instancias de los procesos cuando sea necesario. Por cada proceso existente en el motor hay un correspondiente \textit{Process Space}. 
+\subsubsection*{\textit{Instance Space}}
+El \textit{Instance Space} es quien contiene al elemento raíz del proceso (\textit{Process}\label{section:ElementProcess}). De igual manera contiene una serie de elementos que monitorean la ejecución de elementos para propósitos administrativos.
+\subsubsection*{\textit{Message Center}}
+Este componente es el encargado de la administración de los mensajes recibidos o enviados por los colaboradores.  Cuando recibe un mensaje, se encarga de localizar la instancia a la cual le pertenece y entregársela al elemento que le corresponde. De igual manera mantiene una lista de todos los colaboradores que hacen parte de los procesos, para que los procesos puedan enviar los mensajes a los colaboradores.
+
+\subsubsection*{Protocolo de Instanciación de un Proceso}
+Éste protocolo describe la manera cómo se realiza la creación de una nueva instancia de proceso cuando se recibe un mensaje que no está dirigido a una instancia existente. 
+
+\textbf{1} - El Web service que representa el proceso recibe un mensaje dirigido a alguno de los elementos de inicio del proceso.
+
+\textbf{2} - El \textit{MessageCenter} es encargado de revisar que el mensaje no esté dirigido a una instancia existente del proceso.
+
+\textbf{3} - Al no existir una instancia a la cual pertenezca el mensaje, el \textit{MessageCenter} crea una instancia nueva del proceso.
+
+\textbf{4} - Luego el mensaje es transmitido a la actividad de inicio a la cual es dirigido.
+
+\textbf{5} - La actividad de inicio procesa el mensaje y le indica al proceso que debe comenzar su ejecución.
+
+\subsubsection*{Protocolo de Envío de un Mensaje a un Colaborador}
+A continuación se presenta los pasos para realizar la invocación de un Web service. 
+
+\textbf{1} - Durante la ejecución de una instancia, una actividad \textit{Invoke} le indica al motor que va a invocar un servicio (proporcionando la información de éste) y el mensaje a ser enviado.
+
+\textbf{2} - El motor, utilizando el Web service que representa el proceso, solicita la invocación del \textit{partnerLink} especificado al \textit{MessageCenter}. 
+
+\subsubsection*{Protocolo de Recepción de Mensaje por una Instancia Existente}
+Este protocolo describe la manera como se realiza la creación de una nueva instancia de proceso cuando se recibe un mensaje que está dirigido a una instancia existente. 
+
+\textbf{1} - Durante la ejecución de una instancia de proceso, una actividad \textit{receive} pide al motor que la registre como una actividad que está esperando un mensaje.
+ 
+\textbf{2} - Cuando un mensaje llega, el \textit{MessageCenter} verifica entre los elementos que se registraron para esperar un mensaje.
+
+\textbf{3} - Al encontrar el elemento al cual le pertenece el mensaje recibido, se lo notifica
+
+\textbf{4} - Al entregar el mensaje, la actividad se elimina de la lista de actividades que están esperando mensaje.
+
+
+\subsection{CaffeineDeployer}
+La responsabilidad de este componente es la de traducir el archivo BPEL de entrada al archivo que recibe el \textit{framework} de objetos abiertos y de generar los archivos requeridos para publicar el proceso como un Web service.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/CaffeineImporter.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Arquitectura del CaffeineDeployer]{Arquitectura de CaffeineDeployer.}
+	\label{fig:CaffeineImporterArq}
+\end{figure}
+
+\subsubsection*{\textit{Importer}}
+El \textit{Importer} es el componente principal del \textit{CaffeineDeployer}. Éste es el encargado de leer un archivo con un proceso BPEL y crear una serie de objetos que representan el proceso, pero estos objetos no tienen ningún tipo de lógica, son creados para mantener la información que está contenida en los nodos XML. 
+
+\subsubsection*{\textit{Generator}}
+Parte del \textit{Generator} son una serie de \textit{visitors} que recorren la estructura de los elementos que representan el proceso y generan el archivo del modelo discutido en la sección \ref{section:CumbiaOpenObjectsKernel}. El \textit{Generator} permite la generación de las clases para definir un Web service a partir del archivo WSDL del proceso BPEL.
+
+\subsubsection*{\textit{Deployer}}
+El Deployer también es el encargado de publicar los procesos BPEL, una vez finalice la importación, para que puedan ser utilizados como Web services.
+
+
+\section{Pruebas}
+
+Para probar la correcta implementación de \textit{Caffeine} se utilizó otro de los activos del proyecto Cumbia, el \textit{CumbiaTestFramework}, el cual fue desarrollado como tesis de grado\citep{Ref49} por Sergio Moreno.
+
+\subsection{Framework de Pruebas}
+\label{sec:CumbiaTestFramework}
+El \textit{framework} de pruebas provee un mecanismo para poder hacer pruebas sobre aplicaciones basadas en objetos abiertos. La idea principal del \textit{framework} de pruebas es poder monitorear el comportamiento de un motor sin interferir con su ejecución, lo que presenta una serie de retos debido a que es necesario monitorear todos los elementos que pertenecen a un proceso, sus eventos, maquinas de estado, etc. 
+
+Para hacer esto, el \textit{framework} está dividido en un modelo de capas, que representan las diferentes etapas por las cuales puede pasar un proceso. 
+La primera capa es la capa que tiene el metamodelo que se quiere probar. La segunda capa es la encargada de materializar los modelos que se van a probar. La tercera capa es la encargada de crear la instancia del proceso que se quiere probar. En la cuarta capa  están definidos dos elementos básicos: sensores y trazas. Los sensores son elementos que se colocan sobre los elementos que se quiere monitorear, de ésta manera es posible conocer, por ejemplo, los eventos que han sido generados desde cierto elemento o los estados de una máquina que se activaron. Cuando un sensor es activado por alguno de los elementos que está monitoreando, esa información es guardada en una traza, de tal manera teniendo un registro de que sensores fueron activados por cuales elementos y porque razón. Por último existe la capa de prueba, ésta capa es la encarga de realizar aserciones sobre las trazas que fueron creadas durante la ejecución del proceso, así es posible conocer si la traza que era esperada fue la traza que el proceso generó. 
+
+
+Una prueba en el \textit{CumbiaTestFramework} está definida como una serie de escenarios de prueba. Para cada escenario de prueba es necesario definir la estructura de los elementos que se va a probar, para el caso de \textit{Caffeine}, que proceso BPEL es el que se quiere probar. Se debe especificar un lenguaje, llamado el lenguaje de animación, donde se enumere mediante instrucciones, cual es el comportamiento que se le quiere dar al proceso, es decir, se definen instrucciones que mueven el proceso. En el caso de \textit{Caffeine}, por ejemplo, se debe especificar en ese lenguaje como mandarle un mensaje a un proceso BPEL. En la prueba también se debe definir a que elementos se les va a colocar un sensor y qué tipo de sensor. Para finalizar se definen las aserciones para cada escenario de prueba.
+
+\subsubsection*{Escenarios de prueba}
+Para \textit{Caffeine} se definieron 14 escenarios de prueba, cada uno de ellos probando diferentes elementos y su interacción. Uno de los escenarios definidos es un proceso simple que comienza cuando un elemento \textit{receive} recibe un mensaje, luego ese mensaje es modificado por una actividad \textit{assign} para luego ser retornado a quien envió el mensaje original.
+
+\subsubsection*{Lenguaje de Animación}
+El lenguaje de animación para BPEL es relativamente sencillo. El comportamiento que se quiere simular es el intercambio de mensajes a una instancia de proceso existente. 
+
+\textbf{Ejecutar una Llamada Sincrónica} - Ésta instrucción permite decirle al \textit{MessageCenter} que envié el mensaje que se definido a la instancia de proceso definida y espere a recibir una respuesta del proceso. 
+
+\begin{lstlisting}[language=xml, caption=Instrucción sincrónica de envió de mensaje]
+<execute-synchronous-call processName="HelloWorld" processID="0" instanceID="0" message="initial message" />
+\end{lstlisting}
+
+\textbf{Ejecutar una Llamada Asincrónica} - Ésta instrucción permite decirle al \textit{MessageCenter} que envié el mensaje que se definido a la instancia de proceso definida pero sin necesidad de esperar un mensaje de respuesta del proceso.
+
+\begin{lstlisting}[language=xml, caption=Instrucción sincrónica de envió de mensaje]
+<execute-asynchronous-call processName="HelloWorld" processID="0" instanceID="0" message="initial message" />
+\end{lstlisting}
+
+\textbf{Crear un Servicio} - Ésta instrucción permite decirle crear servicios colaboradores que van a esperar mensajes del proceso, por ejemplo, si dentro del proceso se tiene una actividad \textit{invoke} que debe enviar un mensaje, el servicio que se crea con ésta instrucción es el encargado de recibir ese mensaje. 
+
+\begin{lstlisting}[language=xml, caption=Instrucción de creación de un servicio colaborador]
+<createTestWsdlService processName="HelloWorld" serviceName="testWSDL" type="dummy"/>
+\end{lstlisting}
+
+\subsubsection*{Sensores}
+\label{sec:CaffeineTestSensors}
+Se crearon dos tipos de sensores para los elementos. El primero de ellos es el encargado de monitorear las máquinas de estado de los elementos, de ésta manera es posible conocer cuáles fueron los elementos que se activaron y en qué orden, así es posible realizar aserciones acerca del orden de ejecución de los elementos. El segundo tipo de sensor es el encargado de monitorear si los valores de las variables cambiaron durante la ejecución del proceso.
+
+ 
+ 
+\section{Experimentación \textit{Caffeine} Cliente Web}
+Para poder interactuar con \textit{Caffeine} se construyó una interfaz Web para poder visualizar desde el punto de vista del usuario final. Al ingresar, la interfaz permite que los usuarios vean los procesos que se encuentran en el motor, además de ver las instancias de cada uno de los procesos. El usuario puede hacer \textit{deploy} de nuevos procesos e instanciarlos, suministrando el mensaje de entrada para el proceso. Una vez el proceso ha completado se muestra su resultado. La interfaz provee dos vistas para ver la información de los procesos que se encuentran en el motor. La primera es una vista en forma de árbol (figura \ref{fig:ProcessTree}), donde se listan todas las actividades de los procesos y es posible ingresar a cada actividad y ver la información de cada una, por ejemplo, si se selecciona un \textit{reply}, es posible ver su nombre, la operación asociada, la variable y la información del colaborador (figura \ref{fig:ActivityDetail}). La segunda vista permite a los usuarios ver cuando se instanció y de haber terminado, cuando terminó la ejecución de una instancia especifica del proceso.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/ProcessTree.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Vista en forma de árbol de los elementos de un proceso]{Vista en forma de árbol de los elementos de un proceso.}
+	\label{fig:ProcessTree}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/ActivityDetail.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Detalles de una actividad del proceso]{Detalles de una actividad del proceso.}
+	\label{fig:ActivityDetail}
+\end{figure}

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<definitions name="HelloWorld"
+        targetNamespace="http://samples.otn.com/helloworld"
+        xmlns:tns="http://samples.otn.com/helloworld"
+        xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        >
+
+ <!-- 
+   Type Definition
+   The default output of the BPELZ wizard uses Strings as input and output to the BPEL Process.
+   But you can define or import any XML Schema type and us them as part of the message types.
+   -->
+        
+    <types>  
+        <schema attributeFormDefault="qualified" 
+                elementFormDefault="qualified" 
+                targetNamespace="http://samples.otn.com/helloworld" 
+                xmlns="http://www.w3.org/2001/XMLSchema"
+                >
+                
+         <element name="name" type="string" />            
+         <element name="result" type="string"/>
+        </schema>
+    </types>
+  
+ <!-- 
+   Message Type Definition
+   Definition of the message types used as part of each SOAP interaction
+   -->
+    <message name="HelloWorldRequestMessage">
+        <part name="payload" element="tns:name"/>
+    </message>
+    
+    <message name="HelloWorldResultMessage">
+        <part name="payload" element="tns:result"/>
+    </message>
+
+<!--
+  PortType definition
+  -->
+
+    <!-- portType implemented by the HelloWorld BPEL process -->
+    <portType name="HelloWorld">
+        <operation name="initiate">
+            <input message="tns:HelloWorldRequestMessage"/>
+            <output message="tns:HelloWorldResultMessage"/>
+        </operation>
+    </portType>
+
+
+
+<!--
+  PartnerLinkType definition
+  -->
+
+    <!-- the HelloWorld partnerLinkType binds the service and
+         requestor portType into an asynchronous conversation.
+         -->
+    <plnk:partnerLinkType name="HelloWorld">
+        <plnk:role name="HelloWorldProvider">
+            <plnk:portType name="tns:HelloWorld"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+
+   <binding name="HelloWorld" type="tns:HelloWorld">
+      <soap:binding style="document" 
+         transport="http://schemas.xmlsoap.org/soap/http"/>
+      <operation name="initiate">
+         <input>
+            <soap:body use="literal"/>
+         </input>
+         <output>
+            <soap:body use="literal"/>
+         </output>
+      </operation>     
+   </binding>   
+</definitions>

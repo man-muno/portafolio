@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/caffeineDeployer.jar"/>
+	<classpathentry kind="lib" path="lib/cumbiaTestFramework.jar" sourcepath="/cumbiaTestFramework"/>
+	<classpathentry kind="lib" path="lib/CumbiaCommons.jar"/>
+	<classpathentry kind="lib" path="lib/CumbiaOpenObjectsKernel.jar" sourcepath="/CumbiaOpenObjectsKernel"/>
+	<classpathentry kind="con" path="org.eclipse.ajdt.core.ASPECTJRT_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/aspectCaffeine.jar" sourcepath="/aspectCaffeine"/>
+	<classpathentry kind="con" path="org.jboss.ide.eclipse.jdt.aop.core.classpath.AOP_14_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aspectCaffeine"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/cumbiaTestFramework"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

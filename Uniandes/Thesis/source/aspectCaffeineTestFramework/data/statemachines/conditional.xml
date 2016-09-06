@@ -1,0 +1,123 @@
+<state-machine name="conditional" initial-state="Init">
+
+	<!-- Init -->
+	<state name="Init" enter-event="" exit-event="exitInit">
+		<transition name="ToIf" successor="If">
+			<source-event source-name="ME" event-name="start" />
+			<before-event name="beforeToIf" />
+			<after-event name="afterToIf" />
+			<actions>
+				<action name="EvaluateIf"
+					class="uniandes.cumbia.aspect.elements.conditional.actions.EvaluateIf" />
+			</actions>
+		</transition>
+	</state>
+
+
+	<!-- If -->
+	<state name="If" enter-event="enterIf" exit-event="exitIf">
+		<transition name="ToElseIf" successor="ElseIf">
+			<source-event source-name="ME" event-name="checkElseIf" />
+			<before-event name="beforeToElseIf" />
+			<after-event name="afterToElseIf" />
+			<actions>
+				<action name="EvaluateElseIf"
+					class="uniandes.cumbia.aspect.elements.conditional.actions.EvaluateElseIf" />
+			</actions>
+		</transition>
+		<transition name="ToExecuteIf" successor="Executing">
+			<source-event source-name="ME" event-name="executeIf" />
+			<before-event name="beforeToExecuteIf" />
+			<after-event name="afterToExecuteIf" />
+			<actions>
+				<action name="ExecuteIf"
+					class="uniandes.cumbia.aspect.elements.conditional.actions.ExecuteIf" />
+			</actions>
+		</transition>
+	</state>
+
+	<!-- ElseIf -->
+	<state name="ElseIf" enter-event="enterElseIf"
+		exit-event="exitElseIf">
+		<transition name="ToElse" successor="Else">
+			<source-event source-name="ME" event-name="checkElse" />
+			<before-event name="beforeToElse" />
+			<after-event name="afterToElse" />
+			<actions>
+				<action name="EvaluateElse"
+					class="uniandes.cumbia.aspect.elements.conditional.actions.EvaluateElse" />
+			</actions>
+		</transition>
+		<transition name="ToSelf" successor="Finalizing">
+			<source-event source-name="ME" event-name="checkNextElseIf" />
+			<before-event name="beforeToSelf" />
+			<after-event name="afterToSelf" />
+			<actions>
+				<action name="EvaluateElseIf"
+					class="uniandes.cumbia.aspect.elements.conditional.actions.EvaluateElseIf" />
+			</actions>
+		</transition>
+		<transition name="ToExecuteElseIf" successor="Executing">
+			<source-event source-name="ME" event-name="executeElseIf" />
+			<before-event name="beforeToExecuteElseIf" />
+			<after-event name="afterToExecuteElseIf" />
+			<actions>
+				<action name="ExecuteElseIf"
+					class="uniandes.cumbia.aspect.elements.conditional.actions.ExecuteElseIf" />
+			</actions>
+		</transition>
+	</state>
+
+	<!-- Else -->
+	<state name="Else" enter-event="enterElse" exit-event="exitElse">
+		<transition name="ToExecutingElse" successor="Executing">
+			<source-event source-name="ME" event-name="executeElse" />
+			<before-event name="beforeToExecutingElse" />
+			<after-event name="afterToExecutingElse" />
+			<actions>
+				<action name="ExecuteElse"
+					class="uniandes.cumbia.aspect.elements.conditional.actions.ExecuteElse" />
+			</actions>
+		</transition>
+		<transition name="ToFinalingFromElse" successor="Finalizing">
+			<source-event source-name="ME" event-name="finalizing" />
+			<before-event name="beforeToFinalingFromElse" />
+			<after-event name="afterToFinalingFromElse" />
+			<actions/>
+		</transition>
+	</state>
+
+	<!-- Executing -->
+	<state name="Executing" enter-event="enterExecuting"
+		exit-event="exitExecuting">
+		<transition name="ToWaiting" successor="Waiting">
+			<source-event source-name="ME" event-name="enterWaiting" />
+			<before-event name="beforeToExecuting" />
+			<after-event name="afterToExecuting" />
+			<actions />
+		</transition>
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ACT"
+				event-name="enterFinalizing" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions />
+		</transition>
+	</state>
+
+	<!-- Waiting -->
+	<state name="Waiting" enter-event="enterWaiting"
+		exit-event="exitWaiting">
+		<transition name="ToExecuting" successor="Executing">
+			<source-event source-name="ACT"
+				event-name="enterFinalizing" />
+			<before-event name="beforeToExecuting" />
+			<after-event name="afterToExecuting" />
+			<actions />
+		</transition>
+	</state>
+
+	<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing"
+		exit-event="" />
+</state-machine>

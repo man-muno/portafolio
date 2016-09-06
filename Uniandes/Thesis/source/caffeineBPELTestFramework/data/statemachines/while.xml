@@ -1,0 +1,66 @@
+<state-machine name="while" initial-state="Init">
+
+<!-- Init -->
+	<state name="Init" enter-event="" exit-event="exitInit">
+		<transition name="ToEvaluating" successor="Evaluating">
+			<source-event source-name="ME" event-name="start" />
+			<before-event name="beforeToEvaluating" />
+			<after-event name="afterToEvaluating" />
+			<actions>
+				<action name="Evaluate"
+					class="uniandes.cumbia.bpel.elements.While.actions.Evaluate" />
+			</actions>
+		</transition>
+	</state>
+	
+<!-- Evaluating -->
+	<state name="Evaluating" enter-event="enterEvaluating" exit-event="exitEvaluating">
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ME" event-name="finalizing" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions />
+		</transition>
+		<transition name="ToExecuting" successor="Executing">
+			<source-event source-name="ME" event-name="executing" />
+			<before-event name="beforeToExecuting" />
+			<after-event name="afterToExecuting"/>
+			<actions>
+				<action name="Execute"
+					class="uniandes.cumbia.bpel.elements.While.actions.Execute" />
+			</actions>
+		</transition>
+	</state>
+	
+<!-- Executing -->
+	<state name="Executing" enter-event="enterExecuting" exit-event="exitExecuting">
+		<transition name="ToWaiting" successor="Waiting">
+			<source-event source-name="ACT" event-name="enterWaiting" />
+			<before-event name="beforeToWaiting" />
+			<after-event name="afterToWaiting" />
+			<actions />
+		</transition>
+		<transition name="BackToEvaluating" successor="Evaluating">
+			<source-event source-name="ACT" event-name="enterFinalizing" />
+			<before-event name="beforeBackToEvaluating" />
+			<after-event name="afterBackToEvaluating" />
+			<actions>
+				<action name="Evaluate"
+					class="uniandes.cumbia.bpel.elements.While.actions.Evaluate" />
+			</actions>
+		</transition>			
+	</state>
+		
+<!-- Waiting -->
+	<state name="Waiting" enter-event="enterWaiting" exit-event="exitWaiting">
+		<transition name="ToExecutingFromWaiting" successor="Executing">
+			<source-event source-name="ACT" event-name="exitWaiting" />
+			<before-event name="beforeToExecutingFromWaiting" />
+			<after-event name="afterToExecutingFromWaiting" />
+			<actions />
+		</transition>	
+	</state>
+	
+<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event=""/>
+</state-machine>

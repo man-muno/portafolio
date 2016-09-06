@@ -1,0 +1,34 @@
+<state-machine name="wait" initial-state="Init">
+
+<!-- Init -->
+	<state name="Init" enter-event="" exit-event="exitInit">
+		<transition name="ToWaiting" successor="Waiting">
+			<source-event source-name="ME" event-name="start" />
+			<before-event name="beforeToWaiting" />
+			<after-event name="afterToWaiting" />
+			<actions>
+				<action name="StartWaiting" class="uniandes.cumbia.bpel.elements.wait.actions.StartWaiting" />
+			</actions>
+		</transition>
+	</state>
+	
+<!-- Waiting -->
+	<state name="Waiting" enter-event="enterWaiting" exit-event="exitWaiting">
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ME" event-name="finalized" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions />
+		</transition>
+	</state>
+	
+<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event="exitFinalizing">
+		<transition name="ToInit" successor="Init">
+			<source-event source-name="ME" event-name="reInit" />
+			<before-event name="beforeToInit" />
+			<after-event name="afterToInit" />
+			<actions />
+		</transition>
+	</state>
+</state-machine>

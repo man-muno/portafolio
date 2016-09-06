@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+
+<!-- 
+	$Id: build.xml,v 1.3 2009/02/10 01:05:46 man-muno Exp $
+	
+	Proyecto Cumbia
+	(http://agamenon.uniandes.edu.co/~csw)
+	
+	Grupo de Investigación en Construcción de Software
+	Departamento de Ingeniería de Sistemas y Computación
+	Universidad de los Andes
+	Bogotá - Colombia
+	
+	Copyright (c) 2008
+	Todos los derechos reservados
+-->
+
+<project name="caffeineBPEL" default="jar-pack" basedir="../">
+
+	<!-- Basic properties used by the rest of the project -->
+	<property environment="env" />
+
+	<path id="classpath">
+		<pathelement location="build" />
+		<fileset dir="./lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	
+	<path id="client.classpath">
+		<path refid="classpath" />
+	</path>
+
+	<!-- Compiles the project into the ./build directory -->
+	<target name="compile" description="Compile the source">
+		<echo message="Compiling the project to the /build dir" />
+		<mkdir dir="build" />
+		<javac destdir="build" debug="on" deprecation="on" optimize="on" classpathref="classpath">
+			<src path="source" />
+		</javac>
+	</target>
+
+	<!-- Deletes the files created by the compilation and packaging targets -->
+	<target name="clean" description="Cleanup">
+		<echo message="Deleting the directories /build and /dist" />
+		<delete dir="dist" />
+		<delete dir="build" />
+	</target>
+
+	<!-- 
+	*************************
+	         JBOSS 
+	*************************
+	-->
+
+	<!-- Properties needed for the deployment and undeployment in JBoss -->
+	<property name="jboss.home" value="${env.JBOSS_HOME}" />
+	<property name="jboss.config" value="default" />
+	<property name="jboss.deploy" value="${jboss.home}server/${jboss.config}/deploy" />
+	<property name="jboss.file" value="4-${ant.project.name}.sar" />
+
+	
+	<!-- Creates the .sar file for deployment inside jboss -->
+	<target name="jboss-pack" depends="compile" description="Creates a .sar file for deploying within JBoss">
+		<echo message="Copying to build/META-INF the JBoss service descriptor (jboss-service.xml)" />
+		<mkdir dir="build/META-INF" />
+		<copy file="./data/jboss/jboss-service.xml" todir="build/META-INF" />
+
+		<echo message="Packaging the project inside the file dist/${jboss.file}" />
+		<mkdir dir="dist" />
+		<jar jarfile="dist/${jboss.file}" basedir="build" />
+	</target>
+
+	<!-- 
+		Deploys the .sar file to jboss.
+		Deploys the state machines to the CUMBIA_HOME/caffeineEngine/stateMachines dir.
+	-->
+	<target name="jboss-deploy" depends="jboss-pack" description="Deploy the application">
+		<echo message="Deploying the file ${jboss.file} to JBoss (${jboss.deploy})" />
+		<copy todir="${jboss.deploy}">
+			<fileset dir="dist">
+				<filename name="${jboss.file}" />
+			</fileset>
+		</copy>
+
+		<echo message="Copying conflicting instructions file to ${jboss.conflicting.instructions}" />
+		<mkdir dir="${jboss.conflicting.instructions}" />
+		<copy todir="${jboss.conflicting.instructions}">
+			<fileset file="data/conflictingInstructions.xml"/>
+		</copy>
+		
+	</target>
+
+	<!-- 
+		Undeploys the .sar file from jboss.
+		Removes the state machines from the CUMBIA_HOME/cumbiaBpel/defaultStateMachines dir.
+	-->
+	<target name="jboss-undeploy" description="Undeploy the application">
+		<echo message="Undeploying ${jboss.file} from JBoss (${jboss.deploy})" />
+		<delete file="${jboss.deploy}/${jboss.file}" />
+	</target>
+
+	<!-- 
+	*************************
+	         TESTS
+	*************************
+	-->
+
+	<!-- Properties needed for the deployment and undeployment for test purposes -->
+	<property file="bin/test.properties" />
+
+	<!-- 
+		Deploys the .sar file to jboss.
+		Deploys the state machines to the CUMBIA_HOME/cumbiaBpel/defaultStateMachines dir.
+	-->
+	<target name="test-pack" depends="compile" description="Deploy the application">
+		<echo message="Packaging the project inside the file dist/${test.file}" />
+		<mkdir dir="dist" />
+		<jar jarfile="dist/${test.file}" basedir="build" />
+	</target>
+
+	<!-- 
+		Deploys the .jar file to the test location
+		Deploys the state machines to the test/stateMachines dir.
+	-->
+	<target name="test-deploy" depends="test-pack" description="Deploys the compiled files needed to test the applicaction">
+		<echo message="Deploying the file ${test.file} to the Test Root (${test.deploy})" />
+		<copy todir="${test.deploy}">
+			<fileset dir="dist">
+				<filename name="${test.file}" />
+			</fileset>
+		</copy>
+
+		<echo message="Copying state machines to ${test.statemachines}" />
+		<mkdir dir="${test.statemachines}" />
+		<copy todir="${test.statemachines}">
+			<fileset dir="data/stateMachines" />
+		</copy>
+	</target>
+	
+	<!-- 
+	*************************
+	         JAR
+	*************************
+	-->
+
+	<!-- Properties needed for the deployment and undeployment for dependences purposes -->
+	<property file="bin/jar.properties" />
+
+	<!-- 
+		Creates the jar file
+	-->
+	<target name="jar-pack" depends="clean, compile" description="Application Jar">
+		<echo message="Packaging the project inside the file dist/${jar.file}" />
+		<mkdir dir="dist" />
+		<jar jarfile="dist/${jar.file}" basedir="build" />
+	</target>
+	
+	<!-- 
+	*************************
+	         XAM Model
+	*************************
+	-->
+	<!-- Properties needed for the deployment and undeployment for XAM purposes -->
+	<property file="bin/xam.properties" />
+	
+	<!-- Generates the xam model neccesary for XAM -->
+	<target name="xamModel-pack" depends="compile" description="Jar with the cumbiaBpel  model for XAM">
+		<mkdir dir="dist" />
+		<echo message="Deleting the file dist/${xam.model.jar}" />
+		<delete file="./dist/${xam.model.jar}" />
+		<echo message="Generating the file dist/${xam.model.jar}" />
+		<jar jarfile="./dist/${xam.model.jar}" basedir="build" includes="uniandes/cumbia/bpel/xam/**"/>				
+	</target>
+	
+	<!-- 
+		Deploys the xam model .jar file to the xam location
+	-->
+	<target name="xamModel-deploy" depends="xamModel-pack" description="Deploys the model to the XAM folder">		
+		<echo message="Coping the file dist/${xam.model.jar} to ${env.CUMBIA_HOME}/${xam.directory.model.cumbiaBpel}" />
+		<mkdir dir="${env.CUMBIA_HOME}/${xam.directory.model.cumbiaBpel}" />
+		<copy todir="${env.CUMBIA_HOME}/${xam.directory.model.cumbiaBpel}">
+			<fileset dir="dist">
+				<filename name="${xam.model.jar}" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- 
+	*************************
+	         Javadoc
+	*************************
+	-->
+	<!-- 
+		Generates the javadoc
+	-->
+	<target name="javadoc" description="Generate the javadoc">		
+	  	<echo message="Generating the Javadoc" />
+		<delete dir="docs/api"/>
+		<mkdir dir="docs/api"/>
+		<javadoc packagenames="uniandes.cumbia.bpel.*" sourcepath="source" destdir="docs/api" author="false" version="true"/>
+	</target>
+</project>

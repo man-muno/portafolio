@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conflicts>
+	<advice name="assignFacturacion0">
+		<canNotFollow name="assignFacturacion1"/>
+		<canNotFollow name="assignFacturacion2"/>
+	</advice>
+	<advice name="assignFacturacion1">
+		<canNotFollow name="assignFacturacion0"/>
+		<canNotFollow name="assignFacturacion2"/>
+	</advice>
+	<advice name="assignFacturacion2">
+		<canNotFollow name="assignFacturacion1"/>
+		<canNotFollow name="assignFacturacion0"/>
+	</advice>
+</conflicts>

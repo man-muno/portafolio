@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animation>
+	<setConflictFile file="./data/aspects/conflicts5.xml"/>
+	<addAspect file="./data/aspects/aspect5.xml" enabled="true"/>\
+	<execute-synchronous-call processName="HelloWorld" processID="0" instanceID="0" message="initial message" />
+</animation>

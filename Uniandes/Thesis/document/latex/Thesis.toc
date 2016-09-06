@@ -1,0 +1,137 @@
+\select@language {spanish}
+\contentsline {chapter}{Agradecimientos}{\es@roman {4}}{dummy.1}
+\vspace {1em}
+\contentsline {chapter}{\'{I}ndice de Figuras}{\es@roman {9}}{dummy.5}
+\contentsline {chapter}{\'{I}ndice de Tablas}{\es@roman {11}}{dummy.7}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.9}
+\contentsline {chapter}{\numberline {2}BPEL}{5}{chapter.10}
+\contentsline {section}{\numberline {2.1}Introducci\'on}{5}{section.11}
+\contentsline {section}{\numberline {2.2}Conceptos B\'asicos}{6}{section.12}
+\contentsline {subsection}{\numberline {2.2.1}Elementos B\'asicos}{6}{subsection.13}
+\contentsline {subsubsection}{\numberline {2.2.1.1}Variables}{6}{subsubsection.14}
+\contentsline {subsubsection}{\numberline {2.2.1.2}Colaboradores}{6}{subsubsection.15}
+\contentsline {subsection}{\numberline {2.2.2}Actividades}{6}{subsection.16}
+\contentsline {subsubsection}{\numberline {2.2.2.1}Actividades Estructuradoras}{7}{subsubsection.17}
+\contentsline {subsubsection}{\numberline {2.2.2.2}Actividades de Interacci\'on}{7}{subsubsection.18}
+\contentsline {subsubsection}{\numberline {2.2.2.3}Actividades B\'asicas}{7}{subsubsection.19}
+\contentsline {section}{\numberline {2.3}Conceptos Avanzados}{7}{section.20}
+\contentsline {subsection}{\numberline {2.3.1}Scope}{8}{subsection.21}
+\contentsline {subsection}{\numberline {2.3.2}Fault Handler}{8}{subsection.22}
+\contentsline {subsection}{\numberline {2.3.3}Compsensation Handler}{8}{subsection.23}
+\contentsline {subsection}{\numberline {2.3.4}Correlation Sets}{8}{subsection.24}
+\contentsline {subsection}{\numberline {2.3.5}Event Handler}{9}{subsection.25}
+\contentsline {section}{\numberline {2.4}Implementaciones}{9}{section.26}
+\contentsline {subsection}{\numberline {2.4.1}ActiveVOS}{9}{subsection.27}
+\contentsline {subsection}{\numberline {2.4.2}Oracle BPEL Process Manager}{12}{subsection.35}
+\contentsline {subsection}{\numberline {2.4.3}Apache ODE}{14}{subsection.42}
+\contentsline {section}{\numberline {2.5}Extensiones}{15}{section.46}
+\contentsline {subsection}{\numberline {2.5.1}WS-HumanTask}{15}{subsection.47}
+\contentsline {subsubsection}{\numberline {2.5.1.1}Tarea Humana (\textit {Human Task})}{15}{subsubsection.48}
+\contentsline {subsubsection}{\numberline {2.5.1.2}Roles Humanos Gen\'ericos}{16}{subsubsection.49}
+\contentsline {subsubsection}{\numberline {2.5.1.3}Notificaciones}{17}{subsubsection.57}
+\contentsline {subsection}{\numberline {2.5.2}BPEL4People}{17}{subsection.58}
+\contentsline {subsubsection}{\numberline {2.5.2.1}People Activity}{18}{subsubsection.63}
+\contentsline {chapter}{\numberline {3}Aspect-Oriented Programming}{21}{chapter.65}
+\contentsline {section}{\numberline {3.1}Introducci\'on}{21}{section.66}
+\contentsline {section}{\numberline {3.2}AspectJ}{21}{section.68}
+\contentsline {subsection}{\numberline {3.2.1}Modelo de \textit {Join Points}}{22}{subsection.69}
+\contentsline {subsection}{\numberline {3.2.2}Lenguaje de Puntos de Corte}{22}{subsection.70}
+\contentsline {subsection}{\numberline {3.2.3}Lenguaje de \textit {Advices}}{22}{subsection.71}
+\contentsline {subsection}{\numberline {3.2.4}Tejido de Aspectos}{23}{subsection.85}
+\contentsline {section}{\numberline {3.3}Interacci\'on Entre Aspectos}{24}{section.86}
+\contentsline {subsection}{\numberline {3.3.1}Interferencia Sem\'antica Entre Aspectos}{24}{subsection.87}
+\contentsline {subsubsection}{\numberline {3.3.1.1}Ejemplo}{25}{subsubsection.88}
+\contentsline {subsubsection}{\numberline {3.3.1.2}Clasificaci\'on de Interferencias}{26}{subsubsection.115}
+\contentsline {section}{\numberline {3.4}Propuestas para Resoluci\'on de Conflictos}{27}{section.116}
+\contentsline {subsection}{\numberline {3.4.1}Especificar precedencia Aspectos}{27}{subsection.117}
+\contentsline {subsection}{\numberline {3.4.2}Detecci\'on de Conflictos}{29}{subsection.139}
+\contentsline {subsubsection}{\numberline {3.4.2.1}Etapa de Composici\'on}{30}{subsubsection.146}
+\contentsline {subsubsection}{\numberline {3.4.2.2}Etapa de Abstracci\'on de Comportamiento de los Aspectos}{30}{subsubsection.147}
+\contentsline {subsubsection}{\numberline {3.4.2.3}Etapa de Detecci\'on de Conflictos}{31}{subsubsection.150}
+\contentsline {chapter}{\numberline {4}Aspect-Oriented Workflow Languages}{33}{chapter.152}
+\contentsline {section}{\numberline {4.1}Introducci\'on}{33}{section.153}
+\contentsline {section}{\numberline {4.2}Problemas de Modularizaci\'on de Lenguajes de Workflow}{34}{section.154}
+\contentsline {subsection}{\numberline {4.2.1}Ejemplo}{34}{subsection.155}
+\contentsline {subsection}{\numberline {4.2.2}Problemas de Modularizaci\'on de Preocupaciones Transversales}{34}{subsection.157}
+\contentsline {subsubsection}{\numberline {4.2.2.1}Recolecci\'on de Informaci\'on}{35}{subsubsection.158}
+\contentsline {subsubsection}{\numberline {4.2.2.2}Monitoreo de Tiempo de Ejecuci\'on de Actividades}{36}{subsubsection.160}
+\contentsline {subsection}{\numberline {4.2.3}Problemas de Modularizaci\'on de Cambios}{38}{subsection.162}
+\contentsline {subsubsection}{\numberline {4.2.3.1}Agregar una Actividad}{39}{subsubsection.163}
+\contentsline {section}{\numberline {4.3}AOP en Contextos Workflow}{40}{section.165}
+\contentsline {subsection}{\numberline {4.3.1}Modelo de \textit {Join Points}}{40}{subsection.166}
+\contentsline {subsection}{\numberline {4.3.2}Lenguaje de Puntos de Corte}{40}{subsection.167}
+\contentsline {subsection}{\numberline {4.3.3}Lenguaje de \textit {Advices}}{41}{subsection.168}
+\contentsline {subsection}{\numberline {4.3.4}Tejido de Aspectos}{41}{subsection.169}
+\contentsline {subsubsection}{\numberline {4.3.4.1}Transformaci\'on de Procesos}{41}{subsubsection.170}
+\contentsline {subsubsection}{\numberline {4.3.4.2}Modificaci\'on del Motor para Verificaci\'on de Aspectos}{42}{subsubsection.171}
+\contentsline {section}{\numberline {4.4}Lenguajes de BPEL Orientados Por Aspectos}{42}{section.172}
+\contentsline {subsection}{\numberline {4.4.1}Padus}{42}{subsection.173}
+\contentsline {subsubsection}{\numberline {4.4.1.1}Modelo de \textit {Join Points}}{42}{subsubsection.174}
+\contentsline {subsubsection}{\numberline {4.4.1.2}Lenguaje de Puntos de Corte}{43}{subsubsection.176}
+\contentsline {subsubsection}{\numberline {4.4.1.3}Lenguaje de \textit {Advices}}{44}{subsubsection.183}
+\contentsline {subsubsection}{\numberline {4.4.1.4}Tejido de Aspectos}{44}{subsubsection.184}
+\contentsline {subsection}{\numberline {4.4.2}AO4BPEL}{45}{subsection.186}
+\contentsline {subsubsection}{\numberline {4.4.2.1}Modelo de \textit {Join Points}}{45}{subsubsection.187}
+\contentsline {subsubsection}{\numberline {4.4.2.2}Lenguaje de Puntos de Corte}{45}{subsubsection.188}
+\contentsline {subsubsection}{\numberline {4.4.2.3}Lenguaje de \textit {Advices}}{45}{subsubsection.197}
+\contentsline {subsubsection}{\numberline {4.4.2.4}Tejido de Aspectos}{46}{subsubsection.198}
+\contentsline {section}{\numberline {4.5}Interferencia de Aspectos en Contextos Workflow}{48}{section.204}
+\contentsline {subsection}{\numberline {4.5.1}Facturaci\'on por Busqueda}{48}{subsection.205}
+\contentsline {subsection}{\numberline {4.5.2}Cambios en las Pol\IeC {\'\i }ticas de Distribuci\'on}{48}{subsection.207}
+\contentsline {subsection}{\numberline {4.5.3}Interferencia Entre los Aspectos}{49}{subsection.209}
+\contentsline {chapter}{\numberline {5}El Proyecto Cumbia}{51}{chapter.210}
+\contentsline {section}{\numberline {5.1}Aplicaciones Orientadas a Control}{52}{section.212}
+\contentsline {section}{\numberline {5.2}Metamodelos}{52}{section.213}
+\contentsline {section}{\numberline {5.3}Modelo de Objetos Abiertos (OO)}{53}{section.214}
+\contentsline {section}{\numberline {5.4}Modelos Ejecutables Cumbia}{54}{section.216}
+\contentsline {subsection}{\numberline {5.4.1}Estrategia de Composici\'on de Modelos}{54}{subsection.217}
+\contentsline {chapter}{\numberline {6}Caffeine v2.0: Motor BPEL sobre Cumbia}{57}{chapter.219}
+\contentsline {section}{\numberline {6.1}Introducci\'on}{57}{section.220}
+\contentsline {section}{\numberline {6.2}Elementos Presentes}{57}{section.221}
+\contentsline {subsection}{\numberline {6.2.1}Elementos de Inicio}{58}{subsection.223}
+\contentsline {subsubsection}{\numberline {6.2.1.1}Elemento \textit {Process}}{59}{subsubsection.225}
+\contentsline {subsubsection}{\numberline {6.2.1.2}Elemento \textit {StartingPick}}{60}{subsubsection.229}
+\contentsline {subsubsection}{\numberline {6.2.1.3}Elemento \textit {StartingReceive}}{61}{subsubsection.233}
+\contentsline {subsection}{\numberline {6.2.2}Elementos de Interacci\'on}{62}{subsection.237}
+\contentsline {subsubsection}{\numberline {6.2.2.1}Elemento \textit {Pick}}{62}{subsubsection.239}
+\contentsline {subsubsection}{\numberline {6.2.2.2}Elemento \textit {OnAlarm}}{62}{subsubsection.243}
+\contentsline {subsubsection}{\numberline {6.2.2.3}Elemento \textit {OnMessage}}{64}{subsubsection.247}
+\contentsline {subsubsection}{\numberline {6.2.2.4}Elemento \textit {Receive}}{64}{subsubsection.251}
+\contentsline {subsubsection}{\numberline {6.2.2.5}Elemento \textit {Reply}}{65}{subsubsection.255}
+\contentsline {subsubsection}{\numberline {6.2.2.6}Elemento \textit {Invoke}}{66}{subsubsection.259}
+\contentsline {subsection}{\numberline {6.2.3}Elementos Estructuradores}{67}{subsection.263}
+\contentsline {subsubsection}{\numberline {6.2.3.1}Elemento \textit {Sequence}}{67}{subsubsection.265}
+\contentsline {subsubsection}{\numberline {6.2.3.2}Elemento \textit {Flow}}{67}{subsubsection.269}
+\contentsline {subsubsection}{\numberline {6.2.3.3}Elemento \textit {While}}{67}{subsubsection.273}
+\contentsline {subsubsection}{\numberline {6.2.3.4}Elemento \textit {Condicional}}{70}{subsubsection.277}
+\contentsline {subsection}{\numberline {6.2.4}Instrucciones}{70}{subsection.281}
+\contentsline {subsubsection}{\numberline {6.2.4.1}Elemento \textit {Exit}}{70}{subsubsection.283}
+\contentsline {subsubsection}{\numberline {6.2.4.2}Elemento \textit {Empty}}{73}{subsubsection.287}
+\contentsline {subsubsection}{\numberline {6.2.4.3}Elemento \textit {Wait}}{73}{subsubsection.290}
+\contentsline {subsubsection}{\numberline {6.2.4.4}Elemento \textit {Assign}}{74}{subsubsection.294}
+\contentsline {section}{\numberline {6.3}Arquitectura}{75}{section.298}
+\contentsline {subsection}{\numberline {6.3.1}CumbiaOpenObjectsKernel}{75}{subsection.300}
+\contentsline {subsection}{\numberline {6.3.2}CaffeineEngine}{78}{subsection.350}
+\contentsline {subsection}{\numberline {6.3.3}CaffeineDeployer}{80}{subsection.358}
+\contentsline {section}{\numberline {6.4}Pruebas}{81}{section.363}
+\contentsline {subsection}{\numberline {6.4.1}Framework de Pruebas}{81}{subsection.364}
+\contentsline {section}{\numberline {6.5}Experimentaci\'on \textit {Caffeine} Cliente Web}{83}{section.374}
+\contentsline {chapter}{\numberline {7}AspectCaffine: Extensi\'on de Aspectos a Caffeine}{87}{chapter.377}
+\contentsline {section}{\numberline {7.1}Introducci\'on}{87}{section.378}
+\contentsline {section}{\numberline {7.2}Modelo de \textit {Join Points}}{87}{section.379}
+\contentsline {section}{\numberline {7.3}Lenguaje de Puntos de Corte}{87}{section.380}
+\contentsline {section}{\numberline {7.4}Lenguaje de \textit {Advices}}{90}{section.399}
+\contentsline {subsection}{\numberline {7.4.1}Advice del Aspecto de Facturaci\'on}{90}{subsection.400}
+\contentsline {section}{\numberline {7.5}Tejido de Aspectos}{91}{section.426}
+\contentsline {section}{\numberline {7.6}Elementos}{92}{section.427}
+\contentsline {subsubsection}{\numberline {7.6.0.1}Elemento \textit {Aspect}}{92}{subsubsection.429}
+\contentsline {subsubsection}{\numberline {7.6.0.2}Elemento \textit {Transition Point}}{92}{subsubsection.433}
+\contentsline {subsubsection}{\numberline {7.6.0.3}Elemento \textit {Advice}}{95}{subsubsection.437}
+\contentsline {subsubsection}{\numberline {7.6.0.4}Elemento \textit {Instruction}}{95}{subsubsection.441}
+\contentsline {section}{\numberline {7.7}Manejo de Interferencias}{95}{section.445}
+\contentsline {subsection}{\numberline {7.7.1}\'Arbol de Recubrimiento}{100}{subsection.476}
+\contentsline {section}{\numberline {7.8}Pruebas}{103}{section.485}
+\contentsline {chapter}{\numberline {8}Conclusiones y Trabajo Futuro}{107}{chapter.495}
+\contentsline {section}{\numberline {8.1}Conclusiones}{107}{section.496}
+\contentsline {section}{\numberline {8.2}Trabajo Futuro}{108}{section.497}
+\contentsline {chapter}{Bibliograf\'{\i }a}{109}{dummy.498}

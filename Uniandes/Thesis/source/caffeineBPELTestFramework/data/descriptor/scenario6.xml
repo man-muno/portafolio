@@ -1,0 +1,151 @@
+<testDomain>
+	
+	<!--Rsources for CTF can be either jar or classes in classpath-->
+	<resources>
+	<!--	<resource type="jar">
+			<name>some name to id the resource</name>
+			<path>path to resource</path>			
+		</resource>
+		<resource type="class">
+			<name>some name to id the resource</name>
+			<path>path to resource</path>			
+		</resource> -->
+	</resources>
+	
+	<!--Meta model definition-->
+	<metamodels>
+		<metamodel>
+			<name>CumbiaBPEL</name> 
+			<description>Caffeine</description>
+		</metamodel>
+	</metamodels>	
+	<!--Model definition for the test-->
+	<models>
+		<model id="1">
+			<name>HelloWorld</name>
+			<file>../caffeineBPELTestFramework/data/models/scenario6.model</file>
+			<metamodel>CumbiaBPEL</metamodel>
+		</model>
+	</models>
+
+	
+	<!--Instanciator class-->
+	<!--Class name is a Java qualified name that may or may not
+		be in a .jar file-->
+	<instanciator>
+		<metamodel>CumbiaBPEL</metamodel>
+		<class-name>uniandes.cumbia.bpel.test.instantiation.Instantiator</class-name>
+	</instanciator>
+	
+	<!--Sensor placement for observation layer-->
+	<sensor-definition>
+		<sensor id="1">
+			<name>s1</name>
+			<path>Sequence|HelloWorld:sequence</path>
+			<factoryDescription>uniandes.cumbia.bpel.test.sensors.ElementSensorFactory</factoryDescription>
+			<factoryClass>uniandes.cumbia.bpel.test.sensors.ElementSensorFactory</factoryClass>
+		</sensor>
+		<sensor id="2">
+			<name>s2</name>
+			<path>Reply|HelloWorld:sequence:replyOutput</path>
+			<factoryDescription>uniandes.cumbia.bpel.test.sensors.ElementSensorFactory</factoryDescription>
+			<factoryClass>uniandes.cumbia.bpel.test.sensors.ElementSensorFactory</factoryClass>
+		</sensor>
+		<sensor id="3">
+			<name>s3</name>
+			<path>Assign|HelloWorld:sequence:AssignElement6a54f9</path>
+			<factoryDescription>uniandes.cumbia.bpel.test.sensors.ElementSensorFactory</factoryDescription>
+			<factoryClass>uniandes.cumbia.bpel.test.sensors.ElementSensorFactory</factoryClass>
+		</sensor>
+		<sensor id="4">
+			<name>s4</name>
+			<path>Process|HelloWorld</path>
+			<factoryDescription>uniandes.cumbia.bpel.test.sensors.ElementSensorFactory</factoryDescription>
+			<factoryClass>uniandes.cumbia.bpel.test.sensors.ElementSensorFactory</factoryClass>
+		</sensor>
+		<sensor id="5">
+			<name>s5</name>
+			<path>StartingReceive|HelloWorld:receiveInput</path>
+			<factoryDescription>uniandes.cumbia.bpel.test.sensors.ElementSensorFactory</factoryDescription>
+			<factoryClass>uniandes.cumbia.bpel.test.sensors.ElementSensorFactory</factoryClass>
+		</sensor>
+		<sensor id="6">
+			<name>s6</name>
+			<path>Invoke|HelloWorld:sequence:invoke</path>
+			<factoryDescription>uniandes.cumbia.bpel.test.sensors.ElementSensorFactory</factoryDescription>
+			<factoryClass>uniandes.cumbia.bpel.test.sensors.ElementSensorFactory</factoryClass>
+		</sensor>
+		<sensor id="7">
+			<name>s7</name>
+			<path>Data|HelloWorld:input</path>
+			<factoryDescription>uniandes.cumbia.bpel.test.sensors.DataSensorFactory</factoryDescription>
+			<factoryClass>uniandes.cumbia.bpel.test.sensors.DataSensorFactory</factoryClass>
+		</sensor>
+		<sensor id="8">
+			<name>s8</name>
+			<path>Data|HelloWorld:output</path>
+			<factoryDescription>uniandes.cumbia.bpel.test.sensors.DataSensorFactory</factoryDescription>
+			<factoryClass>uniandes.cumbia.bpel.test.sensors.DataSensorFactory</factoryClass>
+		</sensor>
+	</sensor-definition>
+	
+	<!--Tracer definition for observation layer-->
+	<tracer-definition>
+		<tracer id="1">
+			<class-name>uniandes.cumbia.bpel.test.tracers.EventListenerTracer</class-name>
+			<sensors>
+				<sensor>1</sensor>
+				<sensor>2</sensor>
+				<sensor>3</sensor>
+				<sensor>4</sensor>
+				<sensor>5</sensor>
+				<sensor>6</sensor>
+			</sensors>
+		</tracer>
+		<tracer id="2">
+			<class-name>uniandes.cumbia.bpel.test.tracers.DataTracer</class-name>
+			<sensors>
+				<sensor>7</sensor>
+				<sensor>8</sensor>
+			</sensors>
+		</tracer>
+	</tracer-definition>
+	
+	<!--Animation layer definition for tests -->
+	<animations>
+		<animation id="1">
+			<name>HelloWorld</name>
+			<description>HelloWorld</description>
+			<animation-file>./../caffeineBPELTestFramework/data/animation/scenario6.xml</animation-file>
+			<animator>uniandes.cumbia.bpel.test.animation.Animator</animator>
+		</animation>
+	</animations>
+	
+	<!-- Interpreter Definition -->
+	
+	<interpreters>
+		<interpreter id="1">
+			<name>MessageSent</name>
+			<class-name>uniandes.cumbia.bpel.test.interpreter.Scenario6Interpreter</class-name>
+			<tracers>
+				<tracer>1</tracer>
+				<tracer>2</tracer>
+			</tracers>
+		</interpreter>
+	</interpreters>	
+	
+	
+	<!--Test layer definition-->	
+	<tests>
+		<test id="1">
+			<type>testType</type>
+			<class-name>uniandes.cumbia.bpel.test.interpreter.Scenario6Interpreter</class-name>
+			<interpreters>
+				<interpreter>1</interpreter>
+			</interpreters>
+			<test-model>1</test-model>
+			<test-animation>1</test-animation>
+		</test>
+	</tests>
+
+</testDomain>

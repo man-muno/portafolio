@@ -1,0 +1,31 @@
+<state-machine name="onAlarm" initial-state="Init">
+
+<!-- Init -->
+	<state name="Init" enter-event="" exit-event="exitInit">
+		<transition name="ToCounting" successor="Counting">
+			<source-event source-name="ME" event-name="start" />
+			<before-event name="beforeToCounting" />
+			<after-event name="afterToCounting" />
+			<actions>
+				<action name="StartCounter"
+					class="uniandes.cumbia.aspect.elements.pick.onalarm.actions.StartCounter" />
+			</actions>
+		</transition>
+	</state>
+	
+<!-- Counting -->
+	<state name="Counting" enter-event="enterCounting" exit-event="exitCounting">
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ME" event-name="counterStoped" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions>
+				<action name="SetActivityOnPick"
+					class="uniandes.cumbia.aspect.elements.pick.onalarm.actions.SetActivityOnPick" />
+			</actions>
+		</transition>
+	</state>
+	
+<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event=""/>
+</state-machine>

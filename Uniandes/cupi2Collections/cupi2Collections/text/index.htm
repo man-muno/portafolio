@@ -1,0 +1,503 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es-co">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CUPI2 - Página del Proyecto</title>
+<link type="text/css" rel="stylesheet" href="style/cupi2.css">
+</head>
+
+<body>
+
+<table border="1" width="800" id="table1" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#333333">
+	<tr>
+		<td>
+		<table border="0" width="100%" id="table40">
+			<tr>
+				<td>&nbsp;&nbsp; 
+				<img border="0" src="images/logo.gif" width="200" height="72"></td>
+				<td valign="top">
+				<p align="right"><a href="index.htm">Inicio</a>&nbsp; |&nbsp;
+				<a href="../index.htm">cupi2Collections </a>&nbsp; |&nbsp;
+				<a href="http://cupi2.uniandes.edu.co/">cupi2WEB</a></p>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="h1" height="35">
+			<h1 class="titulo" align="left">&nbsp;&nbsp;&nbsp;Cupi2 Collections - Estructura Text </td>
+	</tr>
+	<tr>
+		<td class="h2" height="22"><script language="JavaScript" src="../js/menu.js"></script></td>
+	</tr>
+
+	<tr>
+		<td>
+			<table border="0" width="100%" id="table42" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="180" bgcolor="#B5D6E6" valign="top"><br>
+<p class="titulomenu">&nbsp;&nbsp; Text<table border="0" width="176" id="table43" cellspacing="4">
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="149" colspan="2"><a href="index.htm"><b>
+							Descripción</b></a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2">
+							<a target="_blank" href="../docs/api/uniandes/cupi2/collections/text/Text.html">
+							Javadoc</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2"><a href="codigo.htm">
+							Visualización Código Fuente</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2"><a href="codigoPruebas.htm">
+							Visualización Código Pruebas</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2">
+							<a href="downloads.htm">Descargas</a></td>
+						</tr>
+					</table>
+					<p></td>
+					<td width="1" bgcolor="#000000"></td>
+					<td width="618" valign="top">
+					<table border="0" width="615" id="table44">
+					<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;&gt;&gt; Estructuras de Datos &gt;
+							Text &gt;<b>
+							Descripción</b></td>
+					</tr>
+						<tr>
+							<td width="609" colspan="4">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="25">&nbsp;</td>
+							<td width="17">&nbsp;</td>
+							<td width="510"><div>
+
+					<h1>
+						<span lang="ES">
+Descripción						</span>
+					</h1>
+
+				</div>
+
+
+				<p>
+					<span lang="ES">
+El
+algoritmo de Huffman es un algoritmo óptimo para la
+codificación de documentos (ver [3]). Fue planteado en 1952
+por David Huffman en su artículo “						<i>
+A Method for the
+Construction of Minimum-Redundancy Codes						</i>
+”. El algoritmo
+básicamente consiste en asignar códigos binarios a
+las letras de un texto buscando que aquellas con mayor frecuencia
+de aparición tengan los códigos más cortos. El
+resultado es la codificación de un texto cuya longitud es
+mínima.					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+Los
+códigos binarios de los caracteres son determinados a partir
+de un árbol binario especial conocido como árbol de
+Huffman. Dicho árbol se caracteriza porque sus hojas
+corresponden a los caracteres que contiene el texto  que se va
+a comprimir y porque los nodos de las ramas izquierdas son
+etiquetados con “0” y los de la derecha son etiquetados
+con “1”. El árbol de Huffman es construido
+basándose en las frecuencias de aparición de los
+caracteres. El código de un carácter corresponde a la
+secuencia de bits resultado del recorrido de la raíz a la
+hoja que contiene tal carácter.					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+Una
+vez construido el árbol de Huffman sobre un texto, es
+posible codificar y decodificar el texto unequivocamente. Esto es
+garantizado debido a que el código de ningún
+carácter es prefijo de otro.    					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+  					</span>
+				</p>
+
+
+				<div>
+
+					<h1>
+						<span lang="ES">
+Ejemplo						</span>
+					</h1>
+
+				</div>
+
+
+				<p>
+					<span lang="ES">
+El siguiente ejemplo
+esquematiza el uso del algoritmo de Huffman.					</span>
+				</p>
+
+
+				<div align="center">
+
+					<table border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+						<tr style="height:185.85pt">
+							<td width="226" valign="top" style="width:169.8pt;padding:0in 5.4pt 0in 5.4pt; height:185.85pt" rowspan="1" colspan="1">
+
+								<table border="1" cellspacing="0" cellpadding="0" align="left" style="border-collapse:collapse;border:none;margin-left:6.75pt;margin-right: 6.75pt">
+									<tr>
+										<td width="91" valign="top" style="width:.95in;border:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+
+												<b>
+													<span lang="ES">
+Letra													</span>
+												</b>
+											</p>
+
+										</td>
+										<td width="120" valign="top" style="width:1.25in;border:solid windowtext 1.0pt; border-left:none;padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+
+												<b>
+													<span lang="ES">
+Frecuencia de
+Aparición (número de veces que
+aparece)													</span>
+												</b>
+											</p>
+
+										</td>
+									</tr>
+									<tr style="height:13.15pt">
+										<td width="91" valign="top" style="width:.95in;border-top:none;border-left: solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt;height:13.15pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+A												</span>
+											</p>
+
+										</td>
+										<td width="120" valign="top" style="width:1.25in;border:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt;height:13.15pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+10												</span>
+											</p>
+
+										</td>
+									</tr>
+									<tr>
+										<td width="91" valign="top" style="width:.95in;border-top:none;border-left: solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+B												</span>
+											</p>
+
+										</td>
+										<td width="120" valign="top" style="width:1.25in;border:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+1												</span>
+											</p>
+
+										</td>
+									</tr>
+									<tr>
+										<td width="91" valign="top" style="width:.95in;border-top:none;border-left: solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+C												</span>
+											</p>
+
+										</td>
+										<td width="120" valign="top" style="width:1.25in;border:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+4												</span>
+											</p>
+
+										</td>
+									</tr>
+									<tr>
+										<td width="91" valign="top" style="width:.95in;border-top:none;border-left: solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+D												</span>
+											</p>
+
+										</td>
+										<td width="120" valign="top" style="width:1.25in;border:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+4												</span>
+											</p>
+
+										</td>
+									</tr>
+									<tr>
+										<td width="91" valign="top" style="width:.95in;border:solid windowtext 1.0pt; border-top:none;padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+E												</span>
+											</p>
+
+										</td>
+										<td width="120" valign="top" style="width:1.25in;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+1												</span>
+											</p>
+
+										</td>
+									</tr>
+								</table>
+
+
+								<p align="center">
+
+									<b>
+										<span lang="ES-CO">
+Frecuencia de
+aparición de cada letra										</span>
+									</b>
+								</p>
+
+							</td>
+							<td width="226" valign="top" style="width:169.85pt;padding:0in 5.4pt 0in 5.4pt; height:185.85pt" rowspan="1" colspan="1">
+
+								<table border="1" cellspacing="0" cellpadding="0" align="left" style="border-collapse:collapse;border:none;margin-left:6.75pt;margin-right: 6.75pt">
+									<tr>
+										<td width="91" valign="top" style="width:.95in;border:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+
+												<b>
+													<span lang="ES">
+Letra													</span>
+												</b>
+											</p>
+
+										</td>
+										<td width="120" valign="top" style="width:1.25in;border:solid windowtext 1.0pt; border-left:none;padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+
+												<b>
+													<span lang="ES">
+Frecuencia de
+Aparición (número de veces que
+aparece)													</span>
+												</b>
+											</p>
+
+										</td>
+									</tr>
+									<tr style="height:9.85pt">
+										<td width="91" valign="top" style="width:.95in;border-top:none;border-left: solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt;height:9.85pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+A												</span>
+											</p>
+
+										</td>
+										<td width="120" valign="top" style="width:1.25in;border:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt;height:9.85pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+01												</span>
+											</p>
+
+										</td>
+									</tr>
+									<tr>
+										<td width="91" valign="top" style="width:.95in;border-top:none;border-left: solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+B												</span>
+											</p>
+
+										</td>
+										<td width="120" valign="top" style="width:1.25in;border:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+100												</span>
+											</p>
+
+										</td>
+									</tr>
+									<tr>
+										<td width="91" valign="top" style="width:.95in;border-top:none;border-left: solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+C												</span>
+											</p>
+
+										</td>
+										<td width="120" valign="top" style="width:1.25in;border:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+00												</span>
+											</p>
+
+										</td>
+									</tr>
+									<tr>
+										<td width="91" valign="top" style="width:.95in;border-top:none;border-left: solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+D												</span>
+											</p>
+
+										</td>
+										<td width="120" valign="top" style="width:1.25in;border:none;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+101												</span>
+											</p>
+
+										</td>
+									</tr>
+									<tr>
+										<td width="91" valign="top" style="width:.95in;border:solid windowtext 1.0pt; border-top:none;padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+E												</span>
+											</p>
+
+										</td>
+										<td width="120" valign="top" style="width:1.25in;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0in 5.4pt 0in 5.4pt" rowspan="1" colspan="1">
+
+											<p align="center">
+												<span lang="ES">
+11												</span>
+											</p>
+
+										</td>
+									</tr>
+								</table>
+
+
+								<p align="center">
+
+									<b>
+										<span lang="ES">
+Código de Huffman										</span>
+									</b>
+								</p>
+
+							</td>
+						</tr>
+						<tr style="height:185.85pt">
+							<td width="453" colspan="2" valign="top" style="width:339.65pt;padding:0in 5.4pt 0in 5.4pt; height:185.85pt" rowspan="1">
+
+								<p align="center">
+									<span lang="ES">
+										<img width="295" height="197" src="descripcion_text_archivos/image002.jpg">
+										</img>
+									</span>
+								</p>
+
+
+								<p align="center">
+
+									<b>
+										<span lang="ES-CO">
+Árbol de
+Huffman										</span>
+									</b>
+								</p>
+
+
+								<p align="center">
+
+									<b>
+										<span lang="ES">
+ 										</span>
+									</b>
+								</p>
+
+							</td>
+						</tr>
+					</table>
+
+				</div>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+			</div>
+
+		</body>
+	</td>
+							<td width="45">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="25">&nbsp;</td>
+							<td width="17">&nbsp;</td>
+							<td width="510">&nbsp;</td>
+							<td width="45">&nbsp;</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+<table border="0" width="800" cellspacing="0" cellpadding="0" id="table6">
+	<tr>
+		<td width="65">
+		<p align="center"><a href="http://www.uniandes.edu.co/">
+		<img border="0" src="images/logo_uniandes.gif" width="44" height="50"></a></td>
+		<td>Copyright © 2006, <b>Universidad de los Andes</b>. Todos los derechos 
+			reservados<b>.<br>
+			</b>Cupi2Collections - <a href="http://sistemas.uniandes.edu.co/">Departamento de Ingeniería de Sistemas y Computación.</a><br>
+		<b>2006</b></td>
+	</tr>
+</table>
+<script language="JavaScript" src="../js/menu_general.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<metamodel name="BPEL" version="0.1">
+	
+	<!-- State machines used by the elments of the metamodel -->
+	<state-machine-reference name="assign" file="assign.xml" />
+	<state-machine-reference name="conditional" file="conditional.xml" />
+	<state-machine-reference name="empty" file="empty.xml" />
+	<state-machine-reference name="exit" file="exit.xml" />
+	<state-machine-reference name="flow" file="flow.xml" />
+	<state-machine-reference name="invoke" file="invoke.xml" />
+	<state-machine-reference name="onAlarm" file="onAlarm.xml" />
+	<state-machine-reference name="onMessage" file="onMessage.xml" />
+	<state-machine-reference name="pick" file="pick.xml" />
+	<state-machine-reference name="process" file="process.xml" />
+	<state-machine-reference name="receive" file="receive.xml" />
+	<state-machine-reference name="reply" file="reply.xml" />
+	<state-machine-reference name="sequence" file="sequence.xml" />
+	<state-machine-reference name="startingPick" file="startingPick.xml" />
+	<state-machine-reference name="startingReceive" file="startingReceive.xml" />
+	<state-machine-reference name="wait" file="wait.xml" />
+	<state-machine-reference name="while" file="while.xml" />	
+	
+	<!-- Elements of the metamodel -->
+	<type name="Assign" class="uniandes.cumbia.bpel.elements.assign.Assign" statemachine="assign"/>
+	<type name="Conditional" class="uniandes.cumbia.bpel.elements.conditional.Conditional" statemachine="conditional"/>
+	<type name="Empty" class="uniandes.cumbia.bpel.elements.empty.Empty" statemachine="empty"/>
+	<type name="Exit" class="uniandes.cumbia.bpel.elements.exit.Exit" statemachine="exit"/>
+	<type name="Flow" class="uniandes.cumbia.bpel.elements.flow.Flow" statemachine="flow" />
+	<type name="Invoke" class="uniandes.cumbia.bpel.elements.invoke.Invoke" statemachine="invoke"/>
+	<type name="OnAlarm" class="uniandes.cumbia.bpel.elements.pick.onalarm.OnAlarm" statemachine="onAlarm"/>
+	<type name="OnMessage" class="uniandes.cumbia.bpel.elements.pick.onmessage.OnMessage" statemachine="onMessage"/>
+	<type name="Pick" class="uniandes.cumbia.bpel.elements.pick.Pick" statemachine="pick"/>
+	<type name="Process" class="uniandes.cumbia.bpel.elements.process.Process" statemachine="process" />
+	<type name="Receive" class="uniandes.cumbia.bpel.elements.receive.Receive" statemachine="receive"/>
+	<type name="Reply" class="uniandes.cumbia.bpel.elements.reply.Reply" statemachine="reply"/>
+	<type name="Sequence" class="uniandes.cumbia.bpel.elements.sequence.Sequence" statemachine="sequence"/>
+	<type name="StartingPick" class="uniandes.cumbia.bpel.elements.startingPoints.StartingPick" statemachine="startingPick"/>
+	<type name="StartingReceive" class="uniandes.cumbia.bpel.elements.startingPoints.StartingReceive" statemachine="startingReceive"/>
+	<type name="Wait" class="uniandes.cumbia.bpel.elements.wait.Wait" statemachine="wait"/>
+	<type name="While" class="uniandes.cumbia.bpel.elements.While.While" statemachine="while" />
+	<type name="Channel" class="uniandes.cumbia.bpel.elements.Channel"/>
+	<type name="Data" class="uniandes.cumbia.bpel.elements.Data"/>
+	<type name="Copy" class="uniandes.cumbia.bpel.elements.assign.copy.Copy"/>
+	<type name="To" class="uniandes.cumbia.bpel.elements.assign.to.To"/>
+	<type name="From" class="uniandes.cumbia.bpel.elements.assign.from.From"/>
+	
+	<!-- Runtime Configuration -->
+	<runtime class="uniandes.cumbia.bpel.elements.runtime.BpelRuntime">
+	</runtime>
+
+</metamodel>

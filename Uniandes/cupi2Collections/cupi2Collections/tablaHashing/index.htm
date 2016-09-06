@@ -1,0 +1,357 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="es-co">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CUPI2 - Página del Proyecto</title>
+<link type="text/css" rel="stylesheet" href="style/cupi2.css">
+</head>
+
+<body>
+
+<table border="1" width="800" id="table1" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#333333">
+	<tr>
+		<td>
+		<table border="0" width="100%" id="table40">
+			<tr>
+				<td>&nbsp;&nbsp; 
+				<img border="0" src="images/logo.gif" width="200" height="72"></td>
+				<td valign="top">
+				<p align="right"><a href="index.htm">Inicio</a>&nbsp; |&nbsp;
+				<a href="../index.htm">cupi2Collections </a>&nbsp; |&nbsp;
+				<a href="http://cupi2.uniandes.edu.co/">cupi2WEB</a></p>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="h1" height="35">
+			<h1 class="titulo" align="left">&nbsp;&nbsp;&nbsp;Cupi2 Collections - Estructura Tabla Hashing </td>
+	</tr>
+	<tr>
+		<td class="h2" height="22"><script language="JavaScript" src="../js/menu.js"></script></td>
+	</tr>
+
+	<tr>
+		<td>
+			<table border="0" width="100%" id="table42" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="180" bgcolor="#B5D6E6" valign="top"><br>
+<p class="titulomenu">&nbsp;&nbsp; Tabla Hashing<table border="0" width="176" id="table43" cellspacing="4">
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="149" colspan="2"><a href="index.htm"><b>
+							Descripción</b></a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2">
+							<a target="_blank" href="../docs/api/uniandes/cupi2/collections/tablaHashing/TablaHashing.html">
+							Javadoc</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2"><a href="codigo.htm">
+							Visualización Código Fuente</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2"><a href="codigoPruebas.htm">
+							Visualización Código Pruebas</a></td>
+						</tr>
+						<tr>
+							<td width="11">&nbsp;</td>
+							<td width="143" colspan="2">
+							<a href="downloads.htm">Descargas</a></td>
+						</tr>
+					</table>
+					<p></td>
+					<td width="1" bgcolor="#000000"></td>
+					<td width="618" valign="top">
+					<table border="0" width="615" id="table44">
+					<tr>
+							<td width="609" colspan="4" valign="top">&nbsp;&gt;&gt; Estructuras de Datos &gt;
+							Tabla Hashing &gt;<b>
+							Descripción</b></td>
+					</tr>
+						<tr>
+							<td width="609" colspan="4">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="25">&nbsp;</td>
+							<td width="17">&nbsp;</td>
+							<td width="510"><div>
+
+					<h1>
+						<span lang="ES">
+Descripción:						</span>
+					</h1>
+
+				</div>
+
+
+				<p>
+					<span lang="ES">
+Una
+tabla de Hashing es una estructura de acceso directo, en la que
+cada elemento tiene asociado una llave. La llave de un elemento es
+un identificador que tiene significado en el contexto del problema
+en el que este siendo utilizada la tabla. Al interior de la tabla
+las llaves son únicas.					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+En
+una tabla de Hashing no existe noción de orden tanto para
+los elementos como para sus respectivas llaves. Los elementos no
+tienen predecesores ni sucesores. No es posible realizar recorrido
+alguno sobre las llaves ni elementos. La única forma de
+acceder a los elementos de la tabla es mediante sus llaves
+asociadas. La ventaja principal de la tabla de Hashing se encuentra
+en su efectividad para consultar los elementos a través de
+su llave de forma directa.					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+Otros conceptos importantes relacionados con la tabla de
+Hashing se presentan a continuación:					</span>
+				</p>
+
+
+				<ul type="disc">
+					<li>
+						<b>
+							<span lang="ES">
+Tamaño:							</span>
+						</b>
+ 						<span lang="ES">
+es el
+número de elementos presentes en la tabla.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Espacio de llaves:							</span>
+						</b>
+ 						<span lang="ES">
+es el
+conjunto de todas las llaves que pueden existir.
+							<b>
+ 							</b>
+						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Área primaria:							</span>
+						</b>
+ 						<span lang="ES">
+es el
+espacio físico en el que se colocan los elementos de la
+estructura.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Dirección de un elemento:							</span>
+						</b>
+ 						<span lang="ES">
+es la posición que un elemento ocupa en el
+área primaria.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Capacidad:							</span>
+						</b>
+ 						<span lang="ES">
+es el tamaño
+del área primaria.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Factor de carga:							</span>
+						</b>
+ 						<span lang="ES">
+es el
+tamaño de la tabla sobre su capacidad. Indica que tan
+saturada la tabla se encuentra.						</span>
+					</li>
+				</ul>
+
+
+				<p>
+
+					<b>
+						<span lang="ES">
+							<img width="299" height="242" src="descripcion_tablaHashing_archivos/image002.gif">
+							</img>
+						</span>
+					</b>
+				</p>
+
+
+				<ul type="disc">
+					<li>
+						<b>
+							<span lang="ES">
+Función de Hashing:							</span>
+						</b>
+ 						<span lang="ES">
+es
+la función que transforma una llave en una dirección
+en el área primaria. Esta función es que permite que
+una tabla localice el elemento deseado.						</span>
+					</li>
+					<li>
+						<b>
+							<span lang="ES">
+Colisión:							</span>
+						</b>
+ 						<span lang="ES">
+ocurre cuando
+dos llaves diferentes son proyectadas sobre la misma
+dirección en la llave primaria. la eficiencia de la tabla de
+Hashing radica en la forma en la que resuelve este tipo de
+conflictos. 							<b>
+   							</b>
+						</span>
+					</li>
+				</ul>
+
+
+				<p>
+					<span lang="ES">
+Es
+apropiado utilizar tablas de Hashing cuando el espacio de llaves es
+significativamente mayor al área primaria. 
+ 					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+En
+el caso concreto de implementación en Cupi2Collections esta
+estructura fue desarrollada para soportar como llaves y elementos
+objetos de cualquier tipo. Sin embargo es necesario que la clase a
+la que pertenezcan los objetos que se usan como llaves tenga el
+método					</span>
+ 					<span lang="ES">
+hashCode					</span>
+ 					<span lang="ES">
+bien definido.					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<div>
+
+					<h1>
+						<span lang="ES">
+Ejemplo:						</span>
+					</h1>
+
+				</div>
+
+
+				<p align="center">
+					<span lang="ES">
+						<img width="447" height="208" src="descripcion_tablaHashing_archivos/image003.jpg">
+						</img>
+					</span>
+				</p>
+
+
+				<p align="center">
+
+					<b>
+						<span lang="ES">
+Tabla de
+Hashing						</span>
+					</b>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+La tabla de Hashing que se
+muestra tiene un factor de carga de 0.28. Note la forma en la que
+se están resolviendo las colisiones.					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+
+				<p>
+					<span lang="ES">
+ 					</span>
+				</p>
+
+			</div>
+
+		</body>
+	</td>
+							<td width="45">&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="25">&nbsp;</td>
+							<td width="17">&nbsp;</td>
+							<td width="510">&nbsp;</td>
+							<td width="45">&nbsp;</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+<table border="0" width="800" cellspacing="0" cellpadding="0" id="table6">
+	<tr>
+		<td width="65">
+		<p align="center"><a href="http://www.uniandes.edu.co/">
+		<img border="0" src="images/logo_uniandes.gif" width="44" height="50"></a></td>
+		<td>Copyright © 2006, <b>Universidad de los Andes</b>. Todos los derechos 
+			reservados<b>.<br>
+			</b>Cupi2Collections - <a href="http://sistemas.uniandes.edu.co/">Departamento de Ingeniería de Sistemas y Computación.</a><br>
+		<b>2006</b></td>
+	</tr>
+</table>
+<script language="JavaScript" src="../js/menu_general.js"></script>
+</body>
+
+</html>

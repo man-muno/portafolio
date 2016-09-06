@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animation>
+	<addAspect file="./data/aspects/aspect0.xml" enabled="true"/>
+	<execute-synchronous-call processName="HelloWorld" processID="0" instanceID="1" message="initial message" />
+</animation>

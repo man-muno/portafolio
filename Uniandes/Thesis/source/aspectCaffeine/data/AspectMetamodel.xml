@@ -1,0 +1,25 @@
+<metamodel name="Aspect" version="0.1">
+	
+	<!-- State machines used by the elments of the metamodel -->
+	<state-machine-reference name="aspect" file="aspect.xml" />
+	<!--<state-machine-reference name="transitionPoint" file="transitionPoint.xml" />-->
+	<state-machine-reference name="transitionPoint" file="transitionPoint.xml" />
+	<state-machine-reference name="advice" file="advice.xml" />
+	<state-machine-reference name="instruction" file="instruction.xml" />
+	<state-machine-reference name="addActionInstruction" file="addActionInstruction.xml" />
+	
+	<!-- Elements of the metamodel -->
+	<type name="Aspect" class="uniandes.cumbia.aspects.elements.aspect.Aspect" statemachine="aspect"/>
+	<!--<type name="AspectedElement" class="uniandes.cumbia.aspects.elements.aspectedElement.AspectedElement"/>-->
+	<type name="TransitionPoint" class="uniandes.cumbia.aspects.elements.transitionPoint.graphTransitionPoint.GraphTransitionPoint" statemachine="transitionPoint"/>
+	<!--<type name="GraphTransitionPoint" class="uniandes.cumbia.aspects.elements.graphTransitionPoint.GraphTransitionPoint" statemachine="graphTransitionPoint"/>-->
+	<type name="Advice" class="uniandes.cumbia.aspects.elements.advice.Advice" statemachine="advice"/>
+	<type name="Instruction" class="uniandes.cumbia.aspects.elements.instruction.Instruction" statemachine="instruction" />
+	<type name="InstallAction" class="uniandes.cumbia.aspects.elements.instruction.InstallAction" statemachine="addActionInstruction" />
+	<type name="CreateBPELElementsInstruction" class="uniandes.cumbia.aspects.elements.instruction.CreateBPELElements" statemachine="instruction"/>
+	
+	<!-- Runtime Configuration -->
+	<runtime class="uniandes.cumbia.aspects.elements.runtime.AspectRuntime">
+	</runtime>
+
+</metamodel>

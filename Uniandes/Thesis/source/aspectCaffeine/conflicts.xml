@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conflicts>
+	<advice name="advice1">
+		<canNotFollow name="advice4"/>
+		<canNotFollow name="advice7"/>
+		<canNotFollow name="advice11"/>
+	</advice>
+	<instruction name="instruction1">
+		<canNotFollow name="instruction5"/>
+		<canNotFollow name="instruction8"/>
+	</instruction>
+</conflicts>

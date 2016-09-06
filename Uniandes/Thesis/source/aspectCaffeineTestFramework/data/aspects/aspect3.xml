@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition metamodel="Aspect" modelName="facturacion" version="0.1">
+<metamodel-extensions/>
+<elements>
+<open-object name="facturacion" typeName="Aspect"/>
+<open-object name="TP1" typeName="TransitionPoint"/>
+<open-object name="invokeFacturacion" typeName="Advice"/>
+<open-object name="inst" typeName="InstallAction"/>
+</elements><runtime/>
+<model>
+<aspect name="facturacion">
+	<transitionPoint name="TP1" pointcut="*Assign|HelloWorld->ToCopying">
+		<advice name="invokeFacturacion">
+			<instruction name="inst" type="installAction" actionName="DummyAction" actionClass="uniandes.cumbia.aspects.elements.aspectedElement.actions.DummyAction"/>
+		</advice>
+	</transitionPoint>
+</aspect>
+</model>
+</definition>

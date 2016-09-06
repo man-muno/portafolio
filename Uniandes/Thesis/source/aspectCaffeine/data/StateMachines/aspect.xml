@@ -1,0 +1,54 @@
+<state-machine name="aspect" initial-state="Init">
+
+	<!-- Init -->
+	<state name="Init" enter-event="" exit-event="exitInit">
+		<transition name="ToCalculatingTP" successor="CalculatingTP">
+			<source-event source-name="ME" event-name="start" />
+			<before-event name="beforeToCalculatingTP" />
+			<after-event name="afterToCalculatingTP" />
+			<actions>
+				<action name="CalculateFirstTP" class="uniandes.cumbia.aspects.elements.aspect.actions.CalculateFirstTP" />
+			</actions>
+		</transition>
+	</state>
+
+	<!-- CalculatingTP -->
+	<state name="CalculatingTP" enter-event="enterCalculatingTP" exit-event="exitCalculatingTP">
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ME" event-name="finalized" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions/>
+		</transition>
+		<transition name="ToExecutingTP" successor="ExecutingTP">
+			<source-event source-name="ME" event-name="executeTP" />
+			<before-event name="beforeToExecutingTP" />
+			<after-event name="afterToExecutingTP" />
+			<actions>
+				<action name="ExecuteTP" class="uniandes.cumbia.aspects.elements.aspect.actions.ExecuteTP" />
+			</actions>
+		</transition>
+	</state>
+	
+	<!-- ExecutingTP -->
+	<state name="ExecutingTP" enter-event="enterExecutingTP" exit-event="exitExecutingTP">
+		<transition name="ReCalculatingTP" successor="CalculatingTP">
+			<source-event source-name="TP" event-name="enterReinit" />
+			<before-event name="beforeToCalculatingTP" />
+			<after-event name="afterToCalculatingTP" />
+			<actions>
+				<action name="CalculateNextTP" class="uniandes.cumbia.aspects.elements.aspect.actions.CalculateNextTP"/>
+			</actions>
+		</transition>
+	</state>
+
+	<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event="exitFinalizing">
+		<transition name="ToReInit" successor="Init">
+			<source-event source-name="ME" event-name="reinit" />
+			<before-event name="beforeToReInit" />
+			<after-event name="afterToReInit" />
+			<actions/>
+		</transition>
+	</state>
+</state-machine>

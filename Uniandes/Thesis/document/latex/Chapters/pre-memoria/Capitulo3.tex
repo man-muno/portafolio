@@ -1,0 +1,235 @@
+% Capitulo 3
+
+\chapter{Aspect-Oriented Programming} % Write in your own chapter title
+\label{Capitulo3}
+\lhead{Capitulo 3. \emph{Aspect-Oriented Programming}} % Write in your own chapter title to set the page header
+
+\section{Introducción}
+Hay unidades funcionales de los sistemas que no pueden ser aisladas usando programación orientada por objetos, porque su funcionalidad es transversal a múltiples componentes. Es por eso que se desarrollo AOP o \textit{Aspect-Oriented Programming}\citep{Ref26}. Con éste paradigma es posible resolver los problemas de modularización de las preocupaciones transversales, lo que resulta en código más fácil de desarrollar, mantener, aumentar su potencial de reutilización y de reducir la cantidad de código enredado y repetido, además de reducir los costos de introducir nuevo comportamiento en la aplicación base\citep{Ref27}.
+
+Existen varias aproximaciones de cómo se deben modelar los sistemas de programación orientada por aspectos, cinco\footnote{Modelo de Pointcuts y Advices basado en AspectJ. Modelo de Recorridos basado en la ley de Demeter o el principio del menor conocimiento\citep{Ref29}. Modelo de Composición de Clases basado en la programación orientada por temas (\textit{Subject-Oriented Programming}\citep{Ref30}). Modelo de Clases Abiertas. Modelo de Navegador Basado en Consultas basado en QJBrowser.} de ellos fueron descritos en\citep{Ref28} basándose en herramientas existentes, el más utilizado de ellos es el modelo de AspectJ.
+
+\section{AspectJ}
+\label{sec:ModeloAspectJ}
+El modelo de AspectJ define cuatro conceptos básicos que son necesarios para definir un aspecto\citep{Ref27}.
+
+\subsection{Modelo de \textit{Join Points}}
+El modelo de \textit{join points} define los lugares donde los \textit{advices} van a ser ubicados en la ejecución de la aplicación base. Son puntos bien definidos, que proveen un marco de referencia común que hace posible que la ejecución del código del programa y la ejecución del código del \textit{advice} sea coordinada. Debido a que AspectJ es una extensión de Java, el modelo de \textit{join points} define puntos dentro de la ejecución de un programa, como llamados a métodos, llamados a constructores, escritura y lectura de atributos, etc.
+
+\subsection{Lenguaje de Puntos de Corte}
+\label{section:AspectJPointCuts}
+El lenguaje de puntos de corte es utilizado para seleccionar un conjunto específico de \textit{join points}. Los puntos de corte dentro de AspectJ se seleccionan utlizando designadores de puntos de corte, los cuales son predicados sobre los \textit{join points}. Estos designadores son un conjunto de predicados predefinidos, por ejemplo \textit{call} que selecciona los llamados de métodos como \textit{join points}. Junto con estos designadores, el lenguaje también selecciona los \textit{join points} gracias a las características sus caracteristicas. Por ejemplo, es posible seleccionar puntos específicos dentro de la ejecución gracias a los tipos de parámetros que tenga un método o tipos de retorno.
+ 
+De acuerdo a \citep{Ref40}, definir el lenguaje de ésta manera tiene tres limitaciones. La primera es que no provee un mecanismo de propósito general para relacionar diferentes \textit{join points}. La segunda es que el usuario no puede definir sus propios designadores, es decir el lenguaje no es un lenguaje extensible. La tercera es que no soportan los puntos de corte semánticos, es decir, especifica como están implementados los \textit{join points} más no que es lo que son.
+
+AspectJ también provee instrucciones que permiten al código definido en el \textit{advice} a obtener información con respecto al contexto donde se está ejecutando. Por ejemplo, puede obtener quien es el que hace el llamado de un método, los parámetros que tiene ése llamado, etc.
+
+\begin{lstlisting}[float, caption= Ejemplo de AspectJ., label = code:aspectJexample ]
+public aspect Logging
+{
+//Donde?
+pointcut loggableMethods(Object o): call(_ bar (..)) && this(o);
+//Cuando?
+before(Object o): loggableMethods(o)
+	{
+		//Qué?
+		System.out. println ("Llamado el método bar desde el objeto " + o.toString ());
+	}
+}
+\end{lstlisting}
+
+En el código mostrado \ref{code:aspectJexample} se ejemplifica un aspecto de monitoreo usando AspectJ. Este aspecto define un punto de corte llamado \textit{loggableMethods}, el cual especifica donde se debe agregar la funcionalidad de ésta preocupación transversal a la aplicación base. En este ejemplo los \textit{join points} son los métodos llamados \textit{bar}, sin importar en que clase están definidos, su tipo de retorno o su lista de parámetros. El \textit{advice} también define cuando y cuál debe ser el comportamiento que debe ser ejecutado en los \textit{join points} escogidos. La lógica del \textit{advice} es imprimir un mensaje antes de que se ejecuten los \textit{join points} asociados. Dentro de la lógica del \textit{advice} también se está haciendo uso de las instrucciones para poder obtener información del contexto donde se está ejecutando el \textit{advice}, específicamente, poder llamar el método \textit{toString()} sobre el objeto que va a llamar el método \textit{bar}. 
+
+\subsection{Tejido de Aspectos}
+El tejido de aspectos es la parte de la implementación que debe asegurar que el código de los \textit{advice} y el de la aplicación base se ejecuten de manera coordinada, en los \textit{join points} que fueron definidos para cada aspecto.
+En AspectJ\citep{Ref31} el proceso de tejido de aspectos comienza en el compilador de AspectJ, una extensión al compilador de Java. El compilador de AspectJ está dividido en dos partes, el \textit{front-end} y el \textit{back-end}. El \textit{front-end} recibe como entrada el código fuente del aspecto y el código fuente de la aplicación base para ser compilados. El código del \textit{advice} es compilado como un método de Java normal, con los mismos parámetros con los que fue implementado, más uno extra que indica que es la declaración de un \textit{advice}, para guardar la información del punto de corte que es referenciado por el \textit{advice} y transmitir información al \textit{back-end} del compilador. El \textit{back-end} del compilador instrumenta el código de la aplicación base con el código de los \textit{advices}. El \textit{back-end} primero evalúa en el \textit{bytecode} todos los posibles lugares donde se puede instrumentar un \textit{advice}. Estos puntos se conocen como la sombra estática de los \textit{join points}. Luego, el compilador compara si el punto de corte de cada \textit{advice} corresponde a esa sombra estática, en caso de hacerlo, inserta una llamada al método del \textit{advice}
+
+\section{Interacción Entre Aspectos}
+
+Casi todos los lenguajes de AOP permiten componer aspectos independientes en un mismo \textit{join point}. Esto fue denominado \textit{shared join point} en \citep{Ref32}. Ésta característica puede causar que se genere comportamiento imprevisto, causando interacciones semánticas inesperadas.
+
+Las interacciones entre aspectos pueden ser clasificadas de acuerdo al comportamiento que se genera entre los aspectos y la aplicación base. Estas interacciones pueden ser clasificadas en cuatro grupos: 
+
+\textbf{Exclusión Mutua} - Si existen dos aspectos que implementen funcionalidades similares o algoritmos, puede darse el caso que solo uno de esos aspectos pueda ser utilizado. No existe la posibilidad de relacionar los dos aspectos porque no se complementan, solo uno de ellos puede ser utilizado.
+
+\textbf{Dependencia} - La dependencia ocurre cuando un aspecto específicamente necesita otro aspecto y por eso depende de él. Una dependencia no resulta en comportamiento errado o inesperado, mientras se garantice que el aspecto con el que se tiene dependencia existe sin cambios.
+
+\textbf{Refuerzo} - El refuerzo se presenta cuando un aspecto influye positivamente en el correcto funcionamiento de otro aspecto. Cuando existe el refuerzo entre dos aspectos, funcionalidades adicionales son ofrecidas.
+
+\textbf{Conflicto} - Representan la interferencia semántica. Un aspecto correctamente implementado no funciona de manera esperada cuando es compuesto con otros aspectos en un \textit{shared join point} o afecta el correcto funcionamiento de los demás aspectos tejidos en el mismo \textit{shared join point}.
+
+El trabajo de ésta tesis se concentra más en las interacciones de conflicto.
+
+\subsection{Interferencia Semántica Entre Aspectos}
+
+Para ilustrar los conflictos de interferencia semántica, se presenta un ejemplo de dos preocupaciones transversales, tomado de \citep{Ref33} en AspectJ.
+
+\subsubsection{Ejemplo}
+
+La figura \ref{fig:jukebox} muestra un sistema de reproductor de música. Si se selecciona una canción, a través de la interfaz del reproductor (\textit{JukeBoxUI}), se llama el método \textit{play(Song)} de la clase \textit{JukeBox}, pasándole como parámetro la canción que se quiere escuchar. Éste método a su vez llama a \textit{play(String)} en la clase \textit{Player}, quien es la interfaz con el sistema de audio.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/InterferenceExample.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Sistema de reproducción de música]{Sistema de reproducción de música.}
+	\label{fig:jukebox}
+\end{figure}
+
+Si se agregan dos aspectos, uno de ellos dice que se debe revisar si el usuario tiene suficiente dinero, de ser así, se tiene que retirar cierta cantidad cada vez que se llame el método \textit{play}. El segundo aspecto, dice que se debe crear una lista de reproducción que pone en cola todas las canciones.
+
+\begin{lstlisting}[caption= Aspecto de Cobrar., label = code:creditAspect]
+aspect CreditsAspect 
+{
+	void around () : call ( public void Jukebox . play ( Song )) 
+	{
+		if( Credits . instance (). enoughCredits ()) 
+		{
+			Credits . instance (). withdraw ();
+			proceed ();
+		} 
+		else 
+		{
+			throw new NotEnoughCreditsException ();
+		}
+	}
+}
+\end{lstlisting}
+
+El segundo aspecto pone en cola las canciones y inmediatamente retorna el control a quien lo llamó. En el \textit{advice} se llama el método \textit{enqueue(Song)} en la instancia del objeto \textit{Playlist} que es un \textit{singleton}. Éste método pone el objeto \textit{Song} en la cola y comienza a tocar las canciones hasta que esté desocupada.
+
+\begin{lstlisting}[caption= Aspecto de colocar en cola las canciones., label = code:playlistAspect]
+aspect PlaylistAspect 
+{
+	void around ( Song song ): call ( public void Jukebox.play( Song )) && args ( song ) 
+	{
+		Playlist . instance (). enqueue ( song );
+		return ;
+	}
+}
+\end{lstlisting}
+
+Los dos aspectos se van a tejer en el mismo punto de corte, la llamada del método \textit{play(Song)} de la clase \textit{Jukebox}. Al no declarar de ninguna manera cuál de ellos es primero, solo se pueden ordenar de dos maneras. De la primera manera, el aspecto que cobra se aplica primero y luego el aspecto que pone en cola las canciones. De la otra manera, primero se aplica el aspecto que pone en cola las canciones y luego el aspecto que cobra. Sin embargo, al ejecutar primero el aspecto que pone en cola las canciones, el aspecto que cobra nunca es ejecutado por el \textit{return} que se encuentra en el segundo aspecto, como resultado las canciones sonarán sin que sean cobradas al cliente.
+
+\subsubsection{Clasificación de Interferencias}
+
+De acuerdo a \citep{Ref32}, éstas interferencias semánticas pueden ser clasificadas, de acuerdo al orden de ejecución de los aspectos:
+
+\textbf{No hay diferencias en el comportamiento observable} - Al tener dos aspectos independientes en un \textit{shared join point}, para cualquier orden de ejecución no se verá ninguna diferencia después de la ejecución de los \textit{advice} de los aspectos.
+
+\textbf{Diferente orden exhibe comportamiento diferente} - Distribuido en tres categorías
+\begin{itemize}
+\item El cambio en el orden de la ejecución de los aspectos presenta cambios observables en el comportamiento, pero no hay un requerimiento especifico de como debería ser ese comportamiento.
+\item El orden de los aspectos importa, debido a que hay un requerimiento explícito que indica el orden de ejecución de los \textit{advices} de los aspectos.
+\item No hay ningún requerimiento de orden de la ejecución de los aspectos, pero hay órdenes de ejecución que pueden violar la semántica de los aspectos. Por ejemplo, cuando múltiples \textit{advices} bloquean ciertos recursos pueden ocurrir \textit{deadlocks}, lo que quiere decir que debido a la semántica de los aspectos hay orden de ejecución implícito.
+\end{itemize}
+
+\section{Propuestas para Resolución de Conflictos}
+
+Existen varias propuestas para reducir los problemas de interferencia de aspectos. Desde los enfoques sencillos, como declarar relaciones de precedencia entre los aspectos en el código como lo hace AspectJ\citep{Ref35}, o aproximaciones desde la etapa de modelamiento\citep{Ref36}. Otras aproximaciones van un poco más allá e introducen dependencias más complejas y relaciones de orden entre aspectos\citep{Ref32}. Otras aproximaciones detectan los conflictos entre los aspectos gracias a una especificación más completa del comportamiento de los aspectos, realizada por quien los programa\citep{Ref33,Ref37}.
+
+A continuación se describen algunas de las propuestas para resolución de conflictos semánticos entre aspectos.
+
+\subsection{Especificar precedencia Aspectos}
+La primera propuesta es que el lenguaje de aspectos permita poder definir un orden o especificar precedencia entre aspectos, de ésta manera reduciendo los posibles conflictos semánticos entre ellos. AspectJ tiene los elementos del lenguaje necesarios para declarar precedencia entre aspectos a través de la instrucción \textit{declare precedence}\citep{Ref35}. La desventaja que tiene está aproximación es que el programador es responsable de identificar donde se pueden presentar estos problemas, lo que causa que en sistemas grandes, se convierta en un proceso largo, propenso a errores en implica que se conozcan todos los aspectos y cuales aspectos pueden llegar a interferir con otros. Además, cuando se quiera introducir un nuevo aspecto, este debe ser tenido en cuenta en las declaraciones de precedencia de los demás aspectos existentes.
+
+Para el caso del ejemplo del sistema de música, la declaración de independencia usando AspectJ es la mostrada en \ref{code:creditAspectPrecedence}.
+
+\begin{lstlisting}[ float, escapechar=\%, caption= Declaración de precedencia entre aspectos en AspectJ., label = code:creditAspectPrecedence]
+aspect CreditsAspect 
+{
+
+	%\Hilight% declare precedence : CreditsAspect, PlaylistAspect;
+
+	void around () : call ( public void Jukebox . play ( Song )) 
+	{
+		if( Credits . instance (). enoughCredits ()) 
+		{
+			Credits . instance (). withdraw ();
+			proceed ();
+		} 
+		else 
+		{
+			throw new NotEnoughCreditsException ();
+		}
+	}
+}
+\end{lstlisting}
+
+Otra propuesta para realizar la definición de precedencia de aspectos, es la implementara para Motorola  WEAVR, un plugin para manipular modelos ejecutables UML en Telelogic TAU G2\citep{Ref38}. Motorola WEAVR es una herramienta diseñada para poder tejer aspectos en modelos ejecutables UML. La premisa principal es que al tejer los aspectos de esa manera, los modelos para plataformas específicas y el código fuente puede ser generado automáticamente. 
+
+En Motorola WEAVER, la composición de aspectos es alcanzada a través de un diagrama de \textit{deployment}, como se puede ver en la figura \ref{fig:MotorolaWeaver}. En éste diagrama, se definen relaciones estereotipadas entre aspectos, que dictan la politica de como van a ser tejidos al modelo base. Los estereotipos definidos son \textit{<<follows>>}, \textit{<<hidden\_by>>} y \textit{<<dependent\_on>>}, los cuales corresponden a tres maneras diferentes de manejar la interferencia. 
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/MotorolaWeavr.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Diagrama de \textit{deployment} mostrando los estereotipos para aspectos]{Diagrama de \textit{deployment} mostrando los estereotipos para aspectos.}
+	\label{fig:MotorolaWeaver}
+\end{figure}
+
+\textbf{Follows} - En un \textit{shared join point}, el \textit{Aspect1} tiene mayor precedencia que el \textit{Aspect2}, lo que quiere decir que todas las instancias de \textit{Aspect2} serán ejecutadas despues de las instancias de \textit{Aspect1}.
+
+\textbf{Hidden By} - Cuando en se encuentren el \textit{Aspect2} y el \textit{Aspect3} en un \textit{shared join point}, el \textit{Aspect3} será desactivado y no se ejecutara.
+
+\textbf{Dependant On} - El \textit{Aspect4} solo podrá ser ejecutado si en el \textit{shared join point} se encuentran tejidos el \textit{Aspect3} y el \textit{Aspect4}.
+
+\subsection{Detección de Conflictos}\citep{Ref39}
+La idea principal de la propuesta se basa en que para que un conflicto ocurra, debe existir una interacción con consecuencias indeseables entre los aspectos. Ésta interacción puede ser modelada por las operaciones que se hacen sobre uno o más recursos compartidos. Un conflicto es modelado como las ocurrencias de ciertos patrones de operaciones sobre un recurso compartido.
+
+Para poder detectar los conflictos entre aspectos, es necesario tener más información sobre las operaciones (comportamiento) de los aspectos. Con éste fin, la propuesta introduce una formalización para poder expresar el comportamiento del aspecto y además, poder modelar reglas de detección de conflictos sobre dicho comportamiento. Para abstraer el comportamiento relevando del aspecto, es necesario definir cómo se va a abstraer el comportamiento del aspecto. La abstracción propuesta consiste en n modelo de recursos\_operaciones, el cual permite representar comportamiento de bajo nivel y de alto nivel.
+
+Un \textbf{recurso} puede representar una propiedad concreta, como un atributo o los parámetros de un método, o una propiedad abstracta, un concepto especifico de la aplicación que encapsula el área problema. Un recurso está compuesto por un nombre y un conjunto de operaciones permitidas para éste recurso. En el ejemplo del sistema de reproducción de música, el recurso pude ser modelado como \textit{Jukebox} y es de tipo abstracto. Como las operaciones, los recursos pueden hacer referencia a los elementos concretos de la aplicación.
+
+Las \textbf{operaciones} representan el efecto que tiene un \textit{advice} sobre cierto recurso. Las operaciones más primitivas sobre datos compartidos que se pueden modelar, son las operaciones de lectura y escritura, pero el modelo también permite modelar acciones de más alto nivel para poder ingresar información más específica sobre el comportamiento. En el ejemplo del sistema de música, una operación sobre el recurso \textit{JukeBox} es el método \textit{checkCredits}. 
+
+Gracias el modelo, es posible hacer una especificación del comportamiento por cada aspecto. Ésta especificación consiste en un conjunto de recursos con una secuencia de operaciones que se les otorga. Para el ejemplo del sistema de música, en el aspecto de la lista de reproducción descrito en \ref{code:playlistAspect} la especificación del comportamiento es: 
+
+\begin{lstlisting}[escapechar=\%, caption= Especificación del comportamiento del aspecto PlaylistAspect, label = code:behaviorPlaylistAspect]
+%\Hilight% JukeBox: enqueue;end
+\end{lstlisting}
+
+Para el aspecto de cobra por escuchar una canción:
+
+\begin{lstlisting}[escapechar=\%, caption= Especificación del comportamiento del aspecto CreditsAspect, label = code:behaviorCreditsAspect]
+%\Hilight% JukeBox: checkCredits;withdrawCredits
+\end{lstlisting}
+
+
+Además de la especificación del comportamiento de los aspectos, es necesario definir unas reglas para la detección de conflictos. Estas reglas describen cuales son las operaciones permitidas para un conjunto de recursos. Las reglas están compuestas por un recurso, una expresión que describe el patrón de conflicto.
+
+Para el ejemplo del sistema de sonido, la regla de detección de aspectos es la siguiente: 
+
+\begin{lstlisting}[escapechar=\%, caption= Regla de detección de conflictos para el aspecto CredisAspect, label = code:ConflictCreditsAspect]
+%\Hilight% Conflict(Jukebox): .*(end).*
+\end{lstlisting}
+
+
+La propuesta también describe un proceso para poder detectar los posibles conflictos. A continuación se presentan sus tres etapas.
+
+\subsubsection{Etapa de Composición}
+En ésta primera etapa, se evalúan todos los puntos de corte sobre la aplicación base, en caso que se encuentre un punto donde deba ir un aspecto, se teje el \textit{advice} sobre ese \textit{join point}. Luego, se determina el orden de ejecución de los aspectos, en caso que se haya hecho alguna definición de ello con anterioridad.
+
+Como resultado se obtiene un conjunto de \textit{join points} con una secuencia de \textit{advices} tejidos a ellos. Como lo define la propuesta, el análisis de conflictos solo debe hacerse sobre un \textit{join point} cuando la cantidad de \textit{advices} es superior a uno.
+
+\subsubsection{Etapa de Abstracción de Comportamiento de los Aspectos}
+Ésta segunda etapa toma el producto de la etapa anterior junto con la abstracción del comportamiento de los aspectos y transforma la secuencia de los \textit{advices} de un \textit{join point} en una secuencia de operaciones por recurso por \textit{shared join point}.
+
+Para el ejemplo del sistema de sonido, la secuencia sería: 
+
+\begin{lstlisting}[escapechar=\%, caption= Secuencia de operaciones para el recurso \textit{JukeBox}, label = code:operationSequence]
+%\Hilight% JukeBox: enqueue;end;checkCredits;withdrawCredits
+\end{lstlisting}
+
+
+\subsubsection{Etapa de Detección de Conflictos}
+Esta etapa toma las reglas de detección de conflictos y las transforma en un autómata a partir de la expresión que define el conflicto. Luego, para cada una de las secuencias de operaciones obtenidas en la etapa anterior, se determina si el autómata que representa el conflicto acepta dicha secuencia, indicando si existe un conflicto o no. En caso que algún autómata no acepté alguna secuencia, al usuario se le muestra algún tipo de error o se registra en un sistema de monitoreo.
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/CompStages.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Proceso de detección de conflictos]{Proceso de detección de conflictos.}
+	\label{fig:Stages}
+\end{figure}
+

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename package &apos;weel1&apos; to &apos;week1&apos;&#x0A;- Original project: &apos;3.Algorithms on Graphs&apos;&#x0A;- Original element: &apos;3.Algorithms on Graphs/src/weel1&apos;&#x0A;- Renamed element: &apos;3.Algorithms on Graphs/src/week1&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;weel1&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;weel1" name="week1" qualified="false" references="true" stamp="1469135130097" textual="false" version="1.0"/>
-</session>

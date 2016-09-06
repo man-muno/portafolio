@@ -1,0 +1,46 @@
+<state-machine name="instruction" initial-state="Init">
+
+	<!-- Init -->
+	<state name="Init" enter-event="enterInit" exit-event="exitInit">
+		<transition name="ToPreparing" successor="Preparing">
+			<source-event source-name="ME" event-name="prepare" />
+			<before-event name="beforeToExecuting" />
+			<after-event name="afterToExecuting" />
+			<actions>
+				<action name="PrepareInstruction" class="uniandes.cumbia.aspects.elements.instruction.actions.PrepareInstruction" />
+			</actions>
+		</transition>
+	</state>
+	
+	<!-- Preparing -->
+	<state name="Preparing" enter-event="enterPreparing" exit-event="exitPreparing">
+		<transition name="ToExecuting" successor="Executing">
+			<source-event source-name="ME" event-name="execute" />
+			<before-event name="beforeToExecuting" />
+			<after-event name="afterToExecuting" />
+			<actions>
+				<action name="ExecuteInstruction" class="uniandes.cumbia.aspects.elements.instruction.actions.ExecuteInstruction" />
+			</actions>
+		</transition>
+	</state>
+	
+	<!-- Executing -->
+	<state name="Executing" enter-event="enterExecuting" exit-event="exitExecuting">
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ME" event-name="finalized" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions/>
+		</transition>
+	</state>		
+	
+	<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event="exitFinalizing">
+		<transition name="ToReInit" successor="Init">
+			<source-event source-name="ME" event-name="reinit" />
+			<before-event name="beforeToReInit" />
+			<after-event name="afterToReInit" />
+			<actions/>
+		</transition>
+	</state>
+</state-machine>

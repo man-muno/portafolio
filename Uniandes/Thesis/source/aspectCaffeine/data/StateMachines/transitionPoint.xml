@@ -1,0 +1,53 @@
+<state-machine name="transitionPoint" initial-state="Init">
+
+	<!-- Init -->
+	<state name="Init" enter-event="enterInit" exit-event="exitInit">
+		<transition name="ToCalculatingNextAdvice" successor="CalculatingNextAdvice">
+			<source-event source-name="ME" event-name="start" />
+			<before-event name="beforeCalculatingNextAdvice" />
+			<after-event name="afterCalculatingNextAdvice" />
+			<actions>
+				<action name="CalculateNextAdvice" class="uniandes.cumbia.aspects.elements.transitionPoint.actions.CalculateNextAdvice" />
+			</actions>
+		</transition>
+	</state>
+
+	<!-- CalculatingNextAdvice -->
+	<state name="CalculatingNextAdvice" enter-event="enterCalculatingNextAdvice" exit-event="exitCalculatingNextAdvice">
+		<transition name="ToExecuting" successor="Executing">
+			<source-event source-name="ME" event-name="execute" />
+			<before-event name="beforeToExecuting" />
+			<after-event name="afterToExecuting" />
+			<actions>
+				<action name="ExecuteAdvice" class="uniandes.cumbia.aspects.elements.transitionPoint.actions.ExecuteAdvice" />
+			</actions>
+		</transition>
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ME" event-name="finalized" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions/>
+		</transition>
+	</state>
+
+	<!-- Executing -->
+	<state name="Executing" enter-event="enterExecuting" exit-event="exitExecuting">
+		<transition name="ToReCalculating" successor="CalculatingNextAdvice">
+			<source-event source-name="ADVICE" event-name="reinit" />
+			<before-event name="beforeToReCalculating" />
+			<after-event name="afterToReCalculating" />
+			<actions>
+				<action name="CalculateNextAdvice" class="uniandes.cumbia.aspects.elements.transitionPoint.actions.CalculateNextAdvice" />
+			</actions>
+		</transition>
+	</state>
+
+	<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event="exitFinalizing" />
+		<transition name="ToReInit" successor="Init">
+			<source-event source-name="ME" event-name="reinit" />
+			<before-event name="beforeToReInit" />
+			<after-event name="afterToReInit" />
+			<actions/>
+		</transition>	
+</state-machine>

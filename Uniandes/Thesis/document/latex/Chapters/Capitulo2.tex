@@ -1,0 +1,224 @@
+% Capitulo 2
+
+\chapter{BPEL} % Write in your own chapter title
+\label{Capitulo2}
+\lhead{Capitulo 2. \emph{BPEL}} % Write in your own chapter title to set the page header
+
+\section{Introducción}
+
+BPEL es el acrónimo para \textit{Business Process Execution Language}. Es un lenguaje de composición,  orquestación y coordinación de Web services orientado a procesos \textit{workflow}. El objetivo principal de BPEL es estandarizar la definición del flujo de los procesos de negocio, de tal manera que las compañías puedan entenderse en un ambiente de tecnologías heterogéneas. BPEL es un lenguaje recursivo, en otras palabras, la composición resultante de los Web services es un nuevo Web service. 
+
+La primera especificación de BPEL (originalmente llamada \textit{Business Process Execution Language for Web Services} o \textit{BPEL4WS}) fue publicada en julio de 2002, como resultado del trabajo conjunto entre Microsoft, IBM y BEA para combinar dos lenguajes de composición existentes \textit{WSFL} (\textit{Web Service Flow Language}) de IBM y XLANG de Microsoft.  Luego, en mayo de 2003 se lanzó la versión 1.1 con contribuciones de otras empresas como SAP y Siebel Systems. Además de esto, la especificación fue presentada a un comité técnico de OASIS para que se convirtiera en un estándar oficial. En abril de 2007 se aprobó la siguiente versión, llamada WS-BPEL 2.0. Este comité contó con la colaboración de más de 37 representantes de diferentes organizaciones como Active Endpoints, Adobe Systems, BEA Systems, Booz Allen Hamilton, EDS, HP, Hitachi, IBM, IONA, Microsoft, NEC, Nortel, Oracle, Red Hat, Rogue Wave, SAP, Sun Microsystems, TIBCO, WebMethods\citep{Ref5}.
+
+Un proceso de \textit{workflow} BPEL consiste de actividades que interactúan con los Web services que participan en la composición, junto con actividades donde se específica el flujo de control, el flujo de datos a otros Web services y el manejo de estos datos. A continuación se presenta una explicación breve de los elementos que se manejan en BPEL, no se espera que sea una explicación profunda de BPEL, para eso se puede consultar la especificación\citep{Ref6}.
+
+
+\section{Conceptos Básicos}
+Los conceptos básicos de BPEL pueden ser divididos en elementos básicos y actividades.
+
+\subsection{Elementos Básicos}
+Los elementos básicos se dividen en variables y colaboradores. 
+\subsubsection{Variables}
+En BPEL los datos del \textit{workflow} son leídos y escritos en variables de tipo XML. En éstas variables se guardan los mensajes que han sido recibidos de un colaborador, las actividades que van a ser enviadas a algún colaborador y las variables que son utilizadas para mantener los datos necesitados para mantener el estado del proceso y nunca van a ser intercambiados con los colaboradores\citep{Ref6}.
+\subsubsection{Colaboradores}
+Representan las partes con quien el proceso BPEL interactúa, cómo los clientes y los Web services que son  llamados por el proceso. El proceso y los colaboradores se comunican a través de un \textit{partner link}. Éste es simplemente una instancia de un conector tipificado, que va a conectar dos tipos de un puerto WSDL. Dentro de la especificación de un \textit{partner link} se define que es lo que el proceso BPEL provee al colaborador y que es lo que el proceso espera del colaborador, es decir, un \textit{partner link} puede ser considerado como un canal en una conversación \textit{peer-to-peer} entre un proceso y el colaborador\citep{Ref7}.
+
+\subsection{Actividades}
+La especificación del lenguaje hace una diferenciación entre las actividades básicas, las actividades estructuradoras y actividades de interacción.  
+\subsubsection{Actividades Estructuradoras}
+Las actividades estructuradoras describen el orden en el que se van a ejecutar un conjunto de actividades. Describen cómo se expresa el control del proceso, manejo de eventos externos y la coordinación del intercambio de mensajes entre los participantes del proceso.
+Con las actividades estructuradoras se pueden expresar varios patrones de control:
+\begin{itemize}
+\item La secuencialidad se puede definir usando las actividades \textit{sequence}, \textit{flow}, \textit{if}, \textit{while}, \textit{repeatUntil} y una variación de \textit{forEach}.
+\item La concurrencia de actividades puede ser definida usando \textit{flow} y \textit{forEach}.
+\item Escogencia de camino en ejecución ya sea por eventos externos o internos está soportada por la actividad \textit{pick}.
+\end{itemize}
+\subsubsection{Actividades de Interacción}
+\label{sec:ActividadesInteraccion}
+Las actividades de interacción definen cómo se va a realizar el intercambio de mensajes entre los participantes del proceso. La actividad \textit{receive} está encargada de bloquear el proceso y esperar que se reciba el mensaje del colaborador definido. La actividad \textit{reply} está encargada de enviar un mensaje a alguno de los colaboradores del proceso sin esperar respuesta. La actividad \textit{invoke} es utilizada para llamar Web services del colaborador designado. Ésta actividad puede ser asíncrona o síncrona, es decir, si es definida como síncrona bloqueara el proceso hasta recibir una respuesta del colaborador.
+\subsubsection{Actividades Básicas}
+Éstas actividades tienen diferentes propósitos. Por ejemplo, es posible terminar inmediatamente un proceso (\textit{exit}). También se puede frenar el proceso por un tiempo determinado o mientras se alcanza un límite de tiempo (\textit{wait}). Igualmente  para poder copiar datos de una variable a otra o asignar nuevos datos a las variables (\textit{assign}). También existe una actividad que no hace nada (\textit{empty}), que es utilizada cuando se quiere atrapar una falla y no hacer nada o si se necesita un punto de sincronización en un \textit{flow}.
+\section{Conceptos Avanzados}
+BPEL define elementos con los cuales se puede hacer manejo de errores, elementos para compensar actividades terminadas, elementos para poder diferenciar instancias de proceso para que los mensajes lleguen a la instancia correcta, elementos para poder definir un contexto para el manejo de error y elementos para reaccionar a eventos externos.
+
+\subsection{Scope}
+El \textit{scope} es un elemento que provee un contexto que va a afectar la manera cómo van a ser ejecutadas las actividades que contiene. En éste contexto se incluyen variables, \textit{partner links}, \textit{message exchanges}, \textit{correlation sets}, \textit{event handlers}, \textit{fault handlers}, un \textit{compensation handler} y un \textit{termination handler}.
+
+\subsection{Fault Handler}
+Durante la ejecución de un proceso pueden ocurrir errores que deben ser manejados dentro del proceso. El \textit{fault handler} está diseñado para qué se pueda deshacer parte del trabajo realizado que causó la falla. Dentro de un \textit{fault handler} se específica una actividad que será ejecutada si se lanza un error durante la ejecución del \textit{scope} donde está definido. En caso de que no se haya determinado un \textit{fault handler} para la falla encontrada, está será lanzada al \textit{scope} padre hasta que se encuentre un \textit{fault handler}  que pueda manejar la falla o hasta que el proceso termine.
+
+\subsection{Compsensation Handler}
+Un \textit{compensation handler} permite definir dentro de un \textit{scope} un conjunto de actividades que pueden ser reversibles. Esto es útil sí, por ejemplo, se tiene un proceso BPEL de larga duración, donde todas las actividades no pueden ser terminadas de manera atómica. En el caso que ocurra una falla es posible deshacer ciertas actividades que fueron ejecutadas hasta ese punto.
+
+\subsection{Correlation Sets}
+Los \textit{correlation sets} son un mecanismo que permite identificar a que instancia de un proceso BPEL le  corresponde un mensaje SOAP recibido, debido a que múltiples instancias de un proceso BPEL pueden estar en ejecución en un momento dado.
+
+\subsection{Event Handler}
+Los \textit{event handlers} son elementos asociados a un \textit{scope} que permiten ejecutar una actividad especificada cuando ocurre cierto evento, cómo recibir un mensaje o qué se dispare una alarma.
+
+\section{Implementaciones}
+En esta sección se van a tratar tres de los motores de \textit{workflow} actuales: ActiveVOS, Oracle BPEL Process Manager y Apache ODE.
+\subsection{ActiveVOS}
+ActiveVOS es un producto de la compañía Active Endpoints. Éste producto es promocionado como un sistema visual de orquestación, donde una sola herramienta permite automatizar los procesos de negocio, la colaboración de diferentes tipos de usuarios organizacionales, controlar los procesos de la organización y adaptar procesos en ejecución. La herramienta está dividida en ActiveVOS Designer y ActiveVOS Server. Entre otras, ActiveVOS  permite:
+
+\subsubsection*{Diseño de Procesos}
+ActiveVOS Designer es un ambiente de desarrollo gráfico basado en Eclipse, que permite diseñar los procesos de negocio usando directamente WS-BPEL 2.0 o BPMN. Además, permite importar procesos existentes realizados en Visio o XPDL, para luego ser traducidos a WS-BPEL 2.0.  Así mismo, permite integrar conceptos de BPEL4People de tal manera que es posible orquestar actividades asignadas a un ser humano dentro de un proceso\citep{Ref8}. 
+	
+\subsubsection*{Deployment de Procesos}
+ActiveVOS Designer también permite hacer \textit{deploy} directamente a ActiveVOS Server. Una de las ventajas que tiene utilizar éste producto, es que es posible subir varias versiones de un mismo proceso al servidor. Cuando esto ocurre, el servidor permite mantener las versiones anteriores de los procesos. Con respecto a cómo se van a manejar las instancias ya existentes de un proceso que ha cambiado, el servidor tiene tres políticas. La primera de ellas es que las instancias existentes pueden mantener su versión hasta que terminen. La segunda política es que las instancias pueden migrar hacia el nuevo proceso. Y la última política es que las instancias existentes deben terminar. La herramienta también permite que las definiciones tengan un ciclo de vida, es decir, es posible definir una fecha a partir de la cual el proceso estará disponible y definir una fecha hasta cuando el proceso estará disponible\citep{Ref12}.
+
+El servidor permite también definir quién prestara el servicio de los colaboradores. En el momento de hacer \textit{deploy}, se puede asignar a cada \textit{partner link} si el servicio es un Web service o servicios Java, JMS (\textit{Java Messaging System}), REST (\textit{Representational State Transfer}),  Ejb Wrappers, Java Wrappers o correo electrónico. Ésta configuración también puede ser definida como estática o dinámica, es decir, los servicios pueden ser seleccionados en tiempo de ejecución, dependiendo de diferentes políticas configurables\citep{Ref12}.	
+
+\subsubsection*{Monitoreo}
+ActiveVOS Server permite hacer monitoreo a través de la consola de los procesos activos, de las tareas del servidor. Con respecto a los procesos, la consola lista todos los procesos que están activos y es posible seleccionar cada uno de ellos para obtener la información que se encuentra en la definición del proceso y además su representación gráfica,  igual como si se estuviera viendo desde ActiveVOS Designer. La consola también tiene la funcionalidad de poder monitorear específicamente la lista de elementos \textit{onAlarm} que se encuentran activos. A su vez, también permite monitorear la cola de elementos \textit{receive}, \textit{onMessage} y \textit{onEvent} que se encuentran esperando recibir un mensaje.
+
+Con respecto al monitoreo de tareas, el servidor tiene la funcionalidad de permitir monitorear  las tareas asociadas con una actividad realizada por un humano, ya sea en ejecución o completada. Contiene los roles genéricos humanos, como los dueños potenciales y los administradores que permiten a los usuarios trabajar en ellas. También tiene la funcionalidad de monitorear la cola de trabajo, la cual es una lista de grupos asociados con tareas que no se han asignado a un ser humano.
+
+El monitoreo que se le puede hacer al servidor es  obtener estadísticas cómo el tiempo para validar mensajes, eficiencia del cache por proceso, tiempo de instanciación de un proceso, entre otras. Los registros que el servidor generó al momento de hacer \textit{deploy} de cada proceso también pueden ser vistos a través de la consola.
+
+\subsubsection*{Reportes}
+ActiveVOS permite generar reportes sobre la información de los procesos o de las tareas. Los reportes que se pueden obtener de los procesos son\citep{Ref15}:
+\begin{itemize}
+\item Lista de los procesos fallidos.
+\item Gráfica con la cantidad de elementos \textit{receive} que están esperando un mensaje.
+\item Gráfica con los procesos más instanciados en las últimas 24 horas.
+\item Gráfica con los procesos que más se encuentran en ejecución en las últimas 24 horas.
+\end{itemize}
+Los reportes que se pueden obtener de las tareas son:
+\begin{itemize}
+\item Lista con el resumen de la cantidad de tareas cerradas.
+\item Lista con el resumen de la cantidad de tareas abiertas.
+\item Lista con el resumen de la cantidad de tareas que han tenido algún problema.
+\item Gráfica con las tareas más instanciados en las últimas 24 horas.
+\end{itemize}
+
+ActiveVOS Designer también permite crear reportes a la medida para poder ser generados desde el servidor. Para hace esto es necesario conocer tanto el modelo de datos del proceso y el modelo de datos de las tareas humanas definido por ActiveVOS\citep{Ref16}. Una vez se conocen los modelos de datos, ActiveVOS Designer permite seleccionar de varias plantillas la manera como se mostrará el reporte y el usuario es responsable de definir las consultas para poder obtener los datos para cada elemento que se va a reportar.
+
+\subsubsection*{Simulación}
+Una de las características importantes de ActiveVOS Designer es que es posible evaluar el impacto que va a tener un nuevo proceso o los cambios sobre un proceso existente, a través de escenarios de simulación. En estos escenarios se definen archivos ejemplo que contienen la información de entrada de un proceso, permitiendo así analizar gráficamente, paso a paso, cómo se comporta del proceso de acuerdo a los datos proporcionados\citep{Ref9}.
+
+\subsubsection*{Pruebas}
+La herramienta también permite guardar las simulaciones realizadas para poder crear lo que ellos denominan \textit{BPEL Unit Testing}. Éste es un procedimiento que puede ser utilizado para validar que la ejecución del las actividades \textit{invoke}, \textit{receive} y \textit{reply} está funcionando correctamente\citep{Ref10}, de ésta manera es posible verificar que todos los componentes de un proceso estén funcionando.
+
+
+\subsubsection*{Depuración}
+ActiveVOS Designer tiene la capacidad de conectarse directamente con el servidor que está corriendo la instancia de proceso y hacer depuración remota. Es posible colocar puntos de quiebre en las actividades que componen el proceso. Estos puntos de quiebre se colocan dentro de la parte gráfica del editor y al ejecutar una instancia, examinar toda la información que pasa a través de la actividad donde se colocó el punto de quiebre\citep{Ref9}.
+
+\subsection{Oracle BPEL Process Manager}
+Ésta suite de herramientas permite el diseño y la ejecución de procesos definidos en BPEL 1.1. También tiene algunas herramientas adicionales para el despliegue, monitoreo y la administración de los procesos. OBPM corre sobre cualquier servidor J2EE. Entre otras, OBPM permite:
+
+\subsubsection*{Diseño de Procesos}
+Dentro de la suite de herramientas contenidas dentro de OBPM se encuentra BPEL Designer. Ésta permite el desarrollo visual de procesos. Existen dos versiones: la de JDeveloper y un plugin para Eclipse. BPEL Designer no tiene que ser utilizado obligatoriamente con BPEL Server. La aplicación permite crear de manera gráfica las definiciones de los procesos BPEL, pero solamente para la versión 1.1 de BPEL. BPEL Designer permite definir los procesos y hacer \textit{deploy} directamente al servidor\citep{Ref17}. 
+
+\subsubsection*{Deployment de Procesos}
+El ambiente de ejecución donde se hace \textit{deploy} de los procesos y donde estos son ejecutados se llama BPEL Server. Proporciona soporte para tecnologías de orquestación, particularmente \textit{WS-Addresing} y \textit{BPEL Compesation Transaction Model}. Permite el manejo de versiones de los procesos. También ofrece la hidratación/deshidratación de procesos y soporte para clustering. 
+BPEL Server tiene un framework que es responsable de la comunicación de los procesos con los clientes y también es responsable de la comunicación de los procesos con los \textit{partnerLinks}. Aunque la especificación de BPEL sólo habla de Web services como colaboradores, el servidor permite la conectividad usando otros protocolos además de SOAP, gracias al Web Services Invocation Framework (WSIF) de apache, el servidor puede comunicarse con colaboradores que están definidos usando otras tecnologías, como EJB, RMI, JMS, JCA y también correo electrónico.
+
+\subsubsection*{Monitoreo}
+La información que se encuentra en el servidor puede ser accedida a través de BPEL Console. Ésta permite hacer \textit{deploy}, depuración, manejo y administración de los procesos. Permite visualizar el flujo de los procesos y realizar auditoría sobre los mismos. A través de la consola también es posible realizar depuración de las instancias (tanto de las que ya terminaron como los que se encuentran en ejecución) ver el historial de los procesos\citep{Ref18}.
+
+\subsubsection*{Reportes}
+BPEL Server permite generar reportes sobre la información de los procesos o sobre sensores colocados en las tareas. Los reportes que se pueden obtener de los procesos son\citep{Ref19}:
+\begin{itemize}
+\item Gráfica con la cantidad de instancias creadas por proceso.
+\item Gráfica con la cantidad de instancias cerradas por proceso debido a un error.
+\item Gráfica con la cantidad de instancias completadas satisfactoriamente por proceso.
+\item Gráfica con la cantidad de instancias en ejecución por proceso.
+\item Gráfica con el tiempo mínimo de ejecución de una instancia por proceso.
+\item Gráfica con el tiempo máximo de ejecución de una instancia por proceso.
+\item Gráfica con el tiempo promedio de ejecución de una instancia por proceso.
+\end{itemize}
+Los reportes que se pueden obtener de los sensores son:
+\begin{itemize}
+\item Gráfica con el tiempo mínimo de ejecución de una tarea donde se colocó un sensor.
+\item Gráfica con el tiempo máximo de ejecución de una tarea donde se colocó un sensor.
+\item Gráfica con el tiempo promedio de ejecución de una tarea donde se colocó un sensor.
+\end{itemize}
+
+\subsubsection*{Pruebas}
+BPEL Server provee un mecanismo que permite que los usuarios automaticen las pruebas de los procesos. La herramienta permite emular servicios y colaboradores. De igual manera es posible definir \textit{asserts} para verificar las acciones del proceso. Los resultados están integrados dentro de la consola, junto con reportes de Ant-JUnit\citep{Ref20}.
+
+
+BPEL Server permite crear instancias que van a ser utilizadas para hacer pruebas de rendimiento y de carga de los procesos. Con las estádisticas obtenidas de éstas pruebas, es posible identificar los cuellos de botella y mejorar el rendimiento de un proceso\citep{Ref21}.
+
+\subsubsection*{Depuración}
+La consola tiene una vista que permite ver gráficamente el proceso. En ésta vista, es posible ver el código de la definición de un proceso o acceder al contenido de las variables de una instancia en ejecución o terminada\citep{Ref21}.
+
+\subsection{Apache ODE}
+Apache  ODE (\textit{Orchestration Director Engine}) es un motor de ejecución de procesos BPEL  2.0. Desarrollado por Apache, es de distribución gratuita y de código abierto bajo la licencia Apache 2.0.
+
+\subsubsection*{Diseño de Procesos}
+Eclipse BPEL Designer es un plugin de Eclipse, que permite diseñar gráficamente los procesos de negocio usando la especificación 2.0 de BPEL\citep{Ref22}. 
+
+\subsubsection*{Deployment de Procesos}
+El \textit{deploy} de los procesos puede realizarse directamente desde Eclipse. Una vez se tiene el proceso diseñado, se define donde está corriendo el motor y la herramienta genera un descriptor donde es necesario definir donde se encuentran los servicios que va a utilizar el proceso\citep{Ref22}. Para el caso donde se quiere modificar un proceso existente,  Apache ODE provee un sistema de versionamiento, sin embargo, no es posible migrar de las instancias existentes de la versión antigua a la nueva. La política de versionamiento permitirá la ejecución de las instancias creadas bajo el proceso viejo, mientras que las nuevas instancias serán creadas con la definición del proceso nuevo.
+
+\subsubsection*{Pruebas}
+La manera como Apache ODE aborda las pruebas es que proveen un conjunto de escenarios de prueba que esperan que verifiquen todas las posibles configuraciones e interacciones que se presentan en la ejecución de un proceso. El framework no está destinado a probar cada uno de los procesos desarrollados por los usuarios del motor, sino a demostrar que el motor funciona correctamente\citep{Ref22}. 
+
+\section{Extensiones}
+BPEL específica el comportamiento de procesos de negocio mientras las actividades del proceso sean Web services. Sin embargo en muchos procesos existen actividades donde debe intervenir un humano, y estás interacciones humanas no son parte del dominio de BPEL. A pesar de la gran aceptación de Web services en aplicaciones de negocio distribuidas, la ausencia de interacciones humanas es un gran vacío para los procesos del mundo real. Para llenar este vacío, se crearon dos extensiones de BPEL llamadas WS-HumanTask\citep{Ref25} y BPEL4People\citep{Ref24}. Estas extensiones permiten la orquestación de Web services junto con la orquestación de actividades humanas.
+
+\subsection{WS-HumanTask}
+La especificación define nuevos elementos para que la interacción humana pueda ser integrada dentro de un proceso BPEL. A continuación se presenta un ejemplo\citep{Ref25} de un proceso con una tarea donde un humano debe interactuar con el proceso.
+
+En un proceso de un préstamo bancario es imaginable que exista una tarea de aprobación del monto solicitado. Después que la información acerca del préstamo es recolectada y si el valor excede cierta cantidad, una persona debe manualmente evaluar si el préstamo es concedido o no. La invocación del servicio de aprobación por el proceso de negocio crea una instancia de la tarea. De ésta manera la tarea aparecerá en la lista de tareas de los aprobadores. Uno de los aprobadores se hará cargo de la tarea, evaluando la información de la solicitud y completará la tarea aprobando o no el préstamo. El mensaje de salida de la tarea contendrá la evaluación del aprobador.
+
+Para lograr esto, la especificación define tres conceptos básicos\citep{Ref25}.
+
+\subsubsection{Tarea Humana (\textit{Human Task})}
+Estas tareas humanas permiten la integración de seres humanos en aplicaciones orientadas a servicios. Las tareas tienen dos interfaces. Una interfaz expone el servicio ofrecido por la tarea, por ejemplo, un servicio de aprobación en un proceso de un préstamo. La segunda interfaz permite que las personas interactúen con las tareas, por ejemplo, obtener las tareas que han sido asignadas a una persona para poder trabajar en ellas.
+\subsubsection{Roles Humanos Genéricos}
+Estos roles definen lo que una persona puede hacer con las tareas y las notificaciones. Los roles están clasificados en:
+
+\subsubsection*{Iniciadores de Tareas (\textit{Task Initiator})}
+Es la persona que crea una instancia de una tarea. Dependiendo de cómo se crea una tarea el iniciador es opcional.
+
+\subsubsection*{Interesados en la Tarea (\textit{Task Stakeholder})}
+Son las personas responsables de la instancia de una tarea y su resultado. Un \textit{task stakeholder} puede influenciar el progreso de una tarea, por ejemplo, reenviando una tarea o siendo un observador de su estado. También puede realizar acciones administrativas sobre la instancia de una tarea y sus notificaciones, cómo resolver plazos vencidos. 
+
+\subsubsection*{Dueños Potenciales (\textit{Potential Owners})}
+Son las personas quienes reciben la tarea para que la puedan reclamar y completar. Un dueño potencial de una tarea se convierte en el dueño actual cuando reclama la tarea. Los dueños potenciales de una tarea pueden influenciar el progreso de la tarea antes de reclamarla, por ejemplo, cambiando la prioridad de la tarea.
+
+\subsubsection*{Dueños Excluidos (\textit{Excluded Owners})}
+Un dueño excluido no puede ser ni dueño potencial ni el dueño actual de una tarea.
+
+\subsubsection*{Dueño Real (\textit{Actual Owner})}
+Es la persona que realmente va a realizar la tarea, puede realizar acciones sobre ella como negar una reclamación, reenviar la tarea a revisión o negar un préstamo. Una tarea solo puede tener un dueño real.
+
+\subsubsection*{Administradores de Negocio (\textit{Business Administrators})}
+Los administradores de tareas cumplen el mismo rol que los \textit{task stakeholders} pero a nivel de tipo de tarea.  Los administradores de proceso también pueden observar el progreso de las notificaciones.
+
+\subsubsection*{Receptores de Notificaciones (\textit{Notification Recipients})}
+Personas que reciben una notificación, por ejemplo, cuando un plazo se vence o cuando se llega a un hito.
+
+\subsubsection{Notificaciones}
+Las notificaciones son mensajes simples, utilizados para informar a una persona o a un grupo de personas que algún evento de negocio ha ocurrido. También son utilizadas cuando es necesario escalar eventos, como una tarea que no ha empezado o una que se ha vencido. Las notificaciones son interacciones simples que no bloquean el proceso. Los receptores de una notificación pueden ser receptores y de manera opcional uno o más administradores de negocio.
+
+\subsection{BPEL4People}
+BPEL4People es otra extensión de BPEL, que también extiende a WS-HumanTask, donde se hace una definición más amplia de los roles y de la manera como los humanos pueden interactuar con los procesos\citep{Ref24}.
+BPEL4People utiliza muchos de los conceptos de WS-HumanTask y define conceptos nuevos\citep{Ref24}.
+
+\subsubsection*{Roles Humanos Genéricos}
+Estos roles complementan los roles definidos en WS-HumanTask y definen que es lo que una persona o grupo de personas pueden hacer con una instancia de proceso.
+
+\subsubsection*{Iniciador de Proceso (\textit{Process Initiator})}
+EL iniciador de proceso es una persona asociada con ejecutar la instancia de proceso en el momento de su creación. El iniciador generalmente es seleccionado automáticamente por el sistema, pero también puede ser definido realizando la asignación a una persona específicamente.
+
+\subsubsection*{Interesados en el Proceso (\textit{Process Stakeholders})}
+Los interesados en el proceso son las personas que pueden influir el progreso de una instancia de proceso, por ejemplo, reenviando una tarea o siendo un observador del progreso de una instancia de proceso. Cada instancia de proceso está relacionada con un interesado en el proceso. En caso que no se haya definido un interesado, el iniciador de proceso será el interesado.
+
+\subsubsection*{Administradores de Negocio (\textit{Business Administrators})}
+Los administradores de negocio son las personas que tienen permitido tomar acciones administrativas de un proceso, cómo resolver incumplimiento de plazos. La diferencia con el \textit{process stakeholder} es que los administradores de negocios están interesados en todas las instancias del proceso. En caso que no se hayan especificado administradores de negocio, los interesados del proceso serán los administradores de negocio.
+
+\subsubsection{People Activity}
+Para poder modelar las interacciones humanas dentro del proceso se define el elemento \textit{people activity}. Cada \textit{people activity} está relacionada con un elemento \textit{inline task} de tipo WS-HumanTask. 
+\begin{figure}[htbp]
+	\centering
+		\includegraphics{./Figures/Constellations.pdf}
+		\rule{35em}{0.5pt}
+	\caption[Constelaciones de BPEL4People]{Constelaciones de BPEL4People.}
+	\label{fig:constellations}
+\end{figure}
+
+La manera de cómo se relacionan la \textit{people activity} con la \textit{inline task} está categorizada de cuatro formas diferentes, llamadas constelaciones (ver figura \ref{fig:constellations}). La primera constelación indica que la \textit{inline task} realizada por un humano está definida dentro de una \textit{people activity} y sólo puede ser utilizada por esa \textit{people activity}, es decir, que el alcance de esa \textit{inline task} es la \textit{people activity}. Para la segunda constelación, la \textit{inline task} a ser completada por un humano se encuentra fuera de la \textit{people activity}, pero dentro del alcance de un \textit{scope} o del proceso, lo que implica que una sola \textit{inline task} puede ser llamada desde diferentes \textit{people activity}. La tercera constelación es muy similar a la segunda, pero con la diferencia que la \textit{inline task} se encuentra definida fuera del proceso (la tarea es \textit{standalone}) pero dentro del mismo ambiente, es por esto que no tiene acceso al contexto del proceso, pero puede ser llamada desde cualquier \textit{people activity}. La última constelación es muy similar a la tercera, pero con la diferencia que la \textit{inline task} a realizar se encuentra fuera del ambiente del proceso. Para que el proceso pueda llamar está  \textit{inline task} es necesario que la invocación sea a través de Web services, utilizando un protocolo predefinido para que el proceso pueda controlar el ciclo de vida de la \textit{inline task}.

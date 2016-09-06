@@ -1,0 +1,24 @@
+<state-machine name="empty" initial-state="Init">
+
+<!-- Init -->
+	<state name="Init" enter-event="" exit-event="exitInit">
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ME"
+				event-name="finalized" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions />
+		</transition>
+	</state>
+
+	
+<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event="exitFinalizing">
+		<transition name="ToInit" successor="Init">
+			<source-event source-name="ME" event-name="reInit" />
+			<before-event name="beforeToInit" />
+			<after-event name="afterToInit" />
+			<actions />
+		</transition>
+	</state>
+</state-machine>

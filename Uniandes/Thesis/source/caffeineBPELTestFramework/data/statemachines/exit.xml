@@ -1,0 +1,19 @@
+<state-machine name="exit" initial-state="Init">
+
+<!-- Init -->
+	<state name="Init" enter-event="" exit-event="exitInit">
+		<transition name="ToFinalizing" successor="Finalizing">
+			<source-event source-name="ME"
+				event-name="exit" />
+			<before-event name="beforeToFinalizing" />
+			<after-event name="afterToFinalizing" />
+			<actions>
+				<action name="ExitProcess" class="uniandes.cumbia.bpel.elements.exit.actions.ExitProcess" />
+			</actions>
+		</transition>
+	</state>
+	
+	
+<!-- Finalizing -->
+	<state name="Finalizing" enter-event="enterFinalizing" exit-event=""/>
+</state-machine>

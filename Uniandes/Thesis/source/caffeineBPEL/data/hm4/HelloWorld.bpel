@@ -1,0 +1,75 @@
+<!-- HelloWorld BPEL Process -->
+<process name="HelloWorld"
+         targetNamespace="http://samples.otn.com/helloworld"
+         suppressJoinFailure="yes"
+         xmlns:tns="http://samples.otn.com/helloworld"
+         xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         >
+         
+    <!-- List of services participating in this BPEL process -->    
+    <partnerLinks>
+        <!--
+        The 'client' role represents the requester of this service. It is 
+        used for callback. The location and correlation information associated
+        with the client role are automatically set using WS-Addressing.
+        -->
+        <partnerLink name="client"
+                     partnerLinkType="tns:HelloWorld"
+                     myRole="HelloWorldProvider"
+                     partnerRole="HelloWorldRequester"
+                     />
+    </partnerLinks>
+  
+    <!-- List of messages and XML documents used as part of this 
+         BPEL process 
+         -->    
+    <variables>
+        <!-- Reference to the message passed as input during initiation -->
+        <variable name="input"
+                  messageType="tns:HelloWorldRequestMessage"/>
+                  
+        <!-- Reference to the message that will be sent back to the 
+             requestor during callback
+             -->
+        <variable name="output"
+                  messageType="tns:HelloWorldResultMessage"/>
+    </variables>
+
+    <!-- Orchestration Logic -->
+    
+    <sequence>
+        
+        <!-- Receive input from requestor. 
+             Note: This maps to operation defined in HelloWorld.wsdl 
+             -->
+        <receive name="receiveInput" partnerLink="client"
+                 portType="tns:HelloWorld"
+                 operation="initiate" variable="input"
+                 createInstance="yes"/>
+        
+        <!-- Generate content of output message based on the content of the
+             input message.
+             -->
+        <assign name="assign1">
+            <copy>
+                <from>concat('Hello ',bpws:getVariableData('input', 'payload','/tns:name'))</from>
+                <to variable="output" part="payload">
+                	<query>tns:result</query>
+                </to>
+            </copy>
+        </assign>
+
+        <!-- Asynchronous callback to the requester.
+             Note: the callback location and correlation id is transparently handled 
+             using WS-addressing.
+             -->
+        <reply name="replyOutput" 
+                partnerLink="client"
+                portType="tns:HelloWorldCallback"
+                operation="onResult" 
+                variable="output"
+                />
+    </sequence>
+</process>
+
